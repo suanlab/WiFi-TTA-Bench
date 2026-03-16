@@ -1,0 +1,39 @@
+# Default configuration for PINN4CSI training
+
+defaults:
+  - model: pinn
+  - data: default
+
+# Model configuration (overridden by defaults)
+model:
+  _target_: pinn4csi.models.pinn.PINN
+  in_features: 52
+  out_features: 10
+  hidden_dim: 64
+  num_layers: 4
+
+# Data configuration
+data:
+  _target_: pinn4csi.data.csi_dataset.CSIDataset
+  batch_size: 32
+  num_workers: 0
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+
+# Training configuration
+trainer:
+  max_epochs: 10
+  learning_rate: 0.001
+  weight_decay: 0.0
+  checkpoint_dir: outputs/checkpoints
+  log_interval: 10
+
+# Device configuration
+device:
+  cuda: null  # null = auto-select, true = force CUDA, false = force CPU
+
+# Logging
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

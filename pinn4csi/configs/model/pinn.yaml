@@ -1,0 +1,16 @@
+# PINN model configuration
+
+_target_: pinn4csi.models.pinn.PINN
+
+# Input/output dimensions
+in_features: 52  # Number of subcarriers
+out_features: 10  # Number of output classes/features
+
+# Architecture
+hidden_dim: 64  # Hidden layer dimension
+num_layers: 4  # Number of hidden layers
+activation: relu  # Activation function: relu, tanh, gelu
+
+# Physics weighting
+lambda_physics: 0.1  # Physics loss weight
+adaptive_lambda: true  # Use adaptive lambda weighting

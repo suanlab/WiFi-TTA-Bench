@@ -79,3 +79,106 @@
 - **Root cause**: Oversight in initial config
 - **Solution**: Created minimal README.md with quick start and structure
 - **Lesson**: Validate all file references in config before committing
+
+## Task 3: Base Training Loop + Hydra Configuration
+
+### Resolved Issues
+
+#### Issue: Model input dimension mismatch
+- **Status**: RESOLVED
+- **Problem**: Synthetic data shape (batch, 104) but model expected (batch, 52)
+- **Root cause**: Synthetic data has 52 subcarriers × 2 features = 104 total features
+- **Solution**: Dynamically calculate `actual_in_features = num_subcarriers * num_features` in train.py
+- **Lesson**: Always match model input dimension to actual data shape
+
+#### Issue: Hydra config composition not working
+- **Status**: RESOLVED
+- **Problem**: `python scripts/train.py model=pinn data=default` failed with "No match in defaults list"
+- **Root cause**: Missing `defaults:` section in root config.yaml
+- **Solution**: Added `defaults: [model: pinn, data: default]` to config.yaml
+- **Lesson**: Hydra requires explicit defaults for config composition
+
+#### Issue: Line length violations in trainer.py
+- **Status**: RESOLVED
+- **Problem**: Type annotations exceeded 88 character line limit
+- **Solution**: Split long function signatures across multiple lines
+- **Lesson**: Type annotations can be verbose; use line breaks for readability
+
+### Potential Future Issues
+
+#### Issue: Loss component logging is placeholder
+- **Status**: MONITORING
+- **Problem**: `loss_physics` is always 0.0 (no physics loss implemented yet)
+- **Impact**: None for Task 3; will be addressed in Task 5
+- **Mitigation**: Trainer structure supports physics loss integration
+
+#### Issue: Synthetic data doesn't reflect real CSI properties
+- **Status**: INFORMATIONAL
+- **Problem**: Random Gaussian data doesn't capture CSI structure (frequency correlation, phase coherence)
+- **Impact**: Smoke tests pass but don't validate physics constraints
+- **Mitigation**: Real datasets used in Task 6 (feasibility experiment)
+
+#### Issue: No learning rate scheduling
+- **Status**: INFORMATIONAL
+- **Problem**: Fixed learning rate throughout training
+- **Impact**: None for Task 3; can be added later if needed
+- **Mitigation**: Adam optimizer with default settings works for smoke tests
+
+## Task 2: CSI Data Loader Implementation
+
+### Resolved Issues
+
+#### Issue: Subset creation reloading from file
+- **Status**: RESOLVED
+- **Problem**: `_create_subset()` was calling `CSIDataset.__init__()` with original file path, causing full data reload
+- **Root cause**: Attempted to reuse constructor for subset creation
+- **Solution**: Used `object.__new__()` to create instance without calling `__init__`, then set attributes directly
+- **Impact**: Efficient subset creation without redundant I/O
+- **Lesson**: For dataset subsets, bypass constructor to avoid reloading
+
+#### Issue: Type annotation for Dataset generic
+- **Status**: RESOLVED
+- **Problem**: `class CSIDataset(Dataset)` missing type parameter
+- **Root cause**: PyTorch Dataset is generic type `Dataset[T]`
+- **Solution**: Changed to `class CSIDataset(Dataset[tuple[Tensor, int]])`
+- **Impact**: Full type safety for mypy strict mode
+- **Lesson**: Always specify generic type parameters for PyTorch classes
+
+#### Issue: Line length in docstrings
+- **Status**: RESOLVED
+- **Problem**: Docstring lines exceeded 88 char limit (ruff E501)
+- **Root cause**: Long parameter descriptions and shape specifications
+- **Solution**: Wrapped long lines across multiple lines in docstrings
+- **Impact**: All ruff checks pass
+- **Lesson**: Docstrings count toward line length; break early
+
+### Potential Future Issues
+
+#### Issue: File format detection
+- **Status**: MONITORING
+- **Problem**: Only `.npy`, `.pt`, `.npz` supported; no `.h5`, `.mat`, `.csv`
+- **Mitigation**: Can add loaders incrementally as needed
+- **Decision**: Keep minimal for now; extend when real datasets require it
+
+#### Issue: Memory efficiency for large datasets
+- **Status**: MONITORING
+- **Problem**: Entire CSI array loaded into memory in `__init__`
+- **Mitigation**: Could implement lazy loading with memory mapping
+- **Decision**: Current approach fine for public datasets (typically <1GB); revisit if needed
+
+#### Issue: Complex-valued tensor handling
+- **Status**: INFORMATIONAL
+- **Problem**: PyTorch has limited complex tensor support (no complex convolution, etc.)
+- **Mitigation**: Amplitude/phase split provides real-valued alternative
+- **Decision**: Amplitude/phase split is primary path; complex mode for reference only
+
+
+## Hydra Configuration Fix (Post-Task 3)
+
+### Issue: Hydra warning about missing `_self_`
+- **Status**: RESOLVED
+- **Problem**: Running train.py emitted "Defaults list is missing _self_" warning
+- **Root cause**: Hydra 1.3+ requires explicit `_self_` in defaults for proper composition
+- **Solution**: Added `_self_` at end of defaults list in pinn4csi/configs/config.yaml
+- **Verification**: Both smoke tests run without warnings
+- **Lesson**: Always include `_self_` in Hydra defaults for explicit composition control

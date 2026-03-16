@@ -165,3 +165,234 @@ All acceptance criteria re-verified:
 - DataLoader generic typing requires explicit type parameters in strict mypy
 - Synthetic data shape must match model input dimension (subcarriers × features)
 - Loss component logging is essential for debugging physics loss integration
+
+## Task 2: CSI Data Loader Implementation
+
+### Dataset Design
+
+#### Shape Convention
+- Raw CSI: `(num_packets, num_subcarriers, num_antennas)` — complex-valued
+- After amplitude/phase split: `(num_packets, num_subcarriers, 2*num_antennas)` — real-valued
+- Per-sample output: `(num_subcarriers, features)` where features = 2*num_antennas (amplitude+phase)
+
+#### Amplitude/Phase Separation
+- `amplitude_phase_split()` converts complex CSI to real-valued amplitude and phase channels
+- Stacks amplitude and phase as separate channels: `[amp_ch1, phase_ch1, amp_ch2, phase_ch2, ...]`
+- Supports both 2D (single sample) and 3D (batch) tensors
+- Enables real-valued neural network processing without complex-valued layers
+
+### Dataset Class Features
+
+#### CSIDataset
+- Flexible file format support: `.npy`, `.pt`, `.npz`
+- Optional amplitude/phase conversion (configurable)
+- Per-sample metadata: labels (integer class IDs) and environments (for cross-env splits)
+- Default labels/environments if not provided (single-class, single-env datasets)
+- Transform pipeline support for preprocessing
+
+#### Split Utilities
+- `train_val_test_split()`: Stratified split with configurable ratios (default 70/15/15)
+- `cross_environment_split()`: Environment-aware split with no overlap guarantee
+- Both utilities use `RandomState` for reproducible shuffling
+- Subset creation via `object.__new__()` to avoid file reloading
+
+### Testing Strategy
+
+#### Test Coverage (19 tests, 100% pass)
+1. **Amplitude/Phase Transform** (3 tests)
+   - 2D and 3D tensor shapes
+   - Numerical correctness (amplitude and phase values)
+
+2. **Normalization** (2 tests)
+   - Output range [0, 1]
+   - Shape preservation
+
+3. **CSIDataset** (7 tests)
+   - Initialization and shape validation
+   - Label/environment handling (default and custom)
+   - Complex vs. real-valued CSI modes
+   - DataLoader iteration (one epoch)
+
+4. **Split Utilities** (7 tests)
+   - Train/val/test ratio validation
+   - No sample overlap
+   - Reproducibility with seed
+   - Cross-environment split non-overlap guarantee
+   - Multiple environment ID support
+
+### Code Quality
+
+#### Linting & Type Checking
+- `ruff check`: All checks passed (0 errors)
+- `mypy`: Strict mode, 0 errors in 3 source files
+- Docstring line length: Fixed to 88 char limit
+- Type annotations: Full coverage for public API
+
+#### Design Decisions
+1. **Subset Creation**: Used `object.__new__()` instead of reloading from file
+   - Avoids redundant I/O
+   - Preserves metadata (labels, environments)
+   - Efficient memory usage
+
+2. **Environment Metadata**: Separate from labels
+   - Enables cross-environment evaluation
+   - Supports multi-environment datasets
+   - Flexible for future domain adaptation tasks
+
+3. **Transform Pipeline**: Optional callable
+   - Allows custom preprocessing (normalization, augmentation)
+   - Decoupled from dataset class
+   - Composable with other transforms
+
+### Integration Points
+
+#### Unblocks
+- Task 6 (Feasibility experiment): Can now load real CSI data
+- Task 10 (Paper 1 experiments): Multi-dataset support ready
+- Task 15 (Paper 2 multi-environment): Cross-env split utilities in place
+
+#### Dependencies
+- Task 1 (Project scaffold): Provides package structure ✓
+- No external dependencies beyond PyTorch/NumPy ✓
+
+
+## Hydra Configuration Fix (Post-Task 3)
+
+### Issue: Missing `_self_` in defaults list
+- **Problem**: Hydra warning "In 'config': Defaults list is missing _self_"
+- **Root cause**: Hydra 1.3+ requires explicit `_self_` placement in defaults
+- **Solution**: Added `_self_` at end of defaults list in config.yaml
+  ```yaml
+  defaults:
+    - model: pinn
+    - data: default
+    - _self_
+  ```
+- **Effect**: `_self_` at end ensures root config values are merged after includes, allowing command-line overrides to take precedence
+- **Verification**: Both smoke tests run warning-free
+
+### Hydra Composition Order
+- **Before `_self_`**: Included configs (model/pinn.yaml, data/default.yaml) are merged
+- **At `_self_`**: Root config values are merged (can override includes)
+- **After `_self_`**: Command-line overrides applied (highest priority)
+- **Result**: Clean composition with proper override precedence
+
+## Task 4: Log-Distance Path Loss Model (TDD)
+
+### Implementation Strategy
+
+#### TDD Approach (RED → GREEN → REFACTOR)
+1. **RED Phase**: Wrote 14 comprehensive tests covering:
+   - Analytical validation against Friis free-space equation
+   - Multiple distances and frequencies
+   - Batched and scalar tensor inputs
+   - Gradient flow (first and second-order)
+   - Edge cases (zero/negative distances, reference distances)
+
+2. **GREEN Phase**: Implemented `compute_path_loss()` function:
+   - Formula: `PL(d) = PL(d0) + 10*n*log10(d/d0)`
+   - Reference level anchored to Friis: `PL(d0) = 20*log10(4*pi*d0*f/c)`
+   - Full type annotations: `Tensor | float` input, `Tensor` output
+   - Autograd-compatible: gradients flow through distance parameter
+
+3. **REFACTOR Phase**:
+   - Added comprehensive Google-style docstring with examples
+   - Implemented input validation (positive distance/reference_distance)
+   - Exported from `pinn4csi.physics.__init__.py`
+   - Fixed code style (ruff, mypy strict mode)
+
+### Physics Model Details
+
+#### Log-Distance Path Loss
+- **Formula**: `PL(d) = PL(d0) + 10*n*log10(d/d0)` (dB)
+- **Parameters**:
+  - `n`: path loss exponent (2.0 for free space, 1.6-3.3 for indoor)
+  - `d0`: reference distance (default 1.0m)
+  - `f`: frequency (Hz)
+  - `c`: speed of light (3e8 m/s)
+
+#### Friis Anchoring
+- Reference level computed from Friis free-space equation
+- `PL(d0) = 20*log10(4*pi*d0*f/c)`
+- Ensures physical consistency with electromagnetic theory
+- At d=d0, path loss matches Friis prediction exactly
+
+### Verification Results
+
+#### Pytest (14/14 PASS)
+- Analytical tests: Friis agreement at 1m, 10m, 100m, 1000m
+- Gradient tests: First-order and second-order (create_graph=True)
+- Edge cases: Zero/negative distance/reference_distance validation
+- Batched inputs: Shape preservation and finite values
+
+#### Type Checking (mypy strict)
+- 0 errors in `pinn4csi/physics/path_loss.py`
+- 0 errors in `pinn4csi/physics/__init__.py`
+- Full type coverage: no `Any` types
+
+#### Code Style (ruff)
+- 0 errors in path_loss.py and test_physics.py
+- Line length: 88 char limit
+- Import order: stdlib → third-party → local
+
+#### Analytical Verification (Python script)
+- Friis equation: 5.99e-07 dB error at d=1m
+- Path loss slope: 20.0 dB/decade (exact for n=2.0)
+- Frequency dependence: 2.4GHz < 5.0GHz < 6.0GHz (correct ordering)
+- Gradient flow: 3.94e-08 dB/m error vs analytical
+- Second-order gradient: Finite and non-zero (PDE residual ready)
+
+### Key Design Decisions
+
+1. **Tensor Input Handling**:
+   - Accept both `Tensor` and `float` for distance
+   - Convert to float32 for consistency
+   - Preserve input shape in output
+
+2. **Validation Strategy**:
+   - Check distance > 0 (raises ValueError)
+   - Check reference_distance > 0 (raises ValueError)
+   - Use `.any()` for batched validation
+
+3. **Friis Anchoring**:
+   - Compute reference level once per call
+   - Use `torch.tensor()` for scalar constants
+   - Ensures frequency-aware reference (not hardcoded)
+
+4. **Autograd Support**:
+   - All operations use torch functions (log10, tensor operations)
+   - No numpy operations on distance tensor
+   - Supports `create_graph=True` for PDE residuals
+
+### Integration Points
+
+#### Unblocks
+- Task 5 (PINN model): Can now integrate path loss as physics constraint
+- Task 6 (Feasibility experiment): Physics loss term ready
+- Task 8 (OFDM model): Foundation for more complex physics
+
+#### Dependencies
+- Task 1 (Project scaffold): Package structure ✓
+- Task 3 (Training loop): Trainer ready for physics loss ✓
+
+### Lessons Learned
+
+1. **Friis Equation Anchoring**: Using Friis as reference ensures physical consistency
+   - Path loss exponent n=2.0 matches free-space theory
+   - Frequency-dependent reference level (not constant)
+   - Enables validation against known electromagnetic laws
+
+2. **Gradient Flow for PDEs**: `create_graph=True` essential for physics constraints
+   - Second-order gradients needed for PDE residuals
+   - Test with both first and second-order to verify
+
+3. **Type Annotations in Physics**: Full type coverage catches errors early
+   - Union types (`Tensor | float`) for flexible inputs
+   - Explicit return types for clarity
+   - Mypy strict mode enforces consistency
+
+4. **Test-Driven Physics**: TDD works well for physics modules
+   - Analytical tests validate against known solutions
+   - Gradient tests verify autograd compatibility
+   - Edge case tests catch validation bugs early
+

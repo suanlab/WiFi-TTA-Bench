@@ -396,3 +396,11 @@ All acceptance criteria re-verified:
    - Gradient tests verify autograd compatibility
    - Edge case tests catch validation bugs early
 
+
+### Device Safety in Physics Modules
+- **Key Lesson**: Always create constant tensors on the same device/dtype as input tensors
+- **Pattern**: `torch.tensor(value, dtype=input.dtype, device=input.device)`
+- **Why**: Prevents device mismatch errors when inputs are on CUDA or have different dtypes
+- **Testing**: Add explicit tests for dtype and device preservation (not just CPU float32)
+- **Impact**: Enables seamless CUDA support and dtype flexibility without code changes
+

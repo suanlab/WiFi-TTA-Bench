@@ -59,11 +59,10 @@ def compute_path_loss(
         >>> pl = compute_path_loss(distance, frequency=2.4e9, n=2.0)
         >>> print(pl)  # Path loss at 1m, 10m, 100m
     """
-    # Convert distance to tensor if needed
+    # Convert distance to tensor if needed, preserving dtype
     if not isinstance(distance, Tensor):
         distance = torch.tensor(distance, dtype=torch.float32)
-    else:
-        distance = distance.float()
+    # Keep original dtype (don't force float32)
 
     # Validate inputs
     if (distance <= 0).any():
@@ -80,9 +79,10 @@ def compute_path_loss(
 
     # Compute reference path loss at d0 using Friis equation
     # PL(d0) = 20*log10(4*pi*d0*f/c)
+    # Create constant tensor on same device/dtype as distance for device safety
     friis_arg = 4 * np.pi * reference_distance * frequency / c
     pl_ref = 20 * torch.log10(
-        torch.tensor(friis_arg, dtype=torch.float32)
+        torch.tensor(friis_arg, dtype=distance.dtype, device=distance.device)
     )
 
     # Compute path loss at distance d

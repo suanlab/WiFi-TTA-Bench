@@ -182,3 +182,24 @@
 - **Solution**: Added `_self_` at end of defaults list in pinn4csi/configs/config.yaml
 - **Verification**: Both smoke tests run without warnings
 - **Lesson**: Always include `_self_` in Hydra defaults for explicit composition control
+
+## Task 4 Post-Verification: Device Safety Fix
+
+### Issue: Device/Dtype Mismatch in Path Loss
+- **Status**: RESOLVED
+- **Problem**: `pl_ref` was created with `torch.tensor(..., dtype=torch.float32)` on CPU unconditionally
+  - Would fail for CUDA distance tensors due to device mismatch
+  - Would force dtype mismatch when distance is float64
+- **Root Cause**: Hardcoded dtype and device in constant tensor creation
+- **Solution**: 
+  - Create `pl_ref` on same device/dtype as input distance: `torch.tensor(friis_arg, dtype=distance.dtype, device=distance.device)`
+  - Remove forced `.float()` conversion that was converting all inputs to float32
+- **Impact**: Now device-safe and dtype-consistent
+- **Tests Added**: 5 new tests in `TestPathLossDeviceSafety` class
+  - `test_path_loss_preserves_dtype_float32`: Verify float32 preservation
+  - `test_path_loss_preserves_dtype_float64`: Verify float64 preservation
+  - `test_path_loss_preserves_device_cpu`: Verify CPU device preservation
+  - `test_path_loss_preserves_device_cuda`: Verify CUDA device preservation (conditional)
+  - `test_path_loss_batched_dtype_consistency`: Verify batched input consistency
+- **Verification**: 18/18 tests pass (1 CUDA test skipped on CPU-only system)
+

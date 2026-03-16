@@ -290,3 +290,72 @@ class TestPathLossEdgeCases:
             f"d0=1m: {pl_d0_1.item():.6f} dB, "
             f"d0=10m: {pl_d0_10.item():.6f} dB"
         )
+
+
+class TestPathLossDeviceSafety:
+    """Verify device and dtype consistency."""
+
+    def test_path_loss_preserves_dtype_float32(self) -> None:
+        """Test that output dtype matches input dtype (float32)."""
+        distance = torch.tensor([10.0], dtype=torch.float32)
+        frequency = 2.4e9
+
+        pl = compute_path_loss(distance, frequency, n=2.0, reference_distance=1.0)
+
+        assert pl.dtype == torch.float32, (
+            f"Output dtype {pl.dtype} != input dtype {distance.dtype}"
+        )
+
+    def test_path_loss_preserves_dtype_float64(self) -> None:
+        """Test that output dtype matches input dtype (float64)."""
+        distance = torch.tensor([10.0], dtype=torch.float64)
+        frequency = 2.4e9
+
+        pl = compute_path_loss(distance, frequency, n=2.0, reference_distance=1.0)
+
+        assert pl.dtype == torch.float64, (
+            f"Output dtype {pl.dtype} != input dtype {distance.dtype}"
+        )
+
+    def test_path_loss_preserves_device_cpu(self) -> None:
+        """Test that output device matches input device (CPU)."""
+        distance = torch.tensor([10.0], device="cpu")
+        frequency = 2.4e9
+
+        pl = compute_path_loss(distance, frequency, n=2.0, reference_distance=1.0)
+
+        assert pl.device == distance.device, (
+            f"Output device {pl.device} != input device {distance.device}"
+        )
+
+    @pytest.mark.skipif(
+        not torch.cuda.is_available(),
+        reason="CUDA not available",
+    )
+    def test_path_loss_preserves_device_cuda(self) -> None:
+        """Test that output device matches input device (CUDA)."""
+        distance = torch.tensor([10.0], device="cuda")
+        frequency = 2.4e9
+
+        pl = compute_path_loss(distance, frequency, n=2.0, reference_distance=1.0)
+
+        assert pl.device == distance.device, (
+            f"Output device {pl.device} != input device {distance.device}"
+        )
+
+    def test_path_loss_batched_dtype_consistency(self) -> None:
+        """Test dtype consistency with batched input."""
+        distances = torch.tensor(
+            [[1.0, 10.0], [100.0, 1000.0]],
+            dtype=torch.float64,
+        )
+        frequency = 2.4e9
+
+        pl = compute_path_loss(distances, frequency, n=2.0, reference_distance=1.0)
+
+        assert pl.dtype == distances.dtype, (
+            f"Output dtype {pl.dtype} != input dtype {distances.dtype}"
+        )
+        assert pl.device == distances.device, (
+            f"Output device {pl.device} != input device {distances.device}"
+        )

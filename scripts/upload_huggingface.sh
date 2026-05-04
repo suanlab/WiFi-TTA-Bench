@@ -1,35 +1,34 @@
 #!/usr/bin/env bash
-# Template for uploading the WiFi-TTA-Bench dataset card + Croissant metadata
-# to a HuggingFace anonymous namespace for double-blind NeurIPS ED review.
+# Upload the WiFi-TTA-Bench dataset card + Croissant metadata + canonical
+# evaluation artifacts to a HuggingFace dataset repository.
 #
 # Prerequisites:
-#   pip install -U "huggingface_hub[cli]"
-#   huggingface-cli login   # use a freshly created anon account; do NOT use your real account
+#   pip install -U "huggingface_hub[cli]"   # provides the `hf` CLI
+#   hf auth login                            # paste a write token
 #
-# This script is idempotent: re-running after edits will push only the changed files.
+# This script is idempotent: re-running after edits will push only the
+# changed files.
 
 set -euo pipefail
 
 # === CONFIGURE ===
-# Choose an anon namespace and dataset name. After acceptance you will rename.
-HF_NAMESPACE="${HF_NAMESPACE:-anonymous-ed2026}"
+HF_NAMESPACE="${HF_NAMESPACE:-WiFi-TTA-Bench}"
 HF_REPO="${HF_REPO:-wifi-tta-bench}"
 HF_TYPE="${HF_TYPE:-dataset}"   # dataset (not model)
+HF_BIN="${HF_BIN:-hf}"           # override e.g. HF_BIN=venv/bin/hf
 # =================
 
 REPO_ID="$HF_NAMESPACE/$HF_REPO"
 
-if ! command -v huggingface-cli >/dev/null 2>&1; then
-  echo "ERROR: huggingface-cli not found. Install with:"
+if ! command -v "$HF_BIN" >/dev/null 2>&1; then
+  echo "ERROR: '$HF_BIN' not found. Install with:"
   echo "  pip install -U 'huggingface_hub[cli]'"
+  echo "  hf auth login"
   exit 1
 fi
 
 # 1. Create the repo (no-op if it already exists)
-huggingface-cli repo create "$HF_REPO" \
-  --type "$HF_TYPE" \
-  --organization "$HF_NAMESPACE" \
-  -y || true
+"$HF_BIN" repo create "$REPO_ID" --repo-type "$HF_TYPE" -y || true
 
 # 2. Stage upload contents under a temp dir so we control exactly what HF sees
 STAGING="$(mktemp -d)"
@@ -61,14 +60,13 @@ cp data/prepared/ntufi_har/metadata.json    "$STAGING/splits/ntufi_har.json"
 cp data/prepared/signfi_top10/metadata.json "$STAGING/splits/signfi_top10.json"
 
 # 3. Upload
-huggingface-cli upload "$REPO_ID" "$STAGING" . \
+"$HF_BIN" upload "$REPO_ID" "$STAGING" . \
   --repo-type "$HF_TYPE" \
-  --commit-message "Initial WiFi-TTA-Bench dataset card + Croissant metadata (NeurIPS 2026 ED, anonymous)"
+  --commit-message "Initial WiFi-TTA-Bench dataset card + Croissant metadata + evaluation artifacts"
 
 echo ""
 echo "Uploaded to https://huggingface.co/datasets/$REPO_ID"
 echo ""
-echo "REMEMBER:"
-echo "  - Update introduction.tex / checklist.tex with the actual URL if it differs."
-echo "  - Keep this account anonymous until the camera-ready period."
+echo "NEXT:"
 echo "  - Verify the Croissant file passes https://huggingface.co/spaces/JoaquinVanschoren/croissant-checker"
+echo "  - Optional: tag the dataset version with 'hf tag $REPO_ID v0.1.0 --repo-type=$HF_TYPE'"

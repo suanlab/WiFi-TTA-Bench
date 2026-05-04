@@ -1,0 +1,46 @@
+# Environment snapshot — captured 2026-03-16
+# Python 3.12 (venv), CPU-only PyTorch build
+# Generated with: pip freeze (inside venv)
+#
+# Reproduce exactly:
+#   python3 -m venv venv
+#   source venv/bin/activate
+#   pip install -e ".[dev]"
+#
+# NOTE: torch==2.10.0+cpu is the CPU-only wheel.
+#       For GPU support install the matching CUDA wheel from pytorch.org.
+
+antlr4-python3-runtime==4.9.3
+coverage==7.13.4
+filelock==3.20.0
+fsspec==2025.12.0
+hydra-core==1.3.2
+iniconfig==2.3.0
+Jinja2==3.1.6
+librt==0.8.1
+MarkupSafe==3.0.2
+mpmath==1.3.0
+mypy==1.19.1
+mypy_extensions==1.1.0
+networkx==3.6.1
+numpy==2.4.3
+nvidia-cusparselt-cu12==0.7.1
+omegaconf==2.3.0
+packaging==26.0
+pathspec==1.0.4
+# The project itself is installed separately via `pip install -e .` from the
+# source root; the previous absolute editable path has been removed for
+# portability (see SUBMISSION_README.md §1).
+pluggy==1.6.0
+Pygments==2.19.2
+pytest==9.0.2
+pytest-cov==7.0.0
+PyYAML==6.0.3
+ruff==0.15.6
+setuptools==82.0.1
+sympy==1.14.0
+torch==2.10.0+cpu
+triton==3.6.0
+types-PyYAML==6.0.12.20250915
+typing_extensions==4.15.0
+wheel==0.46.3

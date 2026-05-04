@@ -1,7 +1,55 @@
+# Data and generated outputs (not redistributed from this repo)
 data/
-outputs/
+data/raw/**
+
+# Outputs: ignore everything by default; allowlist only canonical paper
+# artifacts. Mock / smoke / scaffold runs stay local. Use `outputs/*`
+# (not bare `outputs/`) so negation patterns can re-include subpaths.
+outputs/*
+!outputs/SUBMISSION_MANIFEST.md
+!outputs/croissant/
+!outputs/croissant/**
+!outputs/coverage/
+!outputs/coverage/**
+!outputs/widar_full_tta/
+!outputs/widar_full_tta/**
+!outputs/ntufi_tta/
+!outputs/ntufi_tta/**
+!outputs/signfi_tta/
+!outputs/signfi_tta/**
+!outputs/new_methods/
+!outputs/new_methods/**
+!outputs/phase1/
+!outputs/phase1/**
+!outputs/phase2/
+!outputs/phase2/**
+!outputs/phase_calibration/
+!outputs/phase_calibration/**
+!outputs/source_overfit/
+!outputs/source_overfit/**
+!outputs/overconfidence/
+!outputs/overconfidence/**
+!outputs/cross_physics/
+!outputs/cross_physics/**
+!outputs/final_ablations/
+!outputs/final_ablations/**
+!outputs/db_ablations/
+!outputs/db_ablations/**
+!outputs/neurips_experiments/
+outputs/neurips_experiments/*
+!outputs/neurips_experiments/soft_selective_comparison.json
+!outputs/neurips_experiments/proxy_a_distance.json
+!outputs/neurips_experiments/method_summary.json
+!outputs/neurips_experiments/full_method_comparison.json
+!outputs/neurips_experiments/threshold_ablation.json
+!outputs/neurips_experiments/selective_optimization.json
+
+# Model checkpoints
 *.pt
 *.pth
+*.ckpt
+
+# Python caches
 __pycache__/
 *.pyc
 .pytest_cache/
@@ -10,11 +58,87 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+.coverage
+.coverage.*
+coverage.json
+htmlcov/
+
+# Virtual environments
 .venv/
 venv/
+
+# OMC / session scratch
+.sisyphus/
+.omc/
+
+# Editor / OS
 .DS_Store
 *.swp
 *.swo
 *~
 .idea/
 .vscode/
+
+# LaTeX build artefacts (under manuscript/)
+manuscript/**/*.aux
+manuscript/**/*.bbl
+manuscript/**/*.blg
+manuscript/**/*.fls
+manuscript/**/*.fdb_latexmk
+manuscript/**/*.log
+manuscript/**/*.out
+manuscript/**/*.toc
+manuscript/**/*.synctex.gz
+manuscript/**/.archive/
+
+# Korean parallel build (only the English version is the submitted paper)
+manuscript/paper2/main_korean.*
+manuscript/paper2/korean.*
+manuscript/paper2/checklist_korean.tex
+manuscript/paper2/supplementary_korean.tex
+manuscript/paper2/sections_ko/
+
+# Stray LaTeX intermediates at repo root (if pdflatex is run there)
+/main.aux
+/main.bbl
+/main.blg
+/main.fls
+/main.fdb_latexmk
+/main.log
+/main.out
+
+# Session-scratch markdowns at repo root (review/audit cycle artifacts)
+/AUDIT.md
+/CHECK.md
+/MODIFY.md
+/PLAN.md
+/REVIEW.md
+/REVIEW2.md
+/REVISION.md
+/notepads.md
+
+# In-manuscript scratch markdowns (not part of release)
+manuscript/paper2/AUDIT*.md
+manuscript/paper2/CHECK*.md
+manuscript/paper2/MODIFY*.md
+manuscript/paper2/PLAN*.md
+manuscript/paper2/REVIEW*.md
+manuscript/paper2/FINAL_SUBMISSION_CHECK.md
+manuscript/paper2/PDF_FINAL_CHECK.md
+manuscript/paper2/REFERENCE_VERIFICATION.md
+
+# Internal docs / runbooks: only README.md ships in the public release.
+# All other root-level and per-directory .md files are local-only.
+/AGENTS.md
+/CLAUDE.md
+/SUBMISSION_GUIDE.md
+/SUBMISSION_README.md
+manuscript/paper2/ARTIFACT_MANIFEST.md
+manuscript/paper2/ARTIFACT_README.md
+manuscript/paper2/SUBMISSION_MANIFEST.md
+manuscript/paper2/figures/README.md
+outputs/SUBMISSION_MANIFEST.md
+outputs/croissant/HF_DATASET_CARD.md
+
+# Figure PNG previews are duplicates of the canonical PDFs.
+manuscript/paper2/figures/*.png

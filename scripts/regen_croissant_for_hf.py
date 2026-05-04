@@ -310,6 +310,31 @@ def build() -> dict:
             "via Zenodo DOI on acceptance. Croissant metadata regenerated "
             "on each release."
         ),
+        "rai:dataLimitations": (
+            "Known limitations of the benchmark splits and artifacts: "
+            "(1) Two of three real datasets (NTU-Fi, SignFi-10) use "
+            "temporal splits within a single laboratory rather than "
+            "verified physical-room changes; only Widar_BVP is a verified "
+            "leave-one-room-out split. (2) The primary backbone is a "
+            "fixed MLP without BatchNorm; an MLP+BN control is provided "
+            "but other backbones (CNN1D+BN) are evaluated only on a "
+            "limited one-room probe. (3) The main evaluation uses n=15 "
+            "paired observations (3 folds x 5 seeds), adequate for large "
+            "effects (Cohen's d >= 0.8) but underpowered for small "
+            "effects. (4) SignFi-10 is small (200 samples, 10 classes) "
+            "and may overstate recovery on milder shifts. (5) Method "
+            "fidelity varies: TENT, SHOT, SAR, CoTTA, and LAME on the "
+            "primary MLP backbone are simplified ports because the "
+            "shared MLP lacks BN; a faithful BN-only port on MLP+BN is "
+            "provided as a control but the simplified-port numbers "
+            "should not be read as universal method failures. (6) The "
+            "benchmark redistributes only split manifests and "
+            "evaluation artifacts; raw CSI must be obtained from the "
+            "upstream dataset distributors under their academic "
+            "licences. (7) No demographic, device-diversity, or "
+            "real-time-deployment metadata is provided."
+        ),
+        "rai:hasSyntheticData": True,
         "rai:dataSocialImpact": (
             "Research-only benchmark. Improved WiFi-based adaptation could "
             "in principle reduce deployment cost but also lower barriers to "

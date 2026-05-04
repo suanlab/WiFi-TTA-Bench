@@ -82,8 +82,17 @@ ls -la "$CODE_ZIP"
 SUPP_ZIP="$BUILD/wifi-tta-bench-supp.zip"
 rm -f "$SUPP_ZIP"
 
-# Re-compile to make sure main.pdf is current
-( cd manuscript/paper2 && pdflatex -interaction=batchmode main.tex >/dev/null 2>&1 && pdflatex -interaction=batchmode main.tex >/dev/null 2>&1 ) || true
+# Re-compile to make sure main.pdf is current. Pin SOURCE_DATE_EPOCH so the
+# embedded CreationDate is UTC ('Z' suffix) rather than the local timezone,
+# which would otherwise leak the build location (e.g. KST -> Korea).
+export SOURCE_DATE_EPOCH=1714521600
+(
+  cd manuscript/paper2 \
+    && pdflatex -interaction=batchmode main.tex >/dev/null 2>&1 \
+    && bibtex main >/dev/null 2>&1 \
+    && pdflatex -interaction=batchmode main.tex >/dev/null 2>&1 \
+    && pdflatex -interaction=batchmode main.tex >/dev/null 2>&1
+) || true
 
 zip -q -r "$SUPP_ZIP" \
   manuscript/paper2/main.pdf \

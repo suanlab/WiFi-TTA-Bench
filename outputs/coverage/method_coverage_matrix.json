@@ -1,0 +1,82 @@
+{
+  "methods": [
+    "conservative_entropy_tta",
+    "cotta",
+    "entropy_tta",
+    "lame",
+    "no_adapt",
+    "physics_tta",
+    "safe_physics_tta",
+    "sar",
+    "selective_physics_tta",
+    "shot",
+    "t3a",
+    "tent"
+  ],
+  "coverage": {
+    "widar_bvp": {
+      "conservative_entropy_tta": true,
+      "cotta": true,
+      "entropy_tta": true,
+      "lame": true,
+      "no_adapt": true,
+      "physics_tta": true,
+      "safe_physics_tta": true,
+      "sar": true,
+      "selective_physics_tta": true,
+      "shot": true,
+      "t3a": true,
+      "tent": true
+    },
+    "ntufi_har": {
+      "conservative_entropy_tta": false,
+      "cotta": true,
+      "entropy_tta": true,
+      "lame": true,
+      "no_adapt": true,
+      "physics_tta": true,
+      "safe_physics_tta": true,
+      "sar": true,
+      "selective_physics_tta": true,
+      "shot": true,
+      "t3a": true,
+      "tent": true
+    },
+    "signfi_top10": {
+      "conservative_entropy_tta": false,
+      "cotta": true,
+      "entropy_tta": true,
+      "lame": true,
+      "no_adapt": true,
+      "physics_tta": true,
+      "safe_physics_tta": false,
+      "sar": true,
+      "selective_physics_tta": true,
+      "shot": true,
+      "t3a": true,
+      "tent": true
+    }
+  },
+  "totals": {
+    "widar_bvp": 12,
+    "ntufi_har": 11,
+    "signfi_top10": 10
+  },
+  "sources": {
+    "widar_bvp": {
+      "canonical": "outputs/widar_full_tta/method_summary.json",
+      "extras": "outputs/new_methods/widar_lame_sar_cotta.json"
+    },
+    "ntufi_har": {
+      "canonical": "outputs/ntufi_tta/method_summary.json",
+      "extras": "outputs/new_methods/ntufi_har_lame_sar_cotta.json"
+    },
+    "signfi_top10": {
+      "canonical": "outputs/signfi_tta/method_summary.json",
+      "extras": "outputs/new_methods/signfi_top10_lame_sar_cotta.json"
+    }
+  },
+  "excluded_internal_variants": [
+    "physics_entropy_tta"
+  ]
+}

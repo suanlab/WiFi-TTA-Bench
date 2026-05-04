@@ -1,0 +1,1 @@
+{"widar_bvp": {"train": 0.894, "val": 0.474, "target": 0.373}, "ntufi_har": {"train": 0.85, "val": 0.706, "target": 0.697}}

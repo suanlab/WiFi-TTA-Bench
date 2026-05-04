@@ -1,0 +1,7 @@
+class_id,class_name,accuracy,confidence,n_samples
+0,slide,0.4374,0.7621,3669
+1,draw-zigzag,0.2376,0.7037,3762
+2,push&pull,0.5740,0.8086,3798
+3,sweep,0.2617,0.7022,3642
+4,clap,0.3163,0.6995,3816
+5,draw-circle,0.2853,0.7136,3723

@@ -1,0 +1,16 @@
+{
+  "mlp": {
+    "no_adapt": 0.0,
+    "entropy_tta": 0.0,
+    "tent": 0.0,
+    "physics_tta": 0.0,
+    "selective_physics_tta": 0.0
+  },
+  "cnn1d": {
+    "no_adapt": 0.0,
+    "entropy_tta": 0.19444444444444442,
+    "tent": 0.21296296296296294,
+    "physics_tta": 0.23148148148148148,
+    "selective_physics_tta": 0.23148148148148148
+  }
+}

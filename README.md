@@ -2,7 +2,7 @@
 
 Physics-Informed Neural Networks (PINNs) applied to WiFi Channel State Information (CSI) for signal analysis, localization, and sensing applications.
 
-> **Status (2026-04-08):** The WiFi-TTA-Bench benchmark is complete with 3 real datasets (Widar\_BVP, NTU-Fi, SignFi-10), 10+ TTA methods, and n=15 paired evaluations per method. Paper-quality results are in `outputs/` and `.sisyphus/evidence/`. Self-collected hardware CSI collection remains pending.
+> **Status:** The WiFi-TTA-Bench benchmark is complete with 3 real datasets (Widar\_BVP, NTU-Fi, SignFi-10), 10+ TTA methods, and n=15 paired evaluations per method. Paper-quality results are in `outputs/`.
 
 ---
 
@@ -183,7 +183,7 @@ Key scenarios covered:
 - Cross-environment generalisation (synthetic source → synthetic target)
 - Domain-invariant feature learning baselines
 
-> **Status:** WiFi-TTA-Bench evaluated on Widar\_BVP (3 rooms), NTU-Fi (3 sessions), SignFi-10 (3 splits), and controlled synthetic data. Self-collected hardware CSI remains pending.
+> **Status:** WiFi-TTA-Bench evaluated on Widar\_BVP (3 rooms), NTU-Fi (3 sessions), SignFi-10 (3 splits), and controlled synthetic data.
 
 ---
 
@@ -290,5 +290,3 @@ mypy pinn4csi/       # Type checking (strict)
 pytest               # Full test suite
 pytest -m "not slow and not gpu"  # Fast subset (default)
 ```
-
-See [`AGENTS.md`](AGENTS.md) for detailed code style and conventions.

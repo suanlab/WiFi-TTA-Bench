@@ -61,10 +61,10 @@
   ],
   "license": "CC-BY-4.0 (benchmark artifacts and code; raw datasets retain original academic licences)",
   "citeAs": "To be assigned upon acceptance.",
-  "url": "https://openreview.net/anonymous",
+  "url": "https://huggingface.co/datasets/WiFi-TTA-Bench/wifi-tta-bench",
   "creator": {
     "@type": "Organization",
-    "name": "Anonymous (NeurIPS 2026 ED track, double-blind)"
+    "name": "WiFi-TTA-Bench"
   },
   "datePublished": "2026-04-18",
   "rai:dataCollection": "Benchmark re-uses existing academic-licensed WiFi CSI datasets (Widar_BVP, NTU-Fi HAR, SignFi-10). No new human-subject data collected by the benchmark authors.",
@@ -82,187 +82,152 @@
   ],
   "rai:dataBiases": "WiFi CSI datasets were collected in academic laboratory settings with volunteer subjects; demographic and device-diversity coverage is limited. Two of three datasets (NTU-Fi, SignFi-10) use temporal splits within a single laboratory rather than verified physical-room changes; only Widar_BVP is a verified cross-room split.",
   "rai:personalSensitiveInformation": "None. No personally identifiable information. Original dataset authors collected CSI under informed consent with non-identifying activity labels. WiFi CSI can in principle enable covert monitoring; we redistribute only evaluation artifacts, not raw captures, under an acceptable-use notice.",
-  "rai:dataReleaseMaintenancePlan": "Benchmark artifacts will be maintained at the anonymized code URL for a minimum of three years. Versioned releases via Zenodo DOI. Croissant metadata regenerated on each release.",
+  "rai:dataReleaseMaintenancePlan": "Benchmark artifacts maintained on HuggingFace (WiFi-TTA-Bench org) and GitHub (suanlab/WiFi-TTA-Bench). Versioned releases via Zenodo DOI on acceptance. Croissant metadata regenerated on each release.",
   "rai:dataSocialImpact": "Research-only benchmark. Improved WiFi-based adaptation could in principle reduce deployment cost but also lower barriers to covert monitoring; we therefore couple method releases with negative-adaptation and source-drop reporting so deployers can detect silently-degrading behaviour.",
   "distribution": [
     {
       "@type": "cr:FileObject",
       "@id": "widar-full-tta-summary",
-      "name": "widar_full_tta_method_summary",
-      "contentUrl": "outputs/widar_full_tta/method_summary.json",
+      "name": "widar-full-tta-summary",
+      "contentUrl": "method_summaries/widar.json",
       "encodingFormat": "application/json",
+      "sha256": "d1f4716e300590236ee108592a49f59b5ac8b75ea66af7b1c8eedb49db7c051b",
       "description": "Per-method mean gain + 95% bootstrap CI + Cohen's d + negative adaptation rate for Widar_BVP (primary MLP backbone, n=15 paired observations)."
     },
     {
       "@type": "cr:FileObject",
       "@id": "ntufi-tta-summary",
-      "name": "ntufi_tta_method_summary",
-      "contentUrl": "outputs/ntufi_tta/method_summary.json",
+      "name": "ntufi-tta-summary",
+      "contentUrl": "method_summaries/ntufi.json",
       "encodingFormat": "application/json",
+      "sha256": "6fc5ec94c0f65c73bd32e4d955c1d08127faee20f2089ef31ad5d23daf6c2e5c",
       "description": "Per-method summary for NTU-Fi HAR (primary MLP, n=15)."
     },
     {
       "@type": "cr:FileObject",
       "@id": "signfi-tta-summary",
-      "name": "signfi_tta_method_summary",
-      "contentUrl": "outputs/signfi_tta/method_summary.json",
+      "name": "signfi-tta-summary",
+      "contentUrl": "method_summaries/signfi.json",
       "encodingFormat": "application/json",
+      "sha256": "70555e69a12e6819a59bcd8d4e7a735c7d21ceb3842e79fed453ffe8a05a01b6",
       "description": "Per-method summary for SignFi-10 (primary MLP, n=15)."
     },
     {
       "@type": "cr:FileObject",
       "@id": "widar-lame-sar-cotta",
-      "name": "widar_lame_sar_cotta",
-      "contentUrl": "outputs/new_methods/widar_lame_sar_cotta.json",
+      "name": "widar-lame-sar-cotta",
+      "contentUrl": "method_summaries/widar_lame_sar_cotta.json",
       "encodingFormat": "application/json",
+      "sha256": "365255bea8eed08d7da30dcaa14fbedfc603d4225df971de125beb1f8fb0e02a",
       "description": "SAR, CoTTA, LAME on Widar_BVP (primary MLP, n=15)."
     },
     {
       "@type": "cr:FileObject",
       "@id": "ntufi-lame-sar-cotta",
-      "name": "ntufi_lame_sar_cotta",
-      "contentUrl": "outputs/new_methods/ntufi_har_lame_sar_cotta.json",
+      "name": "ntufi-lame-sar-cotta",
+      "contentUrl": "method_summaries/ntufi_lame_sar_cotta.json",
       "encodingFormat": "application/json",
-      "description": "SAR, CoTTA, LAME on NTU-Fi (primary MLP, n=15)."
+      "sha256": "9518dd5c848e273b6940e7f34555faa2d0d9ccd503e7507029df63f0c70639c2",
+      "description": "SAR, CoTTA, LAME on NTU-Fi HAR (primary MLP, n=15)."
     },
     {
       "@type": "cr:FileObject",
       "@id": "signfi-lame-sar-cotta",
-      "name": "signfi_lame_sar_cotta",
-      "contentUrl": "outputs/new_methods/signfi_top10_lame_sar_cotta.json",
+      "name": "signfi-lame-sar-cotta",
+      "contentUrl": "method_summaries/signfi_lame_sar_cotta.json",
       "encodingFormat": "application/json",
+      "sha256": "b702c627383939b84d883bfd4fd428e146df2f1a87a685a2ab84c64ce6ac638c",
       "description": "SAR, CoTTA, LAME on SignFi-10 (primary MLP, n=15)."
     },
     {
       "@type": "cr:FileObject",
-      "@id": "arch-ablation-n15",
-      "name": "arch_ablation_n15",
-      "contentUrl": "outputs/final_ablations/arch_ablation_n15.json",
+      "@id": "widar-mlpbn-faithful-sar-cotta",
+      "name": "widar-mlpbn-faithful-sar-cotta",
+      "contentUrl": "method_summaries/widar_mlpbn_faithful_sar_cotta.json",
       "encodingFormat": "application/json",
-      "description": "Three-way architecture ablation (MLP, MLP+BN) on Widar_BVP (n=15)."
+      "sha256": "37ac3f0eb7e37121239a1b7c7e7a9692e698423cf4c5fb492dbc785ebbd826ea",
+      "description": "Faithful BN-only SAR/CoTTA + full TENT on MLP+BN Widar_BVP backbone (n=15)."
     },
     {
       "@type": "cr:FileObject",
       "@id": "arch-ablation-with-ci",
-      "name": "arch_ablation_with_ci",
-      "contentUrl": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "name": "arch-ablation-with-ci",
+      "contentUrl": "method_summaries/arch_ablation_with_ci.json",
       "encodingFormat": "application/json",
+      "sha256": "631aee04116a7daccb7a147f7ebe103fb876ab1ab661822ea415a859dac52eb7",
       "description": "Three-backbone architecture ablation with 95% bootstrap CIs (MLP, MLP+BN, CNN1D+BN)."
     },
     {
       "@type": "cr:FileObject",
       "@id": "faithful-tent",
-      "name": "faithful_tent_results",
-      "contentUrl": "outputs/phase1/faithful_tent_results.json",
+      "name": "faithful-tent",
+      "contentUrl": "method_summaries/faithful_tent_results.json",
       "encodingFormat": "application/json",
+      "sha256": "047416218e92ca37a0fa7a30819d66123ca5f532dfb2617cd961abb983add20f",
       "description": "Faithful BN-only TENT on MLP+BN Widar_BVP (n=15)."
     },
     {
       "@type": "cr:FileObject",
-      "@id": "mlpbn-signfi",
-      "name": "mlpbn_other_datasets",
-      "contentUrl": "outputs/final_ablations/mlpbn_other_datasets.json",
-      "encodingFormat": "application/json",
-      "description": "MLP+BN + TENT on SignFi-10 (the +21.1 pp counterexample) and NTU-Fi."
-    },
-    {
-      "@type": "cr:FileObject",
-      "@id": "label-smoothing",
-      "name": "label_smoothing_all",
-      "contentUrl": "outputs/final_ablations/label_smoothing_all.json",
-      "encodingFormat": "application/json",
-      "description": "Label smoothing ablation across Widar, NTU-Fi, SignFi-10."
-    },
-    {
-      "@type": "cr:FileObject",
       "@id": "source-overfit",
-      "name": "source_overfit_mitigation",
-      "contentUrl": "outputs/source_overfit/mitigation_pilot.json",
+      "name": "source-overfit",
+      "contentUrl": "method_summaries/source_overfit_pilot.json",
       "encodingFormat": "application/json",
+      "sha256": "1b2616de3c47051da6cf740efad0ed67b159863d7b2ee50dae3a525852f9b415",
       "description": "Source-overfit mitigation pilot: label smoothing alpha in {0.0, 0.1, 0.2} on Widar (n=15)."
     },
     {
       "@type": "cr:FileObject",
       "@id": "widar-per-class",
-      "name": "widar_per_class",
-      "contentUrl": "outputs/overconfidence/widar_per_class.json",
+      "name": "widar-per-class",
+      "contentUrl": "method_summaries/widar_per_class.json",
       "encodingFormat": "application/json",
+      "sha256": "133863a7bce792d81b3627f0fd1848699fcd018090201c1efa765a437062c054",
       "description": "Per-class Widar target accuracy and mean max-softmax confidence (source-only, aggregated over n=15 runs)."
     },
     {
       "@type": "cr:FileObject",
       "@id": "coverage-matrix",
-      "name": "method_coverage_matrix",
-      "contentUrl": "outputs/coverage/method_coverage_matrix.json",
+      "name": "coverage-matrix",
+      "contentUrl": "method_summaries/coverage_matrix.json",
       "encodingFormat": "application/json",
+      "sha256": "9f64ec8393b36666718a553e266c3922e3cc8cf033dce958de4aa5b8640479c1",
       "description": "Method x dataset coverage matrix."
     },
     {
       "@type": "cr:FileObject",
-      "@id": "submission-manifest",
-      "name": "submission_manifest",
-      "contentUrl": "manuscript/paper2/SUBMISSION_MANIFEST.md",
-      "encodingFormat": "text/markdown",
-      "description": "Mapping from paper tables/figures to backing artifacts."
-    }
-  ],
-  "recordSet": [
+      "@id": "split-widar-bvp",
+      "name": "split-widar-bvp",
+      "contentUrl": "splits/widar_bvp.json",
+      "encodingFormat": "application/json",
+      "sha256": "600da0e97545bc479cb9be817ef6e0ff0a62883c9741d5a76f42297849b27b10",
+      "description": "Widar_BVP split manifest: leave-one-room-out folds and shape metadata. No raw CSI is redistributed."
+    },
     {
-      "@type": "cr:RecordSet",
-      "@id": "method-summary-record",
-      "name": "method_summary_record",
-      "description": "Per-method summary schema used across the method_summary.json artifacts listed above.",
-      "field": [
-        {
-          "@type": "cr:Field",
-          "@id": "method-summary-record/method",
-          "name": "method",
-          "description": "TTA method name (e.g., tent, sar, cotta, lame, physics_tta).",
-          "dataType": "sc:Text"
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "method-summary-record/mean_gain",
-          "name": "mean_gain",
-          "description": "Mean target-accuracy gain vs no_adapt (fraction; 0.003 = 0.3 pp).",
-          "dataType": "sc:Float"
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "method-summary-record/ci_lower",
-          "name": "ci_lower",
-          "description": "95% bootstrap CI lower bound (10K resamples).",
-          "dataType": "sc:Float"
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "method-summary-record/ci_upper",
-          "name": "ci_upper",
-          "description": "95% bootstrap CI upper bound.",
-          "dataType": "sc:Float"
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "method-summary-record/cohens_d_vs_noadapt",
-          "name": "cohens_d_vs_noadapt",
-          "description": "Cohen's d effect size vs no_adapt.",
-          "dataType": "sc:Float"
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "method-summary-record/negative_adaptation_rate",
-          "name": "negative_adaptation_rate",
-          "description": "Probability P(gain < 0) across the n=15 paired observations.",
-          "dataType": "sc:Float"
-        },
-        {
-          "@type": "cr:Field",
-          "@id": "method-summary-record/n_observations",
-          "name": "n_observations",
-          "description": "Number of paired (fold, seed) observations. 15 for the main protocol.",
-          "dataType": "sc:Integer"
-        }
-      ]
+      "@type": "cr:FileObject",
+      "@id": "split-ntufi-har",
+      "name": "split-ntufi-har",
+      "contentUrl": "splits/ntufi_har.json",
+      "encodingFormat": "application/json",
+      "sha256": "0de0714ad5db36d86b06b41e8d7431720f2e7bde15e84fbaaaef4fdb5d1a48c8",
+      "description": "NTU-Fi HAR split manifest. No raw CSI is redistributed."
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "split-signfi-top10",
+      "name": "split-signfi-top10",
+      "contentUrl": "splits/signfi_top10.json",
+      "encodingFormat": "application/json",
+      "sha256": "50780a8f24a033931777896856de1107ea1ebf8b3fcb5ab8039c0636e09a1086",
+      "description": "SignFi-10 split manifest. No raw CSI is redistributed."
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "submission-manifest",
+      "name": "submission-manifest",
+      "contentUrl": "SUBMISSION_MANIFEST.md",
+      "encodingFormat": "text/markdown",
+      "sha256": "2175bab89ae3bcead20f0bd626537a49109248752c56fd573d1c76b85d384a88",
+      "description": "Mapping from paper tables/figures to backing artifacts."
     }
   ]
 }

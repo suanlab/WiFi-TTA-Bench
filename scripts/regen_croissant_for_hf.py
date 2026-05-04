@@ -79,8 +79,7 @@ ENTRIES: list[tuple[str, str, str, str, str]] = [
         "outputs/new_methods/widar_mlpbn_faithful_sar_cotta.json",
         "method_summaries/widar_mlpbn_faithful_sar_cotta.json",
         "application/json",
-        "Faithful BN-only SAR/CoTTA + full TENT on MLP+BN Widar_BVP backbone "
-        "(n=15).",
+        "Faithful BN-only SAR/CoTTA + full TENT on MLP+BN Widar_BVP backbone (n=15).",
     ),
     (
         "arch-ablation-with-ci",
@@ -255,9 +254,7 @@ def build() -> dict:
             "(Widar_BVP, NTU-Fi HAR, SignFi-10). No new human-subject data "
             "collected by the benchmark authors."
         ),
-        "rai:dataCollectionType": (
-            "secondary_reuse_of_existing_academic_datasets"
-        ),
+        "rai:dataCollectionType": ("secondary_reuse_of_existing_academic_datasets"),
         "rai:dataCollectionRawData": (
             "Raw CSI recordings were collected by the original dataset "
             "authors under academic research protocols. WiFi-TTA-Bench does "

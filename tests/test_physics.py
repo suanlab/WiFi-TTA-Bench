@@ -1,10 +1,17 @@
 """Tests for physics modules (path loss, OFDM, etc.)."""
 
+# pyright: reportMissingImports=false
+
 import numpy as np
 import pytest
 import torch
 from torch import Tensor
 
+from pinn4csi.physics.ofdm_channel import (
+    ofdm_channel_response,
+    ofdm_residual,
+    subcarrier_correlation_loss,
+)
 from pinn4csi.physics.path_loss import compute_path_loss
 
 
@@ -39,10 +46,7 @@ class TestPathLossAnalytical:
             pl,
             torch.tensor([friis_pl], dtype=torch.float32),
             atol=1e-5,
-        ), (
-            f"Path loss at d=1m: {pl.item():.6f} dB, "
-            f"Friis: {friis_pl:.6f} dB"
-        )
+        ), f"Path loss at d=1m: {pl.item():.6f} dB, Friis: {friis_pl:.6f} dB"
 
     def test_path_loss_analytical_multiple_distances(self) -> None:
         """Test path loss at multiple distances.
@@ -98,7 +102,7 @@ class TestPathLossAnalytical:
             expected = pl_d0 + 20 * np.log10(distance.item() / d0)
 
             assert abs(pl.item() - expected) < 1e-5, (
-                f"At f={freq/1e9:.1f}GHz: {pl.item():.6f} dB, "
+                f"At f={freq / 1e9:.1f}GHz: {pl.item():.6f} dB, "
                 f"Expected: {expected:.6f} dB"
             )
 
@@ -154,9 +158,7 @@ class TestPathLossGradientFlow:
         # Gradient should exist and be non-zero
         assert distance.grad is not None, "Gradient is None"
         assert distance.grad.item() != 0.0, "Gradient is zero"
-        assert torch.isfinite(distance.grad).all(), (
-            "Gradient contains NaN or Inf"
-        )
+        assert torch.isfinite(distance.grad).all(), "Gradient contains NaN or Inf"
 
     def test_path_loss_gradient_with_create_graph(self) -> None:
         """Test second-order gradients (for PDE residuals)."""
@@ -174,9 +176,7 @@ class TestPathLossGradientFlow:
         )[0]
 
         assert grad_pl is not None, "First-order gradient is None"
-        assert torch.isfinite(grad_pl).all(), (
-            "First-order gradient contains NaN or Inf"
-        )
+        assert torch.isfinite(grad_pl).all(), "First-order gradient contains NaN or Inf"
 
         # Second-order gradient (for PDE residuals)
         grad2_pl = torch.autograd.grad(
@@ -204,9 +204,7 @@ class TestPathLossGradientFlow:
 
         # All gradients should exist and be finite
         assert distances.grad is not None, "Gradient is None"
-        assert torch.isfinite(distances.grad).all(), (
-            "Gradient contains NaN or Inf"
-        )
+        assert torch.isfinite(distances.grad).all(), "Gradient contains NaN or Inf"
         assert (distances.grad != 0.0).any(), "All gradients are zero"
 
     def test_path_loss_gradient_analytical(self) -> None:
@@ -227,8 +225,7 @@ class TestPathLossGradientFlow:
         grad_analytical = 10 * n / (distance.item() * np.log(10))
 
         assert abs(distance.grad.item() - grad_analytical) < 1e-5, (
-            f"Gradient {distance.grad.item():.6f} != "
-            f"analytical {grad_analytical:.6f}"
+            f"Gradient {distance.grad.item():.6f} != analytical {grad_analytical:.6f}"
         )
 
 
@@ -359,3 +356,154 @@ class TestPathLossDeviceSafety:
         assert pl.device == distances.device, (
             f"Output device {pl.device} != input device {distances.device}"
         )
+
+
+class TestOFDMChannelModel:
+    """Validate OFDM channel response and residual constraints."""
+
+    def test_ofdm_channel_model_two_path_analytical(self) -> None:
+        """Test two-path OFDM response against a hand-computed result."""
+        h_l = torch.tensor([1.0 + 0.0j, 0.5 - 0.25j], dtype=torch.complex64)
+        tau_l = torch.tensor([0.0, 2.5e-7], dtype=torch.float32)
+        f_k = torch.tensor([0.0, 1.0e6, 2.0e6], dtype=torch.float32)
+
+        response = ofdm_channel_response(h_l=h_l, tau_l=tau_l, f_k=f_k)
+
+        expected_values = []
+        for frequency in f_k.tolist():
+            exponent = np.exp(-1j * 2.0 * np.pi * frequency * tau_l.numpy())
+            expected_values.append(np.sum(h_l.numpy() * exponent))
+        expected = torch.tensor(expected_values, dtype=torch.complex64)
+
+        assert response.shape == f_k.shape
+        assert response.dtype == torch.complex64
+        assert torch.allclose(response, expected, atol=1e-5)
+        assert torch.isfinite(response.real).all()
+        assert torch.isfinite(response.imag).all()
+
+    def test_ofdm_channel_model_batched_paths(self) -> None:
+        """Test batched multipath inputs produce batched subcarrier responses."""
+        h_l = torch.tensor(
+            [[1.0 + 0.0j, 0.4 + 0.2j], [0.7 - 0.1j, 0.2 + 0.3j]],
+            dtype=torch.complex64,
+        )
+        tau_l = torch.tensor(
+            [[0.0, 1.0e-7], [0.0, 1.5e-7]],
+            dtype=torch.float32,
+        )
+        f_k = torch.tensor([0.0, 3.0e5, 6.0e5], dtype=torch.float32)
+
+        response = ofdm_channel_response(h_l=h_l, tau_l=tau_l, f_k=f_k)
+
+        assert response.shape == (2, 3)
+        assert response.dtype == torch.complex64
+        assert torch.isfinite(response.real).all()
+        assert torch.isfinite(response.imag).all()
+
+    def test_ofdm_channel_model_gradient_flow_path_gains_and_delays(self) -> None:
+        """Test gradients flow through path gains and delays with create_graph."""
+        h_real = torch.tensor([1.0, 0.35], dtype=torch.float64, requires_grad=True)
+        h_imag = torch.tensor([0.1, -0.2], dtype=torch.float64, requires_grad=True)
+        h_l = torch.complex(h_real, h_imag)
+        tau_l = torch.tensor([1.0e-8, 2.0e-7], dtype=torch.float64, requires_grad=True)
+        f_k = torch.tensor([1.0e6, 2.0e6, 3.0e6], dtype=torch.float64)
+
+        response = ofdm_channel_response(h_l=h_l, tau_l=tau_l, f_k=f_k)
+        objective = response.real.sum() + response.imag.sum()
+
+        grad_h_real, grad_h_imag, grad_tau = torch.autograd.grad(
+            objective,
+            (h_real, h_imag, tau_l),
+            create_graph=True,
+        )
+
+        assert grad_h_real is not None
+        assert grad_h_imag is not None
+        assert grad_tau is not None
+        assert torch.isfinite(grad_h_real).all()
+        assert torch.isfinite(grad_h_imag).all()
+        assert torch.isfinite(grad_tau).all()
+
+    def test_ofdm_residual_matches_analytical_response(self) -> None:
+        """Test residual is near zero when prediction equals analytical OFDM CSI."""
+        path_gains = torch.tensor([1.0 + 0.0j, 0.25 + 0.5j], dtype=torch.complex64)
+        path_delays = torch.tensor([0.0, 1.25e-7], dtype=torch.float32)
+        subcarrier_frequencies = torch.tensor(
+            [-1.0e6, -5.0e5, 0.0, 5.0e5, 1.0e6],
+            dtype=torch.float32,
+        )
+        predicted_csi = ofdm_channel_response(
+            h_l=path_gains,
+            tau_l=path_delays,
+            f_k=subcarrier_frequencies,
+        )
+
+        residual = ofdm_residual(
+            predicted_csi=predicted_csi,
+            path_gains=path_gains,
+            path_delays=path_delays,
+            subcarrier_frequencies=subcarrier_frequencies,
+        )
+
+        assert residual.shape == torch.Size([])
+        assert residual.dtype in {torch.float32, torch.float64}
+        assert torch.isfinite(residual)
+        assert residual.item() < 1e-8
+
+    def test_subcarrier_correlation_loss_prefers_smooth_frequency_response(
+        self,
+    ) -> None:
+        """Test neighboring-subcarrier smoothness loss behavior."""
+        smooth_csi = torch.tensor([1 + 0j, 1.01 + 0j, 1.02 + 0j], dtype=torch.complex64)
+        rough_csi = torch.tensor([1 + 0j, -2 + 0j, 3 + 0j], dtype=torch.complex64)
+
+        smooth_loss = subcarrier_correlation_loss(smooth_csi)
+        rough_loss = subcarrier_correlation_loss(rough_csi)
+
+        assert smooth_loss.shape == torch.Size([])
+        assert rough_loss.shape == torch.Size([])
+        assert torch.isfinite(smooth_loss)
+        assert torch.isfinite(rough_loss)
+        assert smooth_loss.item() < rough_loss.item()
+
+    def test_ofdm_residual_gradient_flow_path_parameters(self) -> None:
+        """Test OFDM residual keeps gradient flow through gains and delays."""
+        h_real = torch.tensor([1.0, 0.45], dtype=torch.float64, requires_grad=True)
+        h_imag = torch.tensor([0.0, -0.25], dtype=torch.float64, requires_grad=True)
+        path_gains = torch.complex(h_real, h_imag)
+        path_delays = torch.tensor(
+            [0.0, 1.3e-7],
+            dtype=torch.float64,
+            requires_grad=True,
+        )
+        subcarrier_frequencies = torch.tensor(
+            [-1.0e6, 0.0, 1.0e6],
+            dtype=torch.float64,
+        )
+
+        target = ofdm_channel_response(
+            h_l=path_gains,
+            tau_l=path_delays,
+            f_k=subcarrier_frequencies,
+        )
+        predicted = target + torch.tensor(
+            [0.01 + 0.0j, -0.02 + 0.0j, 0.01 + 0.0j],
+            dtype=torch.complex128,
+        )
+
+        residual = ofdm_residual(
+            predicted_csi=predicted,
+            path_gains=path_gains,
+            path_delays=path_delays,
+            subcarrier_frequencies=subcarrier_frequencies,
+        )
+
+        grad_h_real, grad_h_imag, grad_tau = torch.autograd.grad(
+            residual,
+            (h_real, h_imag, path_delays),
+            create_graph=True,
+        )
+
+        assert torch.isfinite(grad_h_real).all()
+        assert torch.isfinite(grad_h_imag).all()
+        assert torch.isfinite(grad_tau).all()

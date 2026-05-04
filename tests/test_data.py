@@ -11,6 +11,7 @@ from pinn4csi.data import (
     CSIDataset,
     amplitude_phase_split,
     cross_environment_split,
+    has_meaningful_phase,
     normalize_amplitude,
     train_val_test_split,
 )
@@ -111,6 +112,38 @@ class TestAmplitudePhaseTransform:
 
         assert torch.allclose(result_amp, expected_amp, atol=1e-5)
         assert torch.allclose(result_phase, expected_phase, atol=1e-5)
+
+
+class TestHasMeaningfulPhase:
+    """Test phase quality detection."""
+
+    def test_real_tensor_has_no_phase(self) -> None:
+        """Real-valued tensor should report no meaningful phase."""
+        csi = torch.randn(32, 56, 3)
+        assert has_meaningful_phase(csi) is False
+
+    def test_complex_tensor_has_phase(self) -> None:
+        """Complex tensor with significant imaginary part has phase."""
+        csi = torch.randn(32, 56, 3, dtype=torch.complex64)
+        assert has_meaningful_phase(csi) is True
+
+    def test_pure_real_complex_has_no_phase(self) -> None:
+        """Complex tensor with zero imaginary part has no phase."""
+        real_part = torch.randn(32, 56, 3)
+        csi = torch.complex(real_part, torch.zeros_like(real_part))
+        assert has_meaningful_phase(csi) is False
+
+    def test_tiny_imaginary_below_threshold(self) -> None:
+        """Negligible imaginary component should report no phase."""
+        real_part = torch.randn(32, 56, 3)
+        imag_part = torch.randn(32, 56, 3) * 1e-6
+        csi = torch.complex(real_part, imag_part)
+        assert has_meaningful_phase(csi) is False
+
+    def test_zero_tensor(self) -> None:
+        """All-zero complex tensor should report no phase."""
+        csi = torch.zeros(8, 16, 2, dtype=torch.complex64)
+        assert has_meaningful_phase(csi) is False
 
 
 class TestNormalizeAmplitude:

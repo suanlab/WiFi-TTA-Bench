@@ -15,9 +15,15 @@ from pinn4csi.utils.metrics import (
     bonferroni_corrected_alpha,
     bootstrap_ci,
     cohens_d,
+    duplicate_leakage_rate,
+    environment_leakage_rate,
     f1_score,
+    feature_scale,
+    nearest_neighbour_distances,
     nmse,
     paired_cohens_d,
+    prediction_diversity,
+    split_leakage_report,
 )
 
 __all__ = [
@@ -29,6 +35,12 @@ __all__ = [
     "paired_cohens_d",
     "bootstrap_ci",
     "bonferroni_corrected_alpha",
+    "duplicate_leakage_rate",
+    "environment_leakage_rate",
+    "feature_scale",
+    "nearest_neighbour_distances",
+    "prediction_diversity",
+    "split_leakage_report",
     "parse_csv_items",
     "parse_csv_ints",
     "parse_csv_floats",

@@ -1,24 +1,24 @@
 # pyright: basic, reportMissingImports=false
 
-"""Per-class confidence and accuracy on Widar_BVP target to anchor the paper's
-86-94% overconfidence claim.
+"""Per-class confidence and accuracy on Widar/NTU-Fi/SignFi target.
 
-The main paper, abstract, and root-cause section state that Widar source-model
-confidence on target samples remains high (86-94%) while per-class accuracy can
-be as low as 10%. Previously no inline table backed this claim. This script
-computes per-class (mean max-softmax confidence, accuracy, sample count) on the
-held-out target rooms, averaged over 3 folds x 5 seeds = 15 runs.
+Anchors the paper's overconfidence claim with measured per-class statistics.
+Supports the three real datasets via --dataset and produces JSON/CSV per
+dataset with the same n=15 (3 folds x 5 seeds) source-only protocol.
 
 Output:
-    outputs/overconfidence/widar_per_class.json
-    outputs/overconfidence/widar_per_class.csv
+    outputs/overconfidence/<dataset>_per_class.json
+    outputs/overconfidence/<dataset>_per_class.csv
 
 Usage:
-    CUDA_VISIBLE_DEVICES=2 python scripts/analyze_widar_overconfidence.py
+    python scripts/analyze_widar_overconfidence.py --dataset widar_bvp
+    python scripts/analyze_widar_overconfidence.py --dataset ntufi_har
+    python scripts/analyze_widar_overconfidence.py --dataset signfi_top10
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import logging
 from pathlib import Path
@@ -39,19 +39,30 @@ logger = logging.getLogger(__name__)
 PREPARED_ROOT = Path("data/prepared")
 OUTPUT_DIR = Path("outputs/overconfidence")
 SEEDS = (0, 1, 2, 3, 4)
-ROOM_SPLITS = [
-    {"train": (0, 1), "test": (2,), "name": "room2"},
-    {"train": (0, 2), "test": (1,), "name": "room1"},
-    {"train": (1, 2), "test": (0,), "name": "room0"},
+ENV_SPLITS = [
+    {"train": (0, 1), "test": (2,), "name": "env2"},
+    {"train": (0, 2), "test": (1,), "name": "env1"},
+    {"train": (1, 2), "test": (0,), "name": "env0"},
 ]
 
-_WIDAR_CLASSES = {
-    0: "slide",
-    1: "draw-zigzag",
-    2: "push&pull",
-    3: "sweep",
-    4: "clap",
-    5: "draw-circle",
+_CLASS_NAMES_BY_DATASET = {
+    "widar_bvp": {
+        0: "slide",
+        1: "draw-zigzag",
+        2: "push&pull",
+        3: "sweep",
+        4: "clap",
+        5: "draw-circle",
+    },
+    "ntufi_har": {
+        0: "act_0",
+        1: "act_1",
+        2: "act_2",
+        3: "act_3",
+        4: "act_4",
+        5: "act_5",
+    },
+    "signfi_top10": {i: f"sign_{i}" for i in range(10)},
 }
 
 
@@ -90,20 +101,22 @@ def _collect_per_class(
     return sums.cpu(), confs.cpu(), counts.cpu()
 
 
-def run() -> dict[str, object]:
+def run(dataset: str) -> dict[str, object]:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    # accumulate per-class stats over (room, seed) pairs
-    num_classes = 6
-    sum_correct = torch.zeros(num_classes)
-    sum_conf = torch.zeros(num_classes)
-    sum_count = torch.zeros(num_classes)
+    num_classes_default = 10 if dataset == "signfi_top10" else 6
+    sum_correct = torch.zeros(num_classes_default)
+    sum_conf = torch.zeros(num_classes_default)
+    sum_count = torch.zeros(num_classes_default)
     per_run: list[dict[str, object]] = []
+    num_classes = num_classes_default
     config = TTAExperimentConfig(
         backbone="mlp", source_epochs=10, batch_size=32, adaptation_steps=0
     )
-    for split in ROOM_SPLITS:
+    for split in ENV_SPLITS:
         train_envs, test_envs, name = split["train"], split["test"], split["name"]
-        logger.info("split %s train=%s test=%s", name, train_envs, test_envs)
+        logger.info(
+            "[%s] split %s train=%s test=%s", dataset, name, train_envs, test_envs
+        )
         for seed in SEEDS:
             (
                 src_train,
@@ -114,7 +127,7 @@ def run() -> dict[str, object]:
                 num_classes,
                 _metadata,
             ) = build_prepared_tta_loaders(
-                dataset_name="widar_bvp",
+                dataset_name=dataset,
                 prepared_root=PREPARED_ROOT,
                 seed=seed,
                 batch_size=config.batch_size,
@@ -123,6 +136,11 @@ def run() -> dict[str, object]:
                 train_env_ids=train_envs,
                 test_env_ids=test_envs,
             )
+            if num_classes != sum_correct.numel():
+                # First seed - resize accumulators to actual num_classes
+                sum_correct = torch.zeros(num_classes)
+                sum_conf = torch.zeros(num_classes)
+                sum_count = torch.zeros(num_classes)
             model = train_source_only_tta_model(
                 source_train_loader=src_train,
                 source_val_loader=src_val,
@@ -147,13 +165,14 @@ def run() -> dict[str, object]:
     acc = (sum_correct / sum_count.clamp(min=1)).tolist()
     conf = (sum_conf / sum_count.clamp(min=1)).tolist()
     counts = sum_count.int().tolist()
+    class_names = _CLASS_NAMES_BY_DATASET.get(dataset, {})
 
     per_class = []
     for c in range(num_classes):
         per_class.append(
             {
                 "class_id": c,
-                "class_name": _WIDAR_CLASSES.get(c, f"class_{c}"),
+                "class_name": class_names.get(c, f"class_{c}"),
                 "accuracy_mean": acc[c],
                 "confidence_mean": conf[c],
                 "n_target_samples_aggregated": counts[c],
@@ -162,9 +181,9 @@ def run() -> dict[str, object]:
 
     payload = {
         "protocol": (
-            "leave-one-room-out x 5 seeds = 15 runs; source-only (no adaptation)"
+            "leave-one-environment-out x 5 seeds = 15 runs; source-only (no adaptation)"
         ),
-        "dataset": "widar_bvp",
+        "dataset": dataset,
         "backbone": "mlp",
         "n_runs": 15,
         "per_class": per_class,
@@ -174,11 +193,21 @@ def run() -> dict[str, object]:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__ or "")
+    parser.add_argument(
+        "--dataset",
+        default="widar_bvp",
+        choices=("widar_bvp", "ntufi_har", "signfi_top10"),
+    )
+    args = parser.parse_args()
+
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    payload = run()
-    with open(OUTPUT_DIR / "widar_per_class.json", "w") as f:
+    payload = run(args.dataset)
+    out_json = OUTPUT_DIR / f"{args.dataset}_per_class.json"
+    out_csv = OUTPUT_DIR / f"{args.dataset}_per_class.csv"
+    with open(out_json, "w") as f:
         json.dump(payload, f, indent=2)
-    with open(OUTPUT_DIR / "widar_per_class.csv", "w") as f:
+    with open(out_csv, "w") as f:
         f.write("class_id,class_name,accuracy,confidence,n_samples\n")
         for row in payload["per_class"]:
             f.write(
@@ -187,7 +216,7 @@ def main() -> None:
                 f"{row['n_target_samples_aggregated']}\n"
             )
     print("\n" + "=" * 72)
-    print("WIDAR_BVP per-class overconfidence (source-only, n=15 aggregated)")
+    print(f"{args.dataset} per-class overconfidence (source-only, n=15 aggregated)")
     print("=" * 72)
     print(f"{'class':<14s} {'acc':>8s} {'conf':>8s} {'n':>6s}")
     print("-" * 72)
@@ -198,7 +227,7 @@ def main() -> None:
             f"{row['confidence_mean']:>8.3f} "
             f"{row['n_target_samples_aggregated']:>6d}"
         )
-    print(f"\nSaved: {OUTPUT_DIR / 'widar_per_class.json'}")
+    print(f"\nSaved: {out_json}")
 
 
 if __name__ == "__main__":

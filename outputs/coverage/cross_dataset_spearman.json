@@ -1,0 +1,73 @@
+{
+  "methods_in_intersection": [
+    "cotta",
+    "entropy_tta",
+    "lame",
+    "physics_tta",
+    "sar",
+    "selective_physics_tta",
+    "shot",
+    "t3a",
+    "tent"
+  ],
+  "n_methods": 9,
+  "pairwise": [
+    {
+      "pair": "widar_bvp x ntufi_har",
+      "rho": 0.85,
+      "ci_lower": 0.4666666666666667,
+      "ci_upper": 1.0,
+      "n_methods": 9
+    },
+    {
+      "pair": "widar_bvp x signfi_top10",
+      "rho": 0.5166666666666667,
+      "ci_lower": -0.2833333333333333,
+      "ci_upper": 0.9333333333333333,
+      "n_methods": 9
+    },
+    {
+      "pair": "ntufi_har x signfi_top10",
+      "rho": 0.45,
+      "ci_lower": -0.4166666666666667,
+      "ci_upper": 0.8833333333333333,
+      "n_methods": 9
+    }
+  ],
+  "mean_rho": 0.6055555555555555,
+  "method_gains": {
+    "widar_bvp": {
+      "cotta": -0.06577420979738235,
+      "entropy_tta": -0.06581883132457733,
+      "lame": 0.0,
+      "physics_tta": -0.0062918346375226974,
+      "sar": -0.07621598243713379,
+      "selective_physics_tta": 0.0024542605970054865,
+      "shot": -0.0016956713516265154,
+      "t3a": -0.04948683828115463,
+      "tent": -0.0004462293873075396
+    },
+    "ntufi_har": {
+      "cotta": -0.17668728530406952,
+      "entropy_tta": -0.18868787586688995,
+      "lame": 0.0,
+      "physics_tta": -0.05658073350787163,
+      "sar": -0.17687824368476868,
+      "selective_physics_tta": -0.0099351666867733,
+      "shot": -0.059686411172151566,
+      "t3a": -0.18499420583248138,
+      "tent": -0.005673652049154043
+    },
+    "signfi_top10": {
+      "cotta": -0.12380953133106232,
+      "entropy_tta": -0.11428571492433548,
+      "lame": 0.0,
+      "physics_tta": -0.12253968417644501,
+      "sar": -0.11809524148702621,
+      "selective_physics_tta": -0.008253962732851505,
+      "shot": -0.12444444745779037,
+      "t3a": -0.11428571492433548,
+      "tent": -0.06952381134033203
+    }
+  }
+}

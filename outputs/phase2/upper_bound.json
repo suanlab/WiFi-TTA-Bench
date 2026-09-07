@@ -1,5 +1,5 @@
 {
-  "protocol": "Widar_BVP leave-one-room-out x 5 seeds; per held-out room, 5-fold CV on labelled target; Adam lr=1e-3, 50 epochs fine-tune from source checkpoint.",
+  "protocol": "Widar_BVP leave-one-room-out x 3 seeds; per held-out room, 5-fold CV on labelled target; Adam lr=1e-3, 30 epochs fine-tune from source checkpoint.",
   "config": {
     "methods": [
       "no_adapt"

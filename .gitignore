@@ -1,5 +1,7 @@
 # Data and generated outputs (not redistributed from this repo)
 data/
+# `data` is a symlink to external storage; `data/` above does not match a symlink.
+/data
 data/raw/**
 
 # Outputs: ignore everything by default; allowlist only canonical paper
@@ -129,10 +131,13 @@ manuscript/paper2/REFERENCE_VERIFICATION.md
 
 # Internal docs / runbooks: only README.md ships in the public release.
 # All other root-level and per-directory .md files are local-only.
-/AGENTS.md
+AGENTS.md
 /CLAUDE.md
 /SUBMISSION_GUIDE.md
 /SUBMISSION_README.md
+/NEXT_STEPS.md
+/RESEARCH_ROADMAP.md
+/REFERENCE_AUDIT.md
 manuscript/paper2/ARTIFACT_MANIFEST.md
 manuscript/paper2/ARTIFACT_README.md
 manuscript/paper2/SUBMISSION_MANIFEST.md

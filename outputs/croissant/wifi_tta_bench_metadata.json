@@ -61,10 +61,10 @@
   ],
   "license": "CC-BY-4.0 (benchmark artifacts and code; raw datasets retain original academic licences)",
   "citeAs": "To be assigned upon acceptance.",
-  "url": "https://huggingface.co/datasets/WiFi-TTA-Bench/wifi-tta-bench",
+  "url": "https://huggingface.co/datasets/anonymous-ed2026/wifi-tta-bench",
   "creator": {
     "@type": "Organization",
-    "name": "WiFi-TTA-Bench"
+    "name": "Anonymous (NeurIPS 2026 ED, double-blind review)"
   },
   "datePublished": "2026-04-18",
   "rai:dataCollection": "Benchmark re-uses existing academic-licensed WiFi CSI datasets (Widar_BVP, NTU-Fi HAR, SignFi-10). No new human-subject data collected by the benchmark authors.",
@@ -82,7 +82,7 @@
   ],
   "rai:dataBiases": "WiFi CSI datasets were collected in academic laboratory settings with volunteer subjects; demographic and device-diversity coverage is limited. Two of three datasets (NTU-Fi, SignFi-10) use temporal splits within a single laboratory rather than verified physical-room changes; only Widar_BVP is a verified cross-room split.",
   "rai:personalSensitiveInformation": "None. No personally identifiable information. Original dataset authors collected CSI under informed consent with non-identifying activity labels. WiFi CSI can in principle enable covert monitoring; we redistribute only evaluation artifacts, not raw captures, under an acceptable-use notice.",
-  "rai:dataReleaseMaintenancePlan": "Benchmark artifacts maintained on HuggingFace (WiFi-TTA-Bench org) and GitHub (suanlab/WiFi-TTA-Bench). Versioned releases via Zenodo DOI on acceptance. Croissant metadata regenerated on each release.",
+  "rai:dataReleaseMaintenancePlan": "During double-blind review, benchmark artifacts are mirrored at the anonymised HuggingFace dataset namespace (https://huggingface.co/datasets/anonymous-ed2026/wifi-tta-bench) and the anonymous source-code mirror (https://anonymous.4open.science/r/WiFi-TTA-Bench-48FE). After acceptance, the canonical mirror moves to a stable GitHub organisation and a versioned Zenodo DOI; Croissant metadata is regenerated and SHA-256-checked on each release.",
   "rai:dataLimitations": "Known limitations of the benchmark splits and artifacts: (1) Two of three real datasets (NTU-Fi, SignFi-10) use temporal splits within a single laboratory rather than verified physical-room changes; only Widar_BVP is a verified leave-one-room-out split. (2) The primary backbone is a fixed MLP without BatchNorm; an MLP+BN control is provided but other backbones (CNN1D+BN) are evaluated only on a limited one-room probe. (3) The main evaluation uses n=15 paired observations (3 folds x 5 seeds), adequate for large effects (Cohen's d >= 0.8) but underpowered for small effects. (4) SignFi-10 is small (200 samples, 10 classes) and may overstate recovery on milder shifts. (5) Method fidelity varies: TENT, SHOT, SAR, CoTTA, and LAME on the primary MLP backbone are simplified ports because the shared MLP lacks BN; a faithful BN-only port on MLP+BN is provided as a control but the simplified-port numbers should not be read as universal method failures. (6) The benchmark redistributes only split manifests and evaluation artifacts; raw CSI must be obtained from the upstream dataset distributors under their academic licences. (7) No demographic, device-diversity, or real-time-deployment metadata is provided.",
   "rai:hasSyntheticData": true,
   "rai:dataSocialImpact": "Research-only benchmark. Improved WiFi-based adaptation could in principle reduce deployment cost but also lower barriers to covert monitoring; we therefore couple method releases with negative-adaptation and source-drop reporting so deployers can detect silently-degrading behaviour.",
@@ -230,6 +230,65 @@
       "encodingFormat": "text/markdown",
       "sha256": "2175bab89ae3bcead20f0bd626537a49109248752c56fd573d1c76b85d384a88",
       "description": "Mapping from paper tables/figures to backing artifacts."
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "method-summary-record",
+      "name": "method_summary_record",
+      "description": "Per-method summary schema used across the method_summary.json artifacts.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "method-summary-record/method",
+          "name": "method",
+          "description": "TTA method name (tent, sar, cotta, lame, physics_tta, ...).",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "method-summary-record/mean_gain",
+          "name": "mean_gain",
+          "description": "Mean target-accuracy gain vs no_adapt (fraction; 0.003 = 0.3 pp).",
+          "dataType": "sc:Float"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "method-summary-record/ci_lower",
+          "name": "ci_lower",
+          "description": "95% bootstrap CI lower bound (10K resamples).",
+          "dataType": "sc:Float"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "method-summary-record/ci_upper",
+          "name": "ci_upper",
+          "description": "95% bootstrap CI upper bound.",
+          "dataType": "sc:Float"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "method-summary-record/cohens_d_vs_noadapt",
+          "name": "cohens_d_vs_noadapt",
+          "description": "Cohen's d effect size vs no_adapt.",
+          "dataType": "sc:Float"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "method-summary-record/negative_adaptation_rate",
+          "name": "negative_adaptation_rate",
+          "description": "Probability P(gain < 0) across the n=15 paired observations.",
+          "dataType": "sc:Float"
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "method-summary-record/n_observations",
+          "name": "n_observations",
+          "description": "Number of paired (fold, seed) observations. 15 for the main protocol.",
+          "dataType": "sc:Integer"
+        }
+      ]
     }
   ]
 }

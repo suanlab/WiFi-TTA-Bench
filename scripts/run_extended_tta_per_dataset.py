@@ -55,6 +55,9 @@ def run_experiment(
     adaptation_steps: int,
     adaptation_learning_rate: float,
     batch_size: int,
+    backbone: str = "mlp",
+    collapse_guard_diversity_ratio: float = 0.9,
+    weight_reset_probability: float = 0.01,
 ) -> dict[str, object]:
     all_rows: list[dict[str, object]] = []
     config = TTAExperimentConfig(
@@ -63,6 +66,9 @@ def run_experiment(
         adaptation_steps=adaptation_steps,
         adaptation_learning_rate=adaptation_learning_rate,
         batch_size=batch_size,
+        backbone=backbone,
+        collapse_guard_diversity_ratio=collapse_guard_diversity_ratio,
+        weight_reset_probability=weight_reset_probability,
     )
 
     for split in DEFAULT_ENV_SPLITS:
@@ -178,6 +184,24 @@ def main() -> None:
         default="0,1,2,3,4",
         help="Comma-separated seeds (default 5 seeds x 3 folds = n=15).",
     )
+    parser.add_argument(
+        "--backbone",
+        default="mlp",
+        choices=("mlp", "mlp_bn", "cnn1d"),
+        help="Encoder backbone (default: mlp).",
+    )
+    parser.add_argument(
+        "--collapse-guard-ratio",
+        type=float,
+        default=0.9,
+        help="Diversity floor for collapse_guarded_* methods (0 disables).",
+    )
+    parser.add_argument(
+        "--weight-reset-probability",
+        type=float,
+        default=0.01,
+        help="Per-element source-restore probability for reset_* methods.",
+    )
     parser.add_argument("--source-epochs", type=int, default=10)
     parser.add_argument("--adaptation-steps", type=int, default=5)
     parser.add_argument("--adaptation-learning-rate", type=float, default=5e-4)
@@ -196,6 +220,9 @@ def main() -> None:
         adaptation_steps=args.adaptation_steps,
         adaptation_learning_rate=args.adaptation_learning_rate,
         batch_size=args.batch_size,
+        backbone=args.backbone,
+        collapse_guard_diversity_ratio=args.collapse_guard_ratio,
+        weight_reset_probability=args.weight_reset_probability,
     )
     rows = results["rows"]
 

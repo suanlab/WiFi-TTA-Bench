@@ -52,6 +52,7 @@ def run_backbone(
     seeds: tuple[int, ...],
     methods: tuple[str, ...],
     source_epochs: int,
+    collapse_guard_diversity_ratio: float = 0.9,
 ) -> tuple[list[dict[str, object]], dict[str, float]]:
     rows: list[dict[str, object]] = []
     src_accs: list[float] = []
@@ -62,6 +63,7 @@ def run_backbone(
         adaptation_steps=5,
         adaptation_learning_rate=5e-4,
         batch_size=32,
+        collapse_guard_diversity_ratio=collapse_guard_diversity_ratio,
     )
     for split in ROOM_SPLITS:
         train_envs, test_envs, name = split["train"], split["test"], split["name"]
@@ -112,6 +114,12 @@ def run_backbone(
                             "post_accuracy": r.post_accuracy,
                             "gain": r.gain,
                             "source_drop": r.source_drop,
+                            # Kept so guard firings are reportable: which runs
+                            # rolled back, and after how many accepted steps.
+                            "attempted_steps": r.attempted_steps,
+                            "accepted_steps": r.accepted_steps,
+                            "abstained": r.abstained,
+                            "stop_reason": r.stop_reason,
                             "time_seconds": elapsed / max(len(methods), 1),
                         }
                     )
@@ -176,6 +184,12 @@ def main() -> None:
         default=",".join(DEFAULT_METHODS),
     )
     parser.add_argument("--source-epochs", type=int, default=10)
+    parser.add_argument(
+        "--collapse-guard-ratio",
+        type=float,
+        default=0.9,
+        help="Diversity floor for collapse_guarded_* methods (0 disables).",
+    )
     parser.add_argument("--output", type=Path, default=OUTPUT_PATH)
     args = parser.parse_args()
 
@@ -188,7 +202,13 @@ def main() -> None:
     src_per_bb: dict[str, dict[str, float]] = {}
     t_global = time.monotonic()
     for bb in backbones:
-        rows, src_stats = run_backbone(bb, seeds, methods, args.source_epochs)
+        rows, src_stats = run_backbone(
+            bb,
+            seeds,
+            methods,
+            args.source_epochs,
+            collapse_guard_diversity_ratio=args.collapse_guard_ratio,
+        )
         all_rows.extend(rows)
         src_per_bb[bb] = src_stats
 

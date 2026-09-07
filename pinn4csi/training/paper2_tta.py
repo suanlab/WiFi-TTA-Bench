@@ -27,7 +27,7 @@ from pinn4csi.models import (
     create_domain_adaptation_baseline,
 )
 from pinn4csi.utils.experiment import save_dataclass_rows_csv
-from pinn4csi.utils.metrics import accuracy
+from pinn4csi.utils.metrics import accuracy, prediction_diversity
 
 DEFAULT_TTA_METHODS = (
     "no_adapt",
@@ -50,12 +50,74 @@ CANONICAL_TTA_METHODS = DEFAULT_TTA_METHODS + (
     "lame",
     "sar",
     "cotta",
+    "collapse_guarded_entropy_tta",
+    "collapse_guarded_tent",
+    "collapse_guarded_sar",
+    "collapse_guarded_cotta",
+    "collapse_guarded_t3a",
+    "reset_entropy_tta",
+    "reset_tent",
 )
 
 _SAFE_TTA_METHOD_ALIASES = {
     "safe_entropy_tta": "entropy_tta",
     "safe_physics_tta": "physics_tta",
 }
+
+# Methods that keep their base adaptation objective but roll back any step that
+# collapses marginal class usage. The existing safe_* guard watches the
+# adaptation objective, which cannot catch this failure: entropy minimisation
+# improves the objective precisely while it collapses predictions.
+_COLLAPSE_GUARDED_METHOD_ALIASES = {
+    "collapse_guarded_entropy_tta": "entropy_tta",
+    "collapse_guarded_tent": "tent",
+    "collapse_guarded_sar": "sar",
+    "collapse_guarded_cotta": "cotta",
+    "collapse_guarded_t3a": "t3a",
+}
+
+# Methods that keep their base objective but randomly restore a fraction of the
+# adapted weights to their source values after every step. This is the
+# weight-resetting mechanism continual-TTA methods use to bound drift (CoTTA's
+# stochastic restore, DATTA's random weight reset). Simplified port: we implement
+# the reset only, not DATTA's source-side domain-adversarial training, so that the
+# comparison isolates what resetting alone buys against a collapse guard.
+_RESET_METHOD_ALIASES = {
+    "reset_entropy_tta": "entropy_tta",
+    "reset_tent": "tent",
+}
+
+
+def _resolve_base_method(method: str) -> str:
+    """Map a guarded or weight-resetting method name onto its base objective."""
+    if method in _SAFE_TTA_METHOD_ALIASES:
+        return _SAFE_TTA_METHOD_ALIASES[method]
+    if method in _COLLAPSE_GUARDED_METHOD_ALIASES:
+        return _COLLAPSE_GUARDED_METHOD_ALIASES[method]
+    return _RESET_METHOD_ALIASES.get(method, method)
+
+
+def _stochastic_weight_restore(
+    model: Paper2DomainAdaptationBaseline,
+    source_state: dict[str, Tensor],
+    probability: float,
+) -> None:
+    """Restore each trainable weight element to its source value with `probability`.
+
+    Args:
+        model: Model being adapted, updated in place.
+        source_state: Pre-adaptation state, as returned by `_clone_module_state`.
+        probability: Per-element restore probability; <= 0 is a no-op.
+    """
+    if probability <= 0.0:
+        return
+    with torch.no_grad():
+        for name, param in model.named_parameters():
+            if not param.requires_grad or name not in source_state:
+                continue
+            mask = torch.rand_like(param) < probability
+            param.copy_(torch.where(mask, source_state[name].to(param.device), param))
+
 
 SYNTHETIC_SHIFT_LEVELS: dict[str, float] = {
     "mild": 0.25,
@@ -83,6 +145,12 @@ class TTAExperimentConfig:
     update_scope: str = "encoder"
     safe_objective_min_delta: float = 0.0
     safe_alignment_guard_ratio: float = 2.0
+    # Roll back a step once marginal diversity falls below this fraction of the
+    # pre-adaptation reference. 1.0 forbids any collapse; 0.0 disables the guard.
+    collapse_guard_diversity_ratio: float = 0.9
+    # Per-element probability of restoring a weight to its source value after each
+    # adaptation step, for the `reset_*` methods. 0.01 is the CoTTA default.
+    weight_reset_probability: float = 0.01
     warm_restart_steps: int = 3
     warm_restart_lr_factor: float = 0.5
     calibration_temperature: float = 1.5
@@ -113,6 +181,9 @@ class TTAStepLosses:
     invariance_loss: Tensor
     residual_loss: Tensor
     objective: Tensor
+    # Marginal class-usage diversity in [0, 1]; collapse drives this toward 0
+    # even while the entropy objective keeps improving.
+    diversity: float = 1.0
 
 
 @dataclass
@@ -559,7 +630,7 @@ def adapt_model_for_tta_with_summary(
     adapted = copy.deepcopy(model).to(device)
     adapted.train()
     # TENT: use bn_only scope if model has BN layers, else projection
-    if method == "tent":
+    if _resolve_base_method(method) == "tent":
         _bn_types = (torch.nn.BatchNorm1d, torch.nn.BatchNorm2d)
         has_bn = any(isinstance(m, _bn_types) for m in adapted.modules())
         _freeze_for_tta(adapted, "bn_only" if has_bn else "projection")
@@ -568,6 +639,11 @@ def adapt_model_for_tta_with_summary(
     optimizer = Adam(_trainable_parameters(adapted), lr=config.adaptation_learning_rate)
     target_batches = cycle(target_loader)
     safe_mode = method in _SAFE_TTA_METHOD_ALIASES
+    collapse_mode = method in _COLLAPSE_GUARDED_METHOD_ALIASES
+    guarded = safe_mode or collapse_mode
+    reset_mode = method in _RESET_METHOD_ALIASES
+    source_state = _clone_module_state(adapted) if reset_mode else None
+    reference_diversity = 0.0
     attempted_steps = 0
     accepted_steps = 0
     pre_objective = 0.0
@@ -580,8 +656,8 @@ def adapt_model_for_tta_with_summary(
         batch = next(target_batches)
         moved = _move_batch_to_device(batch, device)
         attempted_steps += 1
-        checkpoint_state = _clone_module_state(adapted) if safe_mode else None
-        optimizer_state = copy.deepcopy(optimizer.state_dict()) if safe_mode else None
+        checkpoint_state = _clone_module_state(adapted) if guarded else None
+        optimizer_state = copy.deepcopy(optimizer.state_dict()) if guarded else None
 
         optimizer.zero_grad()
         step_losses = _compute_tta_step_losses(
@@ -594,8 +670,13 @@ def adapt_model_for_tta_with_summary(
         )
         if step_idx == 0:
             pre_objective = float(step_losses.objective.item())
+            reference_diversity = step_losses.diversity
         torch.autograd.backward(step_losses.objective)
         optimizer.step()
+        if reset_mode and source_state is not None:
+            _stochastic_weight_restore(
+                adapted, source_state, config.weight_reset_probability
+            )
 
         with torch.no_grad():
             post_step_losses = _compute_tta_step_losses(
@@ -607,6 +688,23 @@ def adapt_model_for_tta_with_summary(
                 device=device,
             )
         post_objective = float(post_step_losses.objective.item())
+
+        if collapse_mode:
+            floor = config.collapse_guard_diversity_ratio * reference_diversity
+            if post_step_losses.diversity < floor:
+                if checkpoint_state is None or optimizer_state is None:
+                    raise RuntimeError("Collapse-guard restore state was not captured.")
+                adapted.load_state_dict(checkpoint_state)
+                optimizer.load_state_dict(optimizer_state)
+                post_objective = float(step_losses.objective.item())
+                stop_reason = (
+                    "abstained_collapse_guard"
+                    if accepted_steps == 0
+                    else "early_stop_collapse_guard"
+                )
+                break
+            accepted_steps += 1
+            continue
 
         if not safe_mode:
             accepted_steps += 1
@@ -751,7 +849,11 @@ def run_tta_suite(
             device=device,
         )
         adapted_model = adaptation_summary.model
-        if method == "t3a":
+        # Resolve through the guard aliases: t3a and selective_physics use their own
+        # evaluation paths, so a guarded variant must inherit them or it would be a
+        # different method rather than the same method plus a rollback rule.
+        evaluated_as = _resolve_base_method(method)
+        if evaluated_as == "t3a":
             post_metrics = evaluate_t3a_classifier(
                 model=adapted_model,
                 loader=target_test_loader,
@@ -768,7 +870,7 @@ def run_tta_suite(
                 num_classes=num_classes,
                 filter_k=experiment_config.t3a_filter_k,
             )
-        elif method == "selective_physics_tta":
+        elif evaluated_as == "selective_physics_tta":
             post_metrics = evaluate_selective_tta_classifier(
                 source_model=source_model,
                 adapted_model=adapted_model,
@@ -1094,7 +1196,7 @@ def _compute_tta_step_losses(
         prior=_optional_prior(batch),
         has_prior=batch["has_prior"],
     )
-    base_method = _SAFE_TTA_METHOD_ALIASES.get(method, method)
+    base_method = _resolve_base_method(method)
     if base_method == "conservative_entropy_tta":
         entropy_loss = _prediction_opinion_entropy(outputs["task_logits"])
     elif base_method == "calibrated_entropy_tta":
@@ -1179,6 +1281,7 @@ def _compute_tta_step_losses(
         invariance_loss=invariance_loss,
         residual_loss=residual_loss,
         objective=objective,
+        diversity=prediction_diversity(outputs["task_logits"].detach()),
     )
 
 

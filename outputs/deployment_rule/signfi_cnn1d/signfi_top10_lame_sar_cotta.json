@@ -1,0 +1,20 @@
+{
+  "no_adapt": {
+    "mean_gain": 0.0,
+    "ci_lower": 0.0,
+    "ci_upper": 0.0,
+    "cohens_d_vs_noadapt": 0.0,
+    "paired_d_vs_noadapt": 0.0,
+    "negative_adaptation_rate": 0.0,
+    "n_observations": 15
+  },
+  "entropy_tta": {
+    "mean_gain": -0.10603175312280655,
+    "ci_lower": -0.1644444465637207,
+    "ci_upper": -0.04603175073862076,
+    "cohens_d_vs_noadapt": -1.2460709810256958,
+    "paired_d_vs_noadapt": -0.8811052441596985,
+    "negative_adaptation_rate": 0.7333333492279053,
+    "n_observations": 15
+  }
+}

@@ -35,6 +35,8 @@ outputs/*
 !outputs/cross_physics/**
 !outputs/final_ablations/
 !outputs/final_ablations/**
+!outputs/deployment_rule/
+!outputs/deployment_rule/**
 !outputs/db_ablations/
 !outputs/db_ablations/**
 !outputs/neurips_experiments/

@@ -122,6 +122,12 @@ def run_experiment(
                             "post_accuracy": row.post_accuracy,
                             "gain": row.gain,
                             "source_drop": row.source_drop,
+                            # Kept so guard firings are reportable from the same
+                            # run that produces the gain, as in the arch ablation.
+                            "attempted_steps": row.attempted_steps,
+                            "accepted_steps": row.accepted_steps,
+                            "abstained": row.abstained,
+                            "stop_reason": row.stop_reason,
                             "time_seconds": elapsed / max(len(methods), 1),
                         }
                     )

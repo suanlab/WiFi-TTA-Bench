@@ -188,6 +188,70 @@ def prediction_diversity(logits: Tensor) -> float:
     return float((entropy / math.log(num_classes)).item())
 
 
+def expected_calibration_error(
+    logits: Tensor,
+    targets: Tensor,
+    num_bins: int = 15,
+) -> float:
+    """Expected calibration error of a classifier's confidence.
+
+    Equal-width binning over the max-softmax confidence. Each bin contributes
+    the absolute gap between its mean confidence and its accuracy, weighted by
+    the fraction of samples it holds. Unlike the raw confidence-minus-accuracy
+    gap this does not cancel over- against under-confident regions.
+
+    Computed on a *labelled* split. At deployment time that means held-out
+    source validation data, which is available before any target labels are.
+
+    Args:
+        logits: Unnormalized class scores. Shape: (batch, num_classes).
+        targets: Integer class labels. Shape: (batch,).
+        num_bins: Number of equal-width confidence bins.
+
+    Returns:
+        Calibration error in [0, 1]. 0.0 for an empty batch.
+
+    Raises:
+        ValueError: If logits is not 2D, shapes disagree, or num_bins < 1.
+    """
+    if logits.dim() != 2:
+        raise ValueError(
+            f"logits must be 2D (batch, num_classes), got {tuple(logits.shape)}"
+        )
+    if targets.dim() != 1 or targets.shape[0] != logits.shape[0]:
+        raise ValueError(
+            f"targets must be 1D of length {logits.shape[0]}, "
+            f"got {tuple(targets.shape)}"
+        )
+    if num_bins < 1:
+        raise ValueError(f"num_bins must be >= 1, got {num_bins}")
+    num_samples = int(logits.shape[0])
+    if num_samples == 0:
+        return 0.0
+
+    probs = torch.softmax(logits.float(), dim=1)
+    confidence, prediction = probs.max(dim=1)
+    correct = (prediction == targets).float()
+
+    error = torch.zeros((), dtype=torch.float32)
+    edges = torch.linspace(0.0, 1.0, num_bins + 1)
+    for index in range(num_bins):
+        lower = edges[index]
+        upper = edges[index + 1]
+        # Left-open bins so confidence == 1.0 lands in the final bin.
+        in_bin = (confidence > lower) & (confidence <= upper)
+        if index == 0:
+            in_bin = in_bin | (confidence == 0.0)
+        bin_count = int(in_bin.sum().item())
+        if bin_count == 0:
+            continue
+        bin_confidence = confidence[in_bin].mean()
+        bin_accuracy = correct[in_bin].mean()
+        weight = bin_count / num_samples
+        error = error + weight * (bin_confidence - bin_accuracy).abs()
+    return float(error.item())
+
+
 def _flatten_features(features: Tensor) -> Tensor:
     """Flatten per-sample features to 2D float. Shape: (batch, flattened)."""
     if features.dim() == 0:

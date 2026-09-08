@@ -37,6 +37,16 @@ outputs/*
 !outputs/final_ablations/**
 !outputs/deployment_rule/
 !outputs/deployment_rule/**
+!outputs/guard_backbone/
+!outputs/guard_backbone/**
+!outputs/collapse_guard_sweep/
+!outputs/collapse_guard_sweep/**
+!outputs/collapse_guard_generality/
+!outputs/collapse_guard_generality/**
+!outputs/collapse_guard_signfi_tent/
+!outputs/collapse_guard_signfi_tent/**
+!outputs/leakage_audit/
+!outputs/leakage_audit/**
 !outputs/db_ablations/
 !outputs/db_ablations/**
 !outputs/neurips_experiments/

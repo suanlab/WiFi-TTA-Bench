@@ -1,0 +1,262 @@
+{
+  "config": {
+    "datasets": [
+      "widar_bvp",
+      "ntufi_har",
+      "signfi_top10"
+    ],
+    "max_samples": 1500,
+    "relative_threshold": 0.01,
+    "seed": 0
+  },
+  "rows": [
+    {
+      "dataset": "widar_bvp",
+      "protocol": "leave_one_environment_out",
+      "split_name": "held_out_env2",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 0.0,
+      "min_nn_distance": 47.503387451171875,
+      "median_nn_distance": 81.17412567138672,
+      "feature_scale": 86.14938354492188,
+      "num_train": 1500,
+      "num_test": 1500
+    },
+    {
+      "dataset": "widar_bvp",
+      "protocol": "random_split",
+      "split_name": "random_match_env2",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 1.0,
+      "min_nn_distance": 47.26850509643555,
+      "median_nn_distance": 82.01563262939453,
+      "feature_scale": 87.76192474365234,
+      "num_train": 1500,
+      "num_test": 1500
+    },
+    {
+      "dataset": "widar_bvp",
+      "protocol": "leave_one_environment_out",
+      "split_name": "held_out_env1",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 0.0,
+      "min_nn_distance": 46.904109954833984,
+      "median_nn_distance": 82.66006469726562,
+      "feature_scale": 88.1859130859375,
+      "num_train": 1500,
+      "num_test": 1500
+    },
+    {
+      "dataset": "widar_bvp",
+      "protocol": "random_split",
+      "split_name": "random_match_env1",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 1.0,
+      "min_nn_distance": 53.35320281982422,
+      "median_nn_distance": 82.2261734008789,
+      "feature_scale": 87.51287078857422,
+      "num_train": 1500,
+      "num_test": 1500
+    },
+    {
+      "dataset": "widar_bvp",
+      "protocol": "leave_one_environment_out",
+      "split_name": "held_out_env0",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 0.0,
+      "min_nn_distance": 46.904109954833984,
+      "median_nn_distance": 82.74510192871094,
+      "feature_scale": 88.74586486816406,
+      "num_train": 1500,
+      "num_test": 1500
+    },
+    {
+      "dataset": "widar_bvp",
+      "protocol": "random_split",
+      "split_name": "random_match_env0",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 1.0,
+      "min_nn_distance": 51.84758758544922,
+      "median_nn_distance": 81.8101577758789,
+      "feature_scale": 87.9230728149414,
+      "num_train": 1500,
+      "num_test": 1500
+    },
+    {
+      "dataset": "ntufi_har",
+      "protocol": "leave_one_environment_out",
+      "split_name": "held_out_env2",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 0.0,
+      "min_nn_distance": 56.305076599121094,
+      "median_nn_distance": 95.76517486572266,
+      "feature_scale": 173.09701538085938,
+      "num_train": 798,
+      "num_test": 402
+    },
+    {
+      "dataset": "ntufi_har",
+      "protocol": "random_split",
+      "split_name": "random_match_env2",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 1.0,
+      "min_nn_distance": 54.45191955566406,
+      "median_nn_distance": 92.87287902832031,
+      "feature_scale": 172.58518981933594,
+      "num_train": 798,
+      "num_test": 402
+    },
+    {
+      "dataset": "ntufi_har",
+      "protocol": "leave_one_environment_out",
+      "split_name": "held_out_env1",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 0.0,
+      "min_nn_distance": 55.939945220947266,
+      "median_nn_distance": 93.81707763671875,
+      "feature_scale": 172.32757568359375,
+      "num_train": 798,
+      "num_test": 402
+    },
+    {
+      "dataset": "ntufi_har",
+      "protocol": "random_split",
+      "split_name": "random_match_env1",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 1.0,
+      "min_nn_distance": 55.939945220947266,
+      "median_nn_distance": 91.808837890625,
+      "feature_scale": 172.72708129882812,
+      "num_train": 798,
+      "num_test": 402
+    },
+    {
+      "dataset": "ntufi_har",
+      "protocol": "leave_one_environment_out",
+      "split_name": "held_out_env0",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 0.0,
+      "min_nn_distance": 55.939945220947266,
+      "median_nn_distance": 93.39179229736328,
+      "feature_scale": 172.65940856933594,
+      "num_train": 804,
+      "num_test": 396
+    },
+    {
+      "dataset": "ntufi_har",
+      "protocol": "random_split",
+      "split_name": "random_match_env0",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 1.0,
+      "min_nn_distance": 54.45191955566406,
+      "median_nn_distance": 94.05357360839844,
+      "feature_scale": 173.81802368164062,
+      "num_train": 804,
+      "num_test": 396
+    },
+    {
+      "dataset": "signfi_top10",
+      "protocol": "leave_one_environment_out",
+      "split_name": "held_out_env2",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 0.0,
+      "min_nn_distance": 4527.2373046875,
+      "median_nn_distance": 4740.84130859375,
+      "feature_scale": 9863.6552734375,
+      "num_train": 130,
+      "num_test": 70
+    },
+    {
+      "dataset": "signfi_top10",
+      "protocol": "random_split",
+      "split_name": "random_match_env2",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 1.0,
+      "min_nn_distance": 4490.22509765625,
+      "median_nn_distance": 5080.14794921875,
+      "feature_scale": 9941.7724609375,
+      "num_train": 130,
+      "num_test": 70
+    },
+    {
+      "dataset": "signfi_top10",
+      "protocol": "leave_one_environment_out",
+      "split_name": "held_out_env1",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 0.0,
+      "min_nn_distance": 4492.1083984375,
+      "median_nn_distance": 4735.5673828125,
+      "feature_scale": 9851.060546875,
+      "num_train": 130,
+      "num_test": 70
+    },
+    {
+      "dataset": "signfi_top10",
+      "protocol": "random_split",
+      "split_name": "random_match_env1",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 1.0,
+      "min_nn_distance": 4490.22509765625,
+      "median_nn_distance": 4726.390625,
+      "feature_scale": 9736.7412109375,
+      "num_train": 130,
+      "num_test": 70
+    },
+    {
+      "dataset": "signfi_top10",
+      "protocol": "leave_one_environment_out",
+      "split_name": "held_out_env0",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 0.0,
+      "min_nn_distance": 4492.1083984375,
+      "median_nn_distance": 4757.6376953125,
+      "feature_scale": 9857.7294921875,
+      "num_train": 140,
+      "num_test": 60
+    },
+    {
+      "dataset": "signfi_top10",
+      "protocol": "random_split",
+      "split_name": "random_match_env0",
+      "duplicate_leakage_rate": 0.0,
+      "environment_leakage_rate": 1.0,
+      "min_nn_distance": 4489.20458984375,
+      "median_nn_distance": 4730.662109375,
+      "feature_scale": 9831.744140625,
+      "num_train": 140,
+      "num_test": 60
+    }
+  ],
+  "summary": {
+    "widar_bvp/leave_one_environment_out": {
+      "mean_duplicate_leakage_rate": 0.0,
+      "mean_environment_leakage_rate": 0.0,
+      "n_splits": 3.0
+    },
+    "widar_bvp/random_split": {
+      "mean_duplicate_leakage_rate": 0.0,
+      "mean_environment_leakage_rate": 1.0,
+      "n_splits": 3.0
+    },
+    "ntufi_har/leave_one_environment_out": {
+      "mean_duplicate_leakage_rate": 0.0,
+      "mean_environment_leakage_rate": 0.0,
+      "n_splits": 3.0
+    },
+    "ntufi_har/random_split": {
+      "mean_duplicate_leakage_rate": 0.0,
+      "mean_environment_leakage_rate": 1.0,
+      "n_splits": 3.0
+    },
+    "signfi_top10/leave_one_environment_out": {
+      "mean_duplicate_leakage_rate": 0.0,
+      "mean_environment_leakage_rate": 0.0,
+      "n_splits": 3.0
+    },
+    "signfi_top10/random_split": {
+      "mean_duplicate_leakage_rate": 0.0,
+      "mean_environment_leakage_rate": 1.0,
+      "n_splits": 3.0
+    }
+  }
+}

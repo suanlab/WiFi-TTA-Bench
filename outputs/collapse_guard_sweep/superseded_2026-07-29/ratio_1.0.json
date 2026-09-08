@@ -1,0 +1,381 @@
+{
+  "rows": [
+    {
+      "backbone": "mlp",
+      "room": "room2",
+      "seed": 0,
+      "method": "no_adapt",
+      "pre_accuracy": 0.34471218206157966,
+      "post_accuracy": 0.34471218206157966,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 10.030667876359075
+    },
+    {
+      "backbone": "mlp",
+      "room": "room2",
+      "seed": 0,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.34471218206157966,
+      "post_accuracy": 0.34471218206157966,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 10.030667876359075
+    },
+    {
+      "backbone": "mlp",
+      "room": "room2",
+      "seed": 1,
+      "method": "no_adapt",
+      "pre_accuracy": 0.3828647925033467,
+      "post_accuracy": 0.3828647925033467,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.466662490274757
+    },
+    {
+      "backbone": "mlp",
+      "room": "room2",
+      "seed": 1,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.3828647925033467,
+      "post_accuracy": 0.3828647925033467,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.466662490274757
+    },
+    {
+      "backbone": "mlp",
+      "room": "room2",
+      "seed": 2,
+      "method": "no_adapt",
+      "pre_accuracy": 0.3634538152610442,
+      "post_accuracy": 0.3634538152610442,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.535507561638951
+    },
+    {
+      "backbone": "mlp",
+      "room": "room2",
+      "seed": 2,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.3634538152610442,
+      "post_accuracy": 0.3634538152610442,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.535507561638951
+    },
+    {
+      "backbone": "mlp",
+      "room": "room2",
+      "seed": 3,
+      "method": "no_adapt",
+      "pre_accuracy": 0.3614457831325301,
+      "post_accuracy": 0.3614457831325301,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.103076443076134
+    },
+    {
+      "backbone": "mlp",
+      "room": "room2",
+      "seed": 3,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.3614457831325301,
+      "post_accuracy": 0.3614457831325301,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.103076443076134
+    },
+    {
+      "backbone": "mlp",
+      "room": "room2",
+      "seed": 4,
+      "method": "no_adapt",
+      "pre_accuracy": 0.3393574297188755,
+      "post_accuracy": 0.3393574297188755,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.692986248526722
+    },
+    {
+      "backbone": "mlp",
+      "room": "room2",
+      "seed": 4,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.3393574297188755,
+      "post_accuracy": 0.3393574297188755,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.692986248526722
+    },
+    {
+      "backbone": "mlp",
+      "room": "room1",
+      "seed": 0,
+      "method": "no_adapt",
+      "pre_accuracy": 0.41231593038821956,
+      "post_accuracy": 0.41231593038821956,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.266818422358483
+    },
+    {
+      "backbone": "mlp",
+      "room": "room1",
+      "seed": 0,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.41231593038821956,
+      "post_accuracy": 0.41231593038821956,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.266818422358483
+    },
+    {
+      "backbone": "mlp",
+      "room": "room1",
+      "seed": 1,
+      "method": "no_adapt",
+      "pre_accuracy": 0.4464524765729585,
+      "post_accuracy": 0.4464524765729585,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.084234570618719
+    },
+    {
+      "backbone": "mlp",
+      "room": "room1",
+      "seed": 1,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.4464524765729585,
+      "post_accuracy": 0.4464524765729585,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.084234570618719
+    },
+    {
+      "backbone": "mlp",
+      "room": "room1",
+      "seed": 2,
+      "method": "no_adapt",
+      "pre_accuracy": 0.4049531459170013,
+      "post_accuracy": 0.4049531459170013,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.858067136723548
+    },
+    {
+      "backbone": "mlp",
+      "room": "room1",
+      "seed": 2,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.4049531459170013,
+      "post_accuracy": 0.4049531459170013,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 9.858067136723548
+    },
+    {
+      "backbone": "mlp",
+      "room": "room1",
+      "seed": 3,
+      "method": "no_adapt",
+      "pre_accuracy": 0.4143239625167336,
+      "post_accuracy": 0.4143239625167336,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 10.178258881438524
+    },
+    {
+      "backbone": "mlp",
+      "room": "room1",
+      "seed": 3,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.4143239625167336,
+      "post_accuracy": 0.4143239625167336,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 10.178258881438524
+    },
+    {
+      "backbone": "mlp",
+      "room": "room1",
+      "seed": 4,
+      "method": "no_adapt",
+      "pre_accuracy": 0.41967871485943775,
+      "post_accuracy": 0.41967871485943775,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 10.166153457481414
+    },
+    {
+      "backbone": "mlp",
+      "room": "room1",
+      "seed": 4,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.41967871485943775,
+      "post_accuracy": 0.41967871485943775,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 10.166153457481414
+    },
+    {
+      "backbone": "mlp",
+      "room": "room0",
+      "seed": 0,
+      "method": "no_adapt",
+      "pre_accuracy": 0.3038821954484605,
+      "post_accuracy": 0.3038821954484605,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 10.994011994916946
+    },
+    {
+      "backbone": "mlp",
+      "room": "room0",
+      "seed": 0,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.3038821954484605,
+      "post_accuracy": 0.3038821954484605,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 10.994011994916946
+    },
+    {
+      "backbone": "mlp",
+      "room": "room0",
+      "seed": 1,
+      "method": "no_adapt",
+      "pre_accuracy": 0.31593038821954483,
+      "post_accuracy": 0.31593038821954483,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 24.71665727812797
+    },
+    {
+      "backbone": "mlp",
+      "room": "room0",
+      "seed": 1,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.31593038821954483,
+      "post_accuracy": 0.31593038821954483,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 24.71665727812797
+    },
+    {
+      "backbone": "mlp",
+      "room": "room0",
+      "seed": 2,
+      "method": "no_adapt",
+      "pre_accuracy": 0.2965194109772423,
+      "post_accuracy": 0.2965194109772423,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 20.90166518650949
+    },
+    {
+      "backbone": "mlp",
+      "room": "room0",
+      "seed": 2,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.2965194109772423,
+      "post_accuracy": 0.2965194109772423,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 20.90166518650949
+    },
+    {
+      "backbone": "mlp",
+      "room": "room0",
+      "seed": 3,
+      "method": "no_adapt",
+      "pre_accuracy": 0.2965194109772423,
+      "post_accuracy": 0.2965194109772423,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 22.292851113714278
+    },
+    {
+      "backbone": "mlp",
+      "room": "room0",
+      "seed": 3,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.2965194109772423,
+      "post_accuracy": 0.2965194109772423,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 22.292851113714278
+    },
+    {
+      "backbone": "mlp",
+      "room": "room0",
+      "seed": 4,
+      "method": "no_adapt",
+      "pre_accuracy": 0.3032128514056225,
+      "post_accuracy": 0.3032128514056225,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 22.505087167490274
+    },
+    {
+      "backbone": "mlp",
+      "room": "room0",
+      "seed": 4,
+      "method": "collapse_guarded_entropy_tta",
+      "pre_accuracy": 0.3032128514056225,
+      "post_accuracy": 0.3032128514056225,
+      "gain": 0.0,
+      "source_drop": 0.0,
+      "time_seconds": 22.505087167490274
+    }
+  ],
+  "summary": {
+    "mlp": {
+      "no_adapt": {
+        "mean_gain": 0.0,
+        "ci_lower": 0.0,
+        "ci_upper": 0.0,
+        "cohens_d_vs_noadapt": 0.0,
+        "paired_d_vs_noadapt": 0.0,
+        "negative_adaptation_rate": 0.0,
+        "n_observations": 15
+      },
+      "collapse_guarded_entropy_tta": {
+        "mean_gain": 0.0,
+        "ci_lower": 0.0,
+        "ci_upper": 0.0,
+        "cohens_d_vs_noadapt": 0.0,
+        "paired_d_vs_noadapt": 0.0,
+        "negative_adaptation_rate": 0.0,
+        "n_observations": 15
+      }
+    }
+  },
+  "source_accuracy": {
+    "mlp": {
+      "mean": 0.3603748381137848,
+      "std": 0.05093038082122803,
+      "n": 15
+    }
+  },
+  "config": {
+    "backbones": [
+      "mlp"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "methods": [
+      "no_adapt",
+      "collapse_guarded_entropy_tta"
+    ],
+    "source_epochs": 10
+  },
+  "elapsed_seconds": 395.6350321173668
+}

@@ -37,6 +37,8 @@ outputs/*
 !outputs/final_ablations/**
 !outputs/deployment_rule/
 !outputs/deployment_rule/**
+!outputs/guard_coverage/
+!outputs/guard_coverage/**
 !outputs/guard_backbone/
 !outputs/guard_backbone/**
 !outputs/collapse_guard_sweep/

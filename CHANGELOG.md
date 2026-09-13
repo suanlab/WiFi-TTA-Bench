@@ -42,6 +42,14 @@ negative-adaptation rate from 0.73 to 0.53. The benefit tracks the size of the u
 harm, not the architecture: 40-100% removed in the four cells losing more than 6 pp,
 inert in the five losing under 3 pp. The table is now nine rows.
 
+**Guard coverage count corrected.** The abstract stated that the guard helps every one
+of eight method/dataset combinations. Enumerating every guarded measurement against its
+unguarded arm from the same run gives nine at tau=0.9: seven harmful pairings with 49-82%
+of the harm removed, plus two where adaptation helps and the gain is preserved exactly.
+At tau=0.95 the guard improves all four harmful cells of the backbone grid, removing
+40-100%. `scripts/build_guard_coverage.py` now emits this enumeration as
+`outputs/guard_coverage/` and is the reference for any guard number in the paper.
+
 ### Added
 
 - **SignFi-10 backbone cells.** `entropy_tta` and `collapse_guarded_entropy_tta` at

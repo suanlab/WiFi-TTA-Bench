@@ -1,8 +1,8 @@
 # pyright: basic, reportMissingImports=false
 
-"""Scan the repo for PII / de-anonymising patterns before NeurIPS ED submission.
+"""Scan the repo for PII / de-anonymising patterns before a double-blind submission.
 
-The NeurIPS 2026 ED track defaults to double-blind. This script does NOT do an
+Double-blind venues require an anonymised artifact. This script does NOT do an
 exhaustive forensic audit; it flags the easy-to-miss leaks (real emails, real
 names that look human, unfrozen acknowledgements, GitHub handles, university
 domains, hostnames) so that authors can fix them before producing the
@@ -82,7 +82,6 @@ _UPSTREAM_DOMAINS = {
     "ntu.edu.sg",  # NTU-Fi
     "wmich.edu",  # historical SignFi mirror
     "openreview.net",
-    "neurips.cc",
 }
 
 
@@ -195,11 +194,10 @@ SKIP_DIRS = {
     "sections_ko",
 }
 # Files that should not be audited:
-#   - upstream NeurIPS template (we did not author it; cannot anonymise it)
+#   - upstream venue style files are skipped by extension (see SKIP_EXT)
 #   - the audit/validation scripts themselves (their regexes match themselves)
 #   - the Korean parallel build (not part of the submission bundle)
 SKIP_FILES = {
-    "manuscript/paper2/neurips_2026.sty",
     "manuscript/paper2/main_korean.tex",
     "manuscript/paper2/checklist_korean.tex",
     "manuscript/paper2/supplementary_korean.tex",
@@ -207,6 +205,7 @@ SKIP_FILES = {
     "scripts/validate_croissant.py",
 }
 SKIP_EXT = {
+    ".sty",  # upstream venue style files; not author-written
     ".pdf",
     ".png",
     ".jpg",

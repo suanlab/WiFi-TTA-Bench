@@ -1,6 +1,6 @@
 # pyright: basic, reportMissingImports=false
 
-"""NeurIPS D&B Track ablation experiments:
+"""Benchmark ablation experiments:
 B1: Step-budget sweep (1, 3, 5, 10)
 B3: Batch size sweep (16, 32, 64, 128)
 B4: Architecture ablation (MLP vs CNN1D)

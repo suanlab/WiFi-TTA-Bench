@@ -1,7 +1,7 @@
 # pyright: basic, reportMissingImports=false
 
 """Run ALL TTA methods on real Widar_BVP data with leave-one-room-out protocol.
-This is the critical experiment for NeurIPS: demonstrating real-data performance."""
+This is the primary real-data experiment of the benchmark."""
 
 from __future__ import annotations
 

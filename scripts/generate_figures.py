@@ -170,7 +170,7 @@ def fig1_method_comparison() -> None:
 
 def fig2_synthetic_real_gap() -> None:
     """Grouped bar: synthetic vs real gain for key methods."""
-    synthetic = load_json("outputs/neurips_experiments/soft_selective_comparison.json")
+    synthetic = load_json("outputs/synthetic_shift/soft_selective_comparison.json")
     widar = load_json("outputs/widar_full_tta/method_summary.json")
 
     methods = [
@@ -287,7 +287,7 @@ def fig3_step_budget() -> None:
 
 def fig4_tsne() -> None:
     """t-SNE scatter of source/target before/after adaptation."""
-    data = load_json("outputs/neurips_experiments/analysis/tsne_embeddings.json")
+    data = load_json("outputs/synthetic_shift/analysis/tsne_embeddings.json")
 
     fig, ax = plt.subplots(figsize=(7, 6))
     markers = {"source": "o", "target": "s"}

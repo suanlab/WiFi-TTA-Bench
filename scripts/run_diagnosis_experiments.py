@@ -6,7 +6,7 @@ This script evaluates six methods under two evaluation modes:
 - ``iid``: random train/val/test split
 - ``cross_env``: hold out environment ``2`` for test
 
-NeurIPS-focused upgrades in this runner:
+Upgrades in this runner:
 - stronger encoders (Conv1D residual stack, BiGRU)
 - AdamW + cosine scheduling + gradient clipping
 - early stopping with patience

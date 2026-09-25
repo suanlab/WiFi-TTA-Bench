@@ -55,14 +55,14 @@ outputs/*
 !outputs/leakage_audit/**
 !outputs/db_ablations/
 !outputs/db_ablations/**
-!outputs/neurips_experiments/
-outputs/neurips_experiments/*
-!outputs/neurips_experiments/soft_selective_comparison.json
-!outputs/neurips_experiments/proxy_a_distance.json
-!outputs/neurips_experiments/method_summary.json
-!outputs/neurips_experiments/full_method_comparison.json
-!outputs/neurips_experiments/threshold_ablation.json
-!outputs/neurips_experiments/selective_optimization.json
+!outputs/synthetic_shift/
+outputs/synthetic_shift/*
+!outputs/synthetic_shift/soft_selective_comparison.json
+!outputs/synthetic_shift/proxy_a_distance.json
+!outputs/synthetic_shift/method_summary.json
+!outputs/synthetic_shift/full_method_comparison.json
+!outputs/synthetic_shift/threshold_ablation.json
+!outputs/synthetic_shift/selective_optimization.json
 
 # Model checkpoints
 *.pt

@@ -4,7 +4,7 @@
 per-sample harm analysis, shift-magnitude vs gain curves, and
 physics alignment diagnostics.
 
-Generates figures for NeurIPS paper.
+Generates figures for the paper.
 """
 
 from __future__ import annotations

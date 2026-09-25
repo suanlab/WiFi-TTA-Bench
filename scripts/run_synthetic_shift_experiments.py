@@ -1,6 +1,6 @@
 # pyright: basic, reportMissingImports=false
 
-"""Run ALL NeurIPS-required experiments in one shot:
+"""Run the synthetic domain-shift experiment suite in one shot:
 I1: Threshold ablation
 I2: TENT/SHOT/T3A + Selective TTA comparison on all shift levels
 I3: All shift levels (mild/moderate/strong)
@@ -36,7 +36,7 @@ from pinn4csi.utils.metrics import bootstrap_ci, cohens_d, paired_cohens_d
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
 
-OUTPUT_DIR = Path("outputs/neurips_experiments")
+OUTPUT_DIR = Path("outputs/synthetic_shift")
 
 
 # ─────────────────────────────────────────────────────
@@ -475,7 +475,7 @@ def main() -> None:
 
     # Print summary
     print("\n" + "=" * 60)
-    print("NeurIPS EXPERIMENT RESULTS SUMMARY")
+    print("SYNTHETIC-SHIFT EXPERIMENT RESULTS SUMMARY")
     print("=" * 60)
 
     print("\n--- Method Comparison (pooled all shifts) ---")

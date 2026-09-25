@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build the anonymous submission bundle for NeurIPS 2026 ED track.
+# Build the anonymous submission bundle for a double-blind venue.
 #
 # Produces two artifacts under build/submission/:
 #   - wifi-tta-bench-code.zip     : code + scripts + manuscript + Croissant

@@ -6,7 +6,7 @@ install:
 benchmark: install
 	@echo "=== Running WiFi-TTA-Bench (full suite) ==="
 	python scripts/run_widar_full_tta.py
-	python scripts/run_all_neurips_experiments.py
+	python scripts/run_synthetic_shift_experiments.py
 	python scripts/generate_figures.py
 	@echo "=== Done. Results in outputs/ ==="
 
@@ -20,4 +20,4 @@ lint:
 	ruff check . && ruff format --check . && mypy pinn4csi/
 
 clean:
-	rm -rf outputs/widar_full_tta outputs/neurips_experiments outputs/db_ablations
+	rm -rf outputs/widar_full_tta outputs/synthetic_shift outputs/db_ablations

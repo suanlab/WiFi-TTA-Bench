@@ -12,7 +12,7 @@ from pathlib import Path
 import torch
 import torch.nn.functional as functional
 from torch import Tensor
-from torch.optim import Adam
+from torch.optim import Adam, AdamW
 from torch.utils.data import DataLoader, Dataset
 
 from pinn4csi.data import (
@@ -165,6 +165,14 @@ class TTAExperimentConfig:
     early_stop_patience: int = 0
     backbone: str = "mlp"
     source_label_smoothing: float = 0.0
+    # Source-side regularisers. Each acts only during source training, so the
+    # adapted model is architecturally identical to the unregularised one and
+    # any change in TTA outcome is attributable to the source model alone.
+    # Dropout is deliberately absent: TTA puts the encoder in train mode, which
+    # would switch dropout on during adaptation and confound the comparison.
+    source_weight_decay: float = 0.0
+    source_input_noise_std: float = 0.0
+    source_mixup_alpha: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -221,6 +229,8 @@ class TTAResultRow:
     source_val_examples: int
     target_adapt_examples: int
     target_test_examples: int
+    # In-domain source accuracy on the training split, for the train/val gap.
+    source_train_accuracy: float = float("nan")
 
 
 class UnlabeledPreparedCSIDataset(Dataset[dict[str, Tensor]]):
@@ -434,7 +444,18 @@ def train_source_only_tta_model(
             backbone=backbone,
         ),
     ).to(device)
-    optimizer = Adam(model.parameters(), lr=config.source_learning_rate)
+    weight_decay = getattr(config, "source_weight_decay", 0.0)
+    if weight_decay > 0.0:
+        optimizer: torch.optim.Optimizer = AdamW(
+            model.parameters(),
+            lr=config.source_learning_rate,
+            weight_decay=weight_decay,
+        )
+    else:
+        optimizer = Adam(model.parameters(), lr=config.source_learning_rate)
+    noise_std = getattr(config, "source_input_noise_std", 0.0)
+    mixup_alpha = getattr(config, "source_mixup_alpha", 0.0)
+    label_smoothing = getattr(config, "source_label_smoothing", 0.0)
 
     best_state: dict[str, Tensor] | None = None
     best_accuracy = -1.0
@@ -445,16 +466,33 @@ def train_source_only_tta_model(
         for batch in source_train_loader:
             moved = _move_batch_to_device(batch, device)
             optimizer.zero_grad()
+            inputs = moved["x"]
+            if noise_std > 0.0:
+                scale = inputs.detach().std().clamp_min(1e-8)
+                inputs = inputs + noise_std * scale * torch.randn_like(inputs)
+            labels = moved["label"]
+            if mixup_alpha > 0.0:
+                lam = float(
+                    torch.distributions.Beta(mixup_alpha, mixup_alpha).sample().item()
+                )
+                perm = torch.randperm(inputs.shape[0], device=inputs.device)
+                inputs = lam * inputs + (1.0 - lam) * inputs[perm]
             outputs = model(
-                moved["x"],
+                inputs,
                 prior=_optional_prior(moved),
                 has_prior=moved["has_prior"],
             )
-            loss = functional.cross_entropy(
-                outputs["task_logits"],
-                moved["label"],
-                label_smoothing=getattr(config, "source_label_smoothing", 0.0),
-            )
+            logits = outputs["task_logits"]
+            if mixup_alpha > 0.0:
+                loss = lam * functional.cross_entropy(
+                    logits, labels, label_smoothing=label_smoothing
+                ) + (1.0 - lam) * functional.cross_entropy(
+                    logits, labels[perm], label_smoothing=label_smoothing
+                )
+            else:
+                loss = functional.cross_entropy(
+                    logits, labels, label_smoothing=label_smoothing
+                )
             torch.autograd.backward(loss)
             optimizer.step()
 
@@ -826,6 +864,13 @@ def run_tta_suite(
         source_val_loader,
         device,
     )
+    # Iterating the shuffled train loader consumes the global RNG; restore it so
+    # measuring the train/val gap cannot perturb any downstream adaptation.
+    rng_state = torch.get_rng_state()
+    source_train_accuracy = evaluate_tta_classifier(
+        source_model, source_train_loader, device
+    )["accuracy"]
+    torch.set_rng_state(rng_state)
     reference_stats = compute_tta_reference_stats(
         source_model, source_train_loader, device
     )
@@ -927,6 +972,7 @@ def run_tta_suite(
                 source_val_examples=source_val_examples,
                 target_adapt_examples=target_adapt_examples,
                 target_test_examples=target_test_examples,
+                source_train_accuracy=source_train_accuracy,
             )
         )
     return rows

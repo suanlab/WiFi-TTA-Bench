@@ -50,6 +50,8 @@ logger = logging.getLogger(__name__)
 
 PREPARED_ROOT = Path("data/prepared")
 OUTPUT_DIR = Path("outputs/regularized_source")
+# Maximum drop in source validation accuracy a regularised arm may pay.
+VAL_TOLERANCE = 0.03
 DATASET = "widar_bvp"
 SEEDS = (0, 1, 2, 3, 4)
 SPLITS = (
@@ -105,6 +107,12 @@ SEARCH_GRID: dict[str, dict[str, float | int]] = {
         "source_mixup_alpha": 0.2,
         "source_label_smoothing": 0.1,
     },
+    # Capacity by training length: the best-validation checkpoint within a short
+    # budget cannot reach the high train accuracy that drives the gap.
+    "epochs_1": {"source_epochs": 1},
+    "epochs_2": {"source_epochs": 2},
+    "epochs_3": {"source_epochs": 3},
+    "epochs_2_small": {"source_epochs": 2, "hidden_dim": 32, "latent_dim": 16},
     "combined_strong": {
         "source_weight_decay": 1e-1,
         "source_input_noise_std": 0.3,
@@ -149,9 +157,14 @@ def _mean(values: list[float]) -> float:
     return sum(values) / len(values) if values else float("nan")
 
 
-def stage_search(output_dir: Path) -> dict[str, object]:
-    summaries: dict[str, dict[str, float]] = {}
+def stage_search(output_dir: Path, only: tuple[str, ...] = ()) -> dict[str, object]:
+    path = output_dir / "search.json"
+    summaries: dict[str, dict[str, float]] = (
+        json.loads(path.read_text())["summaries"] if path.exists() else {}
+    )
     for name, overrides in SEARCH_GRID.items():
+        if name in summaries and name not in only:
+            continue
         config = dataclasses.replace(BASE_CONFIG, methods=("no_adapt",), **overrides)
         started = time.perf_counter()
         rows = _run_cells(config)
@@ -175,31 +188,35 @@ def stage_search(output_dir: Path) -> dict[str, object]:
             summaries[name]["target_accuracy"],
         )
     baseline_val = summaries["baseline"]["source_val_accuracy"]
-    eligible = {
+    baseline_gap = summaries["baseline"]["train_val_gap_pp"]
+    # A regularised arm must actually shrink the gap; otherwise it is not an
+    # answer to the overfitting confound. Among those, prefer the smallest gap
+    # whose validation accuracy is within VAL_TOLERANCE of the baseline.
+    shrinks = {
         name: s
         for name, s in summaries.items()
-        if name != "baseline" and s["source_val_accuracy"] >= baseline_val
+        if name != "baseline" and s["train_val_gap_pp"] < baseline_gap
     }
-    selected = (
-        min(eligible, key=lambda n: eligible[n]["train_val_gap_pp"])
-        if eligible
-        else min(
-            (n for n in summaries if n != "baseline"),
-            key=lambda n: summaries[n]["train_val_gap_pp"],
-        )
-    )
+    eligible = {
+        name: s
+        for name, s in shrinks.items()
+        if s["source_val_accuracy"] >= baseline_val - VAL_TOLERANCE
+    }
+    pool = eligible or shrinks
+    selected = min(pool, key=lambda n: pool[n]["train_val_gap_pp"]) if pool else None
     payload = {
         "selection_rule": (
-            "smallest source train/val gap among configurations whose source "
-            "validation accuracy is >= the unregularised baseline; target accuracy "
-            "is recorded but never read by selection"
+            "smallest source train/val gap among configurations whose gap is below "
+            "the unregularised baseline and whose source validation accuracy is "
+            f"within {VAL_TOLERANCE:.2f} of it; target accuracy is recorded but "
+            "never read by selection"
         ),
         "selected": selected,
         "selected_meets_val_constraint": selected in eligible,
         "grid": {name: SEARCH_GRID[name] for name in summaries},
         "summaries": summaries,
     }
-    save_json_file(payload, output_dir / "search.json")
+    save_json_file(payload, path)
     logger.info("Selected %s (val constraint met: %s)", selected, selected in eligible)
     return payload
 
@@ -225,10 +242,16 @@ def _summarise(rows: list[dict[str, object]]) -> dict[str, dict[str, float]]:
     return out
 
 
-def stage_tta(output_dir: Path) -> None:
+def stage_tta(output_dir: Path, extra: tuple[str, ...] = ()) -> None:
     search = json.loads((output_dir / "search.json").read_text())
     selected = search["selected"]
-    arms = {"baseline": {}, selected: SEARCH_GRID[selected]}
+    if selected is None:
+        raise SystemExit("No configuration shrinks the gap; nothing to compare.")
+    # The rule-selected arm is primary; ``extra`` adds sensitivity arms (e.g. the
+    # most gap-closed setting even though it pays more validation accuracy).
+    arms: dict[str, dict[str, float | int]] = {"baseline": {}}
+    for name in (selected, *extra):
+        arms[name] = SEARCH_GRID[name]
     result: dict[str, object] = {"selected": selected, "arms": {}}
     for name, overrides in arms.items():
         config = dataclasses.replace(BASE_CONFIG, methods=TTA_METHODS, **overrides)
@@ -254,13 +277,18 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--stage", choices=("search", "tta"), required=True)
     parser.add_argument("--output-dir", default=str(OUTPUT_DIR))
+    parser.add_argument(
+        "--only",
+        default="",
+        help="Comma-separated grid names to (re)run; others are reused.",
+    )
     args = parser.parse_args()
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     if args.stage == "search":
-        stage_search(output_dir)
+        stage_search(output_dir, tuple(n for n in args.only.split(",") if n.strip()))
     else:
-        stage_tta(output_dir)
+        stage_tta(output_dir, tuple(n for n in args.only.split(",") if n.strip()))
 
 
 if __name__ == "__main__":

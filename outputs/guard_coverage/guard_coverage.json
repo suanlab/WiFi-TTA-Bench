@@ -181,6 +181,51 @@
       "verdict": "worse"
     },
     {
+      "backbone": "resnet2d",
+      "dataset": "ntufi_har",
+      "floor": 0.95,
+      "guarded_harm_rate": 0.3333333432674408,
+      "guarded_pp": -0.05879694945178926,
+      "harm_removed_pct": -148.938818959763,
+      "method": "entropy_tta",
+      "note": "backbone breadth",
+      "regime": "little-harm",
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d.json",
+      "unguarded_harm_rate": 0.3333333432674408,
+      "unguarded_pp": -0.02361903607379645,
+      "verdict": "worse"
+    },
+    {
+      "backbone": "resnet2d_gn",
+      "dataset": "ntufi_har",
+      "floor": 0.95,
+      "guarded_harm_rate": 0.6000000238418579,
+      "guarded_pp": -5.943514779210091,
+      "harm_removed_pct": 70.98807751806268,
+      "method": "entropy_tta",
+      "note": "backbone breadth",
+      "regime": "harmful",
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d_gn.json",
+      "unguarded_harm_rate": 1.0,
+      "unguarded_pp": -20.486456155776978,
+      "verdict": "improved"
+    },
+    {
+      "backbone": "transformer",
+      "dataset": "ntufi_har",
+      "floor": 0.95,
+      "guarded_harm_rate": 0.5333333611488342,
+      "guarded_pp": -1.6352580860257149,
+      "harm_removed_pct": 79.22890461742938,
+      "method": "entropy_tta",
+      "note": "backbone breadth",
+      "regime": "harmful",
+      "source": "outputs/backbone_breadth/ntufi_har_transformer.json",
+      "unguarded_harm_rate": 0.9333333373069763,
+      "unguarded_pp": -7.872758060693741,
+      "verdict": "improved"
+    },
+    {
       "backbone": "cnn1d",
       "dataset": "signfi_top10",
       "floor": 0.95,
@@ -241,6 +286,51 @@
       "verdict": "inert"
     },
     {
+      "backbone": "resnet2d",
+      "dataset": "signfi_top10",
+      "floor": 0.95,
+      "guarded_harm_rate": 0.9333333373069763,
+      "guarded_pp": -18.47618967294693,
+      "harm_removed_pct": -1.9264330716441735,
+      "method": "entropy_tta",
+      "note": "backbone breadth",
+      "regime": "harmful",
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d.json",
+      "unguarded_harm_rate": 0.9333333373069763,
+      "unguarded_pp": -18.12698543071747,
+      "verdict": "worse"
+    },
+    {
+      "backbone": "resnet2d_gn",
+      "dataset": "signfi_top10",
+      "floor": 0.95,
+      "guarded_harm_rate": 0.46666666865348816,
+      "guarded_pp": -4.412698373198509,
+      "harm_removed_pct": 0.0,
+      "method": "entropy_tta",
+      "note": "backbone breadth",
+      "regime": "intermediate",
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d_gn.json",
+      "unguarded_harm_rate": 0.46666666865348816,
+      "unguarded_pp": -4.412698373198509,
+      "verdict": "inert"
+    },
+    {
+      "backbone": "transformer",
+      "dataset": "signfi_top10",
+      "floor": 0.95,
+      "guarded_harm_rate": 0.9333333373069763,
+      "guarded_pp": -9.333334118127823,
+      "harm_removed_pct": 6.070292355065854,
+      "method": "entropy_tta",
+      "note": "backbone breadth",
+      "regime": "harmful",
+      "source": "outputs/backbone_breadth/signfi_top10_transformer.json",
+      "unguarded_harm_rate": 0.9333333373069763,
+      "unguarded_pp": -9.936509281396866,
+      "verdict": "improved"
+    },
+    {
       "backbone": "cnn1d",
       "dataset": "widar_bvp",
       "floor": 0.95,
@@ -284,6 +374,51 @@
       "unguarded_harm_rate": 0.7333333492279053,
       "unguarded_pp": -0.6068719085305929,
       "verdict": "inert"
+    },
+    {
+      "backbone": "resnet2d",
+      "dataset": "widar_bvp",
+      "floor": 0.95,
+      "guarded_harm_rate": 0.3333333432674408,
+      "guarded_pp": -0.08478358504362404,
+      "harm_removed_pct": NaN,
+      "method": "entropy_tta",
+      "note": "backbone breadth",
+      "regime": "little-harm",
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d.json",
+      "unguarded_harm_rate": 0.3333333432674408,
+      "unguarded_pp": 0.035698365536518395,
+      "verdict": "worse"
+    },
+    {
+      "backbone": "resnet2d_gn",
+      "dataset": "widar_bvp",
+      "floor": 0.95,
+      "guarded_harm_rate": 0.6666666865348816,
+      "guarded_pp": -0.8433734998106956,
+      "harm_removed_pct": 65.8844786831629,
+      "method": "entropy_tta",
+      "note": "backbone breadth",
+      "regime": "little-harm",
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d_gn.json",
+      "unguarded_harm_rate": 0.9333333373069763,
+      "unguarded_pp": -2.472110837697983,
+      "verdict": "improved"
+    },
+    {
+      "backbone": "transformer",
+      "dataset": "widar_bvp",
+      "floor": 0.95,
+      "guarded_harm_rate": 0.4000000059604645,
+      "guarded_pp": -0.2588130533695221,
+      "harm_removed_pct": 72.38095067720232,
+      "method": "entropy_tta",
+      "note": "backbone breadth",
+      "regime": "little-harm",
+      "source": "outputs/backbone_breadth/widar_bvp_transformer.json",
+      "unguarded_harm_rate": 0.5333333611488342,
+      "unguarded_pp": -0.9370816871523857,
+      "verdict": "improved"
     }
   ],
   "summary": {
@@ -291,7 +426,7 @@
       "harmful_at_or_below": -6.0,
       "little_harm_at_or_above": -3.0
     },
-    "n_rows": 19,
+    "n_rows": 28,
     "per_floor": {
       "0.9": {
         "datasets": [
@@ -320,17 +455,17 @@
           "signfi_top10",
           "widar_bvp"
         ],
-        "harmful_cells": 4,
-        "harmful_improved": 4,
+        "harmful_cells": 8,
+        "harmful_improved": 7,
         "harmful_removed_pct_max": 100.0,
-        "harmful_removed_pct_min": 40.11975399928932,
-        "little_harm_cells": 6,
+        "harmful_removed_pct_min": -1.9264330716441735,
+        "little_harm_cells": 10,
         "little_harm_inert": 2,
         "methods": [
           "entropy_tta",
           "tent"
         ],
-        "n_pairings": 10
+        "n_pairings": 19
       }
     }
   }

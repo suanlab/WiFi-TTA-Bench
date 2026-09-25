@@ -7,6 +7,32 @@ in the paper can be traced to the code that produced them.
 Superseded artifacts are preserved rather than overwritten, per the deprecation policy in
 the supplement.
 
+## 2026-09-25
+
+### Added
+
+- **Regularised-source evaluation** (`outputs/regularized_source/`). Ten standard source
+  regularisers leave the Widar in-domain train/val gap at 33-42 pp (unregularised n=15
+  mean: 34.0 pp, not the 42 pp previously quoted from a single run); only a shorter
+  training budget shrinks it (11.1 pp at one epoch). No TTA method has an interval above
+  zero at any gap, and the harmful families stay harmful.
+- **Backbone breadth** (`outputs/backbone_breadth/`): nine methods on ResNet-BN,
+  ResNet-GN and Transformer-LN across all three datasets. 2 of 81 intervals clear zero,
+  consistent with chance; how much TTA harms depends strongly on backbone and
+  normaliser (Widar entropy minimisation: -6.58 pp on the MLP, +0.04 on ResNet-BN).
+- Source-side regularisers (`source_weight_decay`, `source_input_noise_std`,
+  `source_mixup_alpha`), `source_train_accuracy` on result rows, and TENT adaptation of
+  GroupNorm/LayerNorm affines on models without BatchNorm. Existing results are
+  bit-identical.
+
+### Corrected
+
+- **Collapse-guard scope.** The 2026-09-09 entry stated the guard improves all four
+  harmful cells at tau=0.95. With eighteen dataset-by-backbone cells there are eight
+  harmful ones; the guard removes 40-100% of the loss in six and at most 6% in two
+  (SignFi with ResNet-BN and Transformer), where the loss arrives before marginal class
+  usage falls.
+
 ## 2026-09-09
 
 ### Corrected

@@ -149,6 +149,163 @@ class _MLPBNInvariantEncoder(nn.Module):
         }
 
 
+def _grid_shape(input_shape: tuple[int, ...]) -> tuple[int, int]:
+    """Collapse an input shape to the (rows, cols) grid the grid encoders use."""
+    if len(input_shape) == 1:
+        return (1, int(input_shape[0]))
+    rows = int(input_shape[0])
+    return (rows, int(prod(input_shape[1:])))
+
+
+def _grid_input(
+    x: Tensor, prior: Tensor | None, input_shape: tuple[int, int], use_prior: bool
+) -> Tensor:
+    """Restore flattened CSI to (batch, channels, rows, cols) for grid encoders."""
+    rows, cols = input_shape
+    planes = [x]
+    if use_prior and prior is not None:
+        planes = [x, prior, x - prior]
+    return torch.stack([p.reshape(p.shape[0], rows, cols) for p in planes], dim=1)
+
+
+class _ResidualBlock2D(nn.Module):
+    """Two 3x3 convolutions with a projected shortcut when the shape changes."""
+
+    def __init__(self, in_ch: int, out_ch: int, stride: int, norm: str) -> None:
+        super().__init__()
+
+        def make_norm(channels: int) -> nn.Module:
+            if norm == "group":
+                return nn.GroupNorm(num_groups=min(8, channels), num_channels=channels)
+            return nn.BatchNorm2d(channels)
+
+        self.conv1 = nn.Conv2d(in_ch, out_ch, 3, stride=stride, padding=1, bias=False)
+        self.norm1 = make_norm(out_ch)
+        self.conv2 = nn.Conv2d(out_ch, out_ch, 3, stride=1, padding=1, bias=False)
+        self.norm2 = make_norm(out_ch)
+        self.shortcut: nn.Module = nn.Identity()
+        if stride != 1 or in_ch != out_ch:
+            self.shortcut = nn.Sequential(
+                nn.Conv2d(in_ch, out_ch, 1, stride=stride, bias=False),
+                make_norm(out_ch),
+            )
+
+    def forward(self, x: Tensor) -> Tensor:
+        out = torch.relu(self.norm1(self.conv1(x)))
+        out = self.norm2(self.conv2(out))
+        return torch.relu(out + self.shortcut(x))
+
+
+class _ResNet2DInvariantEncoder(nn.Module):
+    """Residual 2D CNN over the (rows, cols) CSI grid.
+
+    Treats each sample as a single-plane image, the way the SenseFi benchmark
+    applies ResNet to NTU-Fi and Widar. Four stages of residual blocks with
+    strided downsampling, then global average pooling. ``norm`` selects
+    BatchNorm (``"batch"``) or GroupNorm (``"group"``) with the architecture
+    otherwise identical, so the two variants isolate the normaliser.
+    """
+
+    def __init__(
+        self,
+        input_shape: tuple[int, int],
+        hidden_dim: int,
+        latent_dim: int,
+        use_residual_prior: bool = True,
+        norm: str = "batch",
+    ) -> None:
+        super().__init__()
+        self.input_shape = input_shape
+        self.use_residual_prior = use_residual_prior
+        in_ch = 3 if use_residual_prior else 1
+        width = max(8, hidden_dim // 4)
+        norm_layer: nn.Module = (
+            nn.GroupNorm(num_groups=min(8, width), num_channels=width)
+            if norm == "group"
+            else nn.BatchNorm2d(width)
+        )
+        self.stem = nn.Sequential(
+            nn.Conv2d(in_ch, width, 5, stride=2, padding=2, bias=False),
+            norm_layer,
+            nn.ReLU(),
+        )
+        self.stages = nn.Sequential(
+            _ResidualBlock2D(width, width, 1, norm),
+            _ResidualBlock2D(width, width * 2, 2, norm),
+            _ResidualBlock2D(width * 2, width * 4, 2, norm),
+            _ResidualBlock2D(width * 4, hidden_dim, 2, norm),
+        )
+        self.pool = nn.AdaptiveAvgPool2d(1)
+        self.feature_projection = nn.Linear(hidden_dim, latent_dim)
+        self.invariance_projection = nn.Linear(latent_dim, latent_dim)
+
+    def forward(self, x: Tensor, prior: Tensor | None = None) -> dict[str, Tensor]:
+        grid = _grid_input(x, prior, self.input_shape, self.use_residual_prior)
+        hidden = self.pool(self.stages(self.stem(grid))).flatten(1)
+        features = self.feature_projection(hidden)
+        invariant_features = self.invariance_projection(features)
+        return {
+            "features": features,
+            "invariant_features": invariant_features,
+            "physics_residual": x
+            - (prior if prior is not None else torch.zeros_like(x)),
+        }
+
+
+class _TransformerInvariantEncoder(nn.Module):
+    """Transformer encoder with LayerNorm over the rows of the CSI grid.
+
+    Each row of the (rows, cols) input is a token projected to ``hidden_dim``,
+    with a learned positional embedding. LayerNorm normalises per sample, so
+    this backbone has no batch statistics for normalisation-based TTA to use.
+    """
+
+    def __init__(
+        self,
+        input_shape: tuple[int, int],
+        hidden_dim: int,
+        latent_dim: int,
+        use_residual_prior: bool = True,
+        num_layers: int = 2,
+        num_heads: int = 4,
+    ) -> None:
+        super().__init__()
+        rows, cols = input_shape
+        self.input_shape = input_shape
+        self.use_residual_prior = use_residual_prior
+        token_dim = cols * (3 if use_residual_prior else 1)
+        self.token_projection = nn.Linear(token_dim, hidden_dim)
+        self.position = nn.Parameter(torch.zeros(1, rows, hidden_dim))
+        layer = nn.TransformerEncoderLayer(
+            d_model=hidden_dim,
+            nhead=num_heads,
+            dim_feedforward=hidden_dim * 2,
+            dropout=0.0,
+            batch_first=True,
+            norm_first=True,
+        )
+        self.transformer = nn.TransformerEncoder(
+            layer, num_layers=num_layers, enable_nested_tensor=False
+        )
+        self.norm = nn.LayerNorm(hidden_dim)
+        self.feature_projection = nn.Linear(hidden_dim, latent_dim)
+        self.invariance_projection = nn.Linear(latent_dim, latent_dim)
+
+    def forward(self, x: Tensor, prior: Tensor | None = None) -> dict[str, Tensor]:
+        grid = _grid_input(x, prior, self.input_shape, self.use_residual_prior)
+        tokens = grid.permute(0, 2, 1, 3).reshape(grid.shape[0], grid.shape[2], -1)
+        hidden = self.transformer(self.token_projection(tokens) + self.position)
+        pooled = self.norm(hidden.mean(dim=1))
+        features = self.feature_projection(pooled)
+        invariant_features = self.invariance_projection(features)
+        return {
+            "features": features,
+            "invariant_features": invariant_features,
+            "physics_residual": x
+            - (prior if prior is not None else torch.zeros_like(x)),
+        }
+
+
 class Paper2DomainAdaptationBaseline(nn.Module):
     """Shared-backbone Paper 2 baseline model.
 
@@ -180,9 +337,27 @@ class Paper2DomainAdaptationBaseline(nn.Module):
         encoder: (
             _CNN1DInvariantEncoder
             | _MLPBNInvariantEncoder
+            | _ResNet2DInvariantEncoder
+            | _TransformerInvariantEncoder
             | PhysicsDomainInvariantModule
         )
-        if self.config.backbone == "cnn1d":
+        grid_shape = _grid_shape(input_shape)
+        if self.config.backbone in ("resnet2d", "resnet2d_gn"):
+            encoder = _ResNet2DInvariantEncoder(
+                input_shape=grid_shape,
+                hidden_dim=self.config.hidden_dim,
+                latent_dim=self.config.latent_dim,
+                use_residual_prior=self.config.use_residual_prior,
+                norm="group" if self.config.backbone == "resnet2d_gn" else "batch",
+            )
+        elif self.config.backbone == "transformer":
+            encoder = _TransformerInvariantEncoder(
+                input_shape=grid_shape,
+                hidden_dim=self.config.hidden_dim,
+                latent_dim=self.config.latent_dim,
+                use_residual_prior=self.config.use_residual_prior,
+            )
+        elif self.config.backbone == "cnn1d":
             encoder = _CNN1DInvariantEncoder(
                 in_features=in_features,
                 hidden_dim=self.config.hidden_dim,

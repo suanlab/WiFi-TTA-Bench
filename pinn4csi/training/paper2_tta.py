@@ -29,6 +29,10 @@ from pinn4csi.models import (
 from pinn4csi.utils.experiment import save_dataclass_rows_csv
 from pinn4csi.utils.metrics import accuracy, prediction_diversity
 
+# Batch-independent normalisers whose affine parameters TENT adapts when a
+# model has no BatchNorm.
+_SAMPLE_NORM_TYPES = (torch.nn.GroupNorm, torch.nn.LayerNorm)
+
 DEFAULT_TTA_METHODS = (
     "no_adapt",
     "entropy_tta",
@@ -667,11 +671,18 @@ def adapt_model_for_tta_with_summary(
 
     adapted = copy.deepcopy(model).to(device)
     adapted.train()
-    # TENT: use bn_only scope if model has BN layers, else projection
+    # TENT updates normalisation affine parameters: BatchNorm when present
+    # (the original method), otherwise GroupNorm/LayerNorm affines, the usual
+    # generalisation to batch-independent normalisers. Models with no
+    # normalisation fall back to the projection layer.
     if _resolve_base_method(method) == "tent":
         _bn_types = (torch.nn.BatchNorm1d, torch.nn.BatchNorm2d)
         has_bn = any(isinstance(m, _bn_types) for m in adapted.modules())
-        _freeze_for_tta(adapted, "bn_only" if has_bn else "projection")
+        has_other_norm = any(
+            isinstance(m, _SAMPLE_NORM_TYPES) for m in adapted.modules()
+        )
+        scope = "bn_only" if has_bn else "norm_only" if has_other_norm else "projection"
+        _freeze_for_tta(adapted, scope)
     else:
         _freeze_for_tta(adapted, config.update_scope)
     optimizer = Adam(_trainable_parameters(adapted), lr=config.adaptation_learning_rate)
@@ -1404,10 +1415,16 @@ def _freeze_for_tta(
             if isinstance(module, (torch.nn.BatchNorm1d, torch.nn.BatchNorm2d)):
                 module.weight.requires_grad_(True)
                 module.bias.requires_grad_(True)
+    elif update_scope == "norm_only":
+        for module in model.modules():
+            if isinstance(module, _SAMPLE_NORM_TYPES) and module.weight is not None:
+                module.weight.requires_grad_(True)
+                if module.bias is not None:
+                    module.bias.requires_grad_(True)
     else:
         raise ValueError(
             f"Unsupported update_scope: {update_scope}. "
-            "Expected encoder, projection, or bn_only."
+            "Expected encoder, projection, bn_only, or norm_only."
         )
 
 

@@ -126,7 +126,7 @@ PATTERNS: list[tuple[str, str, set[str], object | None]] = [
             r"|anonymous(?:\.4open)?\.science|huggingface\.co"
             r"|noreply\.github\.com)[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
         ),
-        {"suanlab@gmail.com"},  # private memory; never injected into source
+        set(),
         None,
     ),
     (
@@ -191,16 +191,11 @@ SKIP_DIRS = {
     "__pycache__",
     ".omc",
     ".coverage",
-    "sections_ko",
 }
 # Files that should not be audited:
 #   - upstream venue style files are skipped by extension (see SKIP_EXT)
 #   - the audit/validation scripts themselves (their regexes match themselves)
-#   - the Korean parallel build (not part of the submission bundle)
 SKIP_FILES = {
-    "manuscript/paper2/main_korean.tex",
-    "manuscript/paper2/checklist_korean.tex",
-    "manuscript/paper2/supplementary_korean.tex",
     "scripts/anonymization_audit.py",
     "scripts/validate_croissant.py",
 }

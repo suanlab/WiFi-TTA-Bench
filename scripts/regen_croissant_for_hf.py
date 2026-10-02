@@ -243,10 +243,10 @@ def build() -> dict:
             "original academic licences)"
         ),
         "citeAs": "To be assigned upon acceptance.",
-        "url": "https://huggingface.co/datasets/WiFi-TTA-Bench/wifi-tta-bench",
+        "url": "https://anonymous.4open.science/r/WiFi-TTA-Bench-48FE",
         "creator": {
             "@type": "Organization",
-            "name": "WiFi-TTA-Bench",
+            "name": "Anonymous (double-blind review)",
         },
         "datePublished": "2026-04-18",
         "rai:dataCollection": (
@@ -302,10 +302,12 @@ def build() -> dict:
             "not raw captures, under an acceptable-use notice."
         ),
         "rai:dataReleaseMaintenancePlan": (
-            "Benchmark artifacts maintained on HuggingFace (WiFi-TTA-Bench "
-            "org) and GitHub (suanlab/WiFi-TTA-Bench). Versioned releases "
-            "via Zenodo DOI on acceptance. Croissant metadata regenerated "
-            "on each release."
+            "During double-blind review, benchmark artifacts are mirrored"
+            " at the anonymous source-code mirror "
+            "(https://anonymous.4open.science/r/WiFi-TTA-Bench-48FE). "
+            "After acceptance, the canonical mirror moves to a stable "
+            "GitHub organisation and a versioned Zenodo DOI; Croissant "
+            "metadata is regenerated and SHA-256-checked on each release."
         ),
         "rai:dataLimitations": (
             "Known limitations of the benchmark splits and artifacts: "

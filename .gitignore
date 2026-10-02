@@ -111,12 +111,6 @@ manuscript/**/*.toc
 manuscript/**/*.synctex.gz
 manuscript/**/.archive/
 
-# Korean parallel build (only the English version is the submitted paper)
-manuscript/paper2/main_korean.*
-manuscript/paper2/korean.*
-manuscript/paper2/checklist_korean.tex
-manuscript/paper2/supplementary_korean.tex
-manuscript/paper2/sections_ko/
 
 # Stray LaTeX intermediates at repo root (if pdflatex is run there)
 /main.aux

@@ -85,6 +85,9 @@ _UPSTREAM_DOMAINS = {
 }
 
 
+_MAKE_SILENCED_COMMANDS = {"echo", "python", "pytest", "ruff", "mypy", "rm", "mkdir"}
+
+
 def _gh_handle_filter(hit: str) -> bool:
     """True if the @-prefixed token is real PII (not a decorator/bibtex)."""
     h = hit.lstrip().lstrip("(").lstrip()
@@ -94,6 +97,9 @@ def _gh_handle_filter(hit: str) -> bool:
     if name.lower() in _DECORATOR_KEYS:
         return False
     if name.lower() in _BIBTEX_KEYS:
+        return False
+    # Make recipe prefix that silences command echo (`@echo`, `@python`, ...).
+    if name.lower() in _MAKE_SILENCED_COMMANDS:
         return False
     return name.lower() not in {"anonymous", "example"}
 

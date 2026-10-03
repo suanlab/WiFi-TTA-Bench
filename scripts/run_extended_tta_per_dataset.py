@@ -173,7 +173,7 @@ def main() -> None:
     parser.add_argument(
         "--dataset",
         required=True,
-        choices=("ntufi_har", "signfi_top10"),
+        choices=("widar_bvp", "ntufi_har", "signfi_top10"),
     )
     parser.add_argument(
         "--methods",

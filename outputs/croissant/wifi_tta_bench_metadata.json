@@ -118,7 +118,7 @@
       "@type": "cr:FileObject",
       "@id": "widar-lame-sar-cotta",
       "name": "widar-lame-sar-cotta",
-      "contentUrl": "method_summaries/widar_lame_sar_cotta.json",
+      "contentUrl": "method_summaries/widar_bvp_lame_sar_cotta.json",
       "encodingFormat": "application/json",
       "sha256": "365255bea8eed08d7da30dcaa14fbedfc603d4225df971de125beb1f8fb0e02a",
       "description": "SAR, CoTTA, LAME on Widar_BVP (primary MLP, n=15)."

@@ -26,7 +26,7 @@ OUTPUT_DIR = Path("outputs/coverage")
 DATASETS = {
     "widar_bvp": [
         "outputs/widar_full_tta/method_summary.json",
-        "outputs/new_methods/widar_lame_sar_cotta.json",
+        "outputs/new_methods/widar_bvp_lame_sar_cotta.json",
     ],
     "ntufi_har": [
         "outputs/ntufi_tta/method_summary.json",

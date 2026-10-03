@@ -52,7 +52,7 @@ ARTIFACT_MANIFEST: list[tuple[str, str, str]] = [
     ),
     (
         "Cross-dataset SAR/CoTTA/LAME (MLP ports)",
-        "outputs/new_methods/widar_lame_sar_cotta.json",
+        "outputs/new_methods/widar_bvp_lame_sar_cotta.json",
         "widar_ext",
     ),
     (
@@ -183,7 +183,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
             "--dataset",
             "widar_bvp",
         ],
-        "outputs": ["outputs/new_methods/widar_lame_sar_cotta.json"],
+        "outputs": ["outputs/new_methods/widar_bvp_lame_sar_cotta.json"],
     },
     "ntufi_ext": {
         "description": "NTU-Fi extended SAR/CoTTA/LAME (simplified MLP port)",

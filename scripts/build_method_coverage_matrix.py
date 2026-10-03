@@ -21,7 +21,7 @@ from pathlib import Path
 DATASETS: dict[str, dict[str, str]] = {
     "widar_bvp": {
         "canonical": "outputs/widar_full_tta/method_summary.json",
-        "extras": "outputs/new_methods/widar_lame_sar_cotta.json",
+        "extras": "outputs/new_methods/widar_bvp_lame_sar_cotta.json",
     },
     "ntufi_har": {
         "canonical": "outputs/ntufi_tta/method_summary.json",

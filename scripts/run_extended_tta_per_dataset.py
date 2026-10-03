@@ -3,7 +3,7 @@
 """Run extended TTA method coverage (SAR, CoTTA, LAME + core set) on NTU-Fi and SignFi.
 
 This script closes the method-coverage asymmetry flagged by reviewers: Widar_BVP
-has SAR/CoTTA/LAME in outputs/new_methods/widar_lame_sar_cotta.json, but NTU-Fi
+has SAR/CoTTA/LAME in outputs/new_methods/widar_bvp_lame_sar_cotta.json, but NTU-Fi
 and SignFi-10 were previously missing these methods. Running this script produces
 outputs/new_methods/<dataset>_lame_sar_cotta.json for the specified dataset with
 the same leave-one-environment-out protocol as run_widar_full_tta.py.

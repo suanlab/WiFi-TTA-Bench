@@ -55,8 +55,8 @@ ENTRIES: list[tuple[str, str, str, str, str]] = [
     ),
     (
         "widar-lame-sar-cotta",
-        "outputs/new_methods/widar_lame_sar_cotta.json",
-        "method_summaries/widar_lame_sar_cotta.json",
+        "outputs/new_methods/widar_bvp_lame_sar_cotta.json",
+        "method_summaries/widar_bvp_lame_sar_cotta.json",
         "application/json",
         "SAR, CoTTA, LAME on Widar_BVP (primary MLP, n=15).",
     ),

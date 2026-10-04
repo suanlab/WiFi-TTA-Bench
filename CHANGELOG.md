@@ -7,6 +7,51 @@ in the paper can be traced to the code that produced them.
 Superseded artifacts are preserved rather than overwritten, per the deprecation policy in
 the supplement.
 
+## 2026-10-04
+
+### Reproduction audit
+
+Every released artifact was regenerated from a clean checkout with
+`scripts/reproduce_all_results.py` and compared field by field with
+`scripts/compare_artifacts.py` (report: `outputs/reproduction_audit/report.json`).
+Of 89 artifacts, 70 are numerically identical, 18 differ and 1 could not be regenerated
+(`final_ablations/superseded_2026-04/mlpbn_other_datasets.json`, which no reported number
+uses). Differing artifacts were promoted; the previous copies are under
+`superseded_2026-10-04/` next to them. Bootstrap CIs in some summaries are not seeded, so
+their bounds can move by up to 0.002 between reruns; point estimates and
+negative-adaptation rates do not.
+
+### Corrected
+
+- **SignFi MLP+BN faithful TENT** (`outputs/signfi_mlpbn_canonical/`): +10.3 pp
+  [+5.3, +15.2], n=15 (source 67.3% -> 77.6%), replacing +21.1 pp [+13.1, +29.6].
+  BN-reset: +2.6 pp [+0.6, +4.7].
+- **Widar MLP+BN faithful TENT** (`outputs/widar_mlpbn_canonical/`): -0.42 pp
+  [-0.77, -0.09], replacing -0.61 pp. The three-backbone runner
+  (`final_ablations/arch_ablation_with_ci.json`, 10 source epochs) gives -0.37 pp
+  [-0.75, -0.02] for the same cell.
+- **SAR/CoTTA.** Faithful BN-only ports on Widar MLP+BN
+  (`new_methods/widar_mlpbn_faithful_sar_cotta.json`): -0.50 / -0.49 pp, replacing
+  -0.15 / -0.38. Simplified MLP ports (`new_methods/<dataset>_lame_sar_cotta.json`):
+  Widar -6.13 / -6.59, NTU-Fi -18.32 / -18.68, SignFi -11.24 / -12.00.
+- **Three-backbone ablation** regenerated at n=15 with 10 source epochs; the one-room
+  CNN1D+BN probe's positive gains do not survive (TENT +0.13 pp [-0.32, +0.54]).
+- **Overconfidence** (`overconfidence/widar_bvp_per_class.json`): Widar confidence
+  69-81%, per-class accuracy 26-58%.
+- **Label smoothing** (`source_overfit/mitigation_pilot.json`): TENT negative-adaptation
+  rate 0.60 -> 0.33 -> 0.27 for alpha = 0 / 0.1 / 0.2.
+- **Supervised upper bound** (`phase2/upper_bound.json`): now 5 seeds (15 room/seed
+  rows), oracle 61.0% vs source 36.1%, +24.9 pp. The recorded protocol string is built
+  from the run's arguments instead of a fixed description.
+- **Selective-threshold sweep** (`final_ablations/selective_threshold_widar_main_protocol.json`):
+  all 20 grid points lie between -0.30 and +0.06 pp, replacing a sweep in which every
+  point was positive.
+- **Step budget** (`db_ablations/step_budget.json`): 3 seeds instead of 1; entropy
+  minimisation -1.2 pp at 1 step to -17.8 pp at 10.
+- **Synthetic** `selective_physics_tta`: +5.6 pp (negative-adaptation rate 0.20), was 0.0.
+- **Cross-dataset Spearman** (`coverage/cross_dataset_spearman.json`): mean rho 0.67,
+  was 0.61.
+
 ## 2026-09-25
 
 ### Added

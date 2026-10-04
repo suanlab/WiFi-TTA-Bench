@@ -1,0 +1,4 @@
+pair,rho,ci_lower,ci_upper,n_methods
+widar_bvp x ntufi_har,0.8500,0.4667,1.0000,9
+widar_bvp x signfi_top10,0.5167,-0.2833,0.9333,9
+ntufi_har x signfi_top10,0.4500,-0.4167,0.8833,9

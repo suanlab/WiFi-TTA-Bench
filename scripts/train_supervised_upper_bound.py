@@ -288,9 +288,12 @@ def main() -> None:
     oracle_std = float(np.std([r["oracle_mean_accuracy"] for r in all_rows], ddof=1))
 
     payload = {
+        # Built from the arguments actually used, so the description cannot
+        # drift from the run it annotates (a hard-coded string once did).
         "protocol": (
-            "Widar_BVP leave-one-room-out x 5 seeds; per held-out room, "
-            "5-fold CV on labelled target; Adam lr=1e-3, 50 epochs fine-tune "
+            f"Widar_BVP leave-one-room-out x {len(seeds)} seeds; per held-out "
+            f"room, {args.folds}-fold CV on labelled target; Adam "
+            f"lr={args.finetune_lr:g}, {args.finetune_epochs} epochs fine-tune "
             "from source checkpoint."
         ),
         "config": asdict(config),

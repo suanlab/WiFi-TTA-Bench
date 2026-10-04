@@ -336,6 +336,11 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         "argv": ["scripts/build_guard_coverage.py"],
         "outputs": ["outputs/guard_coverage/guard_coverage.json"],
     },
+    "per_pair_spearman": {
+        "description": "App.: per-pair cross-dataset method-rank Spearman",
+        "argv": ["scripts/compute_per_pair_spearman.py"],
+        "outputs": ["outputs/coverage/cross_dataset_spearman.json"],
+    },
     "tsne": {
         "description": "Figure 4 inputs: t-SNE embeddings and harm analysis",
         "argv": [

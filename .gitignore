@@ -43,6 +43,17 @@ outputs/*
 !outputs/regularized_source/**
 !outputs/backbone_breadth/
 !outputs/backbone_breadth/**
+!outputs/signfi_mlpbn_canonical/
+!outputs/signfi_mlpbn_canonical/**
+!outputs/widar_mlpbn_canonical/
+!outputs/widar_mlpbn_canonical/**
+!outputs/severity/
+!outputs/severity/**
+!outputs/reproduction_audit/
+!outputs/reproduction_audit/**
+!outputs/synthetic_shift/analysis/
+outputs/synthetic_shift/analysis/*
+!outputs/synthetic_shift/analysis/tsne_embeddings.json
 !outputs/guard_backbone/
 !outputs/guard_backbone/**
 !outputs/collapse_guard_sweep/

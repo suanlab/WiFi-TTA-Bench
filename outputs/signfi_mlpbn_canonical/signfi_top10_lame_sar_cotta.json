@@ -1,0 +1,56 @@
+{
+  "no_adapt": {
+    "mean_gain": 0.0,
+    "ci_lower": 0.0,
+    "ci_upper": 0.0,
+    "cohens_d_vs_noadapt": 0.0,
+    "paired_d_vs_noadapt": 0.0,
+    "negative_adaptation_rate": 0.0,
+    "n_observations": 15
+  },
+  "entropy_tta": {
+    "mean_gain": -0.008888890035450459,
+    "ci_lower": -0.08920635282993317,
+    "ci_upper": 0.07968254387378693,
+    "cohens_d_vs_noadapt": -0.07246073335409164,
+    "paired_d_vs_noadapt": -0.051237478852272034,
+    "negative_adaptation_rate": 0.5333333611488342,
+    "n_observations": 15
+  },
+  "tent": {
+    "mean_gain": 0.10285715013742447,
+    "ci_lower": 0.05269841477274895,
+    "ci_upper": 0.1520635187625885,
+    "cohens_d_vs_noadapt": 1.4269676208496094,
+    "paired_d_vs_noadapt": 1.0090185403823853,
+    "negative_adaptation_rate": 0.13333334028720856,
+    "n_observations": 15
+  },
+  "physics_tta": {
+    "mean_gain": -0.030476192012429237,
+    "ci_lower": -0.12095239013433456,
+    "ci_upper": 0.05841270461678505,
+    "cohens_d_vs_noadapt": -0.23515750467777252,
+    "paired_d_vs_noadapt": -0.16628144681453705,
+    "negative_adaptation_rate": 0.5333333611488342,
+    "n_observations": 15
+  },
+  "selective_physics_tta": {
+    "mean_gain": 0.0009523918270133436,
+    "ci_lower": -0.07619046419858932,
+    "ci_upper": 0.0749206393957138,
+    "cohens_d_vs_noadapt": 0.008711527101695538,
+    "paired_d_vs_noadapt": 0.0061599803157150745,
+    "negative_adaptation_rate": 0.4000000059604645,
+    "n_observations": 15
+  },
+  "bn_reset": {
+    "mean_gain": 0.025714285671710968,
+    "ci_lower": 0.006349206902086735,
+    "ci_upper": 0.046666666865348816,
+    "cohens_d_vs_noadapt": 0.8601356148719788,
+    "paired_d_vs_noadapt": 0.6082077026367188,
+    "negative_adaptation_rate": 0.13333334028720856,
+    "n_observations": 15
+  }
+}

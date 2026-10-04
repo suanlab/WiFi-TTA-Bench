@@ -1,5 +1,5 @@
 {
-  "protocol": "Widar_BVP leave-one-room-out x 3 seeds; per held-out room, 5-fold CV on labelled target; Adam lr=1e-3, 30 epochs fine-tune from source checkpoint.",
+  "protocol": "Widar_BVP leave-one-room-out x 5 seeds; per held-out room, 5-fold CV on labelled target; Adam lr=1e-3, 50 epochs fine-tune from source checkpoint.",
   "config": {
     "methods": [
       "no_adapt"
@@ -20,6 +20,8 @@
     "update_scope": "encoder",
     "safe_objective_min_delta": 0.0,
     "safe_alignment_guard_ratio": 2.0,
+    "collapse_guard_diversity_ratio": 0.9,
+    "weight_reset_probability": 0.01,
     "warm_restart_steps": 3,
     "warm_restart_lr_factor": 0.5,
     "calibration_temperature": 1.5,
@@ -33,86 +35,119 @@
     "ablation_use_entropy": true,
     "early_stop_patience": 0,
     "backbone": "mlp",
-    "source_label_smoothing": 0.0
+    "source_label_smoothing": 0.0,
+    "source_weight_decay": 0.0,
+    "source_input_noise_std": 0.0,
+    "source_mixup_alpha": 0.0
   },
   "folds": 5,
-  "finetune_epochs": 30,
+  "finetune_epochs": 50,
   "finetune_lr": 0.001,
   "rows": [
     {
       "room": "room2",
       "seed": 0,
-      "source_only_accuracy": 0.3507362784471218,
+      "source_only_accuracy": 0.3530789825970549,
       "oracle_fold_accuracies": [
-        0.7508361204013378,
-        0.7692307692307693,
-        0.7842809364548495,
-        0.8090452261306532,
-        0.7638190954773869
+        0.782608695652174,
+        0.7775919732441472,
+        0.8010033444816054,
+        0.7621440536013401,
+        0.7755443886097152
       ],
-      "oracle_mean_accuracy": 0.7754424295389993,
-      "oracle_std_accuracy": 0.02228465958429947,
-      "gap_pp": 42.470615109187754
+      "oracle_mean_accuracy": 0.7797784911177963,
+      "oracle_std_accuracy": 0.014072902410342843,
+      "gap_pp": 42.66995085207414
     },
     {
       "room": "room2",
       "seed": 1,
       "source_only_accuracy": 0.3785140562248996,
       "oracle_fold_accuracies": [
-        0.8311036789297659,
-        0.8093645484949833,
-        0.8160535117056856,
-        0.8123953098827471,
-        0.8023450586264657
+        0.8294314381270903,
+        0.8244147157190636,
+        0.8210702341137124,
+        0.8056951423785594,
+        0.7956448911222781
       ],
-      "oracle_mean_accuracy": 0.8142524215279294,
-      "oracle_std_accuracy": 0.010680990819762317,
-      "gap_pp": 43.573836530302984
+      "oracle_mean_accuracy": 0.8152512842921409,
+      "oracle_std_accuracy": 0.014094643634449063,
+      "gap_pp": 43.67372280672413
     },
     {
       "room": "room2",
       "seed": 2,
       "source_only_accuracy": 0.3748326639892905,
       "oracle_fold_accuracies": [
-        0.8244147157190636,
-        0.794314381270903,
-        0.7876254180602007,
+        0.8361204013377926,
+        0.8010033444816054,
+        0.7809364548494984,
         0.8157453936348409,
-        0.7772194304857621
+        0.7788944723618091
       ],
-      "oracle_mean_accuracy": 0.7998638678341541,
-      "oracle_std_accuracy": 0.0196743106006054,
-      "gap_pp": 42.50312038448636
+      "oracle_mean_accuracy": 0.8025400133331093,
+      "oracle_std_accuracy": 0.024136130725521537,
+      "gap_pp": 42.770734934381885
+    },
+    {
+      "room": "room2",
+      "seed": 3,
+      "source_only_accuracy": 0.36211512717536815,
+      "oracle_fold_accuracies": [
+        0.8344481605351171,
+        0.8010033444816054,
+        0.8210702341137124,
+        0.7922948073701842,
+        0.8291457286432161
+      ],
+      "oracle_mean_accuracy": 0.815592455028767,
+      "oracle_std_accuracy": 0.018199295676581545,
+      "gap_pp": 45.347732785339886
+    },
+    {
+      "room": "room2",
+      "seed": 4,
+      "source_only_accuracy": 0.3467202141900937,
+      "oracle_fold_accuracies": [
+        0.8193979933110368,
+        0.7993311036789298,
+        0.7959866220735786,
+        0.8056951423785594,
+        0.8140703517587939
+      ],
+      "oracle_mean_accuracy": 0.8068962426401797,
+      "oracle_std_accuracy": 0.00981650907566879,
+      "gap_pp": 46.0176028450086
     },
     {
       "room": "room1",
       "seed": 0,
       "source_only_accuracy": 0.4139892904953146,
       "oracle_fold_accuracies": [
-        0.47324414715719065,
-        0.4866220735785953,
-        0.4899665551839465,
-        0.49246231155778897,
-        0.47738693467336685
+        0.431438127090301,
+        0.4414715719063545,
+        0.49498327759197325,
+        0.474036850921273,
+        0.45896147403685095
       ],
-      "oracle_mean_accuracy": 0.4839364044301776,
-      "oracle_std_accuracy": 0.008268714363849402,
-      "gap_pp": 6.994711393486303
+      "oracle_mean_accuracy": 0.4601782603093506,
+      "oracle_std_accuracy": 0.025401111093222753,
+      "gap_pp": 4.618896981403603
     },
     {
       "room": "room1",
       "seed": 1,
       "source_only_accuracy": 0.44143239625167335,
       "oracle_fold_accuracies": [
-        0.47324414715719065,
-        0.5050167224080268,
-        0.49498327759197325,
-        0.4623115577889447,
-        0.47906197654941374
+        0.4765886287625418,
+        0.5,
+        0.479933110367893,
+        0.4455611390284757,
+        0.48911222780569513
       ],
-      "oracle_mean_accuracy": 0.48292353629910983,
-      "oracle_std_accuracy": 0.017080706282665236,
-      "gap_pp": 4.149114004743648
+      "oracle_mean_accuracy": 0.47823902119292117,
+      "oracle_std_accuracy": 0.020403458878010105,
+      "gap_pp": 3.680662494124781
     },
     {
       "room": "room1",
@@ -120,44 +155,74 @@
       "source_only_accuracy": 0.4009370816599732,
       "oracle_fold_accuracies": [
         0.4782608695652174,
-        0.47491638795986624,
-        0.46153846153846156,
+        0.4698996655518395,
+        0.4498327759197324,
         0.45226130653266333,
-        0.45896147403685095
+        0.46063651591289784
       ],
-      "oracle_mean_accuracy": 0.4651876999266119,
-      "oracle_std_accuracy": 0.011008287912604072,
-      "gap_pp": 6.425061826663869
+      "oracle_mean_accuracy": 0.4621782266964701,
+      "oracle_std_accuracy": 0.011952032799875821,
+      "gap_pp": 6.124114503649686
+    },
+    {
+      "room": "room1",
+      "seed": 3,
+      "source_only_accuracy": 0.4029451137884873,
+      "oracle_fold_accuracies": [
+        0.48327759197324416,
+        0.48494983277591974,
+        0.479933110367893,
+        0.4355108877721943,
+        0.5008375209380235
+      ],
+      "oracle_mean_accuracy": 0.47690178876545497,
+      "oracle_std_accuracy": 0.024498656847198156,
+      "gap_pp": 7.395667497696767
+    },
+    {
+      "room": "room1",
+      "seed": 4,
+      "source_only_accuracy": 0.42302543507362783,
+      "oracle_fold_accuracies": [
+        0.4331103678929766,
+        0.4698996655518395,
+        0.4414715719063545,
+        0.4472361809045226,
+        0.46901172529313234
+      ],
+      "oracle_mean_accuracy": 0.4521459023097651,
+      "oracle_std_accuracy": 0.01658350353915694,
+      "gap_pp": 2.912046723613726
     },
     {
       "room": "room0",
       "seed": 0,
-      "source_only_accuracy": 0.2971887550200803,
+      "source_only_accuracy": 0.31659973226238286,
       "oracle_fold_accuracies": [
-        0.5551839464882943,
-        0.5501672240802675,
-        0.5351170568561873,
-        0.5577889447236181,
-        0.559463986599665
+        0.5668896321070234,
+        0.5785953177257525,
+        0.5585284280936454,
+        0.5912897822445561,
+        0.576214405360134
       ],
-      "oracle_mean_accuracy": 0.5515442317496064,
-      "oracle_std_accuracy": 0.009832531534302804,
-      "gap_pp": 25.435547672952612
+      "oracle_mean_accuracy": 0.5743035131062222,
+      "oracle_std_accuracy": 0.012393782452932808,
+      "gap_pp": 25.770378084383932
     },
     {
       "room": "room0",
       "seed": 1,
       "source_only_accuracy": 0.3149263721552878,
       "oracle_fold_accuracies": [
-        0.5652173913043478,
-        0.5468227424749164,
-        0.5468227424749164,
-        0.5812395309882747,
-        0.5979899497487438
+        0.5551839464882943,
+        0.560200668896321,
+        0.5568561872909699,
+        0.576214405360134,
+        0.5695142378559463
       ],
-      "oracle_mean_accuracy": 0.5676184713982397,
-      "oracle_std_accuracy": 0.022241008464503133,
-      "gap_pp": 25.269209924295193
+      "oracle_mean_accuracy": 0.5635938891783331,
+      "oracle_std_accuracy": 0.008971700839509048,
+      "gap_pp": 24.86675170230453
     },
     {
       "room": "room0",
@@ -165,23 +230,53 @@
       "source_only_accuracy": 0.2814591700133869,
       "oracle_fold_accuracies": [
         0.5535117056856187,
-        0.5384615384615384,
-        0.5652173913043478,
-        0.5494137353433836,
-        0.5778894472361809
+        0.5418060200668896,
+        0.5735785953177257,
+        0.5812395309882747,
+        0.5979899497487438
       ],
-      "oracle_mean_accuracy": 0.5568987636062138,
-      "oracle_std_accuracy": 0.015142964096584688,
-      "gap_pp": 27.543959359282695
+      "oracle_mean_accuracy": 0.5696251603614505,
+      "oracle_std_accuracy": 0.022297043068054943,
+      "gap_pp": 28.816599034806362
+    },
+    {
+      "room": "room0",
+      "seed": 3,
+      "source_only_accuracy": 0.31057563587684067,
+      "oracle_fold_accuracies": [
+        0.5819397993311036,
+        0.560200668896321,
+        0.560200668896321,
+        0.5393634840871022,
+        0.5209380234505863
+      ],
+      "oracle_mean_accuracy": 0.5525285289322868,
+      "oracle_std_accuracy": 0.023205735993999707,
+      "gap_pp": 24.19528930554461
+    },
+    {
+      "room": "room0",
+      "seed": 4,
+      "source_only_accuracy": 0.30087014725568945,
+      "oracle_fold_accuracies": [
+        0.5,
+        0.5518394648829431,
+        0.5652173913043478,
+        0.52428810720268,
+        0.5644891122278057
+      ],
+      "oracle_mean_accuracy": 0.5411668151235552,
+      "oracle_std_accuracy": 0.02835428829220013,
+      "gap_pp": 24.02966678678658
     }
   ],
   "summary": {
-    "source_only_mean": 0.3615573404730031,
-    "source_only_std": 0.05476567886470619,
-    "oracle_mean": 0.6108519807012269,
-    "oracle_std": 0.1441249790905762,
-    "supervised_gap_pp": 24.929464022822383,
-    "n_room_seed_rows": 9
+    "source_only_mean": 0.36146809460062473,
+    "source_only_std": 0.04915033177604673,
+    "oracle_mean": 0.6100613061591867,
+    "oracle_std": 0.14795064843509198,
+    "supervised_gap_pp": 24.8593211558562,
+    "n_room_seed_rows": 15
   },
-  "elapsed_seconds": 645.5548632380087
+  "elapsed_seconds": 4002.3448803052306
 }

@@ -1,0 +1,60 @@
+{
+  "definition": "severity = in-domain validation accuracy - target accuracy",
+  "protocol": "source-only, leave-one-environment-out x 5 seeds (n=15), primary configuration (10 source epochs, early-stop patience 3)",
+  "results": {
+    "ntufi_har": {
+      "mlp": {
+        "n": 15,
+        "source_train_accuracy": 0.995828397126193,
+        "source_val_accuracy": 0.9284756728778468,
+        "target_accuracy": 0.8423086587265691,
+        "train_to_target_drop_pp": 15.351973839962385,
+        "val_to_target_drop_pp": 8.61670141512777
+      },
+      "mlp_bn": {
+        "n": 15,
+        "source_train_accuracy": 0.999479159049063,
+        "source_val_accuracy": 0.9704658385093168,
+        "target_accuracy": 0.9070606563143876,
+        "train_to_target_drop_pp": 9.241850273467545,
+        "val_to_target_drop_pp": 6.340518219492919
+      }
+    },
+    "signfi_top10": {
+      "mlp": {
+        "n": 15,
+        "source_train_accuracy": 0.3033882783882784,
+        "source_val_accuracy": 0.2510989010989011,
+        "target_accuracy": 0.22603174603174603,
+        "train_to_target_drop_pp": 7.735653235653239,
+        "val_to_target_drop_pp": 2.5067155067155067
+      },
+      "mlp_bn": {
+        "n": 15,
+        "source_train_accuracy": 0.9314102564102564,
+        "source_val_accuracy": 0.645970695970696,
+        "target_accuracy": 0.6733333333333333,
+        "train_to_target_drop_pp": 25.80769230769231,
+        "val_to_target_drop_pp": -2.736263736263733
+      }
+    },
+    "widar_bvp": {
+      "mlp": {
+        "n": 15,
+        "source_train_accuracy": 0.8740725244072524,
+        "source_val_accuracy": 0.5336120401337793,
+        "target_accuracy": 0.3603748326639893,
+        "train_to_target_drop_pp": 51.36976917432631,
+        "val_to_target_drop_pp": 17.323720746979
+      },
+      "mlp_bn": {
+        "n": 15,
+        "source_train_accuracy": 0.9517294281729428,
+        "source_val_accuracy": 0.558082497212932,
+        "target_accuracy": 0.36903168228469435,
+        "train_to_target_drop_pp": 58.26977458882485,
+        "val_to_target_drop_pp": 18.905081492823765
+      }
+    }
+  }
+}

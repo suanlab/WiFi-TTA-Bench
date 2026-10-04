@@ -1,1 +1,422 @@
-[{"bs": 16, "method": "no_adapt", "gain": 0.0}, {"bs": 16, "method": "entropy_tta", "gain": 0.0}, {"bs": 16, "method": "tent", "gain": 0.0}, {"bs": 16, "method": "physics_tta", "gain": 0.0}, {"bs": 16, "method": "selective_physics_tta", "gain": -6.6227383022088304e-09}, {"bs": 32, "method": "no_adapt", "gain": 0.0}, {"bs": 32, "method": "entropy_tta", "gain": 0.0}, {"bs": 32, "method": "tent", "gain": 0.0}, {"bs": 32, "method": "physics_tta", "gain": 0.0}, {"bs": 32, "method": "selective_physics_tta", "gain": -6.6227383022088304e-09}, {"bs": 64, "method": "no_adapt", "gain": 0.0}, {"bs": 64, "method": "entropy_tta", "gain": 0.0}, {"bs": 64, "method": "tent", "gain": 0.0}, {"bs": 64, "method": "physics_tta", "gain": 0.0}, {"bs": 64, "method": "selective_physics_tta", "gain": -6.6227383022088304e-09}, {"bs": 128, "method": "no_adapt", "gain": 0.0}, {"bs": 128, "method": "entropy_tta", "gain": 0.0}, {"bs": 128, "method": "tent", "gain": 0.0}, {"bs": 128, "method": "physics_tta", "gain": 0.0}, {"bs": 128, "method": "selective_physics_tta", "gain": -6.6227383022088304e-09}]
+[
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 0,
+    "method": "no_adapt",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 0,
+    "method": "entropy_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 0,
+    "method": "tent",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 0,
+    "method": "physics_tta",
+    "gain": 0.27777777777777773
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 0,
+    "method": "selective_physics_tta",
+    "gain": -6.6227383022088304e-09
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 1,
+    "method": "no_adapt",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 1,
+    "method": "entropy_tta",
+    "gain": -0.3333333333333333
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 1,
+    "method": "tent",
+    "gain": 0.02777777777777779
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 1,
+    "method": "physics_tta",
+    "gain": 0.02777777777777779
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 1,
+    "method": "selective_physics_tta",
+    "gain": 0.02777777777777779
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 2,
+    "method": "no_adapt",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 2,
+    "method": "entropy_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 2,
+    "method": "tent",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 2,
+    "method": "physics_tta",
+    "gain": 0.3333333333333333
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 16,
+    "seed": 2,
+    "method": "selective_physics_tta",
+    "gain": 0.16666666666666669
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 0,
+    "method": "no_adapt",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 0,
+    "method": "entropy_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 0,
+    "method": "tent",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 0,
+    "method": "physics_tta",
+    "gain": 0.3055555555555555
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 0,
+    "method": "selective_physics_tta",
+    "gain": -6.6227383022088304e-09
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 1,
+    "method": "no_adapt",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 1,
+    "method": "entropy_tta",
+    "gain": -0.05555555555555558
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 1,
+    "method": "tent",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 1,
+    "method": "physics_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 1,
+    "method": "selective_physics_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 2,
+    "method": "no_adapt",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 2,
+    "method": "entropy_tta",
+    "gain": -0.3333333333333333
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 2,
+    "method": "tent",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 2,
+    "method": "physics_tta",
+    "gain": -0.3333333333333333
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 32,
+    "seed": 2,
+    "method": "selective_physics_tta",
+    "gain": 1.9868214962137642e-08
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 0,
+    "method": "no_adapt",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 0,
+    "method": "entropy_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 0,
+    "method": "tent",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 0,
+    "method": "physics_tta",
+    "gain": 0.3055555555555555
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 0,
+    "method": "selective_physics_tta",
+    "gain": 0.027777784400516092
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 1,
+    "method": "no_adapt",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 1,
+    "method": "entropy_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 1,
+    "method": "tent",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 1,
+    "method": "physics_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 1,
+    "method": "selective_physics_tta",
+    "gain": -6.6227383022088304e-09
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 2,
+    "method": "no_adapt",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 2,
+    "method": "entropy_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 2,
+    "method": "tent",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 2,
+    "method": "physics_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 64,
+    "seed": 2,
+    "method": "selective_physics_tta",
+    "gain": 9.934107481068821e-09
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 0,
+    "method": "no_adapt",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 0,
+    "method": "entropy_tta",
+    "gain": -0.36111111111111105
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 0,
+    "method": "tent",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 0,
+    "method": "physics_tta",
+    "gain": -0.16666666666666663
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 0,
+    "method": "selective_physics_tta",
+    "gain": 1.9868214962137642e-08
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 1,
+    "method": "no_adapt",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 1,
+    "method": "entropy_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 1,
+    "method": "tent",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 1,
+    "method": "physics_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 1,
+    "method": "selective_physics_tta",
+    "gain": -6.6227383022088304e-09
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 2,
+    "method": "no_adapt",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 2,
+    "method": "entropy_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 2,
+    "method": "tent",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 2,
+    "method": "physics_tta",
+    "gain": 0.0
+  },
+  {
+    "ablation": "batch_size",
+    "batch_size": 128,
+    "seed": 2,
+    "method": "selective_physics_tta",
+    "gain": 9.934107481068821e-09
+  }
+]

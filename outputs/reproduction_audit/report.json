@@ -1,0 +1,1683 @@
+{
+  "backbone_breadth/ntufi_har_resnet2d.json": {
+    "compared": 2633,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "backbone_breadth/ntufi_har_resnet2d.json",
+    "status": "identical"
+  },
+  "backbone_breadth/ntufi_har_resnet2d_gn.json": {
+    "compared": 2633,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "backbone_breadth/ntufi_har_resnet2d_gn.json",
+    "status": "identical"
+  },
+  "backbone_breadth/ntufi_har_transformer.json": {
+    "compared": 2633,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "backbone_breadth/ntufi_har_transformer.json",
+    "status": "identical"
+  },
+  "backbone_breadth/signfi_top10_resnet2d.json": {
+    "compared": 2633,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "backbone_breadth/signfi_top10_resnet2d.json",
+    "status": "identical"
+  },
+  "backbone_breadth/signfi_top10_resnet2d_gn.json": {
+    "compared": 2633,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "backbone_breadth/signfi_top10_resnet2d_gn.json",
+    "status": "identical"
+  },
+  "backbone_breadth/signfi_top10_transformer.json": {
+    "compared": 2633,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "backbone_breadth/signfi_top10_transformer.json",
+    "status": "identical"
+  },
+  "backbone_breadth/widar_bvp_resnet2d.json": {
+    "compared": 2633,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "backbone_breadth/widar_bvp_resnet2d.json",
+    "status": "identical"
+  },
+  "backbone_breadth/widar_bvp_resnet2d_gn.json": {
+    "compared": 2633,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "backbone_breadth/widar_bvp_resnet2d_gn.json",
+    "status": "identical"
+  },
+  "backbone_breadth/widar_bvp_transformer.json": {
+    "compared": 2633,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "backbone_breadth/widar_bvp_transformer.json",
+    "status": "identical"
+  },
+  "collapse_guard_generality/widar_sar_cotta.json": {
+    "compared": 419,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_generality/widar_sar_cotta.json",
+    "status": "identical"
+  },
+  "collapse_guard_signfi_tent/signfi_top10_lame_sar_cotta.json": {
+    "compared": 21,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_signfi_tent/signfi_top10_lame_sar_cotta.json",
+    "status": "identical"
+  },
+  "collapse_guard_signfi_tent/signfi_top10_lame_sar_cotta_full.json": {
+    "compared": 296,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_signfi_tent/signfi_top10_lame_sar_cotta_full.json",
+    "status": "identical"
+  },
+  "collapse_guard_sweep/ratio_0.5.json": {
+    "compared": 345,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_sweep/ratio_0.5.json",
+    "status": "identical"
+  },
+  "collapse_guard_sweep/ratio_0.7.json": {
+    "compared": 345,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_sweep/ratio_0.7.json",
+    "status": "identical"
+  },
+  "collapse_guard_sweep/ratio_0.8.json": {
+    "compared": 345,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_sweep/ratio_0.8.json",
+    "status": "identical"
+  },
+  "collapse_guard_sweep/ratio_0.9.json": {
+    "compared": 345,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_sweep/ratio_0.9.json",
+    "status": "identical"
+  },
+  "collapse_guard_sweep/ratio_0.95.json": {
+    "compared": 345,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_sweep/ratio_0.95.json",
+    "status": "identical"
+  },
+  "collapse_guard_sweep/ratio_1.0.json": {
+    "compared": 345,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_sweep/ratio_1.0.json",
+    "status": "identical"
+  },
+  "collapse_guard_sweep/superseded_2026-07-29/ratio_0.5.json": {
+    "compared": 173,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_sweep/superseded_2026-07-29/ratio_0.5.json",
+    "status": "identical"
+  },
+  "collapse_guard_sweep/superseded_2026-07-29/ratio_0.7.json": {
+    "compared": 173,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_sweep/superseded_2026-07-29/ratio_0.7.json",
+    "status": "identical"
+  },
+  "collapse_guard_sweep/superseded_2026-07-29/ratio_0.8.json": {
+    "compared": 173,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_sweep/superseded_2026-07-29/ratio_0.8.json",
+    "status": "identical"
+  },
+  "collapse_guard_sweep/superseded_2026-07-29/ratio_0.9.json": {
+    "compared": 173,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_sweep/superseded_2026-07-29/ratio_0.9.json",
+    "status": "identical"
+  },
+  "collapse_guard_sweep/superseded_2026-07-29/ratio_0.95.json": {
+    "compared": 173,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_sweep/superseded_2026-07-29/ratio_0.95.json",
+    "status": "identical"
+  },
+  "collapse_guard_sweep/superseded_2026-07-29/ratio_1.0.json": {
+    "compared": 173,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "collapse_guard_sweep/superseded_2026-07-29/ratio_1.0.json",
+    "status": "identical"
+  },
+  "coverage/cross_dataset_spearman.json": {
+    "compared": 41,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "coverage/cross_dataset_spearman.json",
+    "status": "identical"
+  },
+  "coverage/method_coverage_matrix.json": {
+    "compared": 3,
+    "differing": 1,
+    "largest": [
+      {
+        "abs_diff": 1.0,
+        "baseline": 11.0,
+        "field": "/totals/ntufi_har",
+        "reproduction": 10.0
+      }
+    ],
+    "max_abs_diff": 1.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "coverage/method_coverage_matrix.json",
+    "status": "differs"
+  },
+  "croissant/wifi_tta_bench_metadata.json": {
+    "compared": 0,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "croissant/wifi_tta_bench_metadata.json",
+    "status": "identical"
+  },
+  "cross_physics/regime_results.json": {
+    "compared": 100,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "cross_physics/regime_results.json",
+    "status": "identical"
+  },
+  "db_ablations/architecture_3way.json": {
+    "compared": 24,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "db_ablations/architecture_3way.json",
+    "status": "identical"
+  },
+  "db_ablations/architecture_ablation.json": {
+    "compared": 10,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "db_ablations/architecture_ablation.json",
+    "status": "identical"
+  },
+  "db_ablations/architecture_optimized.json": {
+    "compared": 14,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "db_ablations/architecture_optimized.json",
+    "status": "identical"
+  },
+  "db_ablations/architecture_real_widar.json": {
+    "compared": 10,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "db_ablations/architecture_real_widar.json",
+    "status": "identical"
+  },
+  "db_ablations/baseline_accuracies.json": {
+    "compared": 2,
+    "differing": 2,
+    "largest": [
+      {
+        "abs_diff": 0.17198839137645117,
+        "baseline": 0.697,
+        "field": "/ntufi_har/target",
+        "reproduction": 0.8689883913764511
+      },
+      {
+        "abs_diff": 0.015570281124497987,
+        "baseline": 0.373,
+        "field": "/widar_bvp/target",
+        "reproduction": 0.357429718875502
+      }
+    ],
+    "max_abs_diff": 0.17198839137645117,
+    "only_in_baseline": 4,
+    "only_in_reproduction": 4,
+    "reproduction_path": "db_ablations/baseline_accuracies.json",
+    "status": "differs"
+  },
+  "db_ablations/batch_size.json": {
+    "compared": 20,
+    "differing": 8,
+    "largest": [
+      {
+        "abs_diff": 0.3333333333333333,
+        "baseline": 0.0,
+        "field": "[13]/gain",
+        "reproduction": 0.3333333333333333
+      },
+      {
+        "abs_diff": 0.3333333333333333,
+        "baseline": 0.0,
+        "field": "[6]/gain",
+        "reproduction": -0.3333333333333333
+      },
+      {
+        "abs_diff": 0.3055555555555555,
+        "baseline": 0.0,
+        "field": "[18]/gain",
+        "reproduction": 0.3055555555555555
+      },
+      {
+        "abs_diff": 0.27777777777777773,
+        "baseline": 0.0,
+        "field": "[3]/gain",
+        "reproduction": 0.27777777777777773
+      },
+      {
+        "abs_diff": 0.166666673289405,
+        "baseline": -6.6227383022088304e-09,
+        "field": "[14]/gain",
+        "reproduction": 0.16666666666666669
+      },
+      {
+        "abs_diff": 0.027777784400516092,
+        "baseline": -6.6227383022088304e-09,
+        "field": "[9]/gain",
+        "reproduction": 0.02777777777777779
+      },
+      {
+        "abs_diff": 0.02777777777777779,
+        "baseline": 0.0,
+        "field": "[7]/gain",
+        "reproduction": 0.02777777777777779
+      },
+      {
+        "abs_diff": 0.02777777777777779,
+        "baseline": 0.0,
+        "field": "[8]/gain",
+        "reproduction": 0.02777777777777779
+      }
+    ],
+    "max_abs_diff": 0.3333333333333333,
+    "only_in_baseline": 20,
+    "only_in_reproduction": 160,
+    "reproduction_path": "db_ablations/batch_size.json",
+    "status": "differs"
+  },
+  "db_ablations/step_budget.json": {
+    "compared": 40,
+    "differing": 31,
+    "largest": [
+      {
+        "abs_diff": 7.0,
+        "baseline": 10.0,
+        "field": "[15]/steps",
+        "reproduction": 3.0
+      },
+      {
+        "abs_diff": 7.0,
+        "baseline": 10.0,
+        "field": "[16]/steps",
+        "reproduction": 3.0
+      },
+      {
+        "abs_diff": 7.0,
+        "baseline": 10.0,
+        "field": "[17]/steps",
+        "reproduction": 3.0
+      },
+      {
+        "abs_diff": 7.0,
+        "baseline": 10.0,
+        "field": "[18]/steps",
+        "reproduction": 3.0
+      },
+      {
+        "abs_diff": 7.0,
+        "baseline": 10.0,
+        "field": "[19]/steps",
+        "reproduction": 3.0
+      },
+      {
+        "abs_diff": 4.0,
+        "baseline": 5.0,
+        "field": "[10]/steps",
+        "reproduction": 1.0
+      },
+      {
+        "abs_diff": 4.0,
+        "baseline": 5.0,
+        "field": "[11]/steps",
+        "reproduction": 1.0
+      },
+      {
+        "abs_diff": 4.0,
+        "baseline": 5.0,
+        "field": "[12]/steps",
+        "reproduction": 1.0
+      }
+    ],
+    "max_abs_diff": 7.0,
+    "only_in_baseline": 20,
+    "only_in_reproduction": 200,
+    "reproduction_path": "db_ablations/step_budget.json",
+    "status": "differs"
+  },
+  "deployment_rule/predictors.json": {
+    "compared": 652,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "deployment_rule/predictors.json",
+    "status": "identical"
+  },
+  "deployment_rule/rule.json": {
+    "compared": 83,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "deployment_rule/rule.json",
+    "status": "identical"
+  },
+  "deployment_rule/signfi_cnn1d/signfi_top10_lame_sar_cotta.json": {
+    "compared": 14,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "deployment_rule/signfi_cnn1d/signfi_top10_lame_sar_cotta.json",
+    "status": "identical"
+  },
+  "deployment_rule/signfi_cnn1d/signfi_top10_lame_sar_cotta_full.json": {
+    "compared": 207,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "deployment_rule/signfi_cnn1d/signfi_top10_lame_sar_cotta_full.json",
+    "status": "identical"
+  },
+  "deployment_rule/signfi_mlp/signfi_top10_lame_sar_cotta.json": {
+    "compared": 14,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "deployment_rule/signfi_mlp/signfi_top10_lame_sar_cotta.json",
+    "status": "identical"
+  },
+  "deployment_rule/signfi_mlp/signfi_top10_lame_sar_cotta_full.json": {
+    "compared": 207,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "deployment_rule/signfi_mlp/signfi_top10_lame_sar_cotta_full.json",
+    "status": "identical"
+  },
+  "final_ablations/arch_ablation_n15.json": {
+    "compared": 34,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "final_ablations/arch_ablation_n15.json",
+    "status": "identical"
+  },
+  "final_ablations/collapse_guard_widar.json": {
+    "compared": 337,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "final_ablations/collapse_guard_widar.json",
+    "status": "identical"
+  },
+  "final_ablations/label_smoothing_all.json": {
+    "compared": 51,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "final_ablations/label_smoothing_all.json",
+    "status": "identical"
+  },
+  "final_ablations/selective_threshold_widar.json": {
+    "compared": 2554,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "final_ablations/selective_threshold_widar.json",
+    "status": "identical"
+  },
+  "final_ablations/selective_threshold_widar_main_protocol.json": {
+    "compared": 2247,
+    "differing": 1267,
+    "largest": [
+      {
+        "abs_diff": 0.33333333333333337,
+        "baseline": 0.13333333333333333,
+        "field": "/summary[8]/negative_adaptation_rate",
+        "reproduction": 0.4666666666666667
+      },
+      {
+        "abs_diff": 0.26666666666666666,
+        "baseline": 0.2,
+        "field": "/summary[0]/negative_adaptation_rate",
+        "reproduction": 0.4666666666666667
+      },
+      {
+        "abs_diff": 0.26666666666666666,
+        "baseline": 0.3333333333333333,
+        "field": "/summary[5]/negative_adaptation_rate",
+        "reproduction": 0.6
+      },
+      {
+        "abs_diff": 0.26666666666666666,
+        "baseline": 0.3333333333333333,
+        "field": "/summary[9]/negative_adaptation_rate",
+        "reproduction": 0.6
+      },
+      {
+        "abs_diff": 0.2,
+        "baseline": 0.26666666666666666,
+        "field": "/summary[12]/negative_adaptation_rate",
+        "reproduction": 0.4666666666666667
+      },
+      {
+        "abs_diff": 0.2,
+        "baseline": 0.3333333333333333,
+        "field": "/summary[13]/negative_adaptation_rate",
+        "reproduction": 0.5333333333333333
+      },
+      {
+        "abs_diff": 0.2,
+        "baseline": 0.26666666666666666,
+        "field": "/summary[17]/negative_adaptation_rate",
+        "reproduction": 0.4666666666666667
+      },
+      {
+        "abs_diff": 0.2,
+        "baseline": 0.2,
+        "field": "/summary[4]/negative_adaptation_rate",
+        "reproduction": 0.4
+      }
+    ],
+    "max_abs_diff": 0.33333333333333337,
+    "only_in_baseline": 309,
+    "only_in_reproduction": 9,
+    "reproduction_path": "final_ablations/selective_threshold_widar_main_protocol.json",
+    "status": "differs"
+  },
+  "final_ablations/superseded_2026-04/arch_ablation_with_ci.json": {
+    "compared": 1245,
+    "differing": 709,
+    "largest": [
+      {
+        "abs_diff": 0.6930133700370789,
+        "baseline": -0.017042994499206543,
+        "field": "/summary/mlp_bn/tent/cohens_d_vs_noadapt",
+        "reproduction": -0.7100563645362854
+      },
+      {
+        "abs_diff": 0.6665363907814026,
+        "baseline": -0.3928413987159729,
+        "field": "/summary/mlp_bn/entropy_tta/cohens_d_vs_noadapt",
+        "reproduction": -1.0593777894973755
+      },
+      {
+        "abs_diff": 0.5017062425613403,
+        "baseline": -0.16144955158233643,
+        "field": "/summary/cnn1d/physics_tta/cohens_d_vs_noadapt",
+        "reproduction": -0.6631557941436768
+      },
+      {
+        "abs_diff": 0.4900344694033265,
+        "baseline": -0.012051216326653957,
+        "field": "/summary/mlp_bn/tent/paired_d_vs_noadapt",
+        "reproduction": -0.5020856857299805
+      },
+      {
+        "abs_diff": 0.47131240367889404,
+        "baseline": -0.27778083086013794,
+        "field": "/summary/mlp_bn/entropy_tta/paired_d_vs_noadapt",
+        "reproduction": -0.749093234539032
+      },
+      {
+        "abs_diff": 0.35475993901491165,
+        "baseline": -0.11416207998991013,
+        "field": "/summary/cnn1d/physics_tta/paired_d_vs_noadapt",
+        "reproduction": -0.4689220190048218
+      },
+      {
+        "abs_diff": 0.29507100209593773,
+        "baseline": 0.02733924612402916,
+        "field": "/summary/cnn1d/selective_physics_tta/cohens_d_vs_noadapt",
+        "reproduction": -0.26773175597190857
+      },
+      {
+        "abs_diff": 0.28157728910446167,
+        "baseline": -0.026225775480270386,
+        "field": "/summary/mlp/tent/cohens_d_vs_noadapt",
+        "reproduction": -0.30780306458473206
+      }
+    ],
+    "max_abs_diff": 0.6930133700370789,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 450,
+    "reproduction_path": "final_ablations/arch_ablation_with_ci.json",
+    "status": "differs"
+  },
+  "final_ablations/superseded_2026-04/mlpbn_other_datasets.json": {
+    "status": "not-reproduced"
+  },
+  "guard_backbone/ntufi_cnn1d/ntufi_har_lame_sar_cotta.json": {
+    "compared": 21,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "guard_backbone/ntufi_cnn1d/ntufi_har_lame_sar_cotta.json",
+    "status": "identical"
+  },
+  "guard_backbone/ntufi_cnn1d/ntufi_har_lame_sar_cotta_full.json": {
+    "compared": 297,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "guard_backbone/ntufi_cnn1d/ntufi_har_lame_sar_cotta_full.json",
+    "status": "identical"
+  },
+  "guard_backbone/ntufi_mlp_bn/ntufi_har_lame_sar_cotta.json": {
+    "compared": 21,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "guard_backbone/ntufi_mlp_bn/ntufi_har_lame_sar_cotta.json",
+    "status": "identical"
+  },
+  "guard_backbone/ntufi_mlp_bn/ntufi_har_lame_sar_cotta_full.json": {
+    "compared": 297,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "guard_backbone/ntufi_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+    "status": "identical"
+  },
+  "guard_backbone/signfi_cnn1d/signfi_top10_lame_sar_cotta.json": {
+    "compared": 21,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "guard_backbone/signfi_cnn1d/signfi_top10_lame_sar_cotta.json",
+    "status": "identical"
+  },
+  "guard_backbone/signfi_cnn1d/signfi_top10_lame_sar_cotta_full.json": {
+    "compared": 297,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "guard_backbone/signfi_cnn1d/signfi_top10_lame_sar_cotta_full.json",
+    "status": "identical"
+  },
+  "guard_backbone/signfi_mlp/signfi_top10_lame_sar_cotta.json": {
+    "compared": 21,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "guard_backbone/signfi_mlp/signfi_top10_lame_sar_cotta.json",
+    "status": "identical"
+  },
+  "guard_backbone/signfi_mlp/signfi_top10_lame_sar_cotta_full.json": {
+    "compared": 297,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "guard_backbone/signfi_mlp/signfi_top10_lame_sar_cotta_full.json",
+    "status": "identical"
+  },
+  "guard_backbone/signfi_mlp_bn/signfi_top10_lame_sar_cotta.json": {
+    "compared": 21,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "guard_backbone/signfi_mlp_bn/signfi_top10_lame_sar_cotta.json",
+    "status": "identical"
+  },
+  "guard_backbone/signfi_mlp_bn/signfi_top10_lame_sar_cotta_full.json": {
+    "compared": 387,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "guard_backbone/signfi_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+    "status": "identical"
+  },
+  "guard_backbone/widar_3backbone.json": {
+    "compared": 1023,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "guard_backbone/widar_3backbone.json",
+    "status": "identical"
+  },
+  "guard_coverage/guard_coverage.json": {
+    "compared": 185,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "guard_coverage/guard_coverage.json",
+    "status": "identical"
+  },
+  "leakage_audit/split_leakage.json": {
+    "compared": 147,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "leakage_audit/split_leakage.json",
+    "status": "identical"
+  },
+  "new_methods/superseded_2026-05-04/ntufi_har_lame_sar_cotta.json": {
+    "compared": 28,
+    "differing": 10,
+    "largest": [
+      {
+        "abs_diff": 0.13959860801696777,
+        "baseline": -3.3916876316070557,
+        "field": "/sar/cohens_d_vs_noadapt",
+        "reproduction": -3.5312862396240234
+      },
+      {
+        "abs_diff": 0.09871101379394531,
+        "baseline": -2.398285388946533,
+        "field": "/sar/paired_d_vs_noadapt",
+        "reproduction": -2.4969964027404785
+      },
+      {
+        "abs_diff": 0.026800155639648438,
+        "baseline": -3.856679916381836,
+        "field": "/cotta/cohens_d_vs_noadapt",
+        "reproduction": -3.8834800720214844
+      },
+      {
+        "abs_diff": 0.018950700759887695,
+        "baseline": -2.7270843982696533,
+        "field": "/cotta/paired_d_vs_noadapt",
+        "reproduction": -2.746035099029541
+      },
+      {
+        "abs_diff": 0.011292040348052979,
+        "baseline": -0.2070607841014862,
+        "field": "/cotta/ci_lower",
+        "reproduction": -0.21835282444953918
+      },
+      {
+        "abs_diff": 0.010090947151184082,
+        "baseline": -0.17668728530406952,
+        "field": "/cotta/mean_gain",
+        "reproduction": -0.1867782324552536
+      },
+      {
+        "abs_diff": 0.008014574646949768,
+        "baseline": -0.14461030066013336,
+        "field": "/cotta/ci_upper",
+        "reproduction": -0.15262487530708313
+      },
+      {
+        "abs_diff": 0.006344318389892578,
+        "baseline": -0.14178359508514404,
+        "field": "/sar/ci_upper",
+        "reproduction": -0.14812791347503662
+      }
+    ],
+    "max_abs_diff": 0.13959860801696777,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "new_methods/ntufi_har_lame_sar_cotta.json",
+    "status": "differs"
+  },
+  "new_methods/superseded_2026-05-04/ntufi_har_lame_sar_cotta_full.json": {
+    "compared": 384,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "new_methods/superseded_2026-05-04/ntufi_har_lame_sar_cotta_full.json",
+    "status": "identical"
+  },
+  "new_methods/superseded_2026-05-04/signfi_top10_lame_sar_cotta.json": {
+    "compared": 28,
+    "differing": 10,
+    "largest": [
+      {
+        "abs_diff": 0.16989481449127197,
+        "baseline": -1.4290752410888672,
+        "field": "/sar/cohens_d_vs_noadapt",
+        "reproduction": -1.5989700555801392
+      },
+      {
+        "abs_diff": 0.16882336139678955,
+        "baseline": -1.4744940996170044,
+        "field": "/cotta/cohens_d_vs_noadapt",
+        "reproduction": -1.643317461013794
+      },
+      {
+        "abs_diff": 0.12013375759124756,
+        "baseline": -1.0105087757110596,
+        "field": "/sar/paired_d_vs_noadapt",
+        "reproduction": -1.1306425333023071
+      },
+      {
+        "abs_diff": 0.11937606334686279,
+        "baseline": -1.042624831199646,
+        "field": "/cotta/paired_d_vs_noadapt",
+        "reproduction": -1.1620008945465088
+      },
+      {
+        "abs_diff": 0.0158730149269104,
+        "baseline": -0.179047629237175,
+        "field": "/sar/ci_lower",
+        "reproduction": -0.1631746143102646
+      },
+      {
+        "abs_diff": 0.012380942702293396,
+        "baseline": -0.18317462503910065,
+        "field": "/cotta/ci_lower",
+        "reproduction": -0.17079368233680725
+      },
+      {
+        "abs_diff": 0.005714289844036102,
+        "baseline": -0.11809524148702621,
+        "field": "/sar/mean_gain",
+        "reproduction": -0.11238095164299011
+      },
+      {
+        "abs_diff": 0.003809526562690735,
+        "baseline": -0.12380953133106232,
+        "field": "/cotta/mean_gain",
+        "reproduction": -0.12000000476837158
+      }
+    ],
+    "max_abs_diff": 0.16989481449127197,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "new_methods/signfi_top10_lame_sar_cotta.json",
+    "status": "differs"
+  },
+  "new_methods/superseded_2026-05-04/signfi_top10_lame_sar_cotta_full.json": {
+    "compared": 384,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "new_methods/superseded_2026-05-04/signfi_top10_lame_sar_cotta_full.json",
+    "status": "identical"
+  },
+  "new_methods/superseded_2026-05-04/widar_lame_sar_cotta.json": {
+    "compared": 16,
+    "differing": 7,
+    "largest": [
+      {
+        "abs_diff": 0.13333332538604736,
+        "baseline": 0.800000011920929,
+        "field": "/cotta/negative_adaptation_rate",
+        "reproduction": 0.9333333373069763
+      },
+      {
+        "abs_diff": 0.015975002199411392,
+        "baseline": -0.05430497229099274,
+        "field": "/sar/ci_upper",
+        "reproduction": -0.038329970091581345
+      },
+      {
+        "abs_diff": 0.014904070645570755,
+        "baseline": -0.07621598243713379,
+        "field": "/sar/mean_gain",
+        "reproduction": -0.061311911791563034
+      },
+      {
+        "abs_diff": 0.014233589172363281,
+        "baseline": -0.09861668199300766,
+        "field": "/sar/ci_lower",
+        "reproduction": -0.08438309282064438
+      },
+      {
+        "abs_diff": 0.005712859332561493,
+        "baseline": -0.09420014172792435,
+        "field": "/cotta/ci_lower",
+        "reproduction": -0.08848728239536285
+      },
+      {
+        "abs_diff": 0.005445130169391632,
+        "baseline": -0.037837982177734375,
+        "field": "/cotta/ci_upper",
+        "reproduction": -0.04328311234712601
+      },
+      {
+        "abs_diff": 8.924305438995361e-05,
+        "baseline": -0.06577420979738235,
+        "field": "/cotta/mean_gain",
+        "reproduction": -0.06586345285177231
+      }
+    ],
+    "max_abs_diff": 0.13333332538604736,
+    "only_in_baseline": 4,
+    "only_in_reproduction": 12,
+    "reproduction_path": "new_methods/widar_bvp_lame_sar_cotta.json",
+    "status": "differs"
+  },
+  "new_methods/superseded_2026-05-04/widar_mlpbn_faithful_sar_cotta.json": {
+    "compared": 28,
+    "differing": 17,
+    "largest": [
+      {
+        "abs_diff": 0.8387980461120605,
+        "baseline": -0.017042994499206543,
+        "field": "/tent/cohens_d_vs_noadapt",
+        "reproduction": -0.8558410406112671
+      },
+      {
+        "abs_diff": 0.593119808472693,
+        "baseline": -0.012051216326653957,
+        "field": "/tent/paired_d_vs_noadapt",
+        "reproduction": -0.6051710247993469
+      },
+      {
+        "abs_diff": 0.49359388649463654,
+        "baseline": -0.18602876365184784,
+        "field": "/sar/cohens_d_vs_noadapt",
+        "reproduction": -0.6796226501464844
+      },
+      {
+        "abs_diff": 0.3490235507488251,
+        "baseline": -0.13154220581054688,
+        "field": "/sar/paired_d_vs_noadapt",
+        "reproduction": -0.48056575655937195
+      },
+      {
+        "abs_diff": 0.20000001788139343,
+        "baseline": 0.46666666865348816,
+        "field": "/tent/negative_adaptation_rate",
+        "reproduction": 0.6666666865348816
+      },
+      {
+        "abs_diff": 0.1674395203590393,
+        "baseline": -0.547815203666687,
+        "field": "/cotta/cohens_d_vs_noadapt",
+        "reproduction": -0.7152547240257263
+      },
+      {
+        "abs_diff": 0.11839762330055237,
+        "baseline": -0.38736382126808167,
+        "field": "/cotta/paired_d_vs_noadapt",
+        "reproduction": -0.505761444568634
+      },
+      {
+        "abs_diff": 0.06666666269302368,
+        "baseline": 0.7333333492279053,
+        "field": "/cotta/negative_adaptation_rate",
+        "reproduction": 0.800000011920929
+      }
+    ],
+    "max_abs_diff": 0.8387980461120605,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "new_methods/widar_mlpbn_faithful_sar_cotta.json",
+    "status": "differs"
+  },
+  "new_methods/superseded_2026-05-04/widar_mlpbn_faithful_sar_cotta_full.json": {
+    "compared": 360,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "new_methods/superseded_2026-05-04/widar_mlpbn_faithful_sar_cotta_full.json",
+    "status": "identical"
+  },
+  "ntufi_tta/method_summary.json": {
+    "compared": 32,
+    "differing": 13,
+    "largest": [
+      {
+        "abs_diff": 0.0015799850225448608,
+        "baseline": -0.2202448695898056,
+        "field": "/t3a/ci_lower",
+        "reproduction": -0.21866488456726074
+      },
+      {
+        "abs_diff": 0.0010705292224884033,
+        "baseline": -0.040062315762043,
+        "field": "/shot/ci_upper",
+        "reproduction": -0.038991786539554596
+      },
+      {
+        "abs_diff": 0.0009964276105165482,
+        "baseline": -0.02045818790793419,
+        "field": "/safe_physics_tta/ci_upper",
+        "reproduction": -0.01946176029741764
+      },
+      {
+        "abs_diff": 0.0009749159216880798,
+        "baseline": -0.03867480158805847,
+        "field": "/physics_tta/ci_upper",
+        "reproduction": -0.03964971750974655
+      },
+      {
+        "abs_diff": 0.0009306222200393677,
+        "baseline": -0.15056009590625763,
+        "field": "/entropy_tta/ci_upper",
+        "reproduction": -0.14962947368621826
+      },
+      {
+        "abs_diff": 0.0007231459021568298,
+        "baseline": -0.06517914682626724,
+        "field": "/safe_physics_tta/ci_lower",
+        "reproduction": -0.06445600092411041
+      },
+      {
+        "abs_diff": 0.0006927251815795898,
+        "baseline": -0.15337881445884705,
+        "field": "/t3a/ci_upper",
+        "reproduction": -0.15407153964042664
+      },
+      {
+        "abs_diff": 0.00035503506660461426,
+        "baseline": -0.22803859412670135,
+        "field": "/entropy_tta/ci_lower",
+        "reproduction": -0.22839362919330597
+      }
+    ],
+    "max_abs_diff": 0.0015799850225448608,
+    "only_in_baseline": 8,
+    "only_in_reproduction": 24,
+    "reproduction_path": "core_regen/ntufi_har_lame_sar_cotta.json",
+    "status": "differs"
+  },
+  "overconfidence/ntufi_har_per_class.json": {
+    "compared": 310,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "overconfidence/ntufi_har_per_class.json",
+    "status": "identical"
+  },
+  "overconfidence/signfi_top10_per_class.json": {
+    "compared": 506,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "overconfidence/signfi_top10_per_class.json",
+    "status": "identical"
+  },
+  "overconfidence/widar_bvp_per_class.json": {
+    "compared": 310,
+    "differing": 192,
+    "largest": [
+      {
+        "abs_diff": 0.48173025250434875,
+        "baseline": 0.8750154376029968,
+        "field": "/per_run[1]/class_confidence[4]",
+        "reproduction": 0.39328518509864807
+      },
+      {
+        "abs_diff": 0.48036208748817444,
+        "baseline": 0.8704432249069214,
+        "field": "/per_run[1]/class_confidence[1]",
+        "reproduction": 0.39008113741874695
+      },
+      {
+        "abs_diff": 0.4544564485549927,
+        "baseline": 0.8574356436729431,
+        "field": "/per_run[1]/class_confidence[5]",
+        "reproduction": 0.40297919511795044
+      },
+      {
+        "abs_diff": 0.427337646484375,
+        "baseline": 0.8751290440559387,
+        "field": "/per_run[1]/class_confidence[3]",
+        "reproduction": 0.4477913975715637
+      },
+      {
+        "abs_diff": 0.403225839138031,
+        "baseline": 0.6653226017951965,
+        "field": "/per_run[12]/class_accuracy[5]",
+        "reproduction": 0.2620967626571655
+      },
+      {
+        "abs_diff": 0.3785850405693054,
+        "baseline": 0.9231236577033997,
+        "field": "/per_run[1]/class_confidence[0]",
+        "reproduction": 0.5445386171340942
+      },
+      {
+        "abs_diff": 0.30745023488998413,
+        "baseline": 0.5911012291908264,
+        "field": "/per_run[5]/class_confidence[4]",
+        "reproduction": 0.8985514640808105
+      },
+      {
+        "abs_diff": 0.30498218536376953,
+        "baseline": 0.5764108300209045,
+        "field": "/per_run[2]/class_confidence[1]",
+        "reproduction": 0.8813930153846741
+      }
+    ],
+    "max_abs_diff": 0.48173025250434875,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "overconfidence/widar_bvp_per_class.json",
+    "status": "differs"
+  },
+  "overconfidence/widar_per_class.json": {
+    "compared": 310,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "overconfidence/widar_per_class.json",
+    "status": "identical"
+  },
+  "phase1/superseded_2026-05-04/faithful_tent_results.json": {
+    "compared": 0,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 40,
+    "only_in_reproduction": 1132,
+    "reproduction_path": "phase1/faithful_tent_results.json",
+    "status": "identical"
+  },
+  "phase2/upper_bound.json": {
+    "compared": 124,
+    "differing": 90,
+    "largest": [
+      {
+        "abs_diff": 41.868488840264945,
+        "baseline": 4.149114004743648,
+        "field": "/rows[4]/gap_pp",
+        "reproduction": 46.0176028450086
+      },
+      {
+        "abs_diff": 38.35302139185358,
+        "baseline": 6.994711393486303,
+        "field": "/rows[3]/gap_pp",
+        "reproduction": 45.347732785339886
+      },
+      {
+        "abs_diff": 21.75488517882783,
+        "baseline": 25.435547672952612,
+        "field": "/rows[6]/gap_pp",
+        "reproduction": 3.680662494124781
+      },
+      {
+        "abs_diff": 20.14829186158593,
+        "baseline": 27.543959359282695,
+        "field": "/rows[8]/gap_pp",
+        "reproduction": 7.395667497696767
+      },
+      {
+        "abs_diff": 20.0,
+        "baseline": 30.0,
+        "field": "/finetune_epochs",
+        "reproduction": 50.0
+      },
+      {
+        "abs_diff": 19.145095420645507,
+        "baseline": 25.269209924295193,
+        "field": "/rows[7]/gap_pp",
+        "reproduction": 6.124114503649686
+      },
+      {
+        "abs_diff": 6.0,
+        "baseline": 9.0,
+        "field": "/summary/n_room_seed_rows",
+        "reproduction": 15.0
+      },
+      {
+        "abs_diff": 3.0,
+        "baseline": 0.0,
+        "field": "/rows[3]/seed",
+        "reproduction": 3.0
+      }
+    ],
+    "max_abs_diff": 41.868488840264945,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 65,
+    "reproduction_path": "phase2/upper_bound.json",
+    "status": "differs"
+  },
+  "phase_calibration/label_smoothing_results.json": {
+    "compared": 0,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 78,
+    "only_in_reproduction": 1533,
+    "reproduction_path": "phase_calibration/label_smoothing_results.json",
+    "status": "identical"
+  },
+  "phase_calibration/temperature_results.json": {
+    "compared": 20,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "phase_calibration/temperature_results.json",
+    "status": "identical"
+  },
+  "regularized_source/search.json": {
+    "compared": 99,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "regularized_source/search.json",
+    "status": "identical"
+  },
+  "regularized_source/tta.json": {
+    "compared": 7841,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "regularized_source/tta.json",
+    "status": "identical"
+  },
+  "signfi_tta/method_summary.json": {
+    "compared": 28,
+    "differing": 10,
+    "largest": [
+      {
+        "abs_diff": 0.0012698471546173096,
+        "baseline": -0.1168253943324089,
+        "field": "/tent/ci_lower",
+        "reproduction": -0.11809524148702621
+      },
+      {
+        "abs_diff": 0.0009604357182979584,
+        "baseline": -0.061896707862615585,
+        "field": "/physics_tta/ci_upper",
+        "reproduction": -0.06285714358091354
+      },
+      {
+        "abs_diff": 0.0009523853659629822,
+        "baseline": -0.06730158627033234,
+        "field": "/t3a/ci_upper",
+        "reproduction": -0.06634920090436935
+      },
+      {
+        "abs_diff": 0.0009523779153823853,
+        "baseline": -0.1812698394060135,
+        "field": "/physics_tta/ci_lower",
+        "reproduction": -0.1803174614906311
+      },
+      {
+        "abs_diff": 0.0006349235773086548,
+        "baseline": -0.1644444465637207,
+        "field": "/shot/ci_lower",
+        "reproduction": -0.16507937014102936
+      },
+      {
+        "abs_diff": 0.0006349217146635056,
+        "baseline": -0.029523810371756554,
+        "field": "/tent/ci_upper",
+        "reproduction": -0.028888888657093048
+      },
+      {
+        "abs_diff": 0.0006349086761474609,
+        "baseline": -0.08000001311302185,
+        "field": "/shot/ci_upper",
+        "reproduction": -0.08063492178916931
+      },
+      {
+        "abs_diff": 0.0006268620491027832,
+        "baseline": -0.06666667014360428,
+        "field": "/entropy_tta/ci_upper",
+        "reproduction": -0.06729353219270706
+      }
+    ],
+    "max_abs_diff": 0.0012698471546173096,
+    "only_in_baseline": 7,
+    "only_in_reproduction": 28,
+    "reproduction_path": "core_regen/signfi_top10_lame_sar_cotta.json",
+    "status": "differs"
+  },
+  "source_overfit/mitigation_pilot.json": {
+    "compared": 1533,
+    "differing": 541,
+    "largest": [
+      {
+        "abs_diff": 0.5080961994826794,
+        "baseline": -0.03290523216128349,
+        "field": "/conditions[1]/summary/tent/cohens_d_vs_noadapt",
+        "reproduction": 0.4751909673213959
+      },
+      {
+        "abs_diff": 0.28157728910446167,
+        "baseline": -0.026225775480270386,
+        "field": "/conditions[0]/summary/tent/cohens_d_vs_noadapt",
+        "reproduction": -0.30780306458473206
+      },
+      {
+        "abs_diff": 0.18759626150131226,
+        "baseline": -0.54680997133255,
+        "field": "/conditions[1]/summary/physics_tta/cohens_d_vs_noadapt",
+        "reproduction": -0.3592137098312378
+      },
+      {
+        "abs_diff": 0.1596989966555184,
+        "baseline": -0.030936454849498363,
+        "field": "/conditions[0]/rows[57]/source_drop",
+        "reproduction": -0.19063545150501676
+      },
+      {
+        "abs_diff": 0.1585301160812378,
+        "baseline": -1.797010898590088,
+        "field": "/conditions[2]/summary/entropy_tta/cohens_d_vs_noadapt",
+        "reproduction": -1.9555410146713257
+      },
+      {
+        "abs_diff": 0.15802675585284282,
+        "baseline": 0.5610367892976589,
+        "field": "/conditions[0]/rows[57]/source_post_accuracy",
+        "reproduction": 0.40301003344481606
+      },
+      {
+        "abs_diff": 0.1505016722408027,
+        "baseline": 0.3093645484949833,
+        "field": "/conditions[2]/rows[37]/source_post_accuracy",
+        "reproduction": 0.459866220735786
+      },
+      {
+        "abs_diff": 0.14966555183946484,
+        "baseline": -0.2575250836120401,
+        "field": "/conditions[2]/rows[37]/source_drop",
+        "reproduction": -0.10785953177257523
+      }
+    ],
+    "max_abs_diff": 0.5080961994826794,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "source_overfit/mitigation_pilot.json",
+    "status": "differs"
+  },
+  "synthetic_shift/full_method_comparison.json": {
+    "compared": 900,
+    "differing": 17,
+    "largest": [
+      {
+        "abs_diff": 1.0,
+        "baseline": 1.0,
+        "field": "[136]/negative_adaptation",
+        "reproduction": 0.0
+      },
+      {
+        "abs_diff": 1.0,
+        "baseline": 1.0,
+        "field": "[66]/negative_adaptation",
+        "reproduction": 0.0
+      },
+      {
+        "abs_diff": 0.3055555522441864,
+        "baseline": -3.311369178859991e-09,
+        "field": "[136]/gain",
+        "reproduction": 0.3055555489328172
+      },
+      {
+        "abs_diff": 0.3055555522441864,
+        "baseline": 0.3055555522441864,
+        "field": "[136]/post_accuracy",
+        "reproduction": 0.6111111044883728
+      },
+      {
+        "abs_diff": 0.25,
+        "baseline": 6.6227383022088304e-09,
+        "field": "[116]/gain",
+        "reproduction": 0.2500000066227383
+      },
+      {
+        "abs_diff": 0.25,
+        "baseline": 0.3888888955116272,
+        "field": "[116]/post_accuracy",
+        "reproduction": 0.6388888955116272
+      },
+      {
+        "abs_diff": 0.1666666567325592,
+        "baseline": 9.934107481068821e-09,
+        "field": "[76]/gain",
+        "reproduction": 0.16666666666666669
+      },
+      {
+        "abs_diff": 0.1666666567325592,
+        "baseline": 0.3333333432674408,
+        "field": "[76]/post_accuracy",
+        "reproduction": 0.5
+      }
+    ],
+    "max_abs_diff": 1.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "synthetic_shift/full_method_comparison.json",
+    "status": "differs"
+  },
+  "synthetic_shift/method_summary.json": {
+    "compared": 60,
+    "differing": 15,
+    "largest": [
+      {
+        "abs_diff": 0.3505345582962036,
+        "baseline": 0.42965495586395264,
+        "field": "/selective_physics_tta/cohens_d_vs_noadapt",
+        "reproduction": 0.7801895141601562
+      },
+      {
+        "abs_diff": 0.13333334028720856,
+        "baseline": 0.3333333432674408,
+        "field": "/selective_physics_tta/negative_adaptation_rate",
+        "reproduction": 0.20000000298023224
+      },
+      {
+        "abs_diff": 0.11111110332939411,
+        "baseline": 8.609559287720003e-09,
+        "field": "/selective_physics_tta/ci_upper",
+        "reproduction": 0.1111111119389534
+      },
+      {
+        "abs_diff": 0.055555556493776415,
+        "baseline": 3.200990583707153e-09,
+        "field": "/selective_physics_tta/mean_gain",
+        "reproduction": 0.055555559694767
+      },
+      {
+        "abs_diff": 0.012962962514548204,
+        "baseline": -1.8764423348471837e-09,
+        "field": "/selective_physics_tta/ci_lower",
+        "reproduction": 0.01296296063810587
+      },
+      {
+        "abs_diff": 0.0022059276715541906,
+        "baseline": 0.025034768992724516,
+        "field": "/conservative_entropy_tta/mean_time_seconds",
+        "reproduction": 0.022828841321170325
+      },
+      {
+        "abs_diff": 0.0022059276715541906,
+        "baseline": 0.025034768992724516,
+        "field": "/entropy_tta/mean_time_seconds",
+        "reproduction": 0.022828841321170325
+      },
+      {
+        "abs_diff": 0.0022059276715541906,
+        "baseline": 0.025034768992724516,
+        "field": "/no_adapt/mean_time_seconds",
+        "reproduction": 0.022828841321170325
+      }
+    ],
+    "max_abs_diff": 0.3505345582962036,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "synthetic_shift/method_summary.json",
+    "status": "differs"
+  },
+  "synthetic_shift/proxy_a_distance.json": {
+    "compared": 36,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "synthetic_shift/proxy_a_distance.json",
+    "status": "identical"
+  },
+  "synthetic_shift/selective_optimization.json": {
+    "compared": 21,
+    "differing": 15,
+    "largest": [
+      {
+        "abs_diff": 9.0,
+        "baseline": 1.0,
+        "field": "/best_alignment_threshold",
+        "reproduction": 10.0
+      },
+      {
+        "abs_diff": 0.48175038397312164,
+        "baseline": 0.24253563582897186,
+        "field": "/eval_results/strong/cohens_d",
+        "reproduction": 0.7242860198020935
+      },
+      {
+        "abs_diff": 0.4504002183675766,
+        "baseline": 0.23559410870075226,
+        "field": "/eval_results/moderate/cohens_d",
+        "reproduction": 0.6859943270683289
+      },
+      {
+        "abs_diff": 0.2333333124717072,
+        "baseline": 6.95387569749073e-09,
+        "field": "/eval_results/strong/ci_upper",
+        "reproduction": 0.23333331942558289
+      },
+      {
+        "abs_diff": 0.12777776850594513,
+        "baseline": 1.655684478407693e-08,
+        "field": "/eval_results/moderate/ci_upper",
+        "reproduction": 0.12777778506278992
+      },
+      {
+        "abs_diff": 0.1111111177338493,
+        "baseline": 1.6556847004522979e-09,
+        "field": "/eval_results/strong/delta_vs_noadapt",
+        "reproduction": 0.111111119389534
+      },
+      {
+        "abs_diff": 0.1111111177338493,
+        "baseline": 1.6556847004522979e-09,
+        "field": "/eval_results/strong/selective_mean_gain",
+        "reproduction": 0.111111119389534
+      },
+      {
+        "abs_diff": 0.06666665756040135,
+        "baseline": 1.2583202924076886e-08,
+        "field": "/eval_results/mild/ci_upper",
+        "reproduction": 0.06666667014360428
+      }
+    ],
+    "max_abs_diff": 9.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "synthetic_shift/selective_optimization.json",
+    "status": "differs"
+  },
+  "synthetic_shift/soft_selective_comparison.json": {
+    "compared": 45,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "synthetic_shift/soft_selective_comparison.json",
+    "status": "identical"
+  },
+  "synthetic_shift/threshold_ablation.json": {
+    "compared": 80,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "synthetic_shift/threshold_ablation.json",
+    "status": "identical"
+  },
+  "widar_full_tta/full_results.json": {
+    "compared": 924,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 6,
+    "reproduction_path": "widar_full_tta/full_results.json",
+    "status": "identical"
+  },
+  "widar_full_tta/method_summary.json": {
+    "compared": 70,
+    "differing": 0,
+    "largest": [],
+    "max_abs_diff": 0.0,
+    "only_in_baseline": 0,
+    "only_in_reproduction": 0,
+    "reproduction_path": "widar_full_tta/method_summary.json",
+    "status": "identical"
+  }
+}

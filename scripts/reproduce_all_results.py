@@ -256,12 +256,94 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         ],
     },
     "arch_ablation_legacy": {
-        "description": "Tables 8, 9: Architecture ablation + MLP+BN other datasets",
+        "description": "Table 8: Architecture ablation (Widar)",
         "argv": ["scripts/run_arch_ablation_with_ci.py"],
-        "outputs": [
-            "outputs/final_ablations/arch_ablation_n15.json",
-            "outputs/final_ablations/mlpbn_other_datasets.json",
+        # mlpbn_other_datasets.json used to be listed here, but this script is
+        # Widar-only and never wrote it; the SignFi/NTU-Fi MLP+BN numbers now
+        # come from the *_mlpbn_canonical components below.
+        "outputs": ["outputs/final_ablations/arch_ablation_n15.json"],
+    },
+    "signfi_mlpbn_canonical": {
+        "description": "Table 9: SignFi MLP+BN faithful TENT counterexample (n=15)",
+        "argv": [
+            "scripts/run_extended_tta_per_dataset.py",
+            "--dataset",
+            "signfi_top10",
+            "--backbone",
+            "mlp_bn",
+            "--methods",
+            "no_adapt,entropy_tta,tent,physics_tta,selective_physics_tta,bn_reset",
+            "--output-dir",
+            "outputs/signfi_mlpbn_canonical",
         ],
+        "outputs": ["outputs/signfi_mlpbn_canonical/signfi_top10_lame_sar_cotta.json"],
+    },
+    "widar_mlpbn_canonical": {
+        "description": "Table 5: Widar MLP+BN faithful TENT + BN-reset (n=15)",
+        "argv": [
+            "scripts/run_extended_tta_per_dataset.py",
+            "--dataset",
+            "widar_bvp",
+            "--backbone",
+            "mlp_bn",
+            "--methods",
+            "no_adapt,entropy_tta,tent,physics_tta,selective_physics_tta,bn_reset",
+            "--output-dir",
+            "outputs/widar_mlpbn_canonical",
+        ],
+        "outputs": ["outputs/widar_mlpbn_canonical/widar_bvp_lame_sar_cotta.json"],
+    },
+    "severity": {
+        "description": "Dataset table: source/target accuracy and shift severity",
+        "argv": ["scripts/compute_source_target_gap.py"],
+        "outputs": ["outputs/severity/source_target_gap.json"],
+    },
+    "regularized_source_search": {
+        "description": "Sec. 7.5 / App. U: source regularisation search",
+        "argv": ["scripts/run_regularized_source.py", "--stage", "search"],
+        "outputs": ["outputs/regularized_source/search.json"],
+    },
+    "regularized_source_tta": {
+        "description": "Table 12: TTA on regularised source models",
+        "argv": [
+            "scripts/run_regularized_source.py",
+            "--stage",
+            "tta",
+            "--only",
+            "epochs_1",
+        ],
+        "outputs": ["outputs/regularized_source/tta.json"],
+    },
+    "backbone_breadth": {
+        "description": "Sec. 7.6 / App.: nine methods on ResNet-BN/GN, Transformer",
+        "argv": ["scripts/run_backbone_breadth.py"],
+        "outputs": [
+            f"outputs/backbone_breadth/{d}_{b}.json"
+            for d in ("widar_bvp", "ntufi_har", "signfi_top10")
+            for b in ("resnet2d", "resnet2d_gn", "transformer")
+        ],
+    },
+    "deployment_rule": {
+        "description": "Sec. 9: pre-deployment decision rule (negative result)",
+        "argv": ["scripts/derive_deployment_rule.py"],
+        "outputs": [
+            "outputs/deployment_rule/rule.json",
+            "outputs/deployment_rule/predictors.json",
+        ],
+    },
+    "guard_coverage": {
+        "description": "Collapse-guard single source of truth (aggregates guard runs)",
+        "argv": ["scripts/build_guard_coverage.py"],
+        "outputs": ["outputs/guard_coverage/guard_coverage.json"],
+    },
+    "tsne": {
+        "description": "Figure 4 inputs: t-SNE embeddings and harm analysis",
+        "argv": [
+            "scripts/analyze_tta_adaptation.py",
+            "--output_dir",
+            "outputs/synthetic_shift/analysis",
+        ],
+        "outputs": ["outputs/synthetic_shift/analysis/tsne_embeddings.json"],
     },
     "arch_ci": {
         "description": "Architecture ablation with 95% bootstrap CIs",

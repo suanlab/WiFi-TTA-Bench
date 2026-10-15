@@ -1,0 +1,756 @@
+{
+  "default_setting": {
+    "learning_rate": 0.0005,
+    "steps": 5
+  },
+  "sweep": [
+    {
+      "dataset": "ntufi_har",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "default": {
+        "learning_rate": 0.0005,
+        "steps": 5,
+        "mean_pp": -18.86878737625006,
+        "ci_lower_pp": -22.82045580179908,
+        "ci_upper_pp": -14.958540630182423,
+        "harm_rate": 1.0,
+        "harm_rate_gt1pp": 1.0
+      },
+      "source_selected": {
+        "learning_rate": 0.0001,
+        "steps": 1,
+        "mean_pp": 0.06935021860394966,
+        "ci_lower_pp": -0.5653550429669847,
+        "ci_upper_pp": 0.670385446504851,
+        "harm_rate": 0.4,
+        "harm_rate_gt1pp": 0.13333333333333333
+      },
+      "oracle": {
+        "learning_rate": 0.0001,
+        "steps": 1,
+        "mean_pp": 0.06935021860394966,
+        "ci_lower_pp": -0.5648525051510129,
+        "ci_upper_pp": 0.669882908688879,
+        "harm_rate": 0.4,
+        "harm_rate_gt1pp": 0.13333333333333333
+      },
+      "worst": {
+        "learning_rate": 0.005,
+        "steps": 20,
+        "mean_pp": -67.96321423187096,
+        "ci_lower_pp": -69.73166993316246,
+        "ci_upper_pp": -66.05300517613951,
+        "harm_rate": 1.0,
+        "harm_rate_gt1pp": 1.0
+      }
+    },
+    {
+      "dataset": "ntufi_har",
+      "backbone": "mlp",
+      "method": "tent",
+      "default": {
+        "learning_rate": 0.0005,
+        "steps": 5,
+        "mean_pp": -0.5673651942308651,
+        "ci_lower_pp": -1.2739333634856012,
+        "ci_upper_pp": 0.06936278204935306,
+        "harm_rate": 0.5333333333333333,
+        "harm_rate_gt1pp": 0.2
+      },
+      "source_selected": {
+        "learning_rate": 0.0001,
+        "steps": 1,
+        "mean_pp": 0.06633499170812647,
+        "ci_lower_pp": -0.10000502537815963,
+        "ci_upper_pp": 0.23217247097844232,
+        "harm_rate": 0.13333333333333333,
+        "harm_rate_gt1pp": 0.0
+      },
+      "oracle": {
+        "learning_rate": 0.001,
+        "steps": 1,
+        "mean_pp": 0.36785768129051694,
+        "ci_lower_pp": -0.06633499170812723,
+        "ci_upper_pp": 0.8663751947334049,
+        "harm_rate": 0.3333333333333333,
+        "harm_rate_gt1pp": 0.0
+      },
+      "worst": {
+        "learning_rate": 0.005,
+        "steps": 20,
+        "mean_pp": -9.734157495351525,
+        "ci_lower_pp": -12.688589878888385,
+        "ci_upper_pp": -6.864452987587318,
+        "harm_rate": 0.9333333333333333,
+        "harm_rate_gt1pp": 0.9333333333333333
+      }
+    },
+    {
+      "dataset": "ntufi_har",
+      "backbone": "mlp_bn",
+      "method": "entropy_tta",
+      "default": {
+        "learning_rate": 0.0005,
+        "steps": 5,
+        "mean_pp": -0.4623347906929991,
+        "ci_lower_pp": -2.358925071611639,
+        "ci_upper_pp": 1.2633800693502208,
+        "harm_rate": 0.4666666666666667,
+        "harm_rate_gt1pp": 0.4666666666666667
+      },
+      "source_selected": {
+        "learning_rate": 0.0001,
+        "steps": 1,
+        "mean_pp": 0.23368008442635313,
+        "ci_lower_pp": -0.033670033670033885,
+        "ci_upper_pp": 0.5005276647067691,
+        "harm_rate": 0.26666666666666666,
+        "harm_rate_gt1pp": 0.0
+      },
+      "oracle": {
+        "learning_rate": 0.0001,
+        "steps": 5,
+        "mean_pp": 1.3045881702598134,
+        "ci_lower_pp": 0.6342027237549627,
+        "ci_upper_pp": 2.0785089703000184,
+        "harm_rate": 0.06666666666666667,
+        "harm_rate_gt1pp": 0.0
+      },
+      "worst": {
+        "learning_rate": 0.005,
+        "steps": 5,
+        "mean_pp": -41.526709884918844,
+        "ci_lower_pp": -47.54310518116489,
+        "ci_upper_pp": -36.215865118850196,
+        "harm_rate": 1.0,
+        "harm_rate_gt1pp": 1.0
+      }
+    },
+    {
+      "dataset": "ntufi_har",
+      "backbone": "mlp_bn",
+      "method": "tent",
+      "default": {
+        "learning_rate": 0.0005,
+        "steps": 5,
+        "mean_pp": 0.6708879843208181,
+        "ci_lower_pp": 0.16784763053419618,
+        "ci_upper_pp": 1.310618624051459,
+        "harm_rate": 0.13333333333333333,
+        "harm_rate_gt1pp": 0.0
+      },
+      "source_selected": {
+        "learning_rate": 0.0001,
+        "steps": 1,
+        "mean_pp": 0.10151263882607046,
+        "ci_lower_pp": -0.13166490778431314,
+        "ci_upper_pp": 0.3346901854364526,
+        "harm_rate": 0.26666666666666666,
+        "harm_rate_gt1pp": 0.0
+      },
+      "oracle": {
+        "learning_rate": 0.005,
+        "steps": 5,
+        "mean_pp": 0.8724056485250519,
+        "ci_lower_pp": 0.200512588572291,
+        "ci_upper_pp": 1.6473315241971977,
+        "harm_rate": 0.13333333333333333,
+        "harm_rate_gt1pp": 0.0
+      },
+      "worst": {
+        "learning_rate": 0.0001,
+        "steps": 1,
+        "mean_pp": 0.10151263882607046,
+        "ci_lower_pp": -0.13166490778431164,
+        "ci_upper_pp": 0.3352052866978242,
+        "harm_rate": 0.26666666666666666,
+        "harm_rate_gt1pp": 0.0
+      }
+    },
+    {
+      "dataset": "signfi_top10",
+      "backbone": "mlp_bn",
+      "method": "entropy_tta",
+      "default": {
+        "learning_rate": 0.0005,
+        "steps": 5,
+        "mean_pp": -0.8888888888888875,
+        "ci_lower_pp": -9.047619047619047,
+        "ci_upper_pp": 7.809523809523811,
+        "harm_rate": 0.5333333333333333,
+        "harm_rate_gt1pp": 0.5333333333333333
+      },
+      "source_selected": {
+        "learning_rate": 0.0001,
+        "steps": 5,
+        "mean_pp": 9.777777777777782,
+        "ci_lower_pp": 4.063492063492066,
+        "ci_upper_pp": 16.000000000000004,
+        "harm_rate": 0.13333333333333333,
+        "harm_rate_gt1pp": 0.13333333333333333
+      },
+      "oracle": {
+        "learning_rate": 0.0001,
+        "steps": 5,
+        "mean_pp": 9.777777777777782,
+        "ci_lower_pp": 4.158730158730161,
+        "ci_upper_pp": 16.12698412698413,
+        "harm_rate": 0.13333333333333333,
+        "harm_rate_gt1pp": 0.13333333333333333
+      },
+      "worst": {
+        "learning_rate": 0.005,
+        "steps": 5,
+        "mean_pp": -48.6984126984127,
+        "ci_lower_pp": -56.63492063492063,
+        "ci_upper_pp": -39.96825396825397,
+        "harm_rate": 1.0,
+        "harm_rate_gt1pp": 1.0
+      }
+    },
+    {
+      "dataset": "signfi_top10",
+      "backbone": "mlp_bn",
+      "method": "tent",
+      "default": {
+        "learning_rate": 0.0005,
+        "steps": 5,
+        "mean_pp": 10.285714285714286,
+        "ci_lower_pp": 5.174603174603177,
+        "ci_upper_pp": 15.23809523809524,
+        "harm_rate": 0.13333333333333333,
+        "harm_rate_gt1pp": 0.13333333333333333
+      },
+      "source_selected": {
+        "learning_rate": 0.0001,
+        "steps": 20,
+        "mean_pp": 12.380952380952385,
+        "ci_lower_pp": 4.85714285714286,
+        "ci_upper_pp": 19.74603174603175,
+        "harm_rate": 0.2,
+        "harm_rate_gt1pp": 0.2
+      },
+      "oracle": {
+        "learning_rate": 0.0001,
+        "steps": 20,
+        "mean_pp": 12.380952380952385,
+        "ci_lower_pp": 4.919841269841271,
+        "ci_upper_pp": 19.71428571428572,
+        "harm_rate": 0.2,
+        "harm_rate_gt1pp": 0.2
+      },
+      "worst": {
+        "learning_rate": 0.0001,
+        "steps": 1,
+        "mean_pp": 3.6190476190476213,
+        "ci_lower_pp": 1.7777777777777781,
+        "ci_upper_pp": 5.650793650793655,
+        "harm_rate": 0.0,
+        "harm_rate_gt1pp": 0.0
+      }
+    },
+    {
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "default": {
+        "learning_rate": 0.0005,
+        "steps": 5,
+        "mean_pp": -6.581883087907185,
+        "ci_lower_pp": -8.902275769745648,
+        "ci_upper_pp": -4.3060017849174494,
+        "harm_rate": 0.9333333333333333,
+        "harm_rate_gt1pp": 0.8666666666666667
+      },
+      "source_selected": {
+        "learning_rate": 0.0001,
+        "steps": 1,
+        "mean_pp": -0.21865238732708664,
+        "ci_lower_pp": -0.31682284694332913,
+        "ci_upper_pp": -0.12048192771084339,
+        "harm_rate": 0.8666666666666667,
+        "harm_rate_gt1pp": 0.0
+      },
+      "oracle": {
+        "learning_rate": 0.0001,
+        "steps": 1,
+        "mean_pp": -0.21865238732708664,
+        "ci_lower_pp": -0.3123605533244101,
+        "ci_upper_pp": -0.12048192771084373,
+        "harm_rate": 0.8666666666666667,
+        "harm_rate_gt1pp": 0.0
+      },
+      "worst": {
+        "learning_rate": 0.005,
+        "steps": 20,
+        "mean_pp": -19.48683623382419,
+        "ci_lower_pp": -21.825189647478805,
+        "ci_upper_pp": -17.19767960731816,
+        "harm_rate": 1.0,
+        "harm_rate_gt1pp": 1.0
+      }
+    },
+    {
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "tent",
+      "default": {
+        "learning_rate": 0.0005,
+        "steps": 5,
+        "mean_pp": -0.04908522980812199,
+        "ci_lower_pp": -0.16956715751896503,
+        "ci_upper_pp": 0.0490852298081205,
+        "harm_rate": 0.6,
+        "harm_rate_gt1pp": 0.0
+      },
+      "source_selected": {
+        "learning_rate": 0.0001,
+        "steps": 5,
+        "mean_pp": -0.01784917447568035,
+        "ci_lower_pp": -0.05800981704596087,
+        "ci_upper_pp": 0.022311468094600162,
+        "harm_rate": 0.4,
+        "harm_rate_gt1pp": 0.0
+      },
+      "oracle": {
+        "learning_rate": 0.0005,
+        "steps": 1,
+        "mean_pp": -0.004462293618920921,
+        "ci_lower_pp": -0.044622936189201066,
+        "ci_upper_pp": 0.035698348951359225,
+        "harm_rate": 0.3333333333333333,
+        "harm_rate_gt1pp": 0.0
+      },
+      "worst": {
+        "learning_rate": 0.005,
+        "steps": 20,
+        "mean_pp": -2.7755466309683174,
+        "ci_lower_pp": -4.176818384649709,
+        "ci_upper_pp": -1.4725568942436416,
+        "harm_rate": 0.8666666666666667,
+        "harm_rate_gt1pp": 0.5333333333333333
+      }
+    },
+    {
+      "dataset": "widar_bvp",
+      "backbone": "mlp_bn",
+      "method": "entropy_tta",
+      "default": {
+        "learning_rate": 0.0005,
+        "steps": 5,
+        "mean_pp": -0.6068719321731375,
+        "ci_lower_pp": -1.0084783578759489,
+        "ci_upper_pp": -0.21419009370816722,
+        "harm_rate": 0.7333333333333333,
+        "harm_rate_gt1pp": 0.3333333333333333
+      },
+      "source_selected": {
+        "learning_rate": 0.0001,
+        "steps": 1,
+        "mean_pp": -0.10263275323516415,
+        "ci_lower_pp": -0.2721999107541295,
+        "ci_upper_pp": 0.07139669790272103,
+        "harm_rate": 0.6666666666666666,
+        "harm_rate_gt1pp": 0.0
+      },
+      "oracle": {
+        "learning_rate": 0.0005,
+        "steps": 1,
+        "mean_pp": 0.01784917447567998,
+        "ci_lower_pp": -0.17849174475680574,
+        "ci_upper_pp": 0.21419009370816536,
+        "harm_rate": 0.4666666666666667,
+        "harm_rate_gt1pp": 0.0
+      },
+      "worst": {
+        "learning_rate": 0.005,
+        "steps": 20,
+        "mean_pp": -14.02052655064703,
+        "ci_lower_pp": -15.814368585452923,
+        "ci_upper_pp": -12.257920571173583,
+        "harm_rate": 1.0,
+        "harm_rate_gt1pp": 1.0
+      }
+    },
+    {
+      "dataset": "widar_bvp",
+      "backbone": "mlp_bn",
+      "method": "tent",
+      "default": {
+        "learning_rate": 0.0005,
+        "steps": 5,
+        "mean_pp": -0.37483266398929077,
+        "ci_lower_pp": -0.7452030343596613,
+        "ci_upper_pp": -0.022311468094601633,
+        "harm_rate": 0.6,
+        "harm_rate_gt1pp": 0.26666666666666666
+      },
+      "source_selected": {
+        "learning_rate": 0.0001,
+        "steps": 1,
+        "mean_pp": -0.12494422132976357,
+        "ci_lower_pp": -0.3123605533244086,
+        "ci_upper_pp": 0.0669344042838016,
+        "harm_rate": 0.6666666666666666,
+        "harm_rate_gt1pp": 0.0
+      },
+      "oracle": {
+        "learning_rate": 0.005,
+        "steps": 1,
+        "mean_pp": -0.07139669790272252,
+        "ci_lower_pp": -0.24988844265952792,
+        "ci_upper_pp": 0.10263275323516231,
+        "harm_rate": 0.6666666666666666,
+        "harm_rate_gt1pp": 0.0
+      },
+      "worst": {
+        "learning_rate": 0.0001,
+        "steps": 20,
+        "mean_pp": -0.9058456046407851,
+        "ci_lower_pp": -1.4948683623382417,
+        "ci_upper_pp": -0.3748326639892903,
+        "harm_rate": 0.8,
+        "harm_rate_gt1pp": 0.4
+      }
+    }
+  ],
+  "stream": [
+    {
+      "dataset": "ntufi_har",
+      "backbone": "mlp",
+      "method": "collapse_guarded_entropy_tta",
+      "stream": "class_blocked",
+      "mean_pp": -0.2985074626865665,
+      "ci_lower_pp": -0.8955223880596996,
+      "ci_upper_pp": 0.0,
+      "harm_rate": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "accepted_steps": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "dataset": "ntufi_har",
+      "backbone": "mlp",
+      "method": "collapse_guarded_entropy_tta",
+      "stream": "iid",
+      "mean_pp": -3.8665259560781937,
+      "ci_lower_pp": -6.5978818031056825,
+      "ci_upper_pp": -1.4642695612844878,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "accepted_steps": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "dataset": "ntufi_har",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "stream": "class_blocked",
+      "mean_pp": -28.03507713955475,
+      "ci_lower_pp": -34.34555756570681,
+      "ci_upper_pp": -21.84126086738027,
+      "harm_rate": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "accepted_steps": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "dataset": "ntufi_har",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "stream": "iid",
+      "mean_pp": -18.86878737625006,
+      "ci_lower_pp": -22.793218252173478,
+      "ci_upper_pp": -15.03122016181718,
+      "harm_rate": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "accepted_steps": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "dataset": "signfi_top10",
+      "backbone": "mlp_bn",
+      "method": "collapse_guarded_tent",
+      "stream": "class_blocked",
+      "mean_pp": 11.23809523809524,
+      "ci_lower_pp": 7.047619047619048,
+      "ci_upper_pp": 15.619047619047622,
+      "harm_rate": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "accepted_steps": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "dataset": "signfi_top10",
+      "backbone": "mlp_bn",
+      "method": "collapse_guarded_tent",
+      "stream": "iid",
+      "mean_pp": 10.285714285714286,
+      "ci_lower_pp": 5.238095238095241,
+      "ci_upper_pp": 15.17460317460318,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "accepted_steps": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "dataset": "signfi_top10",
+      "backbone": "mlp_bn",
+      "method": "tent",
+      "stream": "class_blocked",
+      "mean_pp": 11.23809523809524,
+      "ci_lower_pp": 7.142857142857143,
+      "ci_upper_pp": 15.683333333333328,
+      "harm_rate": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "accepted_steps": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "dataset": "signfi_top10",
+      "backbone": "mlp_bn",
+      "method": "tent",
+      "stream": "iid",
+      "mean_pp": 10.285714285714286,
+      "ci_lower_pp": 5.2698412698412715,
+      "ci_upper_pp": 15.20634920634921,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "accepted_steps": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "collapse_guarded_entropy_tta",
+      "stream": "class_blocked",
+      "mean_pp": -0.07139669790272214,
+      "ci_lower_pp": -0.28112449799196804,
+      "ci_upper_pp": 0.0669344042838016,
+      "harm_rate": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "accepted_steps": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "collapse_guarded_entropy_tta",
+      "stream": "iid",
+      "mean_pp": -0.6024096385542177,
+      "ci_lower_pp": -1.03078982597055,
+      "ci_upper_pp": -0.18741633199464575,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "accepted_steps": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "stream": "class_blocked",
+      "mean_pp": -9.388665774207944,
+      "ci_lower_pp": -11.726907630522089,
+      "ci_upper_pp": -7.103971441320837,
+      "harm_rate": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "accepted_steps": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "stream": "iid",
+      "mean_pp": -6.581883087907185,
+      "ci_lower_pp": -8.902387327086123,
+      "ci_upper_pp": -4.270303435966088,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "accepted_steps": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ]
+    }
+  ]
+}

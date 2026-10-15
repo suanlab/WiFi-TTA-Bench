@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import math
 import random
 import time
 import warnings
@@ -61,6 +62,9 @@ CANONICAL_TTA_METHODS = DEFAULT_TTA_METHODS + (
     "collapse_guarded_t3a",
     "reset_entropy_tta",
     "reset_tent",
+    "sar_full",
+    "cotta_full",
+    "t3a_full",
 )
 
 _SAFE_TTA_METHOD_ALIASES = {
@@ -163,6 +167,23 @@ class TTAExperimentConfig:
     tent_bn_momentum: float = 0.1
     shot_pseudo_label_threshold: float = 0.9
     t3a_filter_k: int = 1
+    # Faithful SAR (Niu et al. 2023): reliable samples have entropy below
+    # sar_margin_factor * ln(C); SAM neighbourhood radius; model recovery when the
+    # moving average of the second-pass entropy falls below the reset threshold.
+    sar_margin_factor: float = 0.4
+    sar_rho: float = 0.05
+    sar_reset_threshold: float = 0.2
+    # Faithful CoTTA (Wang et al. 2022): EMA teacher, augmentation-averaged
+    # pseudo-labels when the source model's confidence is below the threshold,
+    # stochastic restore of student weights to the source.
+    cotta_ema_momentum: float = 0.999
+    cotta_confidence_threshold: float = 0.92
+    cotta_num_augmentations: int = 32
+    cotta_restore_probability: float = 0.01
+    cotta_noise_std: float = 0.05
+    # Faithful T3A (Iwasawa & Matsuo 2021): gradient-free, online over the
+    # evaluation stream; keep this many lowest-entropy supports per class.
+    t3a_full_filter_k: int = 20
     ablation_use_invariance: bool = True
     ablation_use_residual: bool = True
     ablation_use_entropy: bool = True
@@ -669,6 +690,30 @@ def adapt_model_for_tta_with_summary(
             adaptation_time_seconds=t_elapsed,
         )
 
+    if method == "t3a_full":
+        # Gradient-free: the classifier is adjusted online at evaluation time
+        # (evaluate_t3a_online), so adaptation leaves the model unchanged.
+        adapted_t3a = copy.deepcopy(model).to(device)
+        adapted_t3a.eval()
+        return TTAAdaptationSummary(
+            model=adapted_t3a,
+            attempted_steps=0,
+            accepted_steps=0,
+            abstained=False,
+            stop_reason="t3a_online_at_evaluation",
+            pre_objective=0.0,
+            post_objective=0.0,
+            adaptation_time_seconds=time.monotonic() - t_start,
+        )
+    if method == "sar_full":
+        summary = _adapt_sar_full(model, target_loader, config, device)
+        summary.adaptation_time_seconds = time.monotonic() - t_start
+        return summary
+    if method == "cotta_full":
+        summary = _adapt_cotta_full(model, target_loader, config, device)
+        summary.adaptation_time_seconds = time.monotonic() - t_start
+        return summary
+
     adapted = copy.deepcopy(model).to(device)
     adapted.train()
     # TENT updates normalisation affine parameters: BatchNorm when present
@@ -847,6 +892,268 @@ def adapt_model_for_tta_with_summary(
     )
 
 
+def _norm_affine_scope(model: Paper2DomainAdaptationBaseline) -> str:
+    """TENT/SAR update scope: BN affines, else other norm affines, else projection."""
+    bn_types = (torch.nn.BatchNorm1d, torch.nn.BatchNorm2d)
+    if any(isinstance(m, bn_types) for m in model.modules()):
+        return "bn_only"
+    if any(isinstance(m, _SAMPLE_NORM_TYPES) for m in model.modules()):
+        return "norm_only"
+    return "projection"
+
+
+def _sample_entropy(logits: Tensor) -> Tensor:
+    log_probs = torch.log_softmax(logits, dim=-1)
+    return -(log_probs.exp() * log_probs).sum(dim=-1)
+
+
+def _adapt_sar_full(
+    model: Paper2DomainAdaptationBaseline,
+    target_loader: DataLoader[dict[str, Tensor]],
+    config: TTAExperimentConfig,
+    device: torch.device,
+) -> TTAAdaptationSummary:
+    """SAR: reliable-sample entropy, sharpness-aware update, model recovery.
+
+    Follows Niu et al. (2023): samples with entropy below ``E0 = margin * ln C``
+    drive the update; the gradient is taken at the SAM-perturbed weights
+    (radius ``rho``) after re-filtering there; the model is reset to the source
+    weights when the moving average of the second-pass entropy falls below the
+    reset threshold. Optimiser and learning rate are the benchmark's shared ones.
+    """
+    adapted = copy.deepcopy(model).to(device)
+    adapted.train()
+    _freeze_for_tta(adapted, _norm_affine_scope(adapted))
+    params = [p for p in adapted.parameters() if p.requires_grad]
+    optimizer = Adam(params, lr=config.adaptation_learning_rate)
+    source_state = _clone_module_state(adapted)
+    batches = cycle(target_loader)
+    attempted = accepted = resets = 0
+    ema: float | None = None
+    pre_objective = post_objective = 0.0
+    margin = 0.0
+    for step_idx in range(config.adaptation_steps):
+        moved = _move_batch_to_device(next(batches), device)
+        attempted += 1
+
+        entropies = _batch_entropy(adapted, moved)
+        if step_idx == 0:
+            margin = config.sar_margin_factor * math.log(_num_classes(adapted))
+            pre_objective = float(entropies.mean().item())
+        reliable = entropies < margin
+        if not bool(reliable.any()):
+            continue
+        optimizer.zero_grad()
+        torch.autograd.backward(entropies[reliable].mean())
+        grads = [p.grad for p in params]
+        grad_norm = torch.norm(
+            torch.stack([g.norm(2) for g in grads if g is not None]), 2
+        )
+        perturbations: list[Tensor | None] = []
+        with torch.no_grad():
+            for p in params:
+                if p.grad is None:
+                    perturbations.append(None)
+                    continue
+                e_w = config.sar_rho * p.grad / (grad_norm + 1e-12)
+                p.add_(e_w)
+                perturbations.append(e_w)
+        # Gradient at the SAM-perturbed point, applied at the original weights.
+        optimizer.zero_grad()
+        second = _batch_entropy(adapted, moved)
+        second_reliable = second < margin
+        has_second = bool(second_reliable.any())
+        if has_second:
+            second_loss = second[second_reliable].mean()
+            torch.autograd.backward(second_loss)
+        with torch.no_grad():
+            for p, e_w in zip(params, perturbations, strict=True):
+                if e_w is not None:
+                    p.sub_(e_w)
+        if not has_second:
+            continue
+        optimizer.step()
+        accepted += 1
+        post_objective = float(second_loss.item())
+        ema = post_objective if ema is None else 0.9 * ema + 0.1 * post_objective
+        if ema < config.sar_reset_threshold:
+            adapted.load_state_dict(source_state)
+            optimizer = Adam(params, lr=config.adaptation_learning_rate)
+            ema = None
+            resets += 1
+    adapted.eval()
+    return TTAAdaptationSummary(
+        model=adapted,
+        attempted_steps=attempted,
+        accepted_steps=accepted,
+        abstained=accepted == 0,
+        stop_reason=f"sar_full_resets_{resets}",
+        pre_objective=pre_objective,
+        post_objective=post_objective,
+    )
+
+
+def _batch_entropy(
+    model: Paper2DomainAdaptationBaseline, batch: dict[str, Tensor]
+) -> Tensor:
+    logits = model(
+        batch["x"], prior=_optional_prior(batch), has_prior=batch["has_prior"]
+    )["task_logits"]
+    return _sample_entropy(logits)
+
+
+def _num_classes(model: Paper2DomainAdaptationBaseline) -> int:
+    return int(model.task_head.out_features)
+
+
+def _augment_csi(x: Tensor, noise_std: float) -> Tensor:
+    """CSI stand-in for CoTTA's image augmentations: gain jitter plus noise."""
+    gain = 1.0 + 0.1 * (
+        2.0 * torch.rand(x.shape[0], *([1] * (x.dim() - 1)), device=x.device) - 1.0
+    )
+    scale = x.detach().std().clamp_min(1e-8)
+    return gain * x + noise_std * scale * torch.randn_like(x)
+
+
+def _adapt_cotta_full(
+    model: Paper2DomainAdaptationBaseline,
+    target_loader: DataLoader[dict[str, Tensor]],
+    config: TTAExperimentConfig,
+    device: torch.device,
+) -> TTAAdaptationSummary:
+    """CoTTA: EMA teacher, augmentation-averaged pseudo-labels, stochastic restore.
+
+    Follows Wang et al. (2022). The student is trained toward the teacher's
+    predictions, averaged over augmentations when the source (anchor) model's
+    mean confidence is below the threshold; the teacher is an EMA of the
+    student and is the model that predicts; after each step each student weight
+    is restored to its source value with a small probability. Image augmentations
+    are replaced by CSI gain jitter and additive noise. The encoder is updated.
+    """
+    anchor = copy.deepcopy(model).to(device).eval()
+    student = copy.deepcopy(model).to(device)
+    student.train()
+    _freeze_for_tta(student, config.update_scope)
+    teacher = copy.deepcopy(student).eval()
+    for p in teacher.parameters():
+        p.requires_grad_(False)
+    source_state = _clone_module_state(student)
+    optimizer = Adam(_trainable_parameters(student), lr=config.adaptation_learning_rate)
+    batches = cycle(target_loader)
+    pre_objective = post_objective = 0.0
+    for step_idx in range(config.adaptation_steps):
+        moved = _move_batch_to_device(next(batches), device)
+        x, prior, has_prior = moved["x"], _optional_prior(moved), moved["has_prior"]
+        with torch.no_grad():
+            anchor_conf = (
+                torch.softmax(
+                    anchor(x, prior=prior, has_prior=has_prior)["task_logits"], dim=-1
+                )
+                .max(dim=-1)
+                .values.mean()
+            )
+            teacher_probs = torch.softmax(
+                teacher(x, prior=prior, has_prior=has_prior)["task_logits"], dim=-1
+            )
+            if float(anchor_conf) < config.cotta_confidence_threshold:
+                augmented = torch.stack(
+                    [
+                        torch.softmax(
+                            teacher(
+                                _augment_csi(x, config.cotta_noise_std),
+                                prior=prior,
+                                has_prior=has_prior,
+                            )["task_logits"],
+                            dim=-1,
+                        )
+                        for _ in range(config.cotta_num_augmentations)
+                    ]
+                ).mean(dim=0)
+                teacher_probs = augmented
+        optimizer.zero_grad()
+        student_logp = torch.log_softmax(
+            student(x, prior=prior, has_prior=has_prior)["task_logits"], dim=-1
+        )
+        loss = -(teacher_probs * student_logp).sum(dim=-1).mean()
+        if step_idx == 0:
+            pre_objective = float(loss.item())
+        torch.autograd.backward(loss)
+        optimizer.step()
+        post_objective = float(loss.item())
+        with torch.no_grad():
+            for t_p, s_p in zip(
+                teacher.parameters(), student.parameters(), strict=True
+            ):
+                t_p.mul_(config.cotta_ema_momentum).add_(
+                    s_p.detach(), alpha=1.0 - config.cotta_ema_momentum
+                )
+            for t_b, s_b in zip(teacher.buffers(), student.buffers(), strict=True):
+                t_b.copy_(s_b)
+        _stochastic_weight_restore(
+            student, source_state, config.cotta_restore_probability
+        )
+    teacher.eval()
+    return TTAAdaptationSummary(
+        model=teacher,
+        attempted_steps=config.adaptation_steps,
+        accepted_steps=config.adaptation_steps,
+        abstained=False,
+        stop_reason="cotta_full_teacher",
+        pre_objective=pre_objective,
+        post_objective=post_objective,
+    )
+
+
+@torch.no_grad()
+def evaluate_t3a_online(
+    model: Paper2DomainAdaptationBaseline,
+    loader: DataLoader[dict[str, Tensor]],
+    device: torch.device,
+    num_classes: int,
+    filter_k: int,
+) -> dict[str, float]:
+    """T3A (Iwasawa & Matsuo 2021): gradient-free, online prototype adjustment.
+
+    Supports start as the classifier's weight rows. For each incoming batch the
+    current prototypes label it; its normalised features join the supports of
+    their pseudo-label; each class keeps its ``filter_k`` lowest-entropy supports;
+    the batch is then classified by the updated prototypes.
+    """
+    model.eval()
+    weight = model.task_head.weight.detach()
+    supports = functional.normalize(weight, dim=-1)
+    support_labels = torch.eye(num_classes, device=device)
+    support_entropy = _sample_entropy(model.task_head(weight))
+    correct = 0
+    total = 0
+    for batch in loader:
+        moved = _move_batch_to_device(batch, device)
+        outputs = model(
+            moved["x"], prior=_optional_prior(moved), has_prior=moved["has_prior"]
+        )
+        z = functional.normalize(outputs["invariant_features"], dim=-1)
+        logits = outputs["task_logits"]
+        pseudo = functional.one_hot(logits.argmax(dim=-1), num_classes).float()
+        supports = torch.cat([supports, z])
+        support_labels = torch.cat([support_labels, pseudo])
+        support_entropy = torch.cat([support_entropy, _sample_entropy(logits)])
+        keep: list[Tensor] = []
+        cls = support_labels.argmax(dim=-1)
+        for c in range(num_classes):
+            idx = torch.nonzero(cls == c, as_tuple=False).squeeze(-1)
+            if idx.numel() > filter_k:
+                idx = idx[torch.argsort(support_entropy[idx])[:filter_k]]
+            keep.append(idx)
+        kept = torch.cat(keep)
+        supports, support_labels = supports[kept], support_labels[kept]
+        support_entropy = support_entropy[kept]
+        prototypes = functional.normalize(supports.T @ support_labels, dim=0)
+        preds = (z @ prototypes).argmax(dim=-1)
+        correct += int((preds == moved["label"]).sum().item())
+        total += int(moved["label"].numel())
+    return {"accuracy": correct / max(total, 1), "loss_total": 0.0}
+
+
 def run_tta_suite(
     source_train_loader: DataLoader[dict[str, Tensor]],
     source_val_loader: DataLoader[dict[str, Tensor]],
@@ -909,7 +1216,22 @@ def run_tta_suite(
         # evaluation paths, so a guarded variant must inherit them or it would be a
         # different method rather than the same method plus a rollback rule.
         evaluated_as = _resolve_base_method(method)
-        if evaluated_as == "t3a":
+        if evaluated_as == "t3a_full":
+            post_metrics = evaluate_t3a_online(
+                adapted_model,
+                target_test_loader,
+                device,
+                num_classes,
+                experiment_config.t3a_full_filter_k,
+            )
+            source_post_metrics = evaluate_t3a_online(
+                adapted_model,
+                source_val_loader,
+                device,
+                num_classes,
+                experiment_config.t3a_full_filter_k,
+            )
+        elif evaluated_as == "t3a":
             post_metrics = evaluate_t3a_classifier(
                 model=adapted_model,
                 loader=target_test_loader,

@@ -1,0 +1,29 @@
+{
+  "no_adapt": {
+    "mean_gain": 0.0,
+    "ci_lower": 0.0,
+    "ci_upper": 0.0,
+    "cohens_d_vs_noadapt": 0.0,
+    "paired_d_vs_noadapt": 0.0,
+    "negative_adaptation_rate": 0.0,
+    "n_observations": 15
+  },
+  "tent": {
+    "mean_gain": 0.10285715013742447,
+    "ci_lower": 0.05206349119544029,
+    "ci_upper": 0.15111111104488373,
+    "cohens_d_vs_noadapt": 1.4269676208496094,
+    "paired_d_vs_noadapt": 1.0090185403823853,
+    "negative_adaptation_rate": 0.13333334028720856,
+    "n_observations": 15
+  },
+  "collapse_guarded_tent": {
+    "mean_gain": 0.0895238146185875,
+    "ci_lower": 0.04158730432391167,
+    "ci_upper": 0.13683347404003143,
+    "cohens_d_vs_noadapt": 1.301268458366394,
+    "paired_d_vs_noadapt": 0.9201357364654541,
+    "negative_adaptation_rate": 0.13333334028720856,
+    "n_observations": 15
+  }
+}

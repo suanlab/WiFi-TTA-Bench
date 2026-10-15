@@ -331,6 +331,226 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
             "outputs/deployment_rule/predictors.json",
         ],
     },
+    # --- Collapse-guard and weight-reset runs aggregated by guard_coverage. ---
+    **{
+        cid: {
+            "description": desc,
+            "argv": [
+                "scripts/run_arch_ablation_with_ci.py",
+                "--backbones",
+                backbones,
+                "--methods",
+                methods,
+                "--collapse-guard-ratio",
+                ratio,
+                "--output",
+                out,
+            ],
+            "outputs": [out],
+        }
+        for cid, desc, backbones, methods, ratio, out in (
+            (
+                "guard_widar_mechanism",
+                "Sec. 8.1: guard signal ablation on Widar (MLP, tau=0.9)",
+                "mlp",
+                "no_adapt,entropy_tta,safe_entropy_tta,collapse_guarded_entropy_tta",
+                "0.9",
+                "outputs/final_ablations/collapse_guard_widar.json",
+            ),
+            (
+                "guard_widar_entropy_variants",
+                "Sec. 8.1: guard on sar-lite/cotta-lite, Widar (MLP, tau=0.9)",
+                "mlp",
+                "no_adapt,sar,collapse_guarded_sar,cotta,collapse_guarded_cotta",
+                "0.9",
+                "outputs/collapse_guard_generality/widar_sar_cotta.json",
+            ),
+            (
+                "guard_widar_backbones",
+                "App. guard across backbones: Widar MLP/MLP+BN/CNN1D (tau=0.95)",
+                "mlp,mlp_bn,cnn1d",
+                "no_adapt,entropy_tta,collapse_guarded_entropy_tta",
+                "0.95",
+                "outputs/guard_backbone/widar_3backbone.json",
+            ),
+            *(
+                (
+                    f"guard_widar_floor_{r}",
+                    f"Sec. 8.3: guard floor sweep on Widar, tau={r}",
+                    "mlp",
+                    "no_adapt,entropy_tta,collapse_guarded_entropy_tta",
+                    r,
+                    f"outputs/collapse_guard_sweep/ratio_{r}.json",
+                )
+                for r in ("0.5", "0.7", "0.8", "0.9", "0.95", "1.0")
+            ),
+        )
+    },
+    **{
+        cid: {
+            "description": desc,
+            "argv": [
+                "scripts/run_extended_tta_per_dataset.py",
+                "--dataset",
+                dataset,
+                "--backbone",
+                backbone,
+                "--methods",
+                methods,
+                "--collapse-guard-ratio",
+                ratio,
+                "--weight-reset-probability",
+                reset_p,
+                "--output-dir",
+                out_dir,
+            ],
+            "outputs": [f"{out_dir}/{dataset}_lame_sar_cotta.json"],
+        }
+        for cid, desc, dataset, backbone, methods, ratio, reset_p, out_dir in (
+            (
+                "core_ntufi",
+                "App. per-method NTU-Fi table (primary MLP)",
+                "ntufi_har",
+                "mlp",
+                "no_adapt,entropy_tta,physics_tta,safe_physics_tta,"
+                "selective_physics_tta,tent,shot,t3a",
+                "0.9",
+                "0.01",
+                "outputs/core_regen",
+            ),
+            (
+                "core_signfi",
+                "App. per-method SignFi-10 table (primary MLP)",
+                "signfi_top10",
+                "mlp",
+                "no_adapt,entropy_tta,physics_tta,safe_physics_tta,"
+                "selective_physics_tta,tent,shot,t3a",
+                "0.9",
+                "0.01",
+                "outputs/core_regen",
+            ),
+            (
+                "guard_ntufi",
+                "Sec. 8.1: guard on NTU-Fi entropy variants (MLP, tau=0.9)",
+                "ntufi_har",
+                "mlp",
+                "no_adapt,entropy_tta,collapse_guarded_entropy_tta,t3a,"
+                "collapse_guarded_t3a,sar,collapse_guarded_sar,cotta,"
+                "collapse_guarded_cotta",
+                "0.9",
+                "0.01",
+                "outputs/collapse_guard_ntufi",
+            ),
+            *(
+                (
+                    f"guard_ntufi_floor_{r}",
+                    f"Sec. 8.3: NTU-Fi guard floor, tau={r}",
+                    "ntufi_har",
+                    "mlp",
+                    "no_adapt,entropy_tta,collapse_guarded_entropy_tta",
+                    r,
+                    "0.01",
+                    f"outputs/collapse_guard_ntufi_sweep/r{r}",
+                )
+                for r in ("0.95", "0.98", "1.0")
+            ),
+            (
+                "guard_signfi_mlpbn",
+                "Sec. 8.2: guard on SignFi MLP+BN entropy and TENT (tau=0.9)",
+                "signfi_top10",
+                "mlp_bn",
+                "no_adapt,entropy_tta,collapse_guarded_entropy_tta,tent",
+                "0.9",
+                "0.01",
+                "outputs/collapse_guard_signfi",
+            ),
+            (
+                "guard_signfi_tent",
+                "Sec. 8.2: guarded TENT on SignFi MLP+BN (tau=0.9)",
+                "signfi_top10",
+                "mlp_bn",
+                "no_adapt,tent,collapse_guarded_tent",
+                "0.9",
+                "0.01",
+                "outputs/collapse_guard_signfi_tent",
+            ),
+            *(
+                (
+                    f"guard_signfi_floor_{r}",
+                    f"Sec. 8.3: SignFi MLP+BN guarded TENT, tau={r}",
+                    "signfi_top10",
+                    "mlp_bn",
+                    "no_adapt,tent,collapse_guarded_tent",
+                    r,
+                    "0.01",
+                    f"outputs/collapse_guard_signfi_tight/r{r}",
+                )
+                for r in ("0.95", "0.98")
+            ),
+            *(
+                (
+                    f"guard_backbone_{name}",
+                    f"App. guard across backbones: {dataset} {backbone} (tau=0.95)",
+                    dataset,
+                    backbone,
+                    "no_adapt,entropy_tta,collapse_guarded_entropy_tta",
+                    "0.95",
+                    "0.01",
+                    f"outputs/guard_backbone/{name}",
+                )
+                for name, dataset, backbone in (
+                    ("ntufi_mlp_bn", "ntufi_har", "mlp_bn"),
+                    ("ntufi_cnn1d", "ntufi_har", "cnn1d"),
+                    ("signfi_mlp", "signfi_top10", "mlp"),
+                    ("signfi_mlp_bn", "signfi_top10", "mlp_bn"),
+                    ("signfi_cnn1d", "signfi_top10", "cnn1d"),
+                )
+            ),
+            (
+                "reset_ntufi_default",
+                "Sec. 8.4: weight reset at CoTTA's p=0.01 vs guard, NTU-Fi",
+                "ntufi_har",
+                "mlp",
+                "no_adapt,entropy_tta,reset_entropy_tta,collapse_guarded_entropy_tta",
+                "0.95",
+                "0.01",
+                "outputs/datta_comparison/ntufi",
+            ),
+            (
+                "reset_ntufi_p0.5",
+                "Sec. 8.4: weight reset p=0.5 vs guard, NTU-Fi",
+                "ntufi_har",
+                "mlp",
+                "no_adapt,entropy_tta,reset_entropy_tta,collapse_guarded_entropy_tta",
+                "0.95",
+                "0.5",
+                "outputs/reset_transfer_ntufi/p0.5",
+            ),
+            (
+                "reset_signfi_p0.5",
+                "Sec. 8.4: weight reset p=0.5 vs guard, SignFi MLP+BN TENT",
+                "signfi_top10",
+                "mlp_bn",
+                "no_adapt,tent,reset_tent,collapse_guarded_tent",
+                "0.95",
+                "0.5",
+                "outputs/reset_vs_guard_signfi/p0.5",
+            ),
+            *(
+                (
+                    f"reset_widar_p{p}",
+                    f"Sec. 8.4: weight reset sweep on Widar, p={p}",
+                    "widar_bvp",
+                    "mlp",
+                    "no_adapt,entropy_tta,reset_entropy_tta,collapse_guarded_entropy_tta",
+                    "0.95",
+                    p,
+                    f"outputs/reset_transfer_widar/p{p}",
+                )
+                for p in ("0.01", "0.05", "0.1", "0.3", "0.5")
+            ),
+        )
+    },
     "guard_coverage": {
         "description": "Collapse-guard single source of truth (aggregates guard runs)",
         "argv": ["scripts/build_guard_coverage.py"],
@@ -382,6 +602,59 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         "argv": ["scripts/build_method_coverage_matrix.py"],
         "outputs": ["outputs/coverage/method_coverage_matrix.json"],
     },
+    **{
+        f"faithful_ports_{dataset}_{backbone}": {
+            "description": f"Faithful SAR/CoTTA/T3A vs -lite ports: {dataset} {backbone}",
+            "argv": [
+                "scripts/run_extended_tta_per_dataset.py",
+                "--dataset",
+                dataset,
+                "--backbone",
+                backbone,
+                "--methods",
+                "no_adapt,entropy_tta,tent,sar,sar_full,cotta,cotta_full,t3a,t3a_full"
+                + (",bn_reset" if backbone == "mlp_bn" else ""),
+                "--output-dir",
+                f"outputs/faithful_ports/{dataset}_{backbone}",
+            ],
+            "outputs": [
+                f"outputs/faithful_ports/{dataset}_{backbone}/"
+                f"{dataset}_lame_sar_cotta.json"
+            ],
+        }
+        for dataset in ("widar_bvp", "ntufi_har", "signfi_top10")
+        for backbone in ("mlp", "mlp_bn")
+    },
+    "protocol_sweep": {
+        "description": "Learning-rate x step-budget sweep with label-free selection",
+        "argv": ["scripts/run_protocol_sensitivity.py", "--part", "sweep"],
+        "outputs": ["outputs/protocol_sensitivity/sweep.json"],
+    },
+    "protocol_stream": {
+        "description": "Guard and TENT on class-blocked (non-i.i.d.) target streams",
+        "argv": ["scripts/run_protocol_sensitivity.py", "--part", "stream"],
+        "outputs": ["outputs/protocol_sensitivity/stream.json"],
+    },
+    "protocol_summary": {
+        "description": "Summary of the sweep and stream runs (selection rules, CIs)",
+        "argv": ["scripts/summarize_protocol_sensitivity.py"],
+        "outputs": ["outputs/protocol_sensitivity/summary.json"],
+    },
+    "collapse_trajectories": {
+        "description": "Fig. 5 + Sec. 8: confusion matrices and class-usage trajectories",
+        "argv": ["scripts/analyze_collapse_trajectories.py"],
+        "outputs": ["outputs/collapse_trajectories/collapse_trajectories.json"],
+    },
+    "guard_vs_early_stopping": {
+        "description": "Guard vs fixed and randomly timed early stopping",
+        "argv": ["scripts/analyze_guard_vs_early_stopping.py"],
+        "outputs": ["outputs/statistics/guard_vs_early_stopping.json"],
+    },
+    "harm_tolerance": {
+        "description": "Harm rate with a one-sample tolerance, per environment",
+        "argv": ["scripts/harm_tolerance_report.py"],
+        "outputs": ["outputs/statistics/harm_tolerance.json"],
+    },
     "figures": {
         "description": "Figures 1-5 (regenerated from canonical outputs/)",
         "argv": ["scripts/generate_figures.py"],
@@ -391,6 +664,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
             "manuscript/paper2/figures/fig3_step_budget.pdf",
             "manuscript/paper2/figures/fig4_tsne.pdf",
             "manuscript/paper2/figures/fig5_confusion.pdf",
+            "manuscript/paper2/figures/fig8_collapse_trajectories.pdf",
         ],
     },
     "aggregation": {
@@ -549,26 +823,13 @@ def write_submission_manifest(root: Path) -> None:
 
 
 def _default_order() -> list[str]:
-    return [
-        "widar_full",
-        "widar_ext",
-        "ntufi_signfi_core",
-        "ntufi_ext",
-        "signfi_ext",
-        "widar_faithful",
-        "synthetic_shift",
-        "faithful_tent",
-        "db_ablations",
-        "arch_ablation_legacy",
-        "arch_ci",
-        "label_smoothing",
-        "source_overfit",
-        "overconfidence",
-        "upper_bound",
-        "selective_threshold",
-        "coverage",
-        "figures",
-    ]
+    """Every registered component, in SOURCE_SCRIPTS order, with figures last.
+
+    SOURCE_SCRIPTS is written in dependency order (runs before the aggregators
+    that read them). ``aggregation`` has no command and is skipped.
+    """
+    ids = [c for c in SOURCE_SCRIPTS if c not in ("figures", "aggregation")]
+    return [*ids, "figures"]
 
 
 def main() -> None:

@@ -1,0 +1,266 @@
+{
+  "source": "outputs/collapse_trajectories/collapse_trajectories.json",
+  "note": "p_ge_guard: share of random stops (same stopping-point distribution) whose mean gain is at least the guard's",
+  "cells": {
+    "ntufi_har/mlp": {
+      "n": 15,
+      "guard_accepted_steps": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2
+      ],
+      "guard": {
+        "mean_gain_pp": -3.866525956078194,
+        "harm_rate": 0.5333333333333333,
+        "harm_rate_gt1pp": 0.4
+      },
+      "unguarded_5_steps": {
+        "mean_gain_pp": -18.868787376250058,
+        "harm_rate": 1.0,
+        "harm_rate_gt1pp": 1.0
+      },
+      "fixed_budget": {
+        "1": {
+          "mean_gain_pp": -5.800291471933262,
+          "harm_rate": 1.0,
+          "harm_rate_gt1pp": 0.8666666666666667
+        },
+        "2": {
+          "mean_gain_pp": -10.164832403638371,
+          "harm_rate": 1.0,
+          "harm_rate_gt1pp": 1.0
+        },
+        "3": {
+          "mean_gain_pp": -13.07000351776471,
+          "harm_rate": 1.0,
+          "harm_rate_gt1pp": 1.0
+        }
+      },
+      "random_stop_same_distribution": {
+        "mean_gain_pp": -4.253839891451832,
+        "p_ge_guard": 0.2533,
+        "permutations": 10000
+      }
+    },
+    "signfi_top10/mlp": {
+      "n": 15,
+      "guard_accepted_steps": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "guard": {
+        "mean_gain_pp": 0.0,
+        "harm_rate": 0.0,
+        "harm_rate_gt1pp": 0.0
+      },
+      "unguarded_5_steps": {
+        "mean_gain_pp": -11.428571428571429,
+        "harm_rate": 0.7333333333333333,
+        "harm_rate_gt1pp": 0.7333333333333333
+      },
+      "fixed_budget": {
+        "1": {
+          "mean_gain_pp": -9.968253968253968,
+          "harm_rate": 0.6666666666666666,
+          "harm_rate_gt1pp": 0.6666666666666666
+        },
+        "2": {
+          "mean_gain_pp": -11.428571428571429,
+          "harm_rate": 0.7333333333333333,
+          "harm_rate_gt1pp": 0.7333333333333333
+        },
+        "3": {
+          "mean_gain_pp": -11.428571428571429,
+          "harm_rate": 0.7333333333333333,
+          "harm_rate_gt1pp": 0.7333333333333333
+        }
+      },
+      "random_stop_same_distribution": {
+        "mean_gain_pp": 0.0,
+        "p_ge_guard": 1.0,
+        "permutations": 10000
+      }
+    },
+    "signfi_top10/resnet2d": {
+      "n": 15,
+      "guard_accepted_steps": [
+        3,
+        3,
+        3,
+        4,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "guard": {
+        "mean_gain_pp": -18.476190476190478,
+        "harm_rate": 0.9333333333333333,
+        "harm_rate_gt1pp": 0.9333333333333333
+      },
+      "unguarded_5_steps": {
+        "mean_gain_pp": -18.126984126984127,
+        "harm_rate": 0.9333333333333333,
+        "harm_rate_gt1pp": 0.9333333333333333
+      },
+      "fixed_budget": {
+        "1": {
+          "mean_gain_pp": -16.380952380952383,
+          "harm_rate": 0.8,
+          "harm_rate_gt1pp": 0.8
+        },
+        "2": {
+          "mean_gain_pp": -17.04761904761905,
+          "harm_rate": 0.9333333333333333,
+          "harm_rate_gt1pp": 0.9333333333333333
+        },
+        "3": {
+          "mean_gain_pp": -19.07936507936508,
+          "harm_rate": 1.0,
+          "harm_rate_gt1pp": 1.0
+        }
+      },
+      "random_stop_same_distribution": {
+        "mean_gain_pp": -18.649050793650794,
+        "p_ge_guard": 0.4713,
+        "permutations": 10000
+      }
+    },
+    "signfi_top10/transformer": {
+      "n": 15,
+      "guard_accepted_steps": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        4,
+        5,
+        5,
+        5
+      ],
+      "guard": {
+        "mean_gain_pp": -9.333333333333332,
+        "harm_rate": 0.9333333333333333,
+        "harm_rate_gt1pp": 0.9333333333333333
+      },
+      "unguarded_5_steps": {
+        "mean_gain_pp": -9.936507936507937,
+        "harm_rate": 0.9333333333333333,
+        "harm_rate_gt1pp": 0.9333333333333333
+      },
+      "fixed_budget": {
+        "1": {
+          "mean_gain_pp": -8.444444444444445,
+          "harm_rate": 0.8666666666666667,
+          "harm_rate_gt1pp": 0.8666666666666667
+        },
+        "2": {
+          "mean_gain_pp": -8.444444444444441,
+          "harm_rate": 0.8666666666666667,
+          "harm_rate_gt1pp": 0.8666666666666667
+        },
+        "3": {
+          "mean_gain_pp": -8.57142857142857,
+          "harm_rate": 0.9333333333333333,
+          "harm_rate_gt1pp": 0.9333333333333333
+        }
+      },
+      "random_stop_same_distribution": {
+        "mean_gain_pp": -8.801926984126982,
+        "p_ge_guard": 0.6819,
+        "permutations": 10000
+      }
+    },
+    "widar_bvp/mlp": {
+      "n": 15,
+      "guard_accepted_steps": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3
+      ],
+      "guard": {
+        "mean_gain_pp": -0.6024096385542177,
+        "harm_rate": 0.5333333333333333,
+        "harm_rate_gt1pp": 0.4
+      },
+      "unguarded_5_steps": {
+        "mean_gain_pp": -6.581883087907184,
+        "harm_rate": 0.9333333333333333,
+        "harm_rate_gt1pp": 0.8666666666666667
+      },
+      "fixed_budget": {
+        "1": {
+          "mean_gain_pp": -1.0977242302543517,
+          "harm_rate": 0.8666666666666667,
+          "harm_rate_gt1pp": 0.6
+        },
+        "2": {
+          "mean_gain_pp": -2.46318607764391,
+          "harm_rate": 0.8,
+          "harm_rate_gt1pp": 0.8
+        },
+        "3": {
+          "mean_gain_pp": -3.882195448460509,
+          "harm_rate": 0.8666666666666667,
+          "harm_rate_gt1pp": 0.7333333333333333
+        }
+      },
+      "random_stop_same_distribution": {
+        "mean_gain_pp": -1.3687889335118257,
+        "p_ge_guard": 0.0017,
+        "permutations": 10000
+      }
+    }
+  }
+}

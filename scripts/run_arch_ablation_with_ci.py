@@ -222,6 +222,7 @@ def main() -> None:
             "seeds": list(seeds),
             "methods": list(methods),
             "source_epochs": args.source_epochs,
+            "collapse_guard_diversity_ratio": args.collapse_guard_ratio,
         },
         "elapsed_seconds": time.monotonic() - t_global,
     }

@@ -7,6 +7,71 @@ in the paper can be traced to the code that produced them.
 Superseded artifacts are preserved rather than overwritten, per the deprecation policy in
 the supplement.
 
+## 2026-10-15
+
+### Corrected
+
+- **Simplified ports renamed by what they compute.** `sar` and `cotta` are batch entropy plus
+  a SAR-like low-entropy filter or a CoTTA-like squared-probability pseudo-label term; they
+  update the encoder and have no sharpness-aware step, model recovery, EMA teacher or
+  augmentation. `t3a` runs five entropy steps before T3A's prototype readout. They are now
+  reported as `sar-lite`, `cotta-lite` and `t3a-ent` (code names unchanged), and the
+  "faithful BN-only SAR/CoTTA" label on `run_widar_faithful_sar_cotta.py` is withdrawn.
+  The guard result on these methods is a result across entropy variants, not across method
+  families.
+- **LAME** is a no-op in our port (the source model is returned unchanged); it is excluded
+  from method counts.
+- **Physics prior on real data.** The prepared Widar_BVP, NTU-Fi and SignFi-10 bundles carry
+  no prior, so `p(x)=0` in every real-data run and the physics-prior methods reduce to
+  feature-moment alignment there.
+- **NTU-Fi and SignFi-10 environments** are ordered partitions of each class's recordings
+  (cut into thirds), not recording sessions.
+- **Label smoothing.** TENT's drop in P(gain<0) from 0.60 to 0.33 is within one test sample
+  (rate of losing more than one sample: 0.13, 0.20, 0.20 at alpha 0, 0.1, 0.2) and is no
+  longer reported as an effect; the entropy-minimisation loss does shrink in every room.
+- **Guard.** Seven harmful method/dataset pairs on the primary MLP at tau=0.9 (not eight).
+  At tau=0.95 the guard makes SignFi ResNet-BN slightly worse (-18.13 -> -18.48 pp) rather
+  than removing "at most 6 %", and in low-harm cells it lowers the mean in six of ten (by up
+  to 1.2 pp). tau=0.95 was chosen on the reported datasets; tau=0.9 is the pre-sweep default.
+- **Guard vs weight reset.** Beyond a 1 pp loss the two are equal on Widar (0.40 each); the
+  guard's lower P(gain<0) there comes from five fully rolled-back runs. On NTU-Fi the
+  difference holds (0.40 vs 0.87).
+- **Widar reset p=0.5** regenerated with per-run rows (`outputs/reset_transfer_widar/`):
+  -0.66 pp, P(gain<0) 0.73 (previous summary-only file: -0.65, 0.73).
+
+### Added
+
+- **SAR, CoTTA and T3A as published** (`sar_full`, `cotta_full`, `t3a_full` in
+  `pinn4csi/training/paper2_tta.py`; `outputs/faithful_ports/`, six dataset x backbone
+  cells): SAR with E0 = 0.4 ln C filtering, the SAM two-pass update and model recovery on
+  normalisation affines; CoTTA with an EMA teacher, augmentation-averaged pseudo-labels
+  (gain jitter and noise in place of image augmentations) and stochastic restore; online
+  gradient-free T3A with 20 supports per class. At the benchmark's optimiser and budget
+  they lose at most 4.3 pp on the primary MLP where the -lite ports lose up to 18.7 pp; none
+  clears zero on the primary MLP. SAR matches TENT on SignFi MLP+BN (+10.51 pp).
+- **NTU-Fi MLP+BN BN-affine TENT**: +0.67 pp [+0.17, +1.31], a second positive cell.
+- **Protocol sensitivity** (`scripts/run_protocol_sensitivity.py`,
+  `scripts/summarize_protocol_sensitivity.py` -> `outputs/protocol_sensitivity/`):
+  learning rate x step-budget sweep with source-validation selection, and class-blocked
+  target streams. Selection by source accuracy picks the gentlest setting and removes most
+  harm; no setting, even chosen with target labels, helps on Widar; on SignFi MLP+BN a
+  smaller learning rate turns entropy minimisation from -0.89 into +9.78 pp.
+- **Guard vs early stopping** (`scripts/analyze_guard_vs_early_stopping.py`): the guard's
+  final model equals the unguarded k-step model; it beats a randomly timed stop with the
+  same stopping distribution on Widar (p = 0.002) but not on NTU-Fi (p = 0.25).
+- `scripts/analyze_collapse_trajectories.py` -> `outputs/collapse_trajectories/`: confusion
+  matrices and predicted-class diversity after 0-5 entropy steps; reproduces the benchmark's
+  per-cell losses exactly. Figure 5 is now built from real predictions (it previously
+  filled off-diagonal cells with a synthetic confidence-gap value).
+- `scripts/harm_tolerance_report.py` -> `outputs/statistics/harm_tolerance.json`: harm rate
+  beyond one test sample and beyond 1 pp, abstention rate, per-environment means.
+- `scripts/reproduce_all_results.py` now registers every collapse-guard and weight-reset
+  run (previously none were registered) and the core NTU-Fi/SignFi per-method runs, and its
+  run order is derived from the registry: the old hard-coded order listed 18 of the
+  components, so a full run and `--only` silently omitted the rest.
+- Determinism note: MKL's dynamic threading changes trained models under CPU load; set
+  `MKL_DYNAMIC=FALSE OMP_DYNAMIC=FALSE MKL_NUM_THREADS=6 OMP_NUM_THREADS=6` to reproduce.
+
 ## 2026-10-04
 
 ### Reproduction audit

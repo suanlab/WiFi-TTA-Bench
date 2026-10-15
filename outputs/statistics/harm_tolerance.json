@@ -1,0 +1,4716 @@
+{
+  "definitions": {
+    "harm_rate": "P(gain < 0)",
+    "harm_rate_gt1_sample": "P(gain < -1.5/n_test): loses 2+ samples",
+    "harm_rate_gt1pp": "P(gain < -0.01)",
+    "abstain_rate": "P(accepted_steps == 0 and gain == 0)",
+    "envs_negative": "held-out environments with mean gain < 0"
+  },
+  "target_test_sizes": {
+    "widar_bvp": {
+      "0": 1494,
+      "1": 1494,
+      "2": 1494
+    },
+    "ntufi_har": {
+      "0": 198,
+      "1": 201,
+      "2": 201
+    },
+    "signfi_top10": {
+      "0": 30,
+      "1": 35,
+      "2": 35
+    }
+  },
+  "rows": [
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.05879692446856711,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 1.5151515151515182,
+        "1": -1.8905472636815948,
+        "2": 0.19900497512437498
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "conservative_entropy_tta",
+      "n": 15,
+      "mean_pp": -1.0975425900799045,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.6060606060606055,
+        "1": -1.2935323383084563,
+        "2": -1.3930348258706515
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -0.2578018995929436,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 1.5151515151515182,
+        "1": -1.7910447761194037,
+        "2": -0.4975124378109453
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -0.023619277350620155,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 1.9191919191919224,
+        "1": -1.5920398009950265,
+        "2": -0.3980099502487566
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -6.8963264485652545,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.6,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -6.161616161616161,
+        "1": -6.467661691542285,
+        "2": -8.059701492537314
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": 0.6462636313382567,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.26666666666666666,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 3.232323232323231,
+        "1": -0.8955223880597019,
+        "2": -0.3980099502487589
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "shot",
+      "n": 15,
+      "mean_pp": 0.4688677823006193,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.9090909090909127,
+        "1": 0.3980099502487566,
+        "2": 0.09950248756218859
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": 0.44474617201656874,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.26666666666666666,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 2.727272980140918,
+        "1": -1.2935319409441592,
+        "2": -0.09950252314705256
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 1.0734207749133124,
+      "harm_rate": 0.06666666666666667,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 2.4242424242424265,
+        "1": 0.298507462686568,
+        "2": 0.497512437810943
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d_gn.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -5.9435147494848986,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.6,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.2,
+      "env_mean_pp": {
+        "0": -1.313131313131315,
+        "1": -4.8756218905472615,
+        "2": -11.641791044776117
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d_gn.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "conservative_entropy_tta",
+      "n": 15,
+      "mean_pp": -22.57801899592944,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -24.84848484848485,
+        "1": -8.55721393034826,
+        "2": -34.32835820895522
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d_gn.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -18.50947283783105,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -20.40404040404041,
+        "1": -11.840796019900496,
+        "2": -23.28358208955224
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d_gn.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -20.48645660585959,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -24.444444444444446,
+        "1": -10.547263681592037,
+        "2": -26.46766169154229
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d_gn.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -4.574099200964873,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.6,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.6060606060606055,
+        "1": -5.27363184079602,
+        "2": -9.054726368159201
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d_gn.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -25.668124026332983,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -25.95959595959596,
+        "1": -31.542288557213926,
+        "2": -19.502487562189057
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d_gn.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "shot",
+      "n": 15,
+      "mean_pp": -3.139856274184632,
+      "harm_rate": 0.8,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.6,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -4.444444444444449,
+        "1": -1.293532338308454,
+        "2": -3.681592039800994
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d_gn.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -18.7230512090793,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -23.33333296005172,
+        "1": -6.567163888494765,
+        "2": -26.26865677869142
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_resnet2d_gn.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 0.06583245389215546,
+      "harm_rate": 0.26666666666666666,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.10101010101010166,
+        "1": -0.19900497512437718,
+        "2": 0.4975124378109453
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_transformer.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -1.6352580531685015,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.13333333333333333,
+      "env_mean_pp": {
+        "0": -2.020202020202021,
+        "1": -1.7910447761194028,
+        "2": -1.0945273631840802
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_transformer.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "conservative_entropy_tta",
+      "n": 15,
+      "mean_pp": -9.006985275641991,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -10.404040404040405,
+        "1": -6.567164179104476,
+        "2": -10.049751243781095
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_transformer.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -7.875772651892057,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -9.696969696969697,
+        "1": -5.771144278606964,
+        "2": -8.159203980099502
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_transformer.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -7.872757424996231,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -9.090909090909092,
+        "1": -5.771144278606964,
+        "2": -8.756218905472638
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_transformer.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -3.6645057540579935,
+      "harm_rate": 0.8,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.2323232323232363,
+        "1": -3.8805970149253723,
+        "2": -3.880597014925373
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_transformer.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -8.80395999798985,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -9.595959595959599,
+        "1": -7.6616915422885565,
+        "2": -9.154228855721394
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_transformer.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "shot",
+      "n": 15,
+      "mean_pp": -2.794110256796824,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.6666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.6161616161616166,
+        "1": -3.582089552238806,
+        "2": -3.1840796019900495
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_transformer.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -8.539625304453011,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -9.797979990641279,
+        "1": -7.761193931992374,
+        "2": -8.059701990725388
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/ntufi_har_transformer.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -0.06834514297200796,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.40404040404040553,
+        "1": 0.09950248756219082,
+        "2": 0.09950248756219082
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -18.476190476190478,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -20.0,
+        "1": -14.285714285714288,
+        "2": -21.142857142857142
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "conservative_entropy_tta",
+      "n": 15,
+      "mean_pp": -16.285714285714285,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -6.0,
+        "1": -18.857142857142854,
+        "2": -23.999999999999993
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -18.31746031746032,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -20.666666666666664,
+        "1": -15.42857142857143,
+        "2": -18.857142857142858
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -18.126984126984127,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -20.666666666666664,
+        "1": -14.285714285714288,
+        "2": -19.428571428571427
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -15.714285714285714,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -13.999999999999998,
+        "1": -12.0,
+        "2": -21.142857142857142
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -18.253968253968253,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -19.33333333333333,
+        "1": -16.0,
+        "2": -19.428571428571427
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "shot",
+      "n": 15,
+      "mean_pp": -20.063492063492063,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -17.333333333333336,
+        "1": -19.42857142857143,
+        "2": -23.428571428571427
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -18.888888188297788,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -20.66666646798452,
+        "1": -15.428570368460246,
+        "2": -20.571427728448594
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 2.4761904761904754,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.26666666666666666,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 12.0,
+        "1": -0.5714285714285727,
+        "2": -4.0
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d_gn.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -4.412698412698413,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -4.666666666666667,
+        "1": -4.571428571428572,
+        "2": -4.000000000000002
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d_gn.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "conservative_entropy_tta",
+      "n": 15,
+      "mean_pp": -5.523809523809524,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -8.0,
+        "1": -4.571428571428572,
+        "2": -4.000000000000002
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d_gn.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -4.412698412698413,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -4.666666666666667,
+        "1": -4.571428571428572,
+        "2": -4.000000000000002
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d_gn.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -4.412698412698413,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -4.666666666666667,
+        "1": -4.571428571428572,
+        "2": -4.000000000000002
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d_gn.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -1.8730158730158732,
+      "harm_rate": 0.2,
+      "harm_rate_gt1_sample": 0.2,
+      "harm_rate_gt1pp": 0.2,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.333333333333334,
+        "1": 0.0,
+        "2": -2.2857142857142865
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d_gn.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -6.412698412698411,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.6666666666666666,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -6.666666666666668,
+        "1": -6.2857142857142865,
+        "2": -6.2857142857142865
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d_gn.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "shot",
+      "n": 15,
+      "mean_pp": -2.222222222222223,
+      "harm_rate": 0.26666666666666666,
+      "harm_rate_gt1_sample": 0.26666666666666666,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 1.3333333333333335,
+        "1": -2.857142857142858,
+        "2": -5.142857142857143
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d_gn.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -4.603173916538557,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -4.66666616499424,
+        "1": -4.571427758250917,
+        "2": -4.5714278263705115
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_resnet2d_gn.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -0.19047619047619055,
+      "harm_rate": 0.06666666666666667,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": -0.5714285714285716
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_transformer.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -9.333333333333332,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -7.999999999999999,
+        "1": -6.857142857142858,
+        "2": -13.142857142857146
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_transformer.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "conservative_entropy_tta",
+      "n": 15,
+      "mean_pp": -10.34920634920635,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -13.33333333333333,
+        "1": -8.0,
+        "2": -9.714285714285714
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_transformer.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -9.936507936507937,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -8.666666666666664,
+        "1": -8.571428571428571,
+        "2": -12.571428571428573
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_transformer.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -9.936507936507937,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -8.666666666666664,
+        "1": -8.571428571428571,
+        "2": -12.571428571428573
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_transformer.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -1.1428571428571426,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.2,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 1.1102230246251565e-15,
+        "1": -0.5714285714285711,
+        "2": -2.857142857142857
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_transformer.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -8.888888888888886,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -6.666666666666665,
+        "1": -8.0,
+        "2": -12.000000000000002
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_transformer.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "shot",
+      "n": 15,
+      "mean_pp": -8.190476190476192,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -7.999999999999999,
+        "1": -4.571428571428572,
+        "2": -12.000000000000002
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_transformer.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -9.936507314798378,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -8.666666269302366,
+        "1": -8.57142788278205,
+        "2": -12.571427792310713
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/signfi_top10_transformer.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 0.0,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.08478357875948268,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.26666666666666666,
+      "harm_rate_gt1pp": 0.2,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.040160642570281624,
+        "1": 0.2008032128514048,
+        "2": -0.4149933065595713
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "conservative_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.3257474341811693,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.026773761713520527,
+        "1": -0.5220883534136556,
+        "2": -0.42838018741633177
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -0.026773761713521083,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.2,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.040160642570280514,
+        "1": 0.3748326639892907,
+        "2": -0.4953145917001345
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": 0.0356983489513607,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.26666666666666666,
+      "harm_rate_gt1pp": 0.2,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.10709504685408322,
+        "1": 0.4283801874163306,
+        "2": -0.42838018741633177
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -0.8255243195002234,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.4819277108433728,
+        "1": 0.0401606425702794,
+        "2": -2.0348058902275765
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -0.15171798304328465,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.21419009370816644,
+        "1": -0.18741633199464647,
+        "2": -0.481927710843374
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "shot",
+      "n": 15,
+      "mean_pp": 0.16064257028112464,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.8032128514056214,
+        "1": 1.0709504685408289,
+        "2": 0.21419009370816644
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": 0.49977692056053286,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.8165999776228682,
+        "1": 0.13386911257522893,
+        "2": 2.182061626729238
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 0.5577867023650163,
+      "harm_rate": 0.26666666666666666,
+      "harm_rate_gt1_sample": 0.2,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.02677376171351997,
+        "1": 0.9103078982597046,
+        "2": 0.789825970548864
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d_gn.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.8433734939759044,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.13333333333333333,
+      "env_mean_pp": {
+        "0": -0.24096385542168863,
+        "1": -1.8741633199464525,
+        "2": -0.4149933065595723
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d_gn.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "conservative_entropy_tta",
+      "n": 15,
+      "mean_pp": -2.3828647925033484,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.7333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 1.0843373493975894,
+        "1": -5.890227576974566,
+        "2": -2.342704149933067
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d_gn.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -2.400713966979027,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.6666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.4149933065595723,
+        "1": -3.5207496653279784,
+        "2": -3.266398929049531
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d_gn.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -2.4721106648817495,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.6666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.5622489959839372,
+        "1": -3.3868808567603756,
+        "2": -3.4672021419009367
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d_gn.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": 1.378848728246318,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.481927710843375,
+        "1": -0.21419009370816644,
+        "2": 4.832663989290496
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d_gn.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -2.904953145917002,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.3386880856760386,
+        "1": -4.538152610441767,
+        "2": -2.8380187416332006
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d_gn.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "shot",
+      "n": 15,
+      "mean_pp": 1.209281570727353,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.8299866131191446,
+        "1": -1.0843373493975905,
+        "2": 5.542168674698794
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d_gn.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -2.3560910275981453,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.6599730291519788,
+        "1": -3.4404286059988554,
+        "2": -1.9678714476436023
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_resnet2d_gn.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -0.022311468094600904,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.26666666666666666,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.026773761713521083,
+        "1": -0.053547523427041055,
+        "2": 0.013386880856759433
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_transformer.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.2588130298973673,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.9638554216867472,
+        "1": -0.7095046854082998,
+        "2": 0.8969210174029453
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_transformer.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "conservative_entropy_tta",
+      "n": 15,
+      "mean_pp": -2.552431950022312,
+      "harm_rate": 0.8,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.6666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.1646586345381542,
+        "1": -3.9625167336010714,
+        "2": -2.5301204819277103
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_transformer.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -0.9950914770191881,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.5662650602409642,
+        "1": -2.4765729585006704,
+        "2": 1.0575635876840705
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_transformer.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -0.9370816599732258,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.633199464524766,
+        "1": -2.4765729585006677,
+        "2": 1.298527443105757
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_transformer.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -1.1378848728246318,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.5488621151271761,
+        "1": -0.9638554216867468,
+        "2": -1.9009370816599722
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_transformer.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -1.4904060687193217,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.834002677376172,
+        "1": -2.878179384203481,
+        "2": 0.2409638554216875
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_transformer.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "shot",
+      "n": 15,
+      "mean_pp": -0.040160642570281624,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.6599732262382871,
+        "1": -0.17402945113788593,
+        "2": 1.713520749665328
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_transformer.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -1.1914324752457814,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.6331989945497227,
+        "1": -2.6907634384022505,
+        "2": 0.7496650072146294
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/backbone_breadth/widar_bvp_transformer.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 0.013386880856759617,
+      "harm_rate": 0.26666666666666666,
+      "harm_rate_gt1_sample": 0.26666666666666666,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.12048192771084432,
+        "1": 0.013386880856759433,
+        "2": 0.14725568942436373
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/collapse_guard_generality/widar_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "collapse_guarded_cotta",
+      "n": 15,
+      "mean_pp": -1.316376617581438,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.6666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -0.9236947791164675,
+        "1": -1.4859437751004023,
+        "2": -1.5394912985274445
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_generality/widar_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "collapse_guarded_sar",
+      "n": 15,
+      "mean_pp": -1.1914323962516733,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -1.0307898259705495,
+        "1": -1.0040160642570273,
+        "2": -1.5394912985274434
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_generality/widar_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -6.5863453815261055,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -3.052208835341368,
+        "1": -6.398929049531459,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_generality/widar_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -6.131191432396252,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -2.677376171352076,
+        "1": -5.421686746987951,
+        "2": -10.294511378848728
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_ntufi/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_cotta",
+      "n": 15,
+      "mean_pp": -9.565304789185381,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -9.292929292929292,
+        "1": -7.263681592039799,
+        "2": -12.139303482587064
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_ntufi/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -9.493441881501582,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -8.181818181818182,
+        "1": -8.258706467661689,
+        "2": -12.039800995024875
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_ntufi/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_sar",
+      "n": 15,
+      "mean_pp": -7.711442786069653,
+      "harm_rate": 0.8,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -10.000000000000002,
+        "1": -2.0895522388059695,
+        "2": -11.044776119402986
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_ntufi/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_t3a",
+      "n": 15,
+      "mean_pp": -9.191417134558773,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -7.474747089424519,
+        "1": -10.049752168987517,
+        "2": -10.049752145264279
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_ntufi/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -18.677823006181214,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -20.909090909090907,
+        "1": -12.736318407960196,
+        "2": -22.388059701492537
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_ntufi/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -18.868787376250058,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -19.292929292929294,
+        "1": -13.034825870646763,
+        "2": -24.278606965174127
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_ntufi/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -18.322026232473995,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -16.060606060606062,
+        "1": -14.129353233830841,
+        "2": -24.776119402985074
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_ntufi/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -18.49942230855983,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -18.38383832363167,
+        "1": -17.014925651882415,
+        "2": -20.099502950165398
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_ntufi_sweep/r0.95/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -3.866525956078194,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -3.8383838383838387,
+        "1": -0.3980099502487566,
+        "2": -7.363184079601988
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_ntufi_sweep/r0.95/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -18.868787376250058,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -19.292929292929294,
+        "1": -13.034825870646763,
+        "2": -24.278606965174127
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_signfi/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.8888888888888868,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": -6.666666666666665,
+        "1": 13.714285714285717,
+        "2": -9.714285714285714
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/collapse_guard_signfi/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -0.8888888888888868,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": -6.666666666666665,
+        "1": 13.714285714285717,
+        "2": -9.714285714285714
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/collapse_guard_signfi/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 10.285714285714288,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": 12.000000000000004,
+        "1": 16.0,
+        "2": 2.857142857142858
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/collapse_guard_signfi_tent/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_tent",
+      "n": 15,
+      "mean_pp": 10.285714285714288,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": 12.000000000000004,
+        "1": 16.0,
+        "2": 2.857142857142858
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/collapse_guard_signfi_tent/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 10.285714285714288,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": 12.000000000000004,
+        "1": 16.0,
+        "2": 2.857142857142858
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/collapse_guard_signfi_tight/r0.95/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_tent",
+      "n": 15,
+      "mean_pp": 10.285714285714288,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": 12.000000000000004,
+        "1": 16.0,
+        "2": 2.857142857142858
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/collapse_guard_signfi_tight/r0.95/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 10.285714285714288,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": 12.000000000000004,
+        "1": 16.0,
+        "2": 2.857142857142858
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/collapse_guard_sweep/ratio_0.9.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -1.1646586345381535,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.6666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.13333333333333333,
+      "env_mean_pp": {
+        "0": -0.6559571619812588,
+        "1": -1.4591700133868812,
+        "2": -1.3788487282463202
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_sweep/ratio_0.9.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -6.581883087907184,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.132530120481928,
+        "1": -6.305220883534138,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_sweep/ratio_0.95.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.6024096385542177,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.3333333333333333,
+      "env_mean_pp": {
+        "0": -0.6559571619812599,
+        "1": -0.5890227576974572,
+        "2": -0.5622489959839361
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/collapse_guard_sweep/ratio_0.95.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -6.581883087907184,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.132530120481928,
+        "1": -6.305220883534138,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/core_regen/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -18.868787376250058,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -19.292929292929294,
+        "1": -13.034825870646763,
+        "2": -24.278606965174127
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/core_regen/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -5.658073270013566,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.9393939393939386,
+        "1": -5.273631840796013,
+        "2": -7.761194029850746
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/core_regen/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "safe_physics_tta",
+      "n": 15,
+      "mean_pp": -4.130860847278757,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.6,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.2,
+      "env_mean_pp": {
+        "0": -3.6363636363636336,
+        "1": -3.880597014925371,
+        "2": -4.875621890547264
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/core_regen/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "selective_physics_tta",
+      "n": 15,
+      "mean_pp": -0.9935166803554839,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.3030308208080257,
+        "1": -0.19900458369088714,
+        "2": -3.0845762781835906
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/core_regen/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "shot",
+      "n": 15,
+      "mean_pp": -5.96864164028343,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -6.363636363636363,
+        "1": -4.477611940298505,
+        "2": -7.064676616915422
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/core_regen/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -18.49942230855983,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -18.38383832363167,
+        "1": -17.014925651882415,
+        "2": -20.099502950165398
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/core_regen/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -0.5673651942308652,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.2,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.707070707070705,
+        "1": -0.39800995024875435,
+        "2": -0.597014925373136
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/core_regen/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -11.428571428571429,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.7333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -12.0,
+        "1": -9.142857142857142,
+        "2": -13.142857142857139
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/core_regen/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -12.253968253968253,
+      "harm_rate": 0.8,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -9.333333333333334,
+        "1": -8.571428571428571,
+        "2": -18.857142857142854
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/core_regen/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "safe_physics_tta",
+      "n": 15,
+      "mean_pp": 0.0,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 1.0,
+      "env_mean_pp": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/core_regen/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "selective_physics_tta",
+      "n": 15,
+      "mean_pp": -0.8253962359731155,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.13333333333333333,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.3333329657713577,
+        "1": -1.1428567426545266,
+        "2": 1.0005065381735179e-06
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/core_regen/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "shot",
+      "n": 15,
+      "mean_pp": -12.444444444444445,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -9.333333333333334,
+        "1": -12.0,
+        "2": -16.0
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/core_regen/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -11.42857120056001,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.7333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -11.999999741713205,
+        "1": -9.142857010875428,
+        "2": -13.142856849091395
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/core_regen/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -6.952380952380952,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -10.0,
+        "1": -3.428571428571428,
+        "2": -7.428571428571429
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/datta_comparison/ntufi/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -3.866525956078194,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -3.8383838383838387,
+        "1": -0.3980099502487566,
+        "2": -7.363184079601988
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/datta_comparison/ntufi/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -18.868787376250058,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -19.292929292929294,
+        "1": -13.034825870646763,
+        "2": -24.278606965174127
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/datta_comparison/ntufi/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "reset_entropy_tta",
+      "n": 15,
+      "mean_pp": -18.336097291321167,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -18.888888888888893,
+        "1": -12.736318407960196,
+        "2": -23.383084577114428
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "dataset": "widar_bvp",
+      "backbone": "cnn1d",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -1.7626059794734492,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.5488621151271744,
+        "1": -2.9852744310575643,
+        "2": -2.8514056224899593
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "dataset": "widar_bvp",
+      "backbone": "cnn1d",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -0.7184292726461413,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.9370816599732278,
+        "1": -0.48192771084337616,
+        "2": -0.7362784471218198
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "dataset": "widar_bvp",
+      "backbone": "cnn1d",
+      "method": "selective_physics_tta",
+      "n": 15,
+      "mean_pp": -0.15171796336125087,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.3480592270293237,
+        "1": 0.17402978466856012,
+        "2": -0.28112444772298906
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "dataset": "widar_bvp",
+      "backbone": "cnn1d",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 0.12940651494868322,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.26773761713520583,
+        "1": 0.32128514056224855,
+        "2": -0.2008032128514048
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -6.581883087907184,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.132530120481928,
+        "1": -6.305220883534138,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -0.602409638554217,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.38821954484605126,
+        "1": -0.6693440428380182,
+        "2": -0.7496653279785814
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "selective_physics_tta",
+      "n": 15,
+      "mean_pp": 0.24542604743875782,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.24096368546466682,
+        "1": -0.04016103674289839,
+        "2": 0.535475493594505
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -0.04908522980812198,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.13333333333333333,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.040160642570280514,
+        "1": -0.18741633199464536,
+        "2": -1.1102230246251565e-15
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp_bn",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -0.6068719321731375,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.3520749665327991,
+        "1": -0.3346720214190102,
+        "2": -0.1338688085676032
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp_bn",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -0.40160642570281146,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.4993306559571629,
+        "1": 0.6425702811244982,
+        "2": -0.34805890227576963
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp_bn",
+      "method": "selective_physics_tta",
+      "n": 15,
+      "mean_pp": -0.12048171679391688,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.2,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.8433733359876895,
+        "1": 0.34805925096693113,
+        "2": 0.13386893463900762
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/final_ablations/arch_ablation_with_ci.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp_bn",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -0.3748326639892907,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.1378848728246327,
+        "1": 0.12048192771084375,
+        "2": -0.10709504685408322
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/final_ablations/collapse_guard_widar.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -1.1646586345381535,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.6666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -0.6559571619812588,
+        "1": -1.4591700133868812,
+        "2": -1.3788487282463202
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/final_ablations/collapse_guard_widar.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -6.581883087907184,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -3.132530120481928,
+        "1": -6.305220883534138,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/final_ablations/collapse_guard_widar.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "safe_entropy_tta",
+      "n": 15,
+      "mean_pp": -3.966979027219992,
+      "harm_rate": 0.8,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.7333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -3.4404283801874174,
+        "1": -1.325301204819278,
+        "2": -7.13520749665328
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/guard_backbone/ntufi_cnn1d/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -3.8459219056234,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -6.363636363636367,
+        "1": -2.3880597014925375,
+        "2": -2.7860696517412964
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/guard_backbone/ntufi_cnn1d/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -2.66696818935625,
+      "harm_rate": 0.8,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.6,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -2.727272727272727,
+        "1": -2.3880597014925375,
+        "2": -2.885572139303485
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/guard_backbone/ntufi_mlp_bn/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.7321975978692397,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -0.5050505050505061,
+        "1": -0.4975124378109453,
+        "2": -1.1940298507462677
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/guard_backbone/ntufi_mlp_bn/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -0.46233479069299904,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": 0.40404040404040437,
+        "1": -0.5970149253731338,
+        "2": -1.1940298507462677
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/guard_backbone/signfi_cnn1d/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -6.349206349206351,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": -9.333333333333334,
+        "1": -3.4285714285714293,
+        "2": -6.2857142857142865
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/guard_backbone/signfi_cnn1d/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -10.603174603174601,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.7333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": -10.666666666666666,
+        "1": -8.571428571428571,
+        "2": -12.571428571428573
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/guard_backbone/signfi_mlp/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": 0.0,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/guard_backbone/signfi_mlp/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -11.428571428571429,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.7333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": -12.0,
+        "1": -9.142857142857142,
+        "2": -13.142857142857139
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/guard_backbone/signfi_mlp_bn/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -1.650793650793649,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -6.666666666666665,
+        "1": 13.714285714285717,
+        "2": -12.000000000000002
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/guard_backbone/signfi_mlp_bn/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -0.8888888888888868,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -6.666666666666665,
+        "1": 13.714285714285717,
+        "2": -9.714285714285714
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/guard_backbone/widar_3backbone.json",
+      "dataset": "widar_bvp",
+      "backbone": "cnn1d",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -2.057117358322178,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.2409638554216864,
+        "1": -2.9183400267737625,
+        "2": -3.4939759036144573
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/guard_backbone/widar_3backbone.json",
+      "dataset": "widar_bvp",
+      "backbone": "cnn1d",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -1.7626059794734492,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.5488621151271744,
+        "1": -2.9852744310575643,
+        "2": -2.8514056224899593
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/guard_backbone/widar_3backbone.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.6024096385542177,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.3333333333333333,
+      "env_mean_pp": {
+        "0": -0.6559571619812599,
+        "1": -0.5890227576974572,
+        "2": -0.5622489959839361
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/guard_backbone/widar_3backbone.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -6.581883087907184,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.132530120481928,
+        "1": -6.305220883534138,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/guard_backbone/widar_3backbone.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp_bn",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.6068719321731375,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.3520749665327991,
+        "1": -0.3346720214190102,
+        "2": -0.1338688085676032
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/guard_backbone/widar_3backbone.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp_bn",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -0.6068719321731375,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.3520749665327991,
+        "1": -0.3346720214190102,
+        "2": -0.1338688085676032
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/new_methods/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -6.5863453815261055,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.052208835341368,
+        "1": -6.398929049531459,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/new_methods/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "lame",
+      "n": 15,
+      "mean_pp": 0.0,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 1.0,
+      "env_mean_pp": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/new_methods/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -6.131191432396252,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.677376171352076,
+        "1": -5.421686746987951,
+        "2": -10.294511378848728
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_ntufi/p0.5/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -3.866525956078194,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -3.8383838383838387,
+        "1": -0.3980099502487566,
+        "2": -7.363184079601988
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_ntufi/p0.5/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -18.868787376250058,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -19.292929292929294,
+        "1": -13.034825870646763,
+        "2": -24.278606965174127
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_ntufi/p0.5/ntufi_har_lame_sar_cotta.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "reset_entropy_tta",
+      "n": 15,
+      "mean_pp": -4.675109301974973,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "env_mean_pp": {
+        "0": -6.363636363636363,
+        "1": -3.482587064676612,
+        "2": -4.1791044776119435
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.01/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.6024096385542177,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.3333333333333333,
+      "env_mean_pp": {
+        "0": -0.6559571619812599,
+        "1": -0.5890227576974572,
+        "2": -0.5622489959839361
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.01/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -6.581883087907184,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.132530120481928,
+        "1": -6.305220883534138,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.01/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "reset_entropy_tta",
+      "n": 15,
+      "mean_pp": -6.354306113342258,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.9718875502008033,
+        "1": -6.117804551539491,
+        "2": -9.973226238286479
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.05/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.6024096385542177,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.3333333333333333,
+      "env_mean_pp": {
+        "0": -0.6559571619812599,
+        "1": -0.5890227576974572,
+        "2": -0.5622489959839361
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.05/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -6.581883087907184,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.132530120481928,
+        "1": -6.305220883534138,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.05/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "reset_entropy_tta",
+      "n": 15,
+      "mean_pp": -5.653726015171799,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.8246318607764387,
+        "1": -5.32797858099063,
+        "2": -8.808567603748326
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.1/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.6024096385542177,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.3333333333333333,
+      "env_mean_pp": {
+        "0": -0.6559571619812599,
+        "1": -0.5890227576974572,
+        "2": -0.5622489959839361
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.1/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -6.581883087907184,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.132530120481928,
+        "1": -6.305220883534138,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.1/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "reset_entropy_tta",
+      "n": 15,
+      "mean_pp": -4.930834448906738,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.570281124497992,
+        "1": -4.497991967871486,
+        "2": -7.724230254350736
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.3/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.6024096385542177,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.3333333333333333,
+      "env_mean_pp": {
+        "0": -0.6559571619812599,
+        "1": -0.5890227576974572,
+        "2": -0.5622489959839361
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.3/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -6.581883087907184,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.132530120481928,
+        "1": -6.305220883534138,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.3/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "reset_entropy_tta",
+      "n": 15,
+      "mean_pp": -1.967871485943775,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.6666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.4993306559571629,
+        "1": -1.2985274431057559,
+        "2": -3.105756358768407
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.5/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.6024096385542177,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.3333333333333333,
+      "env_mean_pp": {
+        "0": -0.6559571619812599,
+        "1": -0.5890227576974572,
+        "2": -0.5622489959839361
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.5/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -6.581883087907184,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.132530120481928,
+        "1": -6.305220883534138,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_transfer_widar/p0.5/widar_bvp_lame_sar_cotta.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "reset_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.6604194556001793,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.5220883534136567,
+        "1": -0.17402945113788482,
+        "2": -1.2851405622489964
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/reset_vs_guard_signfi/p0.5/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_tent",
+      "n": 15,
+      "mean_pp": 10.285714285714288,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": 12.000000000000004,
+        "1": 16.0,
+        "2": 2.857142857142858
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/reset_vs_guard_signfi/p0.5/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "reset_tent",
+      "n": 15,
+      "mean_pp": 10.095238095238097,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": 12.000000000000004,
+        "1": 15.42857142857143,
+        "2": 2.857142857142858
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/reset_vs_guard_signfi/p0.5/signfi_top10_lame_sar_cotta.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 10.285714285714288,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "env_mean_pp": {
+        "0": 12.000000000000004,
+        "1": 16.0,
+        "2": 2.857142857142858
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/signfi_mlpbn_canonical/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": 2.571428571428572,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.4,
+      "env_mean_pp": {
+        "0": 1.9999999999999998,
+        "1": 5.714285714285716,
+        "2": 0.0
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/signfi_mlpbn_canonical/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -0.8888888888888868,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -6.666666666666665,
+        "1": 13.714285714285717,
+        "2": -9.714285714285714
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/signfi_mlpbn_canonical/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -3.0476190476190466,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.9999999999999982,
+        "1": 0.5714285714285716,
+        "2": -5.714285714285713
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/signfi_mlpbn_canonical/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "selective_physics_tta",
+      "n": 15,
+      "mean_pp": 0.09523924191792932,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 2.000000119209293,
+        "1": 2.2857163974217007,
+        "2": -3.9999987908772057
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/signfi_mlpbn_canonical/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 10.285714285714288,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 12.000000000000004,
+        "1": 16.0,
+        "2": 2.857142857142858
+      },
+      "envs_negative": 0
+    },
+    {
+      "source": "outputs/widar_full_tta/full_results.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "conservative_entropy_tta",
+      "n": 15,
+      "mean_pp": -5.5064703257474354,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -5.435073627844713,
+        "1": -4.64524765729585,
+        "2": -6.439089692101742
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/widar_full_tta/full_results.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -6.581883087907184,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -3.132530120481928,
+        "1": -6.305220883534138,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/widar_full_tta/full_results.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "physics_entropy_tta",
+      "n": 15,
+      "mean_pp": -0.6514948683623383,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -0.34805890227577074,
+        "1": -0.8567603748326635,
+        "2": -0.7496653279785803
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/widar_full_tta/full_results.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -0.629183400267738,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -0.38821954484605126,
+        "1": -0.7496653279785814,
+        "2": -0.7496653279785814
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/widar_full_tta/full_results.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "safe_physics_tta",
+      "n": 15,
+      "mean_pp": -0.36590807675145,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -0.09370816599732268,
+        "1": -0.38821954484605015,
+        "2": -0.6157965194109771
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/widar_full_tta/full_results.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "selective_physics_tta",
+      "n": 15,
+      "mean_pp": 0.24542604743875782,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": 0.24096368546466682,
+        "1": -0.04016103674289839,
+        "2": 0.535475493594505
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/widar_full_tta/full_results.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "shot",
+      "n": 15,
+      "mean_pp": -0.169567157518965,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -0.8032128514056236,
+        "1": -0.334672021419008,
+        "2": 0.6291834002677366
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/widar_full_tta/full_results.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -4.948684028193974,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -2.516734015989496,
+        "1": -4.631861471427652,
+        "2": -7.697456597164773
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/widar_full_tta/full_results.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -0.04462293618920181,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.13333333333333333,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": 0.040160642570280514,
+        "1": -0.16064257028112428,
+        "2": -0.013386880856761652
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/widar_mlpbn_canonical/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": -1.0664881749219097,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.325301204819277,
+        "1": -0.0669344042838016,
+        "2": -1.8072289156626509
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/widar_mlpbn_canonical/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -0.5265506470325754,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.3520749665327991,
+        "1": -0.3346720214190102,
+        "2": 0.10709504685408322
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/widar_mlpbn_canonical/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "physics_tta",
+      "n": 15,
+      "mean_pp": -0.5042391789379745,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.4993306559571629,
+        "1": 0.6425702811244982,
+        "2": -0.6559571619812588
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/widar_mlpbn_canonical/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "selective_physics_tta",
+      "n": 15,
+      "mean_pp": -0.12048170056953798,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.2,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.8433733359876895,
+        "1": 0.34805925096693113,
+        "2": 0.13386898331214425
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/widar_mlpbn_canonical/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -0.42391789379741235,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.1378848728246327,
+        "1": 0.12048192771084375,
+        "2": -0.25435073627844806
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/source_overfit/mitigation_pilot.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "label_smoothing": 0.0,
+      "n": 15,
+      "mean_pp": -6.581883087907184,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -3.132530120481928,
+        "1": -6.305220883534138,
+        "2": -10.307898259705487
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/source_overfit/mitigation_pilot.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "physics_tta",
+      "label_smoothing": 0.0,
+      "n": 15,
+      "mean_pp": -0.602409638554217,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -0.38821954484605126,
+        "1": -0.6693440428380182,
+        "2": -0.7496653279785814
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/source_overfit/mitigation_pilot.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "tent",
+      "label_smoothing": 0.0,
+      "n": 15,
+      "mean_pp": -0.04908522980812198,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.13333333333333333,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": 0.040160642570280514,
+        "1": -0.18741633199464536,
+        "2": -1.1102230246251565e-15
+      },
+      "envs_negative": 2
+    },
+    {
+      "source": "outputs/source_overfit/mitigation_pilot.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "label_smoothing": 0.1,
+      "n": 15,
+      "mean_pp": -4.24364123159304,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -1.8607764390896935,
+        "1": -6.07764390896921,
+        "2": -4.792503346720214
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/source_overfit/mitigation_pilot.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "physics_tta",
+      "label_smoothing": 0.1,
+      "n": 15,
+      "mean_pp": -0.47746541722445335,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": 0.5220883534136544,
+        "1": 0.4551539491298518,
+        "2": -2.4096385542168663
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/source_overfit/mitigation_pilot.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "tent",
+      "label_smoothing": 0.1,
+      "n": 15,
+      "mean_pp": 0.06693440428380197,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.2,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": 0.2141900937081653,
+        "1": 0.013386880856760541,
+        "2": -0.02677376171351997
+      },
+      "envs_negative": 1
+    },
+    {
+      "source": "outputs/source_overfit/mitigation_pilot.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "entropy_tta",
+      "label_smoothing": 0.2,
+      "n": 15,
+      "mean_pp": -5.256581883087906,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -3.360107095046852,
+        "1": -6.010709504685409,
+        "2": -6.39892904953146
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/source_overfit/mitigation_pilot.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "physics_tta",
+      "label_smoothing": 0.2,
+      "n": 15,
+      "mean_pp": -0.7630522088353423,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.2,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": -0.6157965194109771,
+        "1": -0.24096385542168863,
+        "2": -1.4323962516733613
+      },
+      "envs_negative": 3
+    },
+    {
+      "source": "outputs/source_overfit/mitigation_pilot.json",
+      "dataset": "widar_bvp",
+      "backbone": "mlp",
+      "method": "tent",
+      "label_smoothing": 0.2,
+      "n": 15,
+      "mean_pp": -7.401486830834377e-16,
+      "harm_rate": 0.26666666666666666,
+      "harm_rate_gt1_sample": 0.2,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "env_mean_pp": {
+        "0": 0.013386880856760541,
+        "1": -0.013386880856761652,
+        "2": -1.1102230246251565e-15
+      },
+      "envs_negative": 2
+    }
+  ]
+}

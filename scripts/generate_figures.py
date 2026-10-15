@@ -336,75 +336,102 @@ def fig4_tsne() -> None:
     print("Figure 4 saved")
 
 
+COLLAPSE_JSON = "outputs/collapse_trajectories/collapse_trajectories.json"
+WIDAR_CLASSES = ("slide", "draw-zigzag", "push&pull", "sweep", "clap", "draw-circle")
+
+
 def fig5_confusion() -> None:
-    """Per-class Widar confusion matrix for the source-only primary MLP.
+    """Widar room-2 confusion matrices before and after entropy TTA.
 
-    Uses the aggregated per-class statistics saved by
-    ``scripts/analyze_widar_overconfidence.py`` (``outputs/overconfidence/
-    widar_per_class.json``). If that artifact is missing, the function calls
-    the analyser so the figure is always regenerable from the official
-    pipeline (CHECK.md High 1 fix).
+    Counts are summed over the five seeds of the held-out room-2 fold and
+    row-normalised, from ``scripts/analyze_collapse_trajectories.py``.
     """
-    import subprocess
+    payload = load_json(COLLAPSE_JSON)
+    runs = [
+        r
+        for r in payload["runs"]  # type: ignore[index]
+        if r["dataset"] == "widar_bvp"
+        and r["backbone"] == "mlp"
+        and r["fold"] == "env2"
+    ]
+    steps = runs[0]["entropy_trajectory"][-1]["steps"]
+    panels = []
+    for k, title in ((0, "Source only"), (-1, f"After entropy TTA ({steps} steps)")):
+        counts = np.sum(
+            [np.array(r["entropy_trajectory"][k]["confusion"]) for r in runs], axis=0
+        )
+        acc = np.trace(counts) / counts.sum()
+        used = counts.sum(axis=0) / counts.sum()
+        panels.append((title, counts / counts.sum(axis=1, keepdims=True), acc, used))
 
-    overconf_json = Path("outputs/overconfidence/widar_per_class.json")
-    if not overconf_json.exists():
-        logger.warning("Overconfidence artifact missing; running analyser.")
-        subprocess.check_call(["python3", "scripts/analyze_widar_overconfidence.py"])
-
-    with open(overconf_json) as f:
-        payload = json.load(f)
-
-    # Build a confusion-style heatmap from per-run per-class accuracies. We
-    # aggregate (true_class -> predicted_class) counts from per_run entries if
-    # available; otherwise fall back to an accuracy-only diagonal + off-diagonal
-    # "confidence minus accuracy" block that visually encodes the overconfidence
-    # gap.
-    per_class = payload["per_class"]
-    class_names = [row["class_name"] for row in per_class]
-    n = len(class_names)
-    matrix = np.zeros((n, n), dtype=float)
-    for i, row in enumerate(per_class):
-        acc = float(row["accuracy_mean"])
-        conf = float(row["confidence_mean"])
-        matrix[i, i] = acc
-        # Distribute the remaining mass proportionally to (conf - acc) across the
-        # non-diagonal entries to visualise confident-but-wrong predictions.
-        off = max(conf - acc, 0.0) / max(n - 1, 1)
-        for j in range(n):
-            if j != i:
-                matrix[i, j] = off
-
-    fig, ax = plt.subplots(figsize=(5.2, 4.6))
-    im = ax.imshow(matrix, cmap="Blues", vmin=0.0, vmax=1.0)
-    ax.set_xticks(range(n))
-    ax.set_yticks(range(n))
-    ax.set_xticklabels(class_names, rotation=45, ha="right", fontsize=8)
-    ax.set_yticklabels(class_names, fontsize=8)
-    ax.set_xlabel("Predicted class", fontsize=9)
-    ax.set_ylabel("True class", fontsize=9)
-    for i in range(n):
-        for j in range(n):
-            ax.text(
-                j,
-                i,
-                f"{matrix[i, j]:.2f}",
-                ha="center",
-                va="center",
-                color="white" if matrix[i, j] > 0.45 else "black",
-                fontsize=7,
-            )
-    ax.set_title(
-        "Widar source-only per-class accuracy (diagonal) vs. "
-        "confidence-gap mass (off-diagonal)",
-        fontsize=9,
-    )
-    fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
-    plt.tight_layout()
+    n = len(WIDAR_CLASSES)
+    fig, axes = plt.subplots(1, 2, figsize=(10.4, 4.6))
+    for ax, (title, matrix, acc, used) in zip(axes, panels, strict=True):
+        im = ax.imshow(matrix, cmap="Blues", vmin=0.0, vmax=1.0)
+        ax.set_xticks(range(n))
+        ax.set_yticks(range(n))
+        ax.set_xticklabels(WIDAR_CLASSES, rotation=45, ha="right", fontsize=8)
+        ax.set_yticklabels(WIDAR_CLASSES, fontsize=8)
+        ax.set_xlabel("Predicted class", fontsize=9)
+        if ax is axes[0]:
+            ax.set_ylabel("True class", fontsize=9)
+        else:
+            ax.set_yticklabels([])
+        for i in range(n):
+            for j in range(n):
+                ax.text(
+                    j,
+                    i,
+                    f"{matrix[i, j]:.2f}",
+                    ha="center",
+                    va="center",
+                    color="white" if matrix[i, j] > 0.45 else "black",
+                    fontsize=7,
+                )
+        share = ", ".join(f"{100 * u:.0f}" for u in used)
+        ax.set_title(
+            f"{title}: accuracy {100 * acc:.1f}%\npredicted-class share (%): {share}",
+            fontsize=9,
+        )
+    fig.colorbar(im, ax=axes, fraction=0.025, pad=0.02)
     fig.savefig(FIGDIR / "fig5_confusion.pdf", bbox_inches="tight", dpi=300)
     fig.savefig(FIGDIR / "fig5_confusion.png", bbox_inches="tight", dpi=150)
     plt.close()
     print("Figure 5 saved")
+
+
+def fig8_collapse_trajectories() -> None:
+    """Class-usage diversity and accuracy change along unguarded entropy TTA."""
+    payload = load_json(COLLAPSE_JSON)
+    cells: dict[str, list[dict]] = {}
+    for r in payload["runs"]:  # type: ignore[index]
+        name = {"widar_bvp": "Widar", "ntufi_har": "NTU-Fi", "signfi_top10": "SignFi"}
+        net = {"mlp": "MLP", "resnet2d": "ResNet-BN", "transformer": "Transformer"}
+        label = f"{name[r['dataset']]} / {net[r['backbone']]}"
+        cells.setdefault(label, []).append(r)
+    fig, (ax_d, ax_a) = plt.subplots(1, 2, figsize=(10.4, 3.8))
+    for label, runs in cells.items():
+        traj = [r["entropy_trajectory"] for r in runs]
+        steps = [t["steps"] for t in traj[0]]
+        div = np.array([[t["diversity"] for t in tr] for tr in traj])
+        gain = np.array(
+            [[100 * (t["accuracy"] - tr[0]["accuracy"]) for t in tr] for tr in traj]
+        )
+        (line,) = ax_d.plot(steps, div.mean(axis=0), marker="o", label=label)
+        ax_a.plot(steps, gain.mean(axis=0), marker="o", color=line.get_color())
+    ax_d.set_xlabel("Adaptation steps")
+    ax_d.set_ylabel("Predicted-class diversity $D$")
+    ax_d.set_title("Class usage on the evaluation half", fontsize=10)
+    ax_a.axhline(0.0, color="grey", lw=0.8, ls="--")
+    ax_a.set_xlabel("Adaptation steps")
+    ax_a.set_ylabel("Accuracy change (pp)")
+    ax_a.set_title("Target accuracy relative to source", fontsize=10)
+    ax_d.legend(fontsize=7, loc="lower left")
+    plt.tight_layout()
+    fig.savefig(FIGDIR / "fig8_collapse_trajectories.pdf", bbox_inches="tight", dpi=300)
+    fig.savefig(FIGDIR / "fig8_collapse_trajectories.png", bbox_inches="tight", dpi=150)
+    plt.close()
+    print("Figure 8 saved")
 
 
 if __name__ == "__main__":
@@ -413,4 +440,5 @@ if __name__ == "__main__":
     fig3_step_budget()
     fig4_tsne()
     fig5_confusion()
+    fig8_collapse_trajectories()
     print(f"\nAll figures saved to {FIGDIR}/")

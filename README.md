@@ -2,7 +2,27 @@
 
 Physics-Informed Neural Networks (PINNs) applied to WiFi Channel State Information (CSI) for signal analysis, localization, and sensing applications.
 
-> **Status:** The WiFi-TTA-Bench benchmark is complete with 3 real datasets (Widar\_BVP, NTU-Fi, SignFi-10), 10+ TTA methods, and n=15 paired evaluations per method. Paper-quality results are in `outputs/`.
+> **Status:** The WiFi-TTA-Bench benchmark is complete with 3 real datasets (Widar\_BVP, NTU-Fi, SignFi-10), 10 adaptation methods, and n=15 paired evaluations per method. Paper-quality results are in `outputs/`.
+
+## Reproducing the WiFi-TTA-Bench paper
+
+Every number in the paper comes from a JSON artifact under `outputs/`, and
+`scripts/reproduce_all_results.py` maps each artifact to the exact command that
+regenerates it (`SOURCE_SCRIPTS`). Prepared data bundles go under `data/prepared/`
+(`widar_bvp/` is built by `scripts/prepare_widar_bvp.py`; the NTU-Fi and SignFi-10
+bundles follow the contract in `pinn4csi/data/paper1.py`).
+
+```bash
+# Pin CPU threading first. MKL's dynamic threading changes float summation order
+# when the machine is loaded, and with it the trained models.
+export MKL_DYNAMIC=FALSE OMP_DYNAMIC=FALSE MKL_NUM_THREADS=6 OMP_NUM_THREADS=6
+
+python scripts/reproduce_all_results.py                 # everything (several hours, CPU only)
+python scripts/reproduce_all_results.py --only <id>     # one component
+python scripts/compare_artifacts.py --help              # field-level diff against a snapshot
+```
+
+Recent corrections to released numbers are recorded in `CHANGELOG.md`.
 
 ---
 
@@ -52,7 +72,7 @@ ruff format --check .
 mypy pinn4csi/
 
 # Test suite (excludes slow/gpu tests by default)
-# Expected: 248 passed (as of 2026-04-08)
+# Expected: 311 passed, 1 skipped
 pytest --tb=short -q
 
 # Collect-only sanity check (no execution)

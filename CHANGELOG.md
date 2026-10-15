@@ -36,6 +36,12 @@ the supplement.
 - **Guard vs weight reset.** Beyond a 1 pp loss the two are equal on Widar (0.40 each); the
   guard's lower P(gain<0) there comes from five fully rolled-back runs. On NTU-Fi the
   difference holds (0.40 vs 0.87).
+- **Widar guard floor tau=0.70** (`outputs/collapse_guard_sweep/ratio_0.7.json`): the stored
+  file had one run (room 2, seed 0) trained from a different source model (35.6 vs 34.5 %
+  source-only accuracy), produced under CPU load with MKL dynamic threading. Regenerated
+  with threading pinned: guarded -4.90 pp [-6.53, -3.24] (was -4.66); the old file is in
+  `superseded_2026-10-16/`. Of 45 newly registered guard/reset/core artifacts regenerated
+  and compared, the other 44 are identical.
 - **Widar reset p=0.5** regenerated with per-run rows (`outputs/reset_transfer_widar/`):
   -0.66 pp, P(gain<0) 0.73 (previous summary-only file: -0.65, 0.73).
 

@@ -58,6 +58,9 @@ def run_experiment(
     backbone: str = "mlp",
     collapse_guard_diversity_ratio: float = 0.9,
     weight_reset_probability: float = 0.01,
+    bn_eval_stats: str = "running",
+    bn_reset_cumulative: bool = False,
+    collapse_guard_reference: str = "first_batch",
 ) -> dict[str, object]:
     all_rows: list[dict[str, object]] = []
     config = TTAExperimentConfig(
@@ -69,6 +72,9 @@ def run_experiment(
         backbone=backbone,
         collapse_guard_diversity_ratio=collapse_guard_diversity_ratio,
         weight_reset_probability=weight_reset_probability,
+        bn_eval_stats=bn_eval_stats,
+        bn_reset_cumulative=bn_reset_cumulative,
+        collapse_guard_reference=collapse_guard_reference,
     )
 
     for split in DEFAULT_ENV_SPLITS:
@@ -193,7 +199,15 @@ def main() -> None:
     parser.add_argument(
         "--backbone",
         default="mlp",
-        choices=("mlp", "mlp_bn", "cnn1d"),
+        choices=(
+            "mlp",
+            "mlp_bn",
+            "cnn1d",
+            "resnet2d",
+            "resnet2d_gn",
+            "transformer",
+            "cnn_gru",
+        ),
         help="Encoder backbone (default: mlp).",
     )
     parser.add_argument(
@@ -212,6 +226,22 @@ def main() -> None:
     parser.add_argument("--adaptation-steps", type=int, default=5)
     parser.add_argument("--adaptation-learning-rate", type=float, default=5e-4)
     parser.add_argument("--batch-size", type=int, default=32)
+    parser.add_argument(
+        "--bn-eval-stats",
+        choices=("running", "batch"),
+        default="running",
+        help="Normalise adapted BN models with running or per-test-batch statistics.",
+    )
+    parser.add_argument(
+        "--bn-reset-cumulative",
+        action="store_true",
+        help="BN-reset re-estimates statistics as a cumulative average.",
+    )
+    parser.add_argument(
+        "--collapse-guard-reference",
+        choices=("first_batch", "same_batch"),
+        default="first_batch",
+    )
     args = parser.parse_args()
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
@@ -229,6 +259,9 @@ def main() -> None:
         backbone=args.backbone,
         collapse_guard_diversity_ratio=args.collapse_guard_ratio,
         weight_reset_probability=args.weight_reset_probability,
+        bn_eval_stats=args.bn_eval_stats,
+        bn_reset_cumulative=args.bn_reset_cumulative,
+        collapse_guard_reference=args.collapse_guard_reference,
     )
     rows = results["rows"]
 

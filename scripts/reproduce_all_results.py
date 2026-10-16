@@ -647,8 +647,11 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
                 "--backbone",
                 backbone,
                 "--methods",
-                "no_adapt,entropy_tta,tent,sar,sar_full,cotta,cotta_full,t3a,t3a_full"
+                "no_adapt,entropy_tta,tent,sar,sar_full,cotta,cotta_full,t3a,t3a_full,"
+                "collapse_guarded_sar_full,collapse_guarded_cotta_full"
                 + (",bn_reset" if backbone == "mlp_bn" else ""),
+                "--collapse-guard-ratio",
+                "0.95",
                 "--output-dir",
                 f"outputs/faithful_ports/{dataset}_{backbone}",
             ],
@@ -659,6 +662,93 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         }
         for dataset in ("widar_bvp", "ntufi_har", "signfi_top10")
         for backbone in ("mlp", "mlp_bn")
+    },
+    **{
+        f"published_bn_batchstats_{dataset}": {
+            "description": f"Published BN regime (test-batch statistics): {dataset}",
+            "argv": [
+                "scripts/run_extended_tta_per_dataset.py",
+                "--dataset",
+                dataset,
+                "--backbone",
+                "mlp_bn",
+                "--methods",
+                "no_adapt,tent,bn_reset,sar_full,cotta_full,collapse_guarded_tent,"
+                "collapse_guarded_sar_full,collapse_guarded_cotta_full",
+                "--bn-eval-stats",
+                "batch",
+                "--collapse-guard-ratio",
+                "0.95",
+                "--output-dir",
+                f"outputs/published_bn_batchstats/{dataset}_mlp_bn",
+            ],
+            "outputs": [
+                f"outputs/published_bn_batchstats/{dataset}_mlp_bn/"
+                f"{dataset}_lame_sar_cotta.json"
+            ],
+        }
+        for dataset in ("widar_bvp", "ntufi_har", "signfi_top10")
+    },
+    **{
+        f"bn_reset_cumulative_{dataset}": {
+            "description": f"BN-reset with cumulative re-estimation: {dataset}",
+            "argv": [
+                "scripts/run_extended_tta_per_dataset.py",
+                "--dataset",
+                dataset,
+                "--backbone",
+                "mlp_bn",
+                "--methods",
+                "no_adapt,bn_reset",
+                "--bn-reset-cumulative",
+                "--output-dir",
+                f"outputs/bn_reset_cumulative/{dataset}_mlp_bn",
+            ],
+            "outputs": [
+                f"outputs/bn_reset_cumulative/{dataset}_mlp_bn/"
+                f"{dataset}_lame_sar_cotta.json"
+            ],
+        }
+        for dataset in ("widar_bvp", "ntufi_har", "signfi_top10")
+    },
+    **{
+        f"guard_paired_{dataset}": {
+            "description": f"Guard with a same-batch (paired) reference: {dataset}",
+            "argv": [
+                "scripts/run_extended_tta_per_dataset.py",
+                "--dataset",
+                dataset,
+                "--methods",
+                "no_adapt,entropy_tta,collapse_guarded_entropy_tta",
+                "--collapse-guard-ratio",
+                "0.95",
+                "--collapse-guard-reference",
+                "same_batch",
+                "--output-dir",
+                f"outputs/guard_paired/{dataset}",
+            ],
+            "outputs": [
+                f"outputs/guard_paired/{dataset}/{dataset}_lame_sar_cotta.json"
+            ],
+        }
+        for dataset in ("widar_bvp", "ntufi_har")
+    },
+    "cnn_gru_widar": {
+        "description": "Widar3.0-style CNN-GRU backbone on Widar_BVP",
+        "argv": [
+            "scripts/run_extended_tta_per_dataset.py",
+            "--dataset",
+            "widar_bvp",
+            "--backbone",
+            "cnn_gru",
+            "--methods",
+            "no_adapt,entropy_tta,tent,sar_full,cotta_full,collapse_guarded_entropy_tta",
+            "--collapse-guard-ratio",
+            "0.95",
+            "--output-dir",
+            "outputs/cnn_gru/widar_bvp",
+        ],
+        "outputs": ["outputs/cnn_gru/widar_bvp/widar_bvp_lame_sar_cotta.json"],
     },
     "protocol_sweep": {
         "description": "Learning-rate x step-budget sweep with label-free selection",

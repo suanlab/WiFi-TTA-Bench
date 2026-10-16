@@ -29,6 +29,7 @@ from torch.utils.data import DataLoader
 
 from pinn4csi.training.paper2_tta import (
     TTAExperimentConfig,
+    _set_seed,
     build_prepared_tta_loaders,
     train_source_only_tta_model,
 )
@@ -45,25 +46,11 @@ ENV_SPLITS = [
     {"train": (1, 2), "test": (0,), "name": "env0"},
 ]
 
-_CLASS_NAMES_BY_DATASET = {
-    "widar_bvp": {
-        0: "slide",
-        1: "draw-zigzag",
-        2: "push&pull",
-        3: "sweep",
-        4: "clap",
-        5: "draw-circle",
-    },
-    "ntufi_har": {
-        0: "act_0",
-        1: "act_1",
-        2: "act_2",
-        3: "act_3",
-        4: "act_4",
-        5: "act_5",
-    },
-    "signfi_top10": {i: f"sign_{i}" for i in range(10)},
-}
+
+def _class_names(dataset: str) -> dict[int, str]:
+    """Class names from the prepared bundle's metadata (the labels' source of truth)."""
+    meta = json.loads((PREPARED_ROOT / dataset / "metadata.json").read_text())
+    return {int(k): str(v) for k, v in meta.get("label_names", {}).items()}
 
 
 def _collect_per_class(
@@ -141,6 +128,8 @@ def run(dataset: str) -> dict[str, object]:
                 sum_correct = torch.zeros(num_classes)
                 sum_conf = torch.zeros(num_classes)
                 sum_count = torch.zeros(num_classes)
+            # Same seeding as run_tta_suite, so these are the benchmark's models.
+            _set_seed(seed)
             model = train_source_only_tta_model(
                 source_train_loader=src_train,
                 source_val_loader=src_val,
@@ -165,7 +154,7 @@ def run(dataset: str) -> dict[str, object]:
     acc = (sum_correct / sum_count.clamp(min=1)).tolist()
     conf = (sum_conf / sum_count.clamp(min=1)).tolist()
     counts = sum_count.int().tolist()
-    class_names = _CLASS_NAMES_BY_DATASET.get(dataset, {})
+    class_names = _class_names(dataset)
 
     per_class = []
     for c in range(num_classes):

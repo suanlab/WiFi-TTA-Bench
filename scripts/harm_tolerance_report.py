@@ -18,6 +18,9 @@ This script recomputes, from the per-run rows already released under
 * ``abstain_rate``          P(no accepted step and gain == 0), where recorded
 * ``env_mean_pp``           mean gain per held-out environment (3 values) and how
   many of the three are negative -- the unit that generalises to a new room.
+* ``hier_ci_pp``            a two-stage bootstrap interval: resample environments,
+  then runs within each, so the interval reflects that only three environments
+  were held out. Seeded, 10,000 resamples.
 
 No model is trained. Output: ``outputs/statistics/harm_tolerance.json``.
 """
@@ -109,6 +112,24 @@ def _env_of(row: dict[str, object]) -> int:
     raise KeyError(f"No environment field in row: {sorted(row)}")
 
 
+HIER_RESAMPLES = 10_000
+
+
+def _hierarchical_ci(
+    gains: np.ndarray, envs: np.ndarray, seed: int = 0
+) -> tuple[float, float]:
+    """Two-stage bootstrap of the mean: environments, then runs within them."""
+    rng = np.random.default_rng(seed)
+    groups = [gains[envs == e] for e in sorted(set(envs.tolist()))]
+    means = np.empty(HIER_RESAMPLES)
+    for b in range(HIER_RESAMPLES):
+        picked = rng.integers(0, len(groups), size=len(groups))
+        means[b] = np.mean(
+            [rng.choice(groups[g], size=len(groups[g])).mean() for g in picked]
+        )
+    return float(np.percentile(means, 2.5)), float(np.percentile(means, 97.5))
+
+
 def _summarise(
     rows: list[dict[str, object]], sizes: dict[int, int]
 ) -> dict[str, object]:
@@ -136,6 +157,8 @@ def _summarise(
         str(e): 100.0 * float(gains[envs == e].mean()) for e in sorted(set(envs))
     }
     out["env_mean_pp"] = env_means
+    lo, hi = _hierarchical_ci(gains, envs)
+    out["hier_ci_pp"] = [100.0 * lo, 100.0 * hi]
     out["envs_negative"] = int(sum(v < 0 for v in env_means.values()))
     return out
 

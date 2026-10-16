@@ -335,7 +335,6 @@ def fig4_tsne() -> None:
 
 
 COLLAPSE_JSON = "outputs/collapse_trajectories/collapse_trajectories.json"
-WIDAR_CLASSES = ("slide", "draw-zigzag", "push&pull", "sweep", "clap", "draw-circle")
 
 
 def fig5_confusion() -> None:
@@ -362,14 +361,17 @@ def fig5_confusion() -> None:
         used = counts.sum(axis=0) / counts.sum()
         panels.append((title, counts / counts.sum(axis=1, keepdims=True), acc, used))
 
-    n = len(WIDAR_CLASSES)
+    meta = load_json("data/prepared/widar_bvp/metadata.json")
+    names = meta["label_names"]  # type: ignore[index]
+    widar_classes = [names[str(i)] for i in range(len(names))]
+    n = len(widar_classes)
     fig, axes = plt.subplots(1, 2, figsize=(10.4, 4.6))
     for ax, (title, matrix, acc, used) in zip(axes, panels, strict=True):
         im = ax.imshow(matrix, cmap="Blues", vmin=0.0, vmax=1.0)
         ax.set_xticks(range(n))
         ax.set_yticks(range(n))
-        ax.set_xticklabels(WIDAR_CLASSES, rotation=45, ha="right", fontsize=8)
-        ax.set_yticklabels(WIDAR_CLASSES, fontsize=8)
+        ax.set_xticklabels(widar_classes, rotation=45, ha="right", fontsize=8)
+        ax.set_yticklabels(widar_classes, fontsize=8)
         ax.set_xlabel("Predicted class", fontsize=9)
         if ax is axes[0]:
             ax.set_ylabel("True class", fontsize=9)

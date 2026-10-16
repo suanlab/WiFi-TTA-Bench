@@ -33,6 +33,19 @@ from pinn4csi.utils.metrics import accuracy, prediction_diversity
 # Batch-independent normalisers whose affine parameters TENT adapts when a
 # model has no BatchNorm.
 _SAMPLE_NORM_TYPES = (torch.nn.GroupNorm, torch.nn.LayerNorm)
+_BN_TYPES = (torch.nn.BatchNorm1d, torch.nn.BatchNorm2d)
+_BatchNormLayer = torch.nn.modules.batchnorm._BatchNorm
+# Methods whose published form normalises each test batch with its own statistics.
+_BATCH_STAT_METHODS = frozenset(
+    {
+        "tent",
+        "bn_reset",
+        "sar_full",
+        "cotta_full",
+        "collapse_guarded_sar_full",
+        "collapse_guarded_cotta_full",
+    }
+)
 
 DEFAULT_TTA_METHODS = (
     "no_adapt",
@@ -65,6 +78,8 @@ CANONICAL_TTA_METHODS = DEFAULT_TTA_METHODS + (
     "sar_full",
     "cotta_full",
     "t3a_full",
+    "collapse_guarded_sar_full",
+    "collapse_guarded_cotta_full",
 )
 
 _SAFE_TTA_METHOD_ALIASES = {
@@ -164,7 +179,6 @@ class TTAExperimentConfig:
     calibration_temperature: float = 1.5
     selective_confidence_threshold: float = 0.2
     selective_alignment_threshold: float = 2.0
-    tent_bn_momentum: float = 0.1
     shot_pseudo_label_threshold: float = 0.9
     t3a_filter_k: int = 1
     # Faithful SAR (Niu et al. 2023): reliable samples have entropy below
@@ -173,6 +187,9 @@ class TTAExperimentConfig:
     sar_margin_factor: float = 0.4
     sar_rho: float = 0.05
     sar_reset_threshold: float = 0.2
+    # SAR's 0.2 was set for ImageNet's 1,000 classes; scale it by ln(C)/ln(1000)
+    # so the recovery test means the same thing for 6 or 10 classes.
+    sar_reset_threshold_relative: bool = True
     # Faithful CoTTA (Wang et al. 2022): EMA teacher, augmentation-averaged
     # pseudo-labels when the source model's confidence is below the threshold,
     # stochastic restore of student weights to the source.
@@ -184,6 +201,17 @@ class TTAExperimentConfig:
     # Faithful T3A (Iwasawa & Matsuo 2021): gradient-free, online over the
     # evaluation stream; keep this many lowest-entropy supports per class.
     t3a_full_filter_k: int = 20
+    # How adapted BatchNorm models normalise at evaluation: "running" uses the
+    # running statistics left by adaptation; "batch" uses each test batch's own
+    # statistics, as published TENT, SAR and CoTTA do.
+    bn_eval_stats: str = "running"
+    # BN-reset: re-estimate running statistics as a cumulative average over the
+    # whole adaptation half instead of an exponential moving average.
+    bn_reset_cumulative: bool = False
+    # Collapse-guard reference: "first_batch" compares post-step diversity with
+    # the first batch's pre-step diversity; "same_batch" with the pre-step
+    # diversity of the same batch (a paired statistic).
+    collapse_guard_reference: str = "first_batch"
     ablation_use_invariance: bool = True
     ablation_use_residual: bool = True
     ablation_use_entropy: bool = True
@@ -546,8 +574,24 @@ def evaluate_tta_classifier(
     model: Paper2DomainAdaptationBaseline,
     loader: DataLoader[dict[str, Tensor]],
     device: torch.device,
+    bn_batch_stats: bool = False,
 ) -> dict[str, float]:
+    """Accuracy and loss on a labelled loader.
+
+    With ``bn_batch_stats`` BatchNorm layers normalise each batch with its own
+    statistics (momentum 0, so running statistics are left untouched), as
+    published TENT does at test time; otherwise the model runs in eval mode.
+    """
     model.eval()
+    saved_momentum: list[
+        tuple[torch.nn.modules.batchnorm._BatchNorm, float | None]
+    ] = []
+    if bn_batch_stats:
+        for module in model.modules():
+            if isinstance(module, _BN_TYPES):
+                saved_momentum.append((module, module.momentum))
+                module.momentum = 0.0
+                module.train()
     total_loss = 0.0
     total_examples = 0
     logits_batches: list[Tensor] = []
@@ -572,6 +616,9 @@ def evaluate_tta_classifier(
 
     logits_tensor = torch.cat(logits_batches, dim=0)
     labels_tensor = torch.cat(label_batches, dim=0)
+    for module, momentum in saved_momentum:
+        module.momentum = momentum
+        module.eval()
     return {
         "accuracy": accuracy(logits_tensor, labels_tensor),
         "loss_total": total_loss / max(total_examples, 1),
@@ -651,6 +698,11 @@ def adapt_model_for_tta_with_summary(
     if method == "bn_reset":
         adapted_bn = copy.deepcopy(model).to(device)
         adapted_bn.train()
+        if config.bn_reset_cumulative:
+            for module in adapted_bn.modules():
+                if isinstance(module, _BN_TYPES):
+                    module.reset_running_stats()
+                    module.momentum = None
         with torch.no_grad():
             for batch in target_loader:
                 moved = _move_batch_to_device(batch, device)
@@ -659,6 +711,9 @@ def adapt_model_for_tta_with_summary(
                     prior=_optional_prior(moved),
                     has_prior=moved["has_prior"],
                 )
+        for module in adapted_bn.modules():
+            if isinstance(module, _BN_TYPES):
+                module.momentum = 0.1
         adapted_bn.eval()
         t_elapsed = time.monotonic() - t_start
         return TTAAdaptationSummary(
@@ -705,12 +760,14 @@ def adapt_model_for_tta_with_summary(
             post_objective=0.0,
             adaptation_time_seconds=time.monotonic() - t_start,
         )
-    if method == "sar_full":
-        summary = _adapt_sar_full(model, target_loader, config, device)
+    if method in ("sar_full", "collapse_guarded_sar_full"):
+        guard = method == "collapse_guarded_sar_full"
+        summary = _adapt_sar_full(model, target_loader, config, device, guard)
         summary.adaptation_time_seconds = time.monotonic() - t_start
         return summary
-    if method == "cotta_full":
-        summary = _adapt_cotta_full(model, target_loader, config, device)
+    if method in ("cotta_full", "collapse_guarded_cotta_full"):
+        guard = method == "collapse_guarded_cotta_full"
+        summary = _adapt_cotta_full(model, target_loader, config, device, guard)
         summary.adaptation_time_seconds = time.monotonic() - t_start
         return summary
 
@@ -784,7 +841,12 @@ def adapt_model_for_tta_with_summary(
         post_objective = float(post_step_losses.objective.item())
 
         if collapse_mode:
-            floor = config.collapse_guard_diversity_ratio * reference_diversity
+            reference = (
+                step_losses.diversity
+                if config.collapse_guard_reference == "same_batch"
+                else reference_diversity
+            )
+            floor = config.collapse_guard_diversity_ratio * reference
             if post_step_losses.diversity < floor:
                 if checkpoint_state is None or optimizer_state is None:
                     raise RuntimeError("Collapse-guard restore state was not captured.")
@@ -912,6 +974,7 @@ def _adapt_sar_full(
     target_loader: DataLoader[dict[str, Tensor]],
     config: TTAExperimentConfig,
     device: torch.device,
+    guard: bool = False,
 ) -> TTAAdaptationSummary:
     """SAR: reliable-sample entropy, sharpness-aware update, model recovery.
 
@@ -920,6 +983,9 @@ def _adapt_sar_full(
     (radius ``rho``) after re-filtering there; the model is reset to the source
     weights when the moving average of the second-pass entropy falls below the
     reset threshold. Optimiser and learning rate are the benchmark's shared ones.
+    With ``guard`` a step is rolled back, and adaptation stops, when it lowers the
+    batch's predicted-class diversity below ``collapse_guard_diversity_ratio`` times
+    its value before the step (same batch, paired).
     """
     adapted = copy.deepcopy(model).to(device)
     adapted.train()
@@ -932,13 +998,24 @@ def _adapt_sar_full(
     ema: float | None = None
     pre_objective = post_objective = 0.0
     margin = 0.0
+    num_classes = _num_classes(adapted)
+    reset_threshold = config.sar_reset_threshold * (
+        math.log(num_classes) / math.log(1000.0)
+        if config.sar_reset_threshold_relative
+        else 1.0
+    )
+    stop_reason = ""
     for step_idx in range(config.adaptation_steps):
         moved = _move_batch_to_device(next(batches), device)
         attempted += 1
 
-        entropies = _batch_entropy(adapted, moved)
+        logits = _batch_logits(adapted, moved)
+        entropies = _sample_entropy(logits)
+        pre_diversity = prediction_diversity(logits.detach())
+        checkpoint = _clone_module_state(adapted) if guard else None
+        optimizer_state = copy.deepcopy(optimizer.state_dict()) if guard else None
         if step_idx == 0:
-            margin = config.sar_margin_factor * math.log(_num_classes(adapted))
+            margin = config.sar_margin_factor * math.log(num_classes)
             pre_objective = float(entropies.mean().item())
         reliable = entropies < margin
         if not bool(reliable.any()):
@@ -973,10 +1050,18 @@ def _adapt_sar_full(
         if not has_second:
             continue
         optimizer.step()
+        if guard and checkpoint is not None and optimizer_state is not None:
+            with torch.no_grad():
+                post_diversity = prediction_diversity(_batch_logits(adapted, moved))
+            if post_diversity < config.collapse_guard_diversity_ratio * pre_diversity:
+                adapted.load_state_dict(checkpoint)
+                optimizer.load_state_dict(optimizer_state)
+                stop_reason = "collapse_guard_"
+                break
         accepted += 1
         post_objective = float(second_loss.item())
         ema = post_objective if ema is None else 0.9 * ema + 0.1 * post_objective
-        if ema < config.sar_reset_threshold:
+        if ema < reset_threshold:
             adapted.load_state_dict(source_state)
             optimizer = Adam(params, lr=config.adaptation_learning_rate)
             ema = None
@@ -987,10 +1072,19 @@ def _adapt_sar_full(
         attempted_steps=attempted,
         accepted_steps=accepted,
         abstained=accepted == 0,
-        stop_reason=f"sar_full_resets_{resets}",
+        stop_reason=f"{stop_reason}sar_full_resets_{resets}",
         pre_objective=pre_objective,
         post_objective=post_objective,
     )
+
+
+def _batch_logits(
+    model: Paper2DomainAdaptationBaseline, batch: dict[str, Tensor]
+) -> Tensor:
+    logits: Tensor = model(
+        batch["x"], prior=_optional_prior(batch), has_prior=batch["has_prior"]
+    )["task_logits"]
+    return logits
 
 
 def _batch_entropy(
@@ -1020,6 +1114,7 @@ def _adapt_cotta_full(
     target_loader: DataLoader[dict[str, Tensor]],
     config: TTAExperimentConfig,
     device: torch.device,
+    guard: bool = False,
 ) -> TTAAdaptationSummary:
     """CoTTA: EMA teacher, augmentation-averaged pseudo-labels, stochastic restore.
 
@@ -1029,6 +1124,9 @@ def _adapt_cotta_full(
     student and is the model that predicts; after each step each student weight
     is restored to its source value with a small probability. Image augmentations
     are replaced by CSI gain jitter and additive noise. The encoder is updated.
+    With ``guard`` a step is rolled back, and adaptation stops, when it lowers the
+    teacher's predicted-class diversity on the batch below
+    ``collapse_guard_diversity_ratio`` times its value before the step.
     """
     anchor = copy.deepcopy(model).to(device).eval()
     student = copy.deepcopy(model).to(device)
@@ -1041,9 +1139,17 @@ def _adapt_cotta_full(
     optimizer = Adam(_trainable_parameters(student), lr=config.adaptation_learning_rate)
     batches = cycle(target_loader)
     pre_objective = post_objective = 0.0
+    accepted = 0
+    stop_reason = "cotta_full_teacher"
     for step_idx in range(config.adaptation_steps):
         moved = _move_batch_to_device(next(batches), device)
         x, prior, has_prior = moved["x"], _optional_prior(moved), moved["has_prior"]
+        if guard:
+            saved = (
+                _clone_module_state(student),
+                _clone_module_state(teacher),
+                copy.deepcopy(optimizer.state_dict()),
+            )
         with torch.no_grad():
             anchor_conf = (
                 torch.softmax(
@@ -1052,9 +1158,9 @@ def _adapt_cotta_full(
                 .max(dim=-1)
                 .values.mean()
             )
-            teacher_probs = torch.softmax(
-                teacher(x, prior=prior, has_prior=has_prior)["task_logits"], dim=-1
-            )
+            teacher_logits = teacher(x, prior=prior, has_prior=has_prior)["task_logits"]
+            pre_diversity = prediction_diversity(teacher_logits)
+            teacher_probs = torch.softmax(teacher_logits, dim=-1)
             if float(anchor_conf) < config.cotta_confidence_threshold:
                 augmented = torch.stack(
                     [
@@ -1092,13 +1198,25 @@ def _adapt_cotta_full(
         _stochastic_weight_restore(
             student, source_state, config.cotta_restore_probability
         )
+        if guard:
+            with torch.no_grad():
+                post_diversity = prediction_diversity(
+                    teacher(x, prior=prior, has_prior=has_prior)["task_logits"]
+                )
+            if post_diversity < config.collapse_guard_diversity_ratio * pre_diversity:
+                student.load_state_dict(saved[0])
+                teacher.load_state_dict(saved[1])
+                optimizer.load_state_dict(saved[2])
+                stop_reason = "collapse_guard_cotta_full"
+                break
+        accepted += 1
     teacher.eval()
     return TTAAdaptationSummary(
         model=teacher,
         attempted_steps=config.adaptation_steps,
-        accepted_steps=config.adaptation_steps,
-        abstained=False,
-        stop_reason="cotta_full_teacher",
+        accepted_steps=accepted,
+        abstained=accepted == 0,
+        stop_reason=stop_reason,
         pre_objective=pre_objective,
         post_objective=post_objective,
     )
@@ -1268,15 +1386,23 @@ def run_tta_suite(
                 alignment_threshold=experiment_config.selective_alignment_threshold,
             )
         else:
+            # Published TENT/SAR/CoTTA and BN adaptation normalise each test batch
+            # with its own statistics; the default keeps the running statistics.
+            batch_stats = (
+                experiment_config.bn_eval_stats == "batch"
+                and _resolve_base_method(method) in _BATCH_STAT_METHODS
+            )
             post_metrics = evaluate_tta_classifier(
                 adapted_model,
                 target_test_loader,
                 device,
+                bn_batch_stats=batch_stats,
             )
             source_post_metrics = evaluate_tta_classifier(
                 adapted_model,
                 source_val_loader,
                 device,
+                bn_batch_stats=batch_stats,
             )
         post_accuracy = post_metrics["accuracy"]
         pre_accuracy = pre_metrics["accuracy"]

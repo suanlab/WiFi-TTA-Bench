@@ -43,9 +43,7 @@ def load_esp32_prepared_dataset(
             f"ESP32 prepared-data directory not found: {dataset_dir}"
         )
 
-    metadata = _parse_esp32_metadata(
-        load_metadata_json(dataset_dir / "metadata.json")
-    )
+    metadata = _parse_esp32_metadata(load_metadata_json(dataset_dir / "metadata.json"))
     csi_array = load_prepared_array(dataset_dir / "csi.npy")
     labels = prepare_index_tensor(
         load_prepared_array(dataset_dir / "labels.npy"),

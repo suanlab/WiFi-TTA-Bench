@@ -169,8 +169,7 @@ def prepare_csi_tensor(
 ) -> Tensor:
     if array.ndim != 3:
         raise ValueError(
-            "Prepared CSI arrays must have shape (N, S, A), got "
-            f"{tuple(array.shape)}"
+            f"Prepared CSI arrays must have shape (N, S, A), got {tuple(array.shape)}"
         )
     if not np.iscomplexobj(array):
         raise ValueError(
@@ -187,9 +186,7 @@ def prepare_csi_tensor(
         return amplitude_phase_split(complex_tensor)
     if normalized_representation == "real_imag":
         return (
-            torch.view_as_real(complex_tensor)
-            .flatten(start_dim=-2)
-            .to(torch.float32)
+            torch.view_as_real(complex_tensor).flatten(start_dim=-2).to(torch.float32)
         )
     raise ValueError(f"Unsupported representation: {normalized_representation}")
 

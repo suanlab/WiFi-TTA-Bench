@@ -134,3 +134,49 @@ def test_faithful_ports_run_in_suite() -> None:
     )
     assert [r.method for r in rows] == list(suite_config.methods)
     assert all(0.0 <= r.post_accuracy <= 1.0 for r in rows)
+
+
+def test_batch_stat_evaluation_leaves_running_statistics_untouched() -> None:
+    from pinn4csi.training.paper2_tta import evaluate_tta_classifier
+
+    _, model, _, loaders, *_ = _setup()
+    bn = [m for m in model.modules() if isinstance(m, torch.nn.BatchNorm1d)]
+    before = [m.running_mean.clone() for m in bn]
+    running = evaluate_tta_classifier(model, loaders[3], torch.device("cpu"))
+    batch = evaluate_tta_classifier(
+        model, loaders[3], torch.device("cpu"), bn_batch_stats=True
+    )
+    assert all(torch.equal(b, m.running_mean) for b, m in zip(before, bn, strict=True))
+    assert all(not m.training and m.momentum == 0.1 for m in bn)
+    assert 0.0 <= running["accuracy"] <= 1.0 and 0.0 <= batch["accuracy"] <= 1.0
+
+
+def test_bn_reset_cumulative_replaces_source_statistics() -> None:
+    config, model, reference, loaders, *_ = _setup(bn_reset_cumulative=True)
+    summary = adapt_model_for_tta_with_summary(
+        model, loaders[2], reference, config, "bn_reset", torch.device("cpu")
+    )
+    adapted = [
+        m for m in summary.model.modules() if isinstance(m, torch.nn.BatchNorm1d)
+    ]
+    source = [m for m in model.modules() if isinstance(m, torch.nn.BatchNorm1d)]
+    assert all(m.momentum == 0.1 for m in adapted)
+    assert any(
+        not torch.allclose(a.running_mean, s.running_mean)
+        for a, s in zip(adapted, source, strict=True)
+    )
+
+
+@pytest.mark.slow
+def test_guarded_published_methods_roll_back_on_any_diversity_loss() -> None:
+    # A floor of 1.0 forbids any diversity loss, so guarded runs stop early or
+    # keep every step that does not reduce diversity.
+    config, model, reference, loaders, *_ = _setup(
+        sar_margin_factor=10.0, collapse_guard_diversity_ratio=1.0
+    )
+    for method in ("collapse_guarded_sar_full", "collapse_guarded_cotta_full"):
+        summary = adapt_model_for_tta_with_summary(
+            model, loaders[2], reference, config, method, torch.device("cpu")
+        )
+        assert summary.accepted_steps <= config.adaptation_steps
+        assert summary.stop_reason

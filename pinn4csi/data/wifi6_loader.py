@@ -43,9 +43,7 @@ def load_wifi6_prepared_dataset(
             f"WiFi 6 prepared-data directory not found: {dataset_dir}"
         )
 
-    metadata = _parse_wifi6_metadata(
-        load_metadata_json(dataset_dir / "metadata.json")
-    )
+    metadata = _parse_wifi6_metadata(load_metadata_json(dataset_dir / "metadata.json"))
     csi_array = load_prepared_array(dataset_dir / "csi.npy")
     labels = prepare_index_tensor(
         load_prepared_array(dataset_dir / "labels.npy"),
@@ -84,9 +82,7 @@ def _parse_wifi6_metadata(metadata: dict[str, object]) -> WiFi6CaptureMetadata:
 
     standard = require_string(metadata, "standard")
     if standard != "802.11ax":
-        raise ValueError(
-            f"metadata.json standard must be '802.11ax', got {standard!r}"
-        )
+        raise ValueError(f"metadata.json standard must be '802.11ax', got {standard!r}")
 
     return WiFi6CaptureMetadata(
         source=source,

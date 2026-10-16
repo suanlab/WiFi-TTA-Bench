@@ -92,6 +92,14 @@ outputs/synthetic_shift/analysis/*
 !outputs/statistics/**
 !outputs/splits/
 !outputs/splits/**
+!outputs/published_bn_batchstats/
+!outputs/published_bn_batchstats/**
+!outputs/bn_reset_cumulative/
+!outputs/bn_reset_cumulative/**
+!outputs/guard_paired/
+!outputs/guard_paired/**
+!outputs/cnn_gru/
+!outputs/cnn_gru/**
 !outputs/faithful_ports/
 !outputs/faithful_ports/**
 !outputs/protocol_sensitivity/

@@ -306,6 +306,66 @@ class _TransformerInvariantEncoder(nn.Module):
         }
 
 
+class _CNNGRUInvariantEncoder(nn.Module):
+    """Per-frame CNN followed by a GRU, after the Widar3.0 BVP model.
+
+    Widar_BVP samples are 22 frames of a 20x20 body-coordinate velocity profile
+    (stored as rows of 400). Each frame passes through a small CNN with
+    BatchNorm (conv 5x5, 16 channels, 2x2 max-pool, dense 64); a GRU then reads
+    the frame sequence and its last hidden state is projected to the latent
+    space. Only the CSI itself is used: on real data the residual prior is zero.
+
+    Shape: input (batch, frames * 400) -> features (batch, latent_dim).
+    """
+
+    def __init__(
+        self,
+        input_shape: tuple[int, int],
+        hidden_dim: int,
+        latent_dim: int,
+        frame_side: int = 20,
+        conv_channels: int = 16,
+        frame_dim: int = 64,
+        gru_dim: int = 128,
+    ) -> None:
+        super().__init__()
+        frames, cols = input_shape
+        if cols != frame_side * frame_side:
+            raise ValueError(
+                f"cnn_gru expects rows of {frame_side * frame_side} values "
+                f"(a {frame_side}x{frame_side} frame), got {cols}"
+            )
+        self.frames = frames
+        self.frame_side = frame_side
+        pooled = frame_side // 2
+        self.frame_cnn = nn.Sequential(
+            nn.Conv2d(1, conv_channels, 5, padding=2, bias=False),
+            nn.BatchNorm2d(conv_channels),
+            nn.ReLU(),
+            nn.MaxPool2d(2),
+            nn.Flatten(),
+            nn.Linear(conv_channels * pooled * pooled, frame_dim),
+            nn.ReLU(),
+        )
+        self.gru = nn.GRU(frame_dim, gru_dim, batch_first=True)
+        self.feature_projection = nn.Linear(gru_dim, latent_dim)
+        self.invariance_projection = nn.Linear(latent_dim, latent_dim)
+
+    def forward(self, x: Tensor, prior: Tensor | None = None) -> dict[str, Tensor]:
+        batch = x.shape[0]
+        frames = x.reshape(batch * self.frames, 1, self.frame_side, self.frame_side)
+        per_frame = self.frame_cnn(frames).reshape(batch, self.frames, -1)
+        _, last = self.gru(per_frame)
+        features = self.feature_projection(last[-1])
+        invariant_features = self.invariance_projection(features)
+        return {
+            "features": features,
+            "invariant_features": invariant_features,
+            "physics_residual": x
+            - (prior if prior is not None else torch.zeros_like(x)),
+        }
+
+
 class Paper2DomainAdaptationBaseline(nn.Module):
     """Shared-backbone Paper 2 baseline model.
 
@@ -339,6 +399,7 @@ class Paper2DomainAdaptationBaseline(nn.Module):
             | _MLPBNInvariantEncoder
             | _ResNet2DInvariantEncoder
             | _TransformerInvariantEncoder
+            | _CNNGRUInvariantEncoder
             | PhysicsDomainInvariantModule
         )
         grid_shape = _grid_shape(input_shape)
@@ -356,6 +417,12 @@ class Paper2DomainAdaptationBaseline(nn.Module):
                 hidden_dim=self.config.hidden_dim,
                 latent_dim=self.config.latent_dim,
                 use_residual_prior=self.config.use_residual_prior,
+            )
+        elif self.config.backbone == "cnn_gru":
+            encoder = _CNNGRUInvariantEncoder(
+                input_shape=(int(input_shape[0]), int(input_shape[-1])),
+                hidden_dim=self.config.hidden_dim,
+                latent_dim=self.config.latent_dim,
             )
         elif self.config.backbone == "cnn1d":
             encoder = _CNN1DInvariantEncoder(

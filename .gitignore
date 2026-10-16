@@ -204,3 +204,6 @@ manuscript/paper2/figures/*.png
 # Manuscript sources are not part of the public code release; the paper PDF
 # is distributed via OpenReview / anonymous.4open.science instead.
 manuscript/
+
+# Local agent configuration (review loop); keep out of the public mirror
+/.claude/

@@ -733,6 +733,19 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         }
         for dataset in ("widar_bvp", "ntufi_har")
     },
+    "cnn_gru_widar_source": {
+        "description": "Source/target accuracy of the CNN-GRU backbone on Widar_BVP",
+        "argv": [
+            "scripts/compute_source_target_gap.py",
+            "--datasets",
+            "widar_bvp",
+            "--backbones",
+            "cnn_gru",
+            "--output",
+            "outputs/severity/cnn_gru_widar.json",
+        ],
+        "outputs": ["outputs/severity/cnn_gru_widar.json"],
+    },
     "cnn_gru_widar": {
         "description": "Widar3.0-style CNN-GRU backbone on Widar_BVP",
         "argv": [

@@ -1,0 +1,20 @@
+{
+  "no_adapt": {
+    "mean_gain": 0.0,
+    "ci_lower": 0.0,
+    "ci_upper": 0.0,
+    "cohens_d_vs_noadapt": 0.0,
+    "paired_d_vs_noadapt": 0.0,
+    "negative_adaptation_rate": 0.0,
+    "n_observations": 15
+  },
+  "bn_reset": {
+    "mean_gain": 0.0023669530637562275,
+    "ci_lower": -0.003944921772927046,
+    "ci_upper": 0.008719030767679214,
+    "cohens_d_vs_noadapt": 0.2583991289138794,
+    "paired_d_vs_noadapt": 0.1827157884836197,
+    "negative_adaptation_rate": 0.46666666865348816,
+    "n_observations": 15
+  }
+}

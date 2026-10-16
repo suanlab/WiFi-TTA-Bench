@@ -49,7 +49,7 @@
   "description": "Harm-aware benchmark for test-time adaptation (TTA) on WiFi Channel State Information (CSI). It evaluates ten adaptation methods (TENT, SHOT/IM, entropy-based simplified ports of SAR, CoTTA and T3A, physics-prior variants) plus SAR, CoTTA and T3A as published, on three real WiFi CSI datasets, six backbones and a synthetic control. It does not redistribute raw CSI; it provides split definitions, evaluation protocol artifacts and per-method JSON summaries.",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
   "version": "1.1.0",
-  "dateModified": "2026-10-16",
+  "dateModified": "2026-10-17",
   "keywords": [
     "test-time adaptation",
     "domain adaptation",
@@ -184,7 +184,7 @@
       "name": "widar-per-class",
       "contentUrl": "method_summaries/widar_bvp_per_class.json",
       "encodingFormat": "application/json",
-      "sha256": "1955e470b67678977f08e257c63d8eb17e1946b1a3b3c07e830d096b86d758ae",
+      "sha256": "622a91ce4c4cf074698c98f3a8098af5ff9ee76c7487ee472c5243a3cc79c3ff",
       "description": "Per-class Widar target accuracy and mean max-softmax confidence (source-only, aggregated over n=15 runs)."
     },
     {
@@ -202,7 +202,7 @@
       "name": "published-ports-widar-bvp-mlp",
       "contentUrl": "method_summaries/published_ports_widar_bvp_mlp.json",
       "encodingFormat": "application/json",
-      "sha256": "77b1fabee48db563e06db6546867a75962586bff25cfa415b878db67f17daef4",
+      "sha256": "d8f3b71c5dd1a7c47e65d3932d43c57621ea5bde4328fa8424a51cfda6519d00",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, widar_bvp with the mlp backbone (n=15)."
     },
     {
@@ -211,7 +211,7 @@
       "name": "published-ports-widar-bvp-mlp-bn",
       "contentUrl": "method_summaries/published_ports_widar_bvp_mlp_bn.json",
       "encodingFormat": "application/json",
-      "sha256": "c973ccd0f779135fee1e9d8479fac37517ac87cd2e52dcffbd7bb660120ed612",
+      "sha256": "7877576cbebf4809e2b502b40f08cbc12176d1aaf653b531bf7d74290aa08370",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, widar_bvp with the mlp_bn backbone (n=15)."
     },
     {
@@ -220,7 +220,7 @@
       "name": "published-ports-ntufi-har-mlp",
       "contentUrl": "method_summaries/published_ports_ntufi_har_mlp.json",
       "encodingFormat": "application/json",
-      "sha256": "fc6e2730afdd4d03a940309da430fb6cec0a04f0d39348cd158b2b559a65500a",
+      "sha256": "f128598ffaba0589715a54a5d2847a433187ef51a697cd4b29f269646c1a019c",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, ntufi_har with the mlp backbone (n=15)."
     },
     {
@@ -229,7 +229,7 @@
       "name": "published-ports-ntufi-har-mlp-bn",
       "contentUrl": "method_summaries/published_ports_ntufi_har_mlp_bn.json",
       "encodingFormat": "application/json",
-      "sha256": "d2e07770042f3820fbb7413e8a9e03ee3ec32b3c8b1a02de28504b7dbac32836",
+      "sha256": "94ad96f54e3931a0f4fda1a5256a731afda3124eb8588f50fe54d9d3323c559a",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, ntufi_har with the mlp_bn backbone (n=15)."
     },
     {
@@ -238,7 +238,7 @@
       "name": "published-ports-signfi-top10-mlp",
       "contentUrl": "method_summaries/published_ports_signfi_top10_mlp.json",
       "encodingFormat": "application/json",
-      "sha256": "83706edcd8fbe24b6e4a75cb53a93131c0e9e087004d08f938bba8ae22007247",
+      "sha256": "a3e869b8e548c0e72e9230b9cb421b568385c83c3634b0427a8ca8a54e0c3c79",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, signfi_top10 with the mlp backbone (n=15)."
     },
     {
@@ -247,7 +247,7 @@
       "name": "published-ports-signfi-top10-mlp-bn",
       "contentUrl": "method_summaries/published_ports_signfi_top10_mlp_bn.json",
       "encodingFormat": "application/json",
-      "sha256": "6f833609262399b0d483e9cbfae8a4ae301e39eebd13ef7c786da3413700703c",
+      "sha256": "68fa201ee92a60aea8d14bd06f7519b76929e3dc81cacb3ad4e25a153cceaa79",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, signfi_top10 with the mlp_bn backbone (n=15)."
     },
     {
@@ -265,7 +265,7 @@
       "name": "harm-tolerance",
       "contentUrl": "method_summaries/harm_tolerance.json",
       "encodingFormat": "application/json",
-      "sha256": "9095659c01db85807860d2c42ad0e8bc123e29bf26efc08a609911e95c8dfbfb",
+      "sha256": "049e4844f1861d96e7c72773ca1084922a179e9d2caf5d1e429a85f681bd2fa9",
       "description": "Harm rates beyond one test sample and 1 pp, abstention rates and per-environment means for every reported cell."
     },
     {
@@ -310,7 +310,7 @@
       "name": "submission-manifest",
       "contentUrl": "SUBMISSION_MANIFEST.md",
       "encodingFormat": "text/markdown",
-      "sha256": "f4dbd8af5ddd2566de1bb60ddf9cb464faa710551ddbfab416b8b6cf218c265f",
+      "sha256": "3359b9c3afad9e15f9ecc12f31d03e4642296db63fabdf19716edf644e2e5866",
       "description": "Mapping from paper tables/figures to backing artifacts."
     }
   ]

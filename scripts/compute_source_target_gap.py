@@ -19,6 +19,7 @@ Usage:
 
 from __future__ import annotations
 
+import argparse
 import dataclasses
 import logging
 from pathlib import Path
@@ -97,9 +98,16 @@ def measure(dataset: str, backbone: str) -> dict[str, float]:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__ or "")
+    parser.add_argument("--datasets", default=",".join(DATASETS))
+    parser.add_argument("--backbones", default=",".join(BACKBONES))
+    parser.add_argument("--output", type=Path, default=OUTPUT)
+    args = parser.parse_args()
+    datasets = tuple(d for d in args.datasets.split(",") if d)
+    backbones = tuple(b for b in args.backbones.split(",") if b)
     result: dict[str, dict[str, dict[str, float]]] = {}
-    for dataset in DATASETS:
-        for backbone in BACKBONES:
+    for dataset in datasets:
+        for backbone in backbones:
             stats = measure(dataset, backbone)
             result.setdefault(dataset, {})[backbone] = stats
             logger.info(
@@ -111,7 +119,7 @@ def main() -> None:
                 stats["target_accuracy"],
                 stats["val_to_target_drop_pp"],
             )
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
     save_json_file(
         {
             "protocol": "source-only, leave-one-environment-out x 5 seeds (n=15), "
@@ -119,7 +127,7 @@ def main() -> None:
             "definition": "severity = in-domain validation accuracy - target accuracy",
             "results": result,
         },
-        OUTPUT,
+        args.output,
     )
 
 

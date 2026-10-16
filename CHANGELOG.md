@@ -7,6 +7,39 @@ in the paper can be traced to the code that produced them.
 Superseded artifacts are preserved rather than overwritten, per the deprecation policy in
 the supplement.
 
+## 2026-10-17
+
+### Corrected
+
+- **Overconfidence** (`outputs/overconfidence/`): the analysis trained unseeded source models,
+  so they were not the benchmark's, and it labelled Widar classes with wrong names. It now
+  seeds like `run_tta_suite` (all 15 Widar runs match the benchmark's source-only accuracy)
+  and takes class names from the bundle metadata. Widar: confidence 61-75 %, per-class
+  accuracy 25-54 % (was 69-81 % / 26-58 %). The stale `widar_per_class.*` files are
+  superseded.
+- **Published SAR**: its model-recovery threshold (0.2 for ImageNet) is scaled by
+  ln(C)/ln(1000). With the absolute threshold, SAR reset to the source after every step in
+  10 of 15 NTU-Fi MLP+BN runs. Regenerated `outputs/faithful_ports/` (previous copies in
+  `superseded_2026-10-17/`); only SAR's numbers change, e.g. NTU-Fi MLP+BN +0.70 pp
+  [+0.2, +1.3] (was +0.24).
+- **Headline intervals at the environment level** (two-stage bootstrap over the three held-out
+  environments): Widar MLP+BN BN-affine TENT -0.42 pp spans zero ([-1.09, +0.13]); SignFi
+  MLP+BN TENT +10.3 pp holds ([+2.9, +17.7]); SignFi BN-reset +2.6 pp spans zero.
+
+### Added
+
+- **Published BatchNorm regime** (`bn_eval_stats="batch"`; `outputs/published_bn_batchstats/`):
+  TENT, SAR and CoTTA evaluated with each test batch's own statistics. On MLP+BN all BN
+  methods then coincide: -1.43 pp Widar, -3.03 pp NTU-Fi, +11.56 pp SignFi-10. Cumulative
+  BN-reset (`outputs/bn_reset_cumulative/`): -0.99 / +0.24 / +12.95 pp.
+- **Guarded published methods** (`collapse_guarded_sar_full`, `collapse_guarded_cotta_full`,
+  paired same-batch diversity): stops SAR's loss on SignFi MLP (-3.84 -> 0.00 pp), raises
+  SignFi MLP+BN SAR to +13.59 pp, little change elsewhere. Paired reference for the entropy
+  guard (`outputs/guard_paired/`): -0.87 pp Widar, -3.93 pp NTU-Fi.
+- `cnn_gru` backbone (Widar3.0-style per-frame CNN + GRU) and its Widar run
+  (`outputs/cnn_gru/`).
+- Unused `tent_bn_momentum` config field removed.
+
 ## 2026-10-16 (second simulated review, Tier 1)
 
 ### Corrected

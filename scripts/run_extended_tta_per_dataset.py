@@ -61,6 +61,7 @@ def run_experiment(
     bn_eval_stats: str = "running",
     bn_reset_cumulative: bool = False,
     collapse_guard_reference: str = "first_batch",
+    freeze_bn_in_scoring_pass: bool = False,
 ) -> dict[str, object]:
     all_rows: list[dict[str, object]] = []
     config = TTAExperimentConfig(
@@ -75,6 +76,7 @@ def run_experiment(
         bn_eval_stats=bn_eval_stats,
         bn_reset_cumulative=bn_reset_cumulative,
         collapse_guard_reference=collapse_guard_reference,
+        freeze_bn_in_scoring_pass=freeze_bn_in_scoring_pass,
     )
 
     for split in DEFAULT_ENV_SPLITS:
@@ -242,6 +244,11 @@ def main() -> None:
         choices=("first_batch", "same_batch"),
         default="first_batch",
     )
+    parser.add_argument(
+        "--freeze-bn-in-scoring-pass",
+        action="store_true",
+        help="Freeze BN running statistics in the post-step scoring pass.",
+    )
     args = parser.parse_args()
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
@@ -262,6 +269,7 @@ def main() -> None:
         bn_eval_stats=args.bn_eval_stats,
         bn_reset_cumulative=args.bn_reset_cumulative,
         collapse_guard_reference=args.collapse_guard_reference,
+        freeze_bn_in_scoring_pass=args.freeze_bn_in_scoring_pass,
     )
     rows = results["rows"]
 

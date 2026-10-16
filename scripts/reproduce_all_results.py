@@ -690,6 +690,54 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         for dataset in ("widar_bvp", "ntufi_har", "signfi_top10")
     },
     **{
+        f"bn_single_update_{dataset}": {
+            "description": (
+                f"BN running statistics updated once per step (frozen scoring "
+                f"pass): {dataset}"
+            ),
+            "argv": [
+                "scripts/run_extended_tta_per_dataset.py",
+                "--dataset",
+                dataset,
+                "--backbone",
+                "mlp_bn",
+                "--methods",
+                "no_adapt,tent,entropy_tta,bn_reset,sar_full",
+                "--freeze-bn-in-scoring-pass",
+                "--output-dir",
+                f"outputs/bn_single_update/{dataset}_mlp_bn",
+            ],
+            "outputs": [
+                f"outputs/bn_single_update/{dataset}_mlp_bn/"
+                f"{dataset}_lame_sar_cotta.json"
+            ],
+        }
+        for dataset in ("ntufi_har", "signfi_top10")
+    },
+    **{
+        f"tent_lr0_{dataset}": {
+            "description": f"TENT at learning rate 0 (statistics-only control): "
+            f"{dataset}",
+            "argv": [
+                "scripts/run_extended_tta_per_dataset.py",
+                "--dataset",
+                dataset,
+                "--backbone",
+                "mlp_bn",
+                "--methods",
+                "no_adapt,tent",
+                "--adaptation-learning-rate",
+                "0",
+                "--output-dir",
+                f"outputs/tent_lr0/{dataset}_mlp_bn",
+            ],
+            "outputs": [
+                f"outputs/tent_lr0/{dataset}_mlp_bn/{dataset}_lame_sar_cotta.json"
+            ],
+        }
+        for dataset in ("ntufi_har", "signfi_top10")
+    },
+    **{
         f"bn_reset_cumulative_{dataset}": {
             "description": f"BN-reset with cumulative re-estimation: {dataset}",
             "argv": [

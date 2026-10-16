@@ -37,6 +37,21 @@ def test_harm_tolerance_discounts_one_sample_flips_and_counts_abstentions() -> N
     assert math.isclose(out["env_mean_pp"]["0"], -5.0)
     assert math.isclose(out["env_mean_pp"]["1"], 5.0)
     assert out["envs_negative"] == 1
+    # Two environment means -5 and +5: t interval centred on 0, df = 1.
+    lo, hi = out["env_t_ci_pp"]
+    assert math.isclose(lo, -hi) and hi > 50.0
+    assert out["sign_test_p_envs"] == 1.0
+
+
+def test_sign_test_and_t_interval_match_hand_values() -> None:
+    module = _load_script("harm_tolerance_report")
+    # 15 positive runs: p = 2 / 2**15; 3 positive environments: p = 0.25.
+    assert math.isclose(module._sign_test_p([1.0] * 15), 2.0 / 2**15)
+    assert math.isclose(module._sign_test_p([1.0, 2.0, 3.0]), 0.25)
+    assert module._sign_test_p([0.0, 0.0]) == 1.0
+    lo, hi = module._t_interval([1.0, 2.0, 3.0])
+    assert math.isclose(hi - 2.0, 4.303 / math.sqrt(3), rel_tol=1e-9)
+    assert math.isclose(lo + hi, 4.0)
 
 
 def test_harm_tolerance_reads_widar_room_names() -> None:

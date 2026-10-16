@@ -94,6 +94,10 @@ outputs/synthetic_shift/analysis/*
 !outputs/splits/**
 !outputs/published_bn_batchstats/
 !outputs/published_bn_batchstats/**
+!outputs/bn_single_update/
+!outputs/bn_single_update/**
+!outputs/tent_lr0/
+!outputs/tent_lr0/**
 !outputs/bn_reset_cumulative/
 !outputs/bn_reset_cumulative/**
 !outputs/guard_paired/
@@ -203,7 +207,6 @@ manuscript/paper2/ARTIFACT_MANIFEST.md
 manuscript/paper2/ARTIFACT_README.md
 manuscript/paper2/SUBMISSION_MANIFEST.md
 manuscript/paper2/figures/README.md
-outputs/SUBMISSION_MANIFEST.md
 outputs/croissant/HF_DATASET_CARD.md
 
 # Figure PNG previews are duplicates of the canonical PDFs.

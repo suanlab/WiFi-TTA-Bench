@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+import copy
+
 import pytest
 import torch
 
 from pinn4csi.training.paper2_tta import (
     TTAExperimentConfig,
+    _batch_logits,
     adapt_model_for_tta_with_summary,
     build_synthetic_tta_loaders,
     compute_tta_reference_stats,
@@ -180,3 +183,40 @@ def test_guarded_published_methods_roll_back_on_any_diversity_loss() -> None:
         )
         assert summary.accepted_steps <= config.adaptation_steps
         assert summary.stop_reason
+
+
+def test_frozen_scoring_pass_updates_bn_statistics_once_per_step() -> None:
+    def _tracked(freeze: bool) -> int:
+        config, model, reference, loaders, *_ = _setup(
+            adaptation_learning_rate=0.0, freeze_bn_in_scoring_pass=freeze
+        )
+        summary = adapt_model_for_tta_with_summary(
+            model, loaders[2], reference, config, "tent", torch.device("cpu")
+        )
+        before = {n: int(b) for n, b in model.named_buffers() if "num_batches" in n}
+        after = {
+            n: int(b) for n, b in summary.model.named_buffers() if "num_batches" in n
+        }
+        assert before
+        return max(after[n] - before[n] for n in before)
+
+    assert _tracked(freeze=False) == 4
+    # num_batches_tracked still counts the frozen pass; the running mean must
+    # match a single update per step instead.
+    config, model, reference, loaders, *_ = _setup(
+        adaptation_learning_rate=0.0, freeze_bn_in_scoring_pass=True
+    )
+    summary = adapt_model_for_tta_with_summary(
+        model, loaders[2], reference, config, "tent", torch.device("cpu")
+    )
+    expected = copy.deepcopy(model)
+    expected.train()
+    batches = iter(loaders[2])
+    with torch.no_grad():
+        for _ in range(config.adaptation_steps):
+            _batch_logits(expected, next(batches))
+    for (name, got), (_, want) in zip(
+        summary.model.named_buffers(), expected.named_buffers(), strict=True
+    ):
+        if "running" in name:
+            assert torch.allclose(got, want, atol=1e-6), name

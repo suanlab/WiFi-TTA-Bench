@@ -20,7 +20,13 @@ This script recomputes, from the per-run rows already released under
   many of the three are negative -- the unit that generalises to a new room.
 * ``hier_ci_pp``            a two-stage bootstrap interval: resample environments,
   then runs within each, so the interval reflects that only three environments
-  were held out. Seeded, 10,000 resamples.
+  were held out. Seeded, 10,000 resamples. With three environments it is close
+  to the range of the environment means, so it is reported as descriptive.
+* ``env_t_ci_pp``           a t interval (df = environments - 1) on the
+  environment means -- the inferential interval for a new environment.
+* ``sign_test_p_runs`` / ``sign_test_p_envs``  exact two-sided sign tests on the
+  non-zero run gains and on the environment means (three environments cannot
+  give p below 0.25).
 
 No model is trained. Output: ``outputs/statistics/harm_tolerance.json``.
 """
@@ -29,6 +35,7 @@ from __future__ import annotations
 
 import json
 import logging
+import math
 from collections import defaultdict
 from pathlib import Path
 
@@ -130,6 +137,31 @@ def _hierarchical_ci(
     return float(np.percentile(means, 2.5)), float(np.percentile(means, 97.5))
 
 
+# Two-sided 97.5% Student-t quantiles for small df (avoids a scipy dependency).
+T_975 = {1: 12.706, 2: 4.303, 3: 3.182, 4: 2.776, 5: 2.571}
+
+
+def _t_interval(values: list[float]) -> list[float]:
+    """95% t interval of the mean of a few values (environment means)."""
+    k = len(values)
+    mean = float(np.mean(values))
+    if k < 2:
+        return [mean, mean]
+    half = T_975[k - 1] * float(np.std(values, ddof=1)) / math.sqrt(k)
+    return [mean - half, mean + half]
+
+
+def _sign_test_p(values: list[float] | np.ndarray) -> float:
+    """Exact two-sided sign test; zeros are dropped."""
+    nonzero = [v for v in values if v != 0.0]
+    n = len(nonzero)
+    if n == 0:
+        return 1.0
+    k = min(sum(v > 0 for v in nonzero), sum(v < 0 for v in nonzero))
+    tail = sum(math.comb(n, i) for i in range(k + 1)) / 2.0**n
+    return float(min(1.0, 2.0 * tail))
+
+
 def _summarise(
     rows: list[dict[str, object]], sizes: dict[int, int]
 ) -> dict[str, object]:
@@ -160,6 +192,9 @@ def _summarise(
     lo, hi = _hierarchical_ci(gains, envs)
     out["hier_ci_pp"] = [100.0 * lo, 100.0 * hi]
     out["envs_negative"] = int(sum(v < 0 for v in env_means.values()))
+    out["env_t_ci_pp"] = _t_interval(list(env_means.values()))
+    out["sign_test_p_runs"] = _sign_test_p(gains)
+    out["sign_test_p_envs"] = _sign_test_p(list(env_means.values()))
     return out
 
 

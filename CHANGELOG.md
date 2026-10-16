@@ -7,6 +7,32 @@ in the paper can be traced to the code that produced them.
 Superseded artifacts are preserved rather than overwritten, per the deprecation policy in
 the supplement.
 
+## 2026-10-16 (second simulated review, Tier 1)
+
+### Corrected
+
+- **Croissant metadata** regenerated (`outputs/croissant/`): v1.1.0 with `dateModified`, all 25
+  file hashes match their artifacts, and the distribution now includes the published-method
+  results, guard coverage, harm tolerance, protocol sensitivity and sample-level split
+  manifests. `scripts/validate_croissant.py` now fails on any hash mismatch.
+- **Reproducer**: overconfidence is registered per dataset under the file names the script
+  actually writes (the old entry expected `widar_per_class.json`, a stale pre-audit file now
+  in `outputs/overconfidence/superseded_2026-10-16/`); the split-leakage audit, the guard
+  figures and the split manifests are registered; manifest and component labels no longer
+  carry stale table numbers.
+- **Public API** (`wifi_tta_bench.evaluate`): default batch size 32 as in the paper, a
+  `backbone` argument, and the paper's names (`sar-lite`, `cotta-lite`, `t3a-ent`,
+  `tent-proj`) accepted.
+- Dataset-registry descriptions of NTU-Fi and SignFi-10 say "ordered partitions" instead of
+  sessions or temporal splits; Figure 1 uses the port names and drops the LAME no-op.
+
+### Added
+
+- `scripts/export_split_manifests.py` -> `outputs/splits/`: per-sample environment and label
+  and the exact train/val/adapt/eval indices of every fold and seed, checked against the
+  benchmark loaders.
+- `RESPONSIBLE_USE.md`: a non-binding responsible-use statement.
+
 ## 2026-10-15
 
 ### Corrected

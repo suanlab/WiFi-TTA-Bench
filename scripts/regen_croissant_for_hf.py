@@ -24,6 +24,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import time
 from pathlib import Path
 
 # Map (FileObject @id, source-on-disk path, HF target path, encodingFormat,
@@ -41,14 +43,14 @@ ENTRIES: list[tuple[str, str, str, str, str]] = [
     ),
     (
         "ntufi-tta-summary",
-        "outputs/ntufi_tta/method_summary.json",
+        "outputs/core_regen/ntufi_har_lame_sar_cotta.json",
         "method_summaries/ntufi.json",
         "application/json",
         "Per-method summary for NTU-Fi HAR (primary MLP, n=15).",
     ),
     (
         "signfi-tta-summary",
-        "outputs/signfi_tta/method_summary.json",
+        "outputs/core_regen/signfi_top10_lame_sar_cotta.json",
         "method_summaries/signfi.json",
         "application/json",
         "Per-method summary for SignFi-10 (primary MLP, n=15).",
@@ -106,8 +108,8 @@ ENTRIES: list[tuple[str, str, str, str, str]] = [
     ),
     (
         "widar-per-class",
-        "outputs/overconfidence/widar_per_class.json",
-        "method_summaries/widar_per_class.json",
+        "outputs/overconfidence/widar_bvp_per_class.json",
+        "method_summaries/widar_bvp_per_class.json",
         "application/json",
         "Per-class Widar target accuracy and mean max-softmax confidence "
         "(source-only, aggregated over n=15 runs).",
@@ -120,26 +122,98 @@ ENTRIES: list[tuple[str, str, str, str, str]] = [
         "Method x dataset coverage matrix.",
     ),
     (
+        "published-ports-widar-bvp-mlp",
+        "outputs/faithful_ports/widar_bvp_mlp/widar_bvp_lame_sar_cotta.json",
+        "method_summaries/published_ports_widar_bvp_mlp.json",
+        "application/json",
+        "SAR, CoTTA and T3A as published next to the simplified ports, "
+        "widar_bvp with the mlp backbone (n=15).",
+    ),
+    (
+        "published-ports-widar-bvp-mlp-bn",
+        "outputs/faithful_ports/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta.json",
+        "method_summaries/published_ports_widar_bvp_mlp_bn.json",
+        "application/json",
+        "SAR, CoTTA and T3A as published next to the simplified ports, "
+        "widar_bvp with the mlp_bn backbone (n=15).",
+    ),
+    (
+        "published-ports-ntufi-har-mlp",
+        "outputs/faithful_ports/ntufi_har_mlp/ntufi_har_lame_sar_cotta.json",
+        "method_summaries/published_ports_ntufi_har_mlp.json",
+        "application/json",
+        "SAR, CoTTA and T3A as published next to the simplified ports, "
+        "ntufi_har with the mlp backbone (n=15).",
+    ),
+    (
+        "published-ports-ntufi-har-mlp-bn",
+        "outputs/faithful_ports/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta.json",
+        "method_summaries/published_ports_ntufi_har_mlp_bn.json",
+        "application/json",
+        "SAR, CoTTA and T3A as published next to the simplified ports, "
+        "ntufi_har with the mlp_bn backbone (n=15).",
+    ),
+    (
+        "published-ports-signfi-top10-mlp",
+        "outputs/faithful_ports/signfi_top10_mlp/signfi_top10_lame_sar_cotta.json",
+        "method_summaries/published_ports_signfi_top10_mlp.json",
+        "application/json",
+        "SAR, CoTTA and T3A as published next to the simplified ports, "
+        "signfi_top10 with the mlp backbone (n=15).",
+    ),
+    (
+        "published-ports-signfi-top10-mlp-bn",
+        "outputs/faithful_ports/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta.json",
+        "method_summaries/published_ports_signfi_top10_mlp_bn.json",
+        "application/json",
+        "SAR, CoTTA and T3A as published next to the simplified ports, "
+        "signfi_top10 with the mlp_bn backbone (n=15).",
+    ),
+    (
+        "guard-coverage",
+        "outputs/guard_coverage/guard_coverage.json",
+        "method_summaries/guard_coverage.json",
+        "application/json",
+        "Every collapse-guard measurement with its unguarded arm.",
+    ),
+    (
+        "harm-tolerance",
+        "outputs/statistics/harm_tolerance.json",
+        "method_summaries/harm_tolerance.json",
+        "application/json",
+        "Harm rates beyond one test sample and 1 pp, abstention rates and "
+        "per-environment means for every reported cell.",
+    ),
+    (
+        "protocol-sensitivity",
+        "outputs/protocol_sensitivity/summary.json",
+        "method_summaries/protocol_sensitivity.json",
+        "application/json",
+        "Learning-rate x step-budget sweep and class-blocked stream summary.",
+    ),
+    (
         "split-widar-bvp",
-        "data/prepared/widar_bvp/metadata.json",
+        "outputs/splits/widar_bvp.json",
         "splits/widar_bvp.json",
         "application/json",
-        "Widar_BVP split manifest: leave-one-room-out folds and shape "
-        "metadata. No raw CSI is redistributed.",
+        "Widar_BVP split manifest: per-sample environment and "
+        "label, and the exact train/val/adapt/eval indices of every fold and seed.",
     ),
     (
         "split-ntufi-har",
-        "data/prepared/ntufi_har/metadata.json",
+        "outputs/splits/ntufi_har.json",
         "splits/ntufi_har.json",
         "application/json",
-        "NTU-Fi HAR split manifest. No raw CSI is redistributed.",
+        "NTU-Fi HAR split manifest: per-sample environment and label, and "
+        "the exact train/val/adapt/eval indices of every fold and seed.",
     ),
     (
         "split-signfi-top10",
-        "data/prepared/signfi_top10/metadata.json",
+        "outputs/splits/signfi_top10.json",
         "splits/signfi_top10.json",
         "application/json",
-        "SignFi-10 split manifest. No raw CSI is redistributed.",
+        "SignFi-10 split manifest: per-sample environment and label, and "
+        "the exact train/val/adapt/eval indices of every fold and seed.",
     ),
     (
         "submission-manifest",
@@ -149,6 +223,14 @@ ENTRIES: list[tuple[str, str, str, str, str]] = [
         "Mapping from paper tables/figures to backing artifacts.",
     ),
 ]
+
+
+def _date_modified() -> str:
+    """Release date from SOURCE_DATE_EPOCH, so regeneration is reproducible."""
+    epoch = os.environ.get("SOURCE_DATE_EPOCH")
+    if epoch is None:
+        raise SystemExit("Set SOURCE_DATE_EPOCH to the release date (UTC seconds).")
+    return time.strftime("%Y-%m-%d", time.gmtime(int(epoch)))
 
 
 def sha256(path: Path) -> str:
@@ -218,16 +300,17 @@ def build() -> dict:
         "name": "WiFi-TTA-Bench",
         "description": (
             "Harm-aware benchmark for test-time adaptation (TTA) on WiFi "
-            "Channel State Information (CSI) under physics-structured domain "
-            "shift. The benchmark evaluates up to 12 TTA methods (including "
-            "TENT, SHOT/IM, T3A, SAR, CoTTA, LAME, and physics-informed "
-            "variants) on three real WiFi CSI datasets and controlled "
-            "synthetic data. It does not redistribute raw CSI; it provides "
-            "split manifests, evaluation protocol artifacts, and canonical "
+            "Channel State Information (CSI). It evaluates ten adaptation "
+            "methods (TENT, SHOT/IM, entropy-based simplified ports of SAR, "
+            "CoTTA and T3A, physics-prior variants) plus SAR, CoTTA and T3A "
+            "as published, on three real WiFi CSI datasets, six backbones and "
+            "a synthetic control. It does not redistribute raw CSI; it "
+            "provides split definitions, evaluation protocol artifacts and "
             "per-method JSON summaries."
         ),
         "conformsTo": "http://mlcommons.org/croissant/1.0",
-        "version": "1.0.0",
+        "version": "1.1.0",
+        "dateModified": _date_modified(),
         "keywords": [
             "test-time adaptation",
             "domain adaptation",
@@ -311,22 +394,20 @@ def build() -> dict:
         ),
         "rai:dataLimitations": (
             "Known limitations of the benchmark splits and artifacts: "
-            "(1) Two of three real datasets (NTU-Fi, SignFi-10) use "
-            "temporal splits within a single laboratory rather than "
-            "verified physical-room changes; only Widar_BVP is a verified "
-            "leave-one-room-out split. (2) The primary backbone is a "
-            "fixed MLP without BatchNorm; an MLP+BN control is provided "
-            "but other backbones (CNN1D+BN) are evaluated only on a "
-            "limited one-room probe. (3) The main evaluation uses n=15 "
-            "paired observations (3 folds x 5 seeds), adequate for large "
-            "effects (Cohen's d >= 0.8) but underpowered for small "
-            "effects. (4) SignFi-10 is small (200 samples, 10 classes) "
-            "and may overstate recovery on milder shifts. (5) Method "
-            "fidelity varies: TENT, SHOT, SAR, CoTTA, and LAME on the "
-            "primary MLP backbone are simplified ports because the "
-            "shared MLP lacks BN; a faithful BN-only port on MLP+BN is "
-            "provided as a control but the simplified-port numbers "
-            "should not be read as universal method failures. (6) The "
+            "(1) Only Widar_BVP is a recorded room change (rooms also differ "
+            "in date and users); the NTU-Fi and SignFi-10 environments are "
+            "ordered partitions of each class's recordings within one "
+            "setting. (2) Source models are trained from scratch at modest "
+            "size and fall well short of published accuracy on these "
+            "datasets. (3) The main evaluation uses n=15 paired observations "
+            "from 3 environments per dataset, so the effective sample for a "
+            "new environment is about 3. (4) SignFi-10 is small (200 "
+            "samples, 10 classes; 30-35 evaluation samples per fold). (5) "
+            "sar-lite, cotta-lite and t3a-ent are entropy-based "
+            "simplifications; SAR, CoTTA and T3A as published are run at the "
+            "benchmark's optimiser and step budget, not their papers' "
+            "settings. "
+            "(6) The "
             "benchmark redistributes only split manifests and "
             "evaluation artifacts; raw CSI must be obtained from the "
             "upstream dataset distributors under their academic "

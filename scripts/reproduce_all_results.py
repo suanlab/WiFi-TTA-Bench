@@ -43,55 +43,63 @@ logger = logging.getLogger(__name__)
 # ``SOURCE_SCRIPTS`` below, with the single exception of aggregated Table 10.
 # ---------------------------------------------------------------------------
 ARTIFACT_MANIFEST: list[tuple[str, str, str]] = [
-    ("Table 1 (Widar)", "outputs/widar_full_tta/method_summary.json", "widar_full"),
-    ("Table 2 (NTU-Fi)", "outputs/ntufi_tta/method_summary.json", "ntufi_signfi_core"),
     (
-        "Table 3 (SignFi-10)",
+        "Widar per-method results (primary MLP)",
+        "outputs/widar_full_tta/method_summary.json",
+        "widar_full",
+    ),
+    (
+        "NTU-Fi per-method results (inline runner)",
+        "outputs/ntufi_tta/method_summary.json",
+        "ntufi_signfi_core",
+    ),
+    (
+        "SignFi-10 per-method results (inline runner)",
         "outputs/signfi_tta/method_summary.json",
         "ntufi_signfi_core",
     ),
     (
-        "Cross-dataset SAR/CoTTA/LAME (MLP ports)",
+        "sar-lite/cotta-lite/LAME port, Widar (MLP)",
         "outputs/new_methods/widar_bvp_lame_sar_cotta.json",
         "widar_ext",
     ),
     (
-        "Cross-dataset SAR/CoTTA/LAME (NTU-Fi)",
+        "sar-lite/cotta-lite/LAME port, NTU-Fi (MLP)",
         "outputs/new_methods/ntufi_har_lame_sar_cotta.json",
         "ntufi_ext",
     ),
     (
-        "Cross-dataset SAR/CoTTA/LAME (SignFi-10)",
+        "sar-lite/cotta-lite/LAME port, SignFi-10 (MLP)",
         "outputs/new_methods/signfi_top10_lame_sar_cotta.json",
         "signfi_ext",
     ),
     (
-        "Faithful SAR/CoTTA on Widar MLP+BN",
+        "sar-lite/cotta-lite and BN-affine TENT, Widar MLP+BN",
         "outputs/new_methods/widar_mlpbn_faithful_sar_cotta.json",
         "widar_faithful",
     ),
     (
-        "Table 4 (synthetic)",
+        "Synthetic control: soft-selective comparison",
         "outputs/synthetic_shift/soft_selective_comparison.json",
         "synthetic_shift",
     ),
     (
-        "Table 5 (faithful TENT)",
+        "BN-affine TENT, three-backbone run",
         "outputs/phase1/faithful_tent_results.json",
         "faithful_tent",
     ),
     (
-        "Table 6 (smoothing)",
+        "Label smoothing (legacy runner)",
         "outputs/phase_calibration/label_smoothing_results.json",
         "label_smoothing",
     ),
     (
-        "Table 7 (baselines)",
+        "Step-budget / batch-size ablations",
         "outputs/db_ablations/baseline_accuracies.json",
         "db_ablations",
     ),
     (
-        "Table 8 (arch 3way)",
+        "Architecture ablation (legacy runner)",
         "outputs/final_ablations/arch_ablation_n15.json",
         "arch_ablation_legacy",
     ),
@@ -101,7 +109,7 @@ ARTIFACT_MANIFEST: list[tuple[str, str, str]] = [
         "arch_ci",
     ),
     (
-        "Table 9 (SignFi BN)",
+        "SignFi MLP+BN (legacy runner)",
         "outputs/final_ablations/mlpbn_other_datasets.json",
         "arch_ablation_legacy",
     ),
@@ -112,30 +120,37 @@ ARTIFACT_MANIFEST: list[tuple[str, str, str]] = [
     ),
     (
         "Widar per-class overconfidence",
-        "outputs/overconfidence/widar_per_class.json",
-        "overconfidence",
+        "outputs/overconfidence/widar_bvp_per_class.json",
+        "overconfidence_widar_bvp",
     ),
     ("Supervised upper bound", "outputs/phase2/upper_bound.json", "upper_bound"),
-    ("Table 10 (leaderboard)", "aggregated from Tables 1-3", "aggregation"),
-    ("Table 11 (per-room)", "outputs/widar_full_tta/full_results.json", "widar_full"),
-    ("Table 12 (step budget)", "outputs/db_ablations/step_budget.json", "db_ablations"),
     (
-        "Appendix Table (source drop)",
+        "Widar per-room breakdown",
         "outputs/widar_full_tta/full_results.json",
         "widar_full",
     ),
     (
-        "Appendix Table (threshold)",
+        "Step-budget sensitivity",
+        "outputs/db_ablations/step_budget.json",
+        "db_ablations",
+    ),
+    (
+        "Source-drop results (Widar)",
+        "outputs/widar_full_tta/full_results.json",
+        "widar_full",
+    ),
+    (
+        "Selective-threshold sensitivity",
         "outputs/final_ablations/selective_threshold_widar_main_protocol.json",
         "selective_threshold",
     ),
     (
-        "Table 13 (shift)",
+        "Synthetic control: proxy A-distance",
         "outputs/synthetic_shift/proxy_a_distance.json",
         "synthetic_shift",
     ),
     (
-        "Table 14 (regime)",
+        "Synthetic control: cross-regime results",
         "outputs/cross_physics/regime_results.json",
         "synthetic_shift",
     ),
@@ -145,22 +160,26 @@ ARTIFACT_MANIFEST: list[tuple[str, str, str]] = [
         "coverage",
     ),
     (
-        "Fig 1 (comparison)",
+        "Figure: per-method comparison",
         "manuscript/paper2/figures/fig1_method_comparison.pdf",
         "figures",
     ),
     (
-        "Fig 2 (syn-real)",
+        "Figure: synthetic vs real gap",
         "manuscript/paper2/figures/fig2_synthetic_real_gap.pdf",
         "figures",
     ),
     (
-        "Fig 3 (step budget)",
+        "Figure: step budget",
         "manuscript/paper2/figures/fig3_step_budget.pdf",
         "figures",
     ),
-    ("Fig 4 (t-SNE)", "manuscript/paper2/figures/fig4_tsne.pdf", "figures"),
-    ("Fig 5 (confusion)", "manuscript/paper2/figures/fig5_confusion.pdf", "figures"),
+    ("Figure: t-SNE", "manuscript/paper2/figures/fig4_tsne.pdf", "figures"),
+    (
+        "Figure: Widar room-2 confusion matrices",
+        "manuscript/paper2/figures/fig5_confusion.pdf",
+        "figures",
+    ),
 ]
 
 # Component id -> (description, command argv, output signals).
@@ -169,7 +188,7 @@ ARTIFACT_MANIFEST: list[tuple[str, str, str]] = [
 # produced.
 SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
     "widar_full": {
-        "description": "Tables 1, 11 + Appendix source-drop: Widar primary-MLP TTA",
+        "description": "Widar primary-MLP TTA",
         "argv": ["scripts/run_widar_full_tta.py"],
         "outputs": [
             "outputs/widar_full_tta/method_summary.json",
@@ -204,12 +223,12 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         "outputs": ["outputs/new_methods/signfi_top10_lame_sar_cotta.json"],
     },
     "widar_faithful": {
-        "description": "Widar MLP+BN faithful SAR/CoTTA/TENT (n=15)",
+        "description": "Widar MLP+BN sar-lite/cotta-lite and BN-affine TENT (n=15)",
         "argv": ["scripts/run_widar_faithful_sar_cotta.py"],
         "outputs": ["outputs/new_methods/widar_mlpbn_faithful_sar_cotta.json"],
     },
     "ntufi_signfi_core": {
-        "description": "Tables 2-3: NTU-Fi + SignFi primary-MLP 7-method TTA",
+        "description": "NTU-Fi + SignFi primary-MLP 7-method TTA",
         "argv": None,  # inline block, handled below
         "outputs": [
             "outputs/ntufi_tta/method_summary.json",
@@ -217,7 +236,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         ],
     },
     "synthetic_shift": {
-        "description": "Tables 4+13+14: Synthetic + PAD + cross-regime",
+        "description": "Synthetic + PAD + cross-regime",
         "argv": ["scripts/run_synthetic_shift_experiments.py"],
         "outputs": [
             "outputs/synthetic_shift/soft_selective_comparison.json",
@@ -226,7 +245,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         ],
     },
     "faithful_tent": {
-        "description": "Table 5: Faithful BN-only TENT + BN-reset on MLP+BN Widar",
+        "description": "BN-affine TENT + BN-reset on MLP+BN Widar",
         "argv": [
             "scripts/run_arch_ablation_with_ci.py",
             "--backbones",
@@ -239,7 +258,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         "outputs": ["outputs/phase1/faithful_tent_results.json"],
     },
     "label_smoothing": {
-        "description": "Table 6: Label smoothing ablation",
+        "description": "Label smoothing ablation",
         "argv": [
             "scripts/run_source_overfit_mitigation.py",
             "--output",
@@ -248,7 +267,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         "outputs": ["outputs/phase_calibration/label_smoothing_results.json"],
     },
     "db_ablations": {
-        "description": "Tables 7, 12: Baselines + step-budget sweep",
+        "description": "Baselines + step-budget sweep",
         "argv": ["scripts/run_db_ablations.py"],
         "outputs": [
             "outputs/db_ablations/baseline_accuracies.json",
@@ -256,7 +275,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         ],
     },
     "arch_ablation_legacy": {
-        "description": "Table 8: Architecture ablation (Widar)",
+        "description": "Architecture ablation (Widar)",
         "argv": ["scripts/run_arch_ablation_with_ci.py"],
         # mlpbn_other_datasets.json used to be listed here, but this script is
         # Widar-only and never wrote it; the SignFi/NTU-Fi MLP+BN numbers now
@@ -264,7 +283,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         "outputs": ["outputs/final_ablations/arch_ablation_n15.json"],
     },
     "signfi_mlpbn_canonical": {
-        "description": "Table 9: SignFi MLP+BN faithful TENT counterexample (n=15)",
+        "description": "SignFi MLP+BN BN-affine TENT counterexample (n=15)",
         "argv": [
             "scripts/run_extended_tta_per_dataset.py",
             "--dataset",
@@ -279,7 +298,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         "outputs": ["outputs/signfi_mlpbn_canonical/signfi_top10_lame_sar_cotta.json"],
     },
     "widar_mlpbn_canonical": {
-        "description": "Table 5: Widar MLP+BN faithful TENT + BN-reset (n=15)",
+        "description": "Widar MLP+BN BN-affine TENT + BN-reset (n=15)",
         "argv": [
             "scripts/run_extended_tta_per_dataset.py",
             "--dataset",
@@ -299,12 +318,12 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         "outputs": ["outputs/severity/source_target_gap.json"],
     },
     "regularized_source_search": {
-        "description": "Sec. 7.5 / App. U: source regularisation search",
+        "description": "Source regularisation search",
         "argv": ["scripts/run_regularized_source.py", "--stage", "search"],
         "outputs": ["outputs/regularized_source/search.json"],
     },
     "regularized_source_tta": {
-        "description": "Table 12: TTA on regularised source models",
+        "description": "TTA on regularised source models",
         "argv": [
             "scripts/run_regularized_source.py",
             "--stage",
@@ -315,7 +334,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         "outputs": ["outputs/regularized_source/tta.json"],
     },
     "backbone_breadth": {
-        "description": "Sec. 7.6 / App.: nine methods on ResNet-BN/GN, Transformer",
+        "description": "Backbone breadth: nine methods on ResNet-BN/GN, Transformer",
         "argv": ["scripts/run_backbone_breadth.py"],
         "outputs": [
             f"outputs/backbone_breadth/{d}_{b}.json"
@@ -324,7 +343,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         ],
     },
     "deployment_rule": {
-        "description": "Sec. 9: pre-deployment decision rule (negative result)",
+        "description": "pre-deployment decision rule (negative result)",
         "argv": ["scripts/derive_deployment_rule.py"],
         "outputs": [
             "outputs/deployment_rule/rule.json",
@@ -557,12 +576,12 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         "outputs": ["outputs/guard_coverage/guard_coverage.json"],
     },
     "per_pair_spearman": {
-        "description": "App.: per-pair cross-dataset method-rank Spearman",
+        "description": "per-pair cross-dataset method-rank Spearman",
         "argv": ["scripts/compute_per_pair_spearman.py"],
         "outputs": ["outputs/coverage/cross_dataset_spearman.json"],
     },
     "tsne": {
-        "description": "Figure 4 inputs: t-SNE embeddings and harm analysis",
+        "description": "t-SNE embeddings and harm analysis",
         "argv": [
             "scripts/analyze_tta_adaptation.py",
             "--output_dir",
@@ -580,10 +599,26 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         "argv": ["scripts/run_source_overfit_mitigation.py"],
         "outputs": ["outputs/source_overfit/mitigation_pilot.json"],
     },
-    "overconfidence": {
-        "description": "Per-class Widar source-only overconfidence table",
-        "argv": ["scripts/analyze_widar_overconfidence.py"],
-        "outputs": ["outputs/overconfidence/widar_per_class.json"],
+    **{
+        f"overconfidence_{dataset}": {
+            "description": f"Per-class source-only overconfidence: {dataset}",
+            "argv": ["scripts/analyze_widar_overconfidence.py", "--dataset", dataset],
+            "outputs": [f"outputs/overconfidence/{dataset}_per_class.json"],
+        }
+        for dataset in ("widar_bvp", "ntufi_har", "signfi_top10")
+    },
+    "split_manifests": {
+        "description": "Sample-level split manifests for every fold and seed",
+        "argv": ["scripts/export_split_manifests.py"],
+        "outputs": [
+            f"outputs/splits/{d}.json"
+            for d in ("widar_bvp", "ntufi_har", "signfi_top10")
+        ],
+    },
+    "split_leakage": {
+        "description": "Split-integrity audit",
+        "argv": ["scripts/audit_split_leakage.py"],
+        "outputs": ["outputs/leakage_audit/split_leakage.json"],
     },
     "upper_bound": {
         "description": "Supervised upper bound (labelled-target 5-fold CV)",
@@ -641,7 +676,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
         "outputs": ["outputs/protocol_sensitivity/summary.json"],
     },
     "collapse_trajectories": {
-        "description": "Fig. 5 + Sec. 8: confusion matrices and class-usage trajectories",
+        "description": "confusion matrices and class-usage trajectories",
         "argv": ["scripts/analyze_collapse_trajectories.py"],
         "outputs": ["outputs/collapse_trajectories/collapse_trajectories.json"],
     },
@@ -667,8 +702,16 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
             "manuscript/paper2/figures/fig8_collapse_trajectories.pdf",
         ],
     },
+    "guard_figures": {
+        "description": "Collapse-guard floor sweep and asymmetry figures (Figs. 6-7)",
+        "argv": ["scripts/generate_collapse_guard_figures.py"],
+        "outputs": [
+            "manuscript/paper2/figures/fig6_collapse_guard_sweep.pdf",
+            "manuscript/paper2/figures/fig7_collapse_guard_asymmetry.pdf",
+        ],
+    },
     "aggregation": {
-        "description": "Table 10 aggregation (no side effects; reads Tables 1-3)",
+        "description": "Aggregation placeholder (no command)",
         "argv": None,
         "outputs": [],
     },
@@ -828,8 +871,9 @@ def _default_order() -> list[str]:
     SOURCE_SCRIPTS is written in dependency order (runs before the aggregators
     that read them). ``aggregation`` has no command and is skipped.
     """
-    ids = [c for c in SOURCE_SCRIPTS if c not in ("figures", "aggregation")]
-    return [*ids, "figures"]
+    last = ("figures", "guard_figures")
+    ids = [c for c in SOURCE_SCRIPTS if c not in (*last, "aggregation")]
+    return [*ids, *last]
 
 
 def main() -> None:

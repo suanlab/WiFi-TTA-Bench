@@ -1,0 +1,22 @@
+# Default data configuration
+
+# DataLoader settings
+batch_size: 32
+num_workers: 0
+pin_memory: false
+
+# Data splits
+train_split: 0.7
+val_split: 0.15
+test_split: 0.15
+
+# Data preprocessing
+normalize: true
+amplitude_only: false  # Use amplitude only (ignore phase)
+subcarrier_range: null  # null = use all subcarriers, or [start, end]
+
+# Synthetic data for testing
+use_synthetic: true  # Use synthetic data if real dataset unavailable
+synthetic_samples: 100
+synthetic_num_subcarriers: 52
+synthetic_num_features: 2  # amplitude + phase

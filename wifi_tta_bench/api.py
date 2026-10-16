@@ -78,27 +78,44 @@ def load_dataset(
     )
 
 
+# Names used in the paper's tables for the simplified ports.
+PAPER_METHOD_ALIASES: dict[str, str] = {
+    "sar-lite": "sar",
+    "cotta-lite": "cotta",
+    "t3a-ent": "t3a",
+    "tent-proj": "tent",
+}
+
+
 def evaluate(
     method: str,
     dataset: BenchmarkDataset,
     seeds: int = 5,
     source_epochs: int = 10,
     adaptation_steps: int = 5,
-    batch_size: int = 64,
+    batch_size: int = 32,
+    backbone: str = "mlp",
 ) -> BenchmarkResult:
     """Evaluate a TTA method on a benchmark dataset.
 
     Args:
-        method: TTA method name from list_methods().
+        method: TTA method name from list_methods(). The paper's names for the
+            simplified ports are accepted too: ``sar-lite``, ``cotta-lite``,
+            ``t3a-ent`` and ``tent-proj`` map to the code names ``sar``, ``cotta``,
+            ``t3a`` and ``tent``; ``sar_full``, ``cotta_full`` and ``t3a_full`` are the
+            methods as published.
         dataset: Loaded dataset from load_dataset().
         seeds: Number of random seeds per fold.
         source_epochs: Source model training epochs.
         adaptation_steps: TTA adaptation steps.
-        batch_size: Batch size for training and adaptation.
+        batch_size: Batch size for training and adaptation (paper protocol: 32).
+        backbone: Encoder backbone (``mlp``, ``mlp_bn``, ``cnn1d``, ``resnet2d``,
+            ``resnet2d_gn`` or ``transformer``).
 
     Returns:
         BenchmarkResult with gain, CI, Cohen's d, and negative rate.
     """
+    method = PAPER_METHOD_ALIASES.get(method, method)
     if method not in CANONICAL_TTA_METHODS:
         raise ValueError(
             f"Unknown method: {method}. Use list_methods() to see available."
@@ -109,6 +126,7 @@ def evaluate(
         source_epochs=source_epochs,
         adaptation_steps=adaptation_steps,
         batch_size=batch_size,
+        backbone=backbone,
         hidden_dim=64,
         num_layers=3,
         latent_dim=32,

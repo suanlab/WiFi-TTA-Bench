@@ -51,13 +51,13 @@ FIG1_DATASETS = [
         "outputs/new_methods/widar_bvp_lame_sar_cotta.json",
     ),
     (
-        "NTU-Fi (cross-session)",
-        "outputs/ntufi_tta/method_summary.json",
+        "NTU-Fi (ordered partitions)",
+        "outputs/core_regen/ntufi_har_lame_sar_cotta.json",
         "outputs/new_methods/ntufi_har_lame_sar_cotta.json",
     ),
     (
-        "SignFi-10 (cross-split)",
-        "outputs/signfi_tta/method_summary.json",
+        "SignFi-10 (ordered partitions)",
+        "outputs/core_regen/signfi_top10_lame_sar_cotta.json",
         "outputs/new_methods/signfi_top10_lame_sar_cotta.json",
     ),
 ]
@@ -71,7 +71,6 @@ FIG1_METHOD_ORDER = [
     "t3a",
     "sar",
     "cotta",
-    "lame",
 ]
 FIG1_METHOD_LABELS = {
     "no_adapt": "no_adapt",
@@ -80,10 +79,9 @@ FIG1_METHOD_LABELS = {
     "physics_tta": "physics",
     "selective_physics_tta": "sel.phys",
     "shot": "im",
-    "t3a": "t3a",
-    "sar": "sar",
-    "cotta": "cotta",
-    "lame": "lame",
+    "t3a": "t3a-ent",
+    "sar": "sar-lite",
+    "cotta": "cotta-lite",
 }
 
 

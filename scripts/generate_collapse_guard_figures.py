@@ -8,7 +8,7 @@ that the strictest setting reduces exactly to no_adapt.
 
 Figure B (asymmetry): the guard removes most of the harm where adaptation hurts
 (Widar, hard cross-room shift) and leaves the gain untouched where it helps
-(SignFi, milder temporal shift).
+(SignFi-10, within-setting split).
 
 Outputs: manuscript/paper2/figures/fig6_collapse_guard_sweep.{pdf,png}
          manuscript/paper2/figures/fig7_collapse_guard_asymmetry.{pdf,png}
@@ -173,7 +173,7 @@ def figure_asymmetry() -> None:
             "entropy TTA",
         ),
         (
-            "SignFi-10 (milder temporal)\nadaptation helps",
+            "SignFi-10 (within-setting)\nadaptation helps",
             signfi["tent"],
             signfi["collapse_guarded_tent"],
             "TENT",

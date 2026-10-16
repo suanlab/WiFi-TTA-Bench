@@ -146,6 +146,38 @@ def try_mlcroissant(path: Path) -> tuple[bool, list[str]]:
         return True, [f"mlcroissant raised: {e}"]
 
 
+def check_hashes(d: dict) -> list[str]:
+    """Compare every FileObject's sha256 with its source file on disk.
+
+    Source paths come from the generator's ENTRIES table, so a stale metadata
+    file (artifacts regenerated, metadata not) fails validation.
+    """
+    import hashlib
+    import importlib.util
+
+    gen = Path(__file__).with_name("regen_croissant_for_hf.py")
+    spec = importlib.util.spec_from_file_location("regen_croissant_for_hf", gen)
+    if spec is None or spec.loader is None:
+        return [f"cannot load {gen}"]
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    by_id = {e.get("@id"): e for e in d.get("distribution", [])}
+    errors = []
+    for file_id, source, *_ in module.ENTRIES:
+        entry = by_id.get(file_id)
+        if entry is None:
+            errors.append(f"{file_id}: missing from distribution")
+            continue
+        path = Path(source)
+        if not path.exists():
+            errors.append(f"{file_id}: source {source} not found")
+            continue
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        if digest != entry.get("sha256"):
+            errors.append(f"{file_id}: sha256 does not match {source}")
+    return errors
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__ or "")
     parser.add_argument("--path", type=Path, default=DEFAULT_PATH)
@@ -165,6 +197,7 @@ def main() -> int:
     print("-" * 70)
 
     errors, warnings = lightweight_check(d)
+    errors.extend(check_hashes(d))
     used_official, official_messages = try_mlcroissant(args.path)
 
     if used_official:

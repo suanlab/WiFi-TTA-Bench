@@ -1,5 +1,5 @@
 # Data and generated outputs (not redistributed from this repo)
-data/
+/data/
 # `data` is a symlink to external storage; `data/` above does not match a symlink.
 /data
 data/raw/**
@@ -90,6 +90,8 @@ outputs/synthetic_shift/analysis/*
 !outputs/collapse_trajectories/**
 !outputs/statistics/
 !outputs/statistics/**
+!outputs/splits/
+!outputs/splits/**
 !outputs/faithful_ports/
 !outputs/faithful_ports/**
 !outputs/protocol_sensitivity/

@@ -11,6 +11,24 @@ the supplement.
 
 ### Corrected
 
+- **Widar_BVP labels (known defect, not yet fixed)**: `scripts/prepare_widar_bvp.py`
+  maps gesture IDs 1-6 to the same six gestures on every recording date, but in Widar3.0
+  the meaning of a gesture ID changes between dates. The prepared Widar_BVP labels are
+  therefore wrong on most dates, and every Widar_BVP number in the released outputs is
+  affected. Rebuilding needs the raw BVP archive and a per-date gesture mapping.
+- **BatchNorm statistics in adaptation**: each unguarded adaptation step also scored its
+  objective with a train-mode forward pass, so five steps updated BatchNorm running
+  statistics ten times. `TTAExperimentConfig.freeze_bn_in_scoring_pass` (off by default, so
+  released artifacts still reproduce) updates them once per step. Controls on NTU-Fi and
+  SignFi-10 MLP+BN: `outputs/tent_lr0/` (TENT at learning rate 0 recovers +10.10 of
+  +10.29 pp on SignFi-10) and `outputs/bn_single_update/`.
+- **Environment-level inference**: `outputs/statistics/harm_tolerance.json` adds a t interval
+  over the environment means (`env_t_ci_pp`) and exact sign tests over runs and over
+  environments; with three environments the hierarchical bootstrap is close to the range of
+  the environment means and is now described as descriptive.
+- **Croissant**: `outputs/SUBMISSION_MANIFEST.md`, listed in the Croissant distribution,
+  was not tracked, so the validator failed on a clean checkout; it is now tracked.
+
 - **Overconfidence** (`outputs/overconfidence/`): the analysis trained unseeded source models,
   so they were not the benchmark's, and it labelled Widar classes with wrong names. It now
   seeds like `run_tta_suite` (all 15 Widar runs match the benchmark's source-only accuracy)

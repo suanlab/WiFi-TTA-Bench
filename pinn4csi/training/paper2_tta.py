@@ -212,6 +212,10 @@ class TTAExperimentConfig:
     # the first batch's pre-step diversity; "same_batch" with the pre-step
     # diversity of the same batch (a paired statistic).
     collapse_guard_reference: str = "first_batch"
+    # The post-step objective is scored in train mode; when True, BatchNorm
+    # running statistics are frozen for that pass so each step updates them
+    # once (the scoring pass otherwise doubles the running-statistic updates).
+    freeze_bn_in_scoring_pass: bool = False
     ablation_use_invariance: bool = True
     ablation_use_residual: bool = True
     ablation_use_entropy: bool = True
@@ -829,6 +833,11 @@ def adapt_model_for_tta_with_summary(
                 adapted, source_state, config.weight_reset_probability
             )
 
+        frozen_bn = (
+            _freeze_bn_running_stats(adapted)
+            if config.freeze_bn_in_scoring_pass
+            else []
+        )
         with torch.no_grad():
             post_step_losses = _compute_tta_step_losses(
                 model=adapted,
@@ -838,6 +847,8 @@ def adapt_model_for_tta_with_summary(
                 method=method,
                 device=device,
             )
+        for module, momentum in frozen_bn:
+            module.momentum = momentum
         post_objective = float(post_step_losses.objective.item())
 
         if collapse_mode:
@@ -1076,6 +1087,21 @@ def _adapt_sar_full(
         pre_objective=pre_objective,
         post_objective=post_objective,
     )
+
+
+def _freeze_bn_running_stats(
+    model: torch.nn.Module,
+) -> list[tuple[torch.nn.modules.batchnorm._BatchNorm, float | None]]:
+    """Set BatchNorm momentum to 0 so a forward pass leaves running stats intact.
+
+    Returns the saved momenta; the caller restores them after the pass.
+    """
+    saved: list[tuple[torch.nn.modules.batchnorm._BatchNorm, float | None]] = []
+    for module in model.modules():
+        if isinstance(module, _BN_TYPES):
+            saved.append((module, module.momentum))
+            module.momentum = 0.0
+    return saved
 
 
 def _batch_logits(

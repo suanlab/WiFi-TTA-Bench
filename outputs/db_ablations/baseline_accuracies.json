@@ -1,8 +1,8 @@
 {
   "widar_bvp": {
-    "source_train": 0.9275453277545328,
-    "source_val": 0.49108138238573024,
-    "target": 0.357429718875502
+    "source_train": 0.9891910739191073,
+    "source_val": 0.7054069119286511,
+    "target": 0.6472556894243642
   },
   "ntufi_har": {
     "source_train": 1.0,

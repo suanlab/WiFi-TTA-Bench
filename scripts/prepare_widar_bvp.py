@@ -29,14 +29,57 @@ ROOM_BY_DATE = {
     "20181211": 2,
 }
 
-GESTURE_NAMES = {
-    1: "push_pull",
-    2: "sweep",
-    3: "clap",
-    4: "slide",
-    5: "draw_o_h",
-    6: "draw_zigzag_h",
+# Shared six-gesture task: the only gestures recorded in all three rooms (room 3,
+# 20181211, has exactly these six). Label index = position in this tuple.
+SHARED_GESTURES = (
+    "push_pull",
+    "sweep",
+    "clap",
+    "slide",
+    "draw_o_h",
+    "draw_zigzag_h",
+)
+
+_PP, _SW, _CL, _SL = "push_pull", "sweep", "clap", "slide"
+_OV, _ZV, _NV = "draw_o_v", "draw_zigzag_v", "draw_n_v"
+_OH, _ZH, _NH = "draw_o_h", "draw_zigzag_h", "draw_n_h"
+_TH, _RH = "draw_triangle_h", "draw_rectangle_h"
+_NINE_H = (_PP, _SW, _CL, _SL, _OH, _ZH, _NH, _TH, _RH)
+
+# Gesture ID -> gesture, per recording date (and per user where the official
+# README lists users separately). In Widar3.0 a gesture ID means a different
+# gesture on different dates; source: the dataset README ("Data" table).
+# Key None applies to every user of that date. 20181112/20181116 (digits) are
+# omitted: none of their gestures is shared by all three rooms.
+GESTURES_BY_DATE: dict[str, dict[str | None, tuple[str, ...]]] = {
+    "20181109": {None: (_PP, _SW, _CL, _SL, _ZV, _NV)},
+    "20181115": {None: (_PP, _SW, _CL, _OV, _ZV, _NV)},
+    "20181117": {None: (_PP, _SW, _CL, _OV, _ZV, _NV)},
+    "20181118": {None: (_PP, _SW, _CL, _OV, _ZV, _NV)},
+    "20181121": {None: (_SL, _OH, _ZH, _NH, _TH, _RH)},
+    "20181127": {None: (_SL, _OH, _ZH, _NH, _TH, _RH)},
+    "20181128": {None: (_PP, _SW, _CL, _OH, _ZH, _NH)},
+    "20181130": {None: _NINE_H},
+    "20181204": {None: _NINE_H},
+    "20181205": {
+        "user2": (_OH, _ZH, _NH, _TH, _RH),
+        "user3": (_SL, _OH, _ZH, _NH, _TH, _RH),
+    },
+    "20181208": {"user2": (_PP, _SW, _CL, _SL), "user3": (_PP, _SW, _CL)},
+    "20181209": {"user2": (_PP,), "user6": (_PP, _SW, _CL, _SL, _OH, _ZH)},
+    "20181211": {None: (_PP, _SW, _CL, _SL, _OH, _ZH)},
 }
+
+
+def gesture_name(date: str, user: str, gesture_id: int) -> str | None:
+    """Gesture recorded under ``gesture_id`` on ``date`` by ``user``, or None."""
+    by_user = GESTURES_BY_DATE.get(date)
+    if by_user is None:
+        return None
+    sequence = by_user.get(user, by_user.get(None))
+    if sequence is None or not 1 <= gesture_id <= len(sequence):
+        return None
+    return sequence[gesture_id - 1]
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -73,7 +116,7 @@ def main() -> None:
         reserve_per_group=args.reserve_per_group,
         seed=args.seed,
     )
-    features, labels, environments = load_entries(
+    features, labels, environments, sources = load_entries(
         args.bvp_zip,
         selected_entries,
         target_length=args.target_length,
@@ -84,10 +127,14 @@ def main() -> None:
     np.save(args.output_dir / "csi.npy", features)
     np.save(args.output_dir / "labels.npy", labels)
     np.save(args.output_dir / "environments.npy", environments)
+    # Upstream file for every sample, in array order (sample-level provenance).
+    (args.output_dir / "sources.txt").write_text(
+        "\n".join(sources) + "\n", encoding="utf-8"
+    )
 
     metadata = {
         "source": "widar3_bvp_zip",
-        "protocol_version": "1.0",
+        "protocol_version": "2.0",
         "task_name": "gesture_recognition",
         "representation": "bvp",
         "num_classes": int(np.max(labels) + 1),
@@ -98,11 +145,9 @@ def main() -> None:
             "1": "room2_hall",
             "2": "room3_office",
         },
-        "label_names": {
-            str(idx): GESTURE_NAMES[gesture_id]
-            for idx, gesture_id in enumerate(sorted(GESTURE_NAMES))
-        },
-        "shared_gesture_ids": sorted(GESTURE_NAMES),
+        "label_names": {str(idx): name for idx, name in enumerate(SHARED_GESTURES)},
+        "label_mapping": "per recording date and user (GESTURES_BY_DATE)",
+        "file_filter": "BVP/<date>-VS/6-link/ only (20181130 has no 6-link folder)",
         "cap_per_room_gesture": args.cap_per_room_gesture,
         "target_length": args.target_length,
         "normalization": "(x - 0.0025) / 0.0119",
@@ -123,6 +168,7 @@ def main() -> None:
 
 
 def collect_entries(bvp_zip: Path) -> dict[tuple[int, int], list[str]]:
+    """Group 6-link BVP files by (room, shared-gesture label index)."""
     grouped: dict[tuple[int, int], list[str]] = defaultdict(list)
     with zipfile.ZipFile(bvp_zip) as archive:
         for name in archive.namelist():
@@ -138,11 +184,11 @@ def collect_entries(bvp_zip: Path) -> dict[tuple[int, int], list[str]]:
             fields = stem.split("-")
             if len(fields) < 5:
                 continue
-            gesture_id = int(fields[1])
-            if gesture_id not in GESTURE_NAMES:
+            name_of_gesture = gesture_name(date, fields[0], int(fields[1]))
+            if name_of_gesture not in SHARED_GESTURES:
                 continue
             room_id = ROOM_BY_DATE[date]
-            grouped[(room_id, gesture_id)].append(name)
+            grouped[(room_id, SHARED_GESTURES.index(name_of_gesture))].append(name)
     return grouped
 
 
@@ -155,11 +201,11 @@ def sample_entries(
     rng = np.random.default_rng(seed)
     selected: list[tuple[str, int, int]] = []
     for room_id in sorted({room for room, _ in grouped_entries}):
-        for gesture_id in sorted(GESTURE_NAMES):
-            entries = grouped_entries[(room_id, gesture_id)]
+        for label in range(len(SHARED_GESTURES)):
+            entries = sorted(grouped_entries[(room_id, label)])
             if len(entries) < cap_per_room_gesture:
                 raise ValueError(
-                    f"Not enough entries for room {room_id}, gesture {gesture_id}: "
+                    f"Not enough entries for room {room_id}, gesture {label}: "
                     f"{len(entries)} < {cap_per_room_gesture}"
                 )
             chosen_count = min(
@@ -168,7 +214,7 @@ def sample_entries(
             )
             chosen = rng.choice(entries, size=chosen_count, replace=False)
             for name in chosen.tolist():
-                selected.append((name, gesture_id - 1, room_id))
+                selected.append((name, label, room_id))
     return selected
 
 
@@ -177,8 +223,9 @@ def load_entries(
     selected_entries: list[tuple[str, int, int]],
     target_length: int,
     cap_per_room_gesture: int,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, list[str]]:
     features: list[np.ndarray] = []
+    sources: list[str] = []
     labels: list[int] = []
     environments: list[int] = []
     kept_counts: dict[tuple[int, int], int] = defaultdict(int)
@@ -199,9 +246,10 @@ def load_entries(
             features.append(bvp.reshape(target_length, -1))
             labels.append(label)
             environments.append(room_id)
+            sources.append(name)
             kept_counts[group_key] += 1
 
-    expected_groups = 3 * len(GESTURE_NAMES)
+    expected_groups = 3 * len(SHARED_GESTURES)
     if len(kept_counts) != expected_groups or any(
         count < cap_per_room_gesture for count in kept_counts.values()
     ):
@@ -212,6 +260,7 @@ def load_entries(
         np.stack(features).astype(np.float32),
         np.asarray(labels, dtype=np.int64),
         np.asarray(environments, dtype=np.int64),
+        sources,
     )
 
 

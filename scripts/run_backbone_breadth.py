@@ -144,13 +144,16 @@ def main() -> None:
     parser.add_argument("--datasets", default=",".join(DATASETS))
     parser.add_argument("--backbones", default=",".join(BACKBONES))
     parser.add_argument("--output-dir", default=str(OUTPUT_DIR))
+    parser.add_argument(
+        "--force", action="store_true", help="Re-run cells whose output exists."
+    )
     args = parser.parse_args()
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     for dataset in [d for d in args.datasets.split(",") if d]:
         for backbone in [b for b in args.backbones.split(",") if b]:
             path = output_dir / f"{dataset}_{backbone}.json"
-            if path.exists():
+            if path.exists() and not args.force:
                 logger.info("skip %s (exists)", path)
                 continue
             result = run_cell(dataset, backbone)

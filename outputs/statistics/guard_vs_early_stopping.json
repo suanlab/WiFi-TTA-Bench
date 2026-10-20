@@ -215,50 +215,50 @@
       "guard_accepted_steps": [
         0,
         0,
-        0,
-        0,
-        0,
         1,
         1,
         1,
         1,
+        1,
+        1,
+        1,
         2,
         2,
         2,
-        2,
-        2,
-        3
+        3,
+        5,
+        5
       ],
       "guard": {
-        "mean_gain_pp": -0.6024096385542177,
-        "harm_rate": 0.5333333333333333,
-        "harm_rate_gt1pp": 0.4
+        "mean_gain_pp": -1.9901829540383762,
+        "harm_rate": 0.7333333333333333,
+        "harm_rate_gt1pp": 0.6
       },
       "unguarded_5_steps": {
-        "mean_gain_pp": -6.581883087907184,
-        "harm_rate": 0.9333333333333333,
-        "harm_rate_gt1pp": 0.8666666666666667
+        "mean_gain_pp": -10.200803212851408,
+        "harm_rate": 1.0,
+        "harm_rate_gt1pp": 1.0
       },
       "fixed_budget": {
         "1": {
-          "mean_gain_pp": -1.0977242302543517,
+          "mean_gain_pp": -1.6599732262382858,
           "harm_rate": 0.8666666666666667,
-          "harm_rate_gt1pp": 0.6
+          "harm_rate_gt1pp": 0.6666666666666666
         },
         "2": {
-          "mean_gain_pp": -2.46318607764391,
-          "harm_rate": 0.8,
+          "mean_gain_pp": -3.342257920571174,
+          "harm_rate": 0.8666666666666667,
           "harm_rate_gt1pp": 0.8
         },
         "3": {
-          "mean_gain_pp": -3.882195448460509,
-          "harm_rate": 0.8666666666666667,
-          "harm_rate_gt1pp": 0.7333333333333333
+          "mean_gain_pp": -5.6760374832663985,
+          "harm_rate": 0.9333333333333333,
+          "harm_rate_gt1pp": 0.8666666666666667
         }
       },
       "random_stop_same_distribution": {
-        "mean_gain_pp": -1.3687889335118257,
-        "p_ge_guard": 0.0017,
+        "mean_gain_pp": -3.187000892458723,
+        "p_ge_guard": 0.006,
         "permutations": 10000
       }
     }

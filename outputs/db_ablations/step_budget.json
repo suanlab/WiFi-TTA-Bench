@@ -12,276 +12,36 @@
     "steps": 1,
     "seed": 0,
     "method": "entropy_tta",
-    "gain": -0.00870147255689424,
-    "source_drop": -0.0050167224080267525
+    "gain": -0.022757697456492587,
+    "source_drop": -0.015886287625417994
   },
   {
     "ablation": "step_budget",
     "steps": 1,
     "seed": 0,
     "method": "tent",
-    "gain": -0.0006693440428380271,
-    "source_drop": -0.0025083612040133763
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 1,
-    "seed": 0,
-    "method": "physics_tta",
-    "gain": 0.00870147255689424,
-    "source_drop": -0.005852842809364545
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 1,
-    "seed": 0,
-    "method": "selective_physics_tta",
-    "gain": -0.0013386748003034188,
-    "source_drop": -0.004180616060626918
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 1,
-    "seed": 1,
-    "method": "no_adapt",
-    "gain": 0.0,
-    "source_drop": 0.0
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 1,
-    "seed": 1,
-    "method": "entropy_tta",
-    "gain": -0.013386880856760375,
-    "source_drop": -0.05351170568561875
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 1,
-    "seed": 1,
-    "method": "tent",
-    "gain": 0.0,
-    "source_drop": 0.0
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 1,
-    "seed": 1,
-    "method": "physics_tta",
-    "gain": -0.005354752342704161,
-    "source_drop": -0.005852842809364545
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 1,
-    "seed": 1,
-    "method": "selective_physics_tta",
-    "gain": -0.002677370466222073,
-    "source_drop": 0.0033444949615759056
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 1,
-    "seed": 2,
-    "method": "no_adapt",
-    "gain": 0.0,
-    "source_drop": 0.0
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 1,
-    "seed": 2,
-    "method": "entropy_tta",
-    "gain": -0.012717536813922403,
-    "source_drop": -0.031772575250836155
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 1,
-    "seed": 2,
-    "method": "tent",
-    "gain": 0.0006693440428379716,
-    "source_drop": 0.0008361204013377921
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 1,
-    "seed": 2,
-    "method": "physics_tta",
-    "gain": -0.015394912985274456,
-    "source_drop": -0.02591973244147161
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 1,
-    "seed": 2,
-    "method": "selective_physics_tta",
-    "gain": -0.012717525044598277,
-    "source_drop": -0.009197316640196851
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 0,
-    "method": "no_adapt",
-    "gain": 0.0,
-    "source_drop": 0.0
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 0,
-    "method": "entropy_tta",
-    "gain": -0.07028112449799195,
-    "source_drop": -0.05100334448160532
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 0,
-    "method": "tent",
-    "gain": -0.0006693440428380271,
-    "source_drop": -0.00418060200668896
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 0,
-    "method": "physics_tta",
-    "gain": 0.004016064257028107,
-    "source_drop": -0.03929765886287623
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 0,
-    "method": "selective_physics_tta",
-    "gain": 0.010040149910542528,
-    "source_drop": -0.023411369243991786
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 1,
-    "method": "no_adapt",
-    "gain": 0.0,
-    "source_drop": 0.0
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 1,
-    "method": "entropy_tta",
-    "gain": -0.055555555555555525,
-    "source_drop": -0.1279264214046823
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 1,
-    "method": "tent",
-    "gain": -0.0006693440428380271,
-    "source_drop": 0.0008361204013377921
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 1,
-    "method": "physics_tta",
     "gain": 0.002008032128514081,
-    "source_drop": -0.06270903010033446
+    "source_drop": 0.0025083612040134318
   },
   {
     "ablation": "step_budget",
-    "steps": 3,
-    "seed": 1,
-    "method": "selective_physics_tta",
-    "gain": 0.001338701091776584,
-    "source_drop": -0.017558526135607322
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 2,
-    "method": "no_adapt",
-    "gain": 0.0,
-    "source_drop": 0.0
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 2,
-    "method": "entropy_tta",
-    "gain": -0.07295850066934406,
-    "source_drop": -0.1479933110367893
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 2,
-    "method": "tent",
-    "gain": 0.0006693440428379716,
-    "source_drop": 0.0
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 2,
-    "method": "physics_tta",
-    "gain": -0.017402945113788537,
-    "source_drop": -0.0693979933110368
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 3,
-    "seed": 2,
-    "method": "selective_physics_tta",
-    "gain": -0.0006693401729246928,
-    "source_drop": -0.0292642037804709
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 5,
-    "seed": 0,
-    "method": "no_adapt",
-    "gain": 0.0,
-    "source_drop": 0.0
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 5,
-    "seed": 0,
-    "method": "entropy_tta",
-    "gain": -0.12650602409638556,
-    "source_drop": -0.11789297658862874
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 5,
-    "seed": 0,
-    "method": "tent",
-    "gain": -0.0006693440428380271,
-    "source_drop": -0.0025083612040133763
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 5,
+    "steps": 1,
     "seed": 0,
     "method": "physics_tta",
-    "gain": 0.018741633199464536,
-    "source_drop": -0.08444816053511706
+    "gain": 0.007362784471218298,
+    "source_drop": 0.0058528428093646
   },
   {
     "ablation": "step_budget",
-    "steps": 5,
+    "steps": 1,
     "seed": 0,
     "method": "selective_physics_tta",
-    "gain": 0.01941098354587273,
-    "source_drop": -0.03595316998137277
+    "gain": -0.0013387038047054656,
+    "source_drop": 0.002508366187679356
   },
   {
     "ablation": "step_budget",
-    "steps": 5,
+    "steps": 1,
     "seed": 1,
     "method": "no_adapt",
     "gain": 0.0,
@@ -289,39 +49,39 @@
   },
   {
     "ablation": "step_budget",
-    "steps": 5,
+    "steps": 1,
     "seed": 1,
     "method": "entropy_tta",
-    "gain": -0.08433734939759036,
-    "source_drop": -0.18227424749163879
+    "gain": -0.025435073627844695,
+    "source_drop": -0.018394648829431426
   },
   {
     "ablation": "step_budget",
-    "steps": 5,
+    "steps": 1,
     "seed": 1,
     "method": "tent",
-    "gain": -0.0006693440428380271,
-    "source_drop": 0.0025083612040133763
+    "gain": 0.0013386880856760541,
+    "source_drop": 0.0
   },
   {
     "ablation": "step_budget",
-    "steps": 5,
+    "steps": 1,
     "seed": 1,
     "method": "physics_tta",
-    "gain": -0.0153949129852744,
-    "source_drop": -0.11538461538461542
+    "gain": -0.002008032128514081,
+    "source_drop": -0.013377926421404673
   },
   {
     "ablation": "step_budget",
-    "steps": 5,
+    "steps": 1,
     "seed": 1,
     "method": "selective_physics_tta",
-    "gain": -0.012717534460057522,
-    "source_drop": -0.042642127610369285
+    "gain": 0.00468538651664252,
+    "source_drop": -0.00501673097993216
   },
   {
     "ablation": "step_budget",
-    "steps": 5,
+    "steps": 1,
     "seed": 2,
     "method": "no_adapt",
     "gain": 0.0,
@@ -329,35 +89,275 @@
   },
   {
     "ablation": "step_budget",
-    "steps": 5,
+    "steps": 1,
     "seed": 2,
     "method": "entropy_tta",
-    "gain": -0.13253012048192772,
-    "source_drop": -0.24247491638795987
+    "gain": -0.02208835341365467,
+    "source_drop": -0.006688963210702337
   },
   {
     "ablation": "step_budget",
-    "steps": 5,
+    "steps": 1,
     "seed": 2,
     "method": "tent",
-    "gain": 0.0020080321285140257,
+    "gain": 0.000669344042837916,
+    "source_drop": 0.0016722408026755842
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 1,
+    "seed": 2,
+    "method": "physics_tta",
+    "gain": 0.001338688085675943,
     "source_drop": -0.0016722408026755842
   },
   {
     "ablation": "step_budget",
+    "steps": 1,
+    "seed": 2,
+    "method": "selective_physics_tta",
+    "gain": -0.0026773626864994293,
+    "source_drop": -0.00585286493684134
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 0,
+    "method": "no_adapt",
+    "gain": 0.0,
+    "source_drop": 0.0
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 0,
+    "method": "entropy_tta",
+    "gain": -0.06157965194109771,
+    "source_drop": -0.0794314381270903
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 0,
+    "method": "tent",
+    "gain": 0.004016064257028162,
+    "source_drop": -0.0008361204013377366
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 0,
+    "method": "physics_tta",
+    "gain": -0.014056224899598346,
+    "source_drop": -0.010033444816053505
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 0,
+    "method": "selective_physics_tta",
+    "gain": -0.0013387038047054656,
+    "source_drop": -0.0025083779491309466
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 1,
+    "method": "no_adapt",
+    "gain": 0.0,
+    "source_drop": 0.0
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 1,
+    "method": "entropy_tta",
+    "gain": -0.1097724230254351,
+    "source_drop": -0.12040133779264206
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 1,
+    "method": "tent",
+    "gain": 0.002008032128514081,
+    "source_drop": -0.0008361204013377366
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 1,
+    "method": "physics_tta",
+    "gain": 0.008032128514056214,
+    "source_drop": -0.0016722408026755842
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 1,
+    "method": "selective_physics_tta",
+    "gain": 0.0020080054779767487,
+    "source_drop": 0.0008361471137873222
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 2,
+    "method": "no_adapt",
+    "gain": 0.0,
+    "source_drop": 0.0
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 2,
+    "method": "entropy_tta",
+    "gain": -0.0635876840696118,
+    "source_drop": -0.08946488294314381
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 2,
+    "method": "tent",
+    "gain": 0.0,
+    "source_drop": 0.0025083612040134318
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 2,
+    "method": "physics_tta",
+    "gain": -0.019410977242302563,
+    "source_drop": -0.015886287625417994
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 3,
+    "seed": 2,
+    "method": "selective_physics_tta",
+    "gain": -0.004685383564337564,
+    "source_drop": -0.003344463066113801
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 0,
+    "method": "no_adapt",
+    "gain": 0.0,
+    "source_drop": 0.0
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 0,
+    "method": "entropy_tta",
+    "gain": -0.11378848728246316,
+    "source_drop": -0.14381270903010035
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 0,
+    "method": "tent",
+    "gain": 0.0046854082998661895,
+    "source_drop": -0.0008361204013377366
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 0,
+    "method": "physics_tta",
+    "gain": -0.03145917001338683,
+    "source_drop": -0.019230769230769162
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 0,
+    "method": "selective_physics_tta",
+    "gain": -0.014725549393389548,
+    "source_drop": -0.00501672021521371
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 1,
+    "method": "no_adapt",
+    "gain": 0.0,
+    "source_drop": 0.0
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 1,
+    "method": "entropy_tta",
+    "gain": -0.20481927710843373,
+    "source_drop": -0.2683946488294314
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 1,
+    "method": "tent",
+    "gain": -0.0013386880856760541,
+    "source_drop": -0.0025083612040133207
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 1,
+    "method": "physics_tta",
+    "gain": -0.02878179384203483,
+    "source_drop": -0.03093645484949825
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 1,
+    "method": "selective_physics_tta",
+    "gain": -0.010709479949879697,
+    "source_drop": -0.003344463066113801
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 2,
+    "method": "no_adapt",
+    "gain": 0.0,
+    "source_drop": 0.0
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 2,
+    "method": "entropy_tta",
+    "gain": -0.0890227576974566,
+    "source_drop": -0.13043478260869557
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 5,
+    "seed": 2,
+    "method": "tent",
+    "gain": 0.001338688085675943,
+    "source_drop": 0.0016722408026755842
+  },
+  {
+    "ablation": "step_budget",
     "steps": 5,
     "seed": 2,
     "method": "physics_tta",
-    "gain": -0.021419009370816644,
-    "source_drop": -0.0585284280936455
+    "gain": -0.018741633199464536,
+    "source_drop": -0.010869565217391242
   },
   {
     "ablation": "step_budget",
     "steps": 5,
     "seed": 2,
     "method": "selective_physics_tta",
-    "gain": -0.006693432608761485,
-    "source_drop": -0.025919727557478955
+    "gain": -0.003346722847327066,
+    "source_drop": -0.00585286493684134
   },
   {
     "ablation": "step_budget",
@@ -372,72 +372,72 @@
     "steps": 10,
     "seed": 0,
     "method": "entropy_tta",
-    "gain": -0.17536813922356093,
-    "source_drop": -0.2115384615384615
+    "gain": -0.29183400267737614,
+    "source_drop": -0.33361204013377926
   },
   {
     "ablation": "step_budget",
     "steps": 10,
     "seed": 0,
     "method": "tent",
-    "gain": 0.0013386880856759986,
+    "gain": 0.004016064257028162,
+    "source_drop": 0.0
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 10,
+    "seed": 0,
+    "method": "physics_tta",
+    "gain": -0.025435073627844695,
+    "source_drop": -0.02341137123745818
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 10,
+    "seed": 0,
+    "method": "selective_physics_tta",
+    "gain": -0.004016084843371237,
+    "source_drop": -0.001672243992221767
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 10,
+    "seed": 1,
+    "method": "no_adapt",
+    "gain": 0.0,
+    "source_drop": 0.0
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 10,
+    "seed": 1,
+    "method": "entropy_tta",
+    "gain": -0.4879518072289157,
+    "source_drop": -0.5351170568561873
+  },
+  {
+    "ablation": "step_budget",
+    "steps": 10,
+    "seed": 1,
+    "method": "tent",
+    "gain": -0.0013386880856760541,
     "source_drop": -0.006688963210702337
   },
   {
     "ablation": "step_budget",
     "steps": 10,
-    "seed": 0,
-    "method": "physics_tta",
-    "gain": -0.009370816599732268,
-    "source_drop": -0.045986622073578565
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 10,
-    "seed": 0,
-    "method": "selective_physics_tta",
-    "gain": 0.0026773669553728507,
-    "source_drop": -0.02926421753538888
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 10,
-    "seed": 1,
-    "method": "no_adapt",
-    "gain": 0.0,
-    "source_drop": 0.0
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 10,
-    "seed": 1,
-    "method": "entropy_tta",
-    "gain": -0.16800535475234268,
-    "source_drop": -0.29347826086956524
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 10,
-    "seed": 1,
-    "method": "tent",
-    "gain": -0.0013386880856759986,
-    "source_drop": 0.0008361204013377921
-  },
-  {
-    "ablation": "step_budget",
-    "steps": 10,
     "seed": 1,
     "method": "physics_tta",
-    "gain": -0.011378848728246294,
-    "source_drop": -0.027591973244147194
+    "gain": -0.04484605087014726,
+    "source_drop": -0.05267558528428096
   },
   {
     "ablation": "step_budget",
     "steps": 10,
     "seed": 1,
     "method": "selective_physics_tta",
-    "gain": -0.008701462902058865,
-    "source_drop": -0.013377915955706199
+    "gain": -0.013386860988545468,
+    "source_drop": -0.020066903785718293
   },
   {
     "ablation": "step_budget",
@@ -452,31 +452,31 @@
     "steps": 10,
     "seed": 2,
     "method": "entropy_tta",
-    "gain": -0.19076305220883535,
-    "source_drop": -0.31187290969899667
+    "gain": -0.20816599732262386,
+    "source_drop": -0.24163879598662202
   },
   {
     "ablation": "step_budget",
     "steps": 10,
     "seed": 2,
     "method": "tent",
-    "gain": 0.0026773761713520527,
-    "source_drop": -0.0008361204013377921
+    "gain": 0.00200803212851397,
+    "source_drop": 0.0008361204013378476
   },
   {
     "ablation": "step_budget",
     "steps": 10,
     "seed": 2,
     "method": "physics_tta",
-    "gain": 0.0026773761713520527,
-    "source_drop": -0.020903010033444858
+    "gain": -0.0053547523427042165,
+    "source_drop": -0.01421404682274241
   },
   {
     "ablation": "step_budget",
     "steps": 10,
     "seed": 2,
     "method": "selective_physics_tta",
-    "gain": -0.006024102250256236,
-    "source_drop": -0.004180602305708936
+    "gain": 0.003346699947014975,
+    "source_drop": -0.008361207202924104
   }
 ]

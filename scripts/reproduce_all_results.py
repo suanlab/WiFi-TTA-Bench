@@ -319,7 +319,12 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
     },
     "regularized_source_search": {
         "description": "Source regularisation search",
-        "argv": ["scripts/run_regularized_source.py", "--stage", "search"],
+        "argv": [
+            "scripts/run_regularized_source.py",
+            "--stage",
+            "search",
+            "--force",
+        ],
         "outputs": ["outputs/regularized_source/search.json"],
     },
     "regularized_source_tta": {
@@ -335,7 +340,7 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
     },
     "backbone_breadth": {
         "description": "Backbone breadth: nine methods on ResNet-BN/GN, Transformer",
-        "argv": ["scripts/run_backbone_breadth.py"],
+        "argv": ["scripts/run_backbone_breadth.py", "--force"],
         "outputs": [
             f"outputs/backbone_breadth/{d}_{b}.json"
             for d in ("widar_bvp", "ntufi_har", "signfi_top10")

@@ -5,3181 +5,3181 @@
       "seed": 0,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.3547523319721222,
-      "gain": -0.001338698817703765,
-      "source_drop": -0.032608693758380825
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7068272829055786,
+      "gain": 0.011378822396877153,
+      "source_drop": 0.001672270305978052
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.3547523319721222,
-      "gain": -0.001338698817703765,
-      "source_drop": -0.034280931869876796
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7054886221885681,
+      "gain": 0.010040161679866655,
+      "source_drop": 0.0058528208812344
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.3580990731716156,
-      "gain": 0.002008042381789643,
-      "source_drop": -0.03929764620436471
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7054886221885681,
+      "gain": 0.010040161679866655,
+      "source_drop": 0.006688954838143579
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.3580990731716156,
-      "gain": 0.002008042381789643,
-      "source_drop": -0.04180601827276986
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7048192620277405,
+      "gain": 0.009370801519039018,
+      "source_drop": 0.006688954838143579
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.3534136414527893,
-      "gain": -0.002677389337036651,
-      "source_drop": -0.032608693758380825
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7068272829055786,
+      "gain": 0.011378822396877153,
+      "source_drop": 0.001672270305978052
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.35274431109428406,
-      "gain": -0.0033467196955419,
-      "source_drop": -0.03595316998137277
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7054886221885681,
+      "gain": 0.010040161679866655,
+      "source_drop": 0.0058528208812344
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.3567603826522827,
-      "gain": 0.0006693518624567574,
-      "source_drop": -0.04264215222967904
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7061579823493958,
+      "gain": 0.010709521840694292,
+      "source_drop": 0.005016746528969995
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.3567603826522827,
-      "gain": 0.0006693518624567574,
-      "source_drop": -0.043478256384265834
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7054886221885681,
+      "gain": 0.010040161679866655,
+      "source_drop": 0.004180612572060816
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.3507362902164459,
-      "gain": -0.005354740573380035,
-      "source_drop": -0.03177258960379403
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7054886221885681,
+      "gain": 0.010040161679866655,
+      "source_drop": 0.0008361363490688722
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.3500669300556183,
-      "gain": -0.006024100734207671,
-      "source_drop": -0.03762540809286874
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7061579823493958,
+      "gain": 0.010709521840694292,
+      "source_drop": 0.003344478615151636
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.3560910224914551,
-      "gain": -8.29837087934493e-09,
-      "source_drop": -0.04264215222967904
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7074966430664062,
+      "gain": 0.01204818255770479,
+      "source_drop": 0.004180612572060816
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.35542169213294983,
-      "gain": -0.0006693386568761284,
-      "source_drop": -0.04264215222967904
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7074966430664062,
+      "gain": 0.01204818255770479,
+      "source_drop": 0.004180612572060816
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.34939759969711304,
-      "gain": -0.00669343109271292,
-      "source_drop": -0.02926421753538888
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7061579823493958,
+      "gain": 0.010709521840694292,
+      "source_drop": 0.0008361363490688722
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.34805890917778015,
-      "gain": -0.008032121612045806,
-      "source_drop": -0.035117065826785976
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7081660032272339,
+      "gain": 0.012717542718532426,
+      "source_drop": 0.0025083446582424562
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.35140562057495117,
-      "gain": -0.004685410214874786,
-      "source_drop": -0.03929764620436471
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7074966430664062,
+      "gain": 0.01204818255770479,
+      "source_drop": 0.005016746528969995
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.3534136414527893,
-      "gain": -0.002677389337036651,
-      "source_drop": -0.03929764620436471
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7061579823493958,
+      "gain": 0.010709521840694292,
+      "source_drop": 0.005016746528969995
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.34939759969711304,
-      "gain": -0.00669343109271292,
-      "source_drop": -0.025083607355487758
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7068272829055786,
+      "gain": 0.011378822396877153,
+      "source_drop": 0.004180612572060816
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.34805890917778015,
-      "gain": -0.008032121612045806,
-      "source_drop": -0.035117065826785976
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7068272829055786,
+      "gain": 0.011378822396877153,
+      "source_drop": 0.0008361363490688722
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.34939759969711304,
-      "gain": -0.00669343109271292,
-      "source_drop": -0.03762540809286874
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7081660032272339,
+      "gain": 0.012717542718532426,
+      "source_drop": 0.0058528208812344
     },
     {
       "room": "office",
       "seed": 0,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.35609103078982596,
-      "post_accuracy": 0.3500669300556183,
-      "gain": -0.006024100734207671,
-      "source_drop": -0.03846154204977792
+      "pre_accuracy": 0.6954484605087015,
+      "post_accuracy": 0.7081660032272339,
+      "gain": 0.012717542718532426,
+      "source_drop": 0.004180612572060816
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.4042837917804718,
-      "gain": 0.003346710120498586,
-      "source_drop": -0.02090300245827259
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6746987700462341,
+      "gain": 0.005354727208215393,
+      "source_drop": -0.005852824270127233
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.4029451012611389,
-      "gain": 0.0020080196011657003,
-      "source_drop": -0.028428088861165657
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6720214486122131,
+      "gain": 0.002677405774194397,
+      "source_drop": -0.010033434450028356
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.40495315194129944,
-      "gain": 0.004016070281326223,
-      "source_drop": -0.04347826166695179
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6639893054962158,
+      "gain": -0.005354737341802918,
+      "source_drop": -0.01254177671611112
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.4029451012611389,
-      "gain": 0.0020080196011657003,
-      "source_drop": -0.04598663373535694
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6646586060523987,
+      "gain": -0.004685436785620056,
+      "source_drop": -0.013377910673020299
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.40361446142196655,
-      "gain": 0.002677379761993337,
-      "source_drop": -0.02173913641518177
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6746987700462341,
+      "gain": 0.005354727208215393,
+      "source_drop": -0.005016749917862828
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.40026775002479553,
-      "gain": -0.0006693316351776835,
-      "source_drop": -0.03010032697266163
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6706827282905579,
+      "gain": 0.0013386854525391234,
+      "source_drop": -0.007525092183945592
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.4009370803833008,
-      "gain": -1.276672434435966e-09,
-      "source_drop": -0.04431439562386097
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6639893054962158,
+      "gain": -0.005354737341802918,
+      "source_drop": -0.010033434450028356
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.39892905950546265,
-      "gain": -0.002008022154510569,
-      "source_drop": -0.04598663373535694
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6639893054962158,
+      "gain": -0.005354737341802918,
+      "source_drop": -0.010033434450028356
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.4009370803833008,
-      "gain": -1.276672434435966e-09,
-      "source_drop": -0.023411374526677742
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6753681302070618,
+      "gain": 0.00602408736904303,
+      "source_drop": -0.004180615960953649
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.398259699344635,
-      "gain": -0.002677382315338206,
-      "source_drop": -0.027591984706578865
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6720214486122131,
+      "gain": 0.002677405774194397,
+      "source_drop": -0.006688958227036412
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.39759036898612976,
-      "gain": -0.003346712673843455,
-      "source_drop": -0.04180602355545582
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6666666865348816,
+      "gain": -0.002677356303137146,
+      "source_drop": -0.008361226140854772
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.39759036898612976,
-      "gain": -0.003346712673843455,
-      "source_drop": -0.04682273788994373
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.665997326374054,
+      "gain": -0.003346716463964783,
+      "source_drop": -0.010033434450028356
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.39892905950546265,
-      "gain": -0.002008022154510569,
-      "source_drop": -0.023411374526677742
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6753681302070618,
+      "gain": 0.00602408736904303,
+      "source_drop": -0.004180615960953649
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.3995983898639679,
-      "gain": -0.0013386917960053202,
-      "source_drop": -0.026755850749669685
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6740294694900513,
+      "gain": 0.004685426652032532,
+      "source_drop": -0.006688958227036412
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.3962516784667969,
-      "gain": -0.004685403193176341,
-      "source_drop": -0.04264212771004261
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6673359870910645,
+      "gain": -0.002008055746954285,
+      "source_drop": -0.007525092183945592
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.39558231830596924,
-      "gain": -0.005354763354003977,
-      "source_drop": -0.04682273788994373
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6666666865348816,
+      "gain": -0.002677356303137146,
+      "source_drop": -0.008361226140854772
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.3935742974281311,
-      "gain": -0.007362784231842112,
-      "source_drop": -0.02173913641518177
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6760374903678894,
+      "gain": 0.006693447529870666,
+      "source_drop": -0.005016749917862828
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.39424362778663635,
-      "gain": -0.006693453873336863,
-      "source_drop": -0.025083612638173713
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.672690749168396,
+      "gain": 0.003346706330377258,
+      "source_drop": -0.006688958227036412
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.3962516784667969,
-      "gain": -0.004685403193176341,
-      "source_drop": -0.03428093715256275
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6680053472518921,
+      "gain": -0.001338695586126648,
+      "source_drop": -0.008361226140854772
     },
     {
       "room": "office",
       "seed": 1,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.4009370816599732,
-      "post_accuracy": 0.3962516784667969,
-      "gain": -0.004685403193176341,
-      "source_drop": -0.03929765148705067
+      "pre_accuracy": 0.6693440428380187,
+      "post_accuracy": 0.6666666865348816,
+      "gain": -0.002677356303137146,
+      "source_drop": -0.008361226140854772
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.34672021865844727,
-      "gain": -0.002008027660160505,
-      "source_drop": -0.012541795454695082
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6713520884513855,
+      "gain": 0.011378862213099028,
+      "source_drop": -3.986933005961646e-10
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3393574357032776,
-      "gain": -0.009370810615330183,
-      "source_drop": -0.028428102217390394
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6713520884513855,
+      "gain": 0.011378862213099028,
+      "source_drop": -0.00167226831251166
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.33868807554244995,
-      "gain": -0.01004017077615782,
-      "source_drop": -0.030100340328886366
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6713520884513855,
+      "gain": 0.011378862213099028,
+      "source_drop": -0.0008361343556024803
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.33868807554244995,
-      "gain": -0.01004017077615782,
-      "source_drop": -0.030100340328886366
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6713520884513855,
+      "gain": 0.011378862213099028,
+      "source_drop": -0.0008361343556024803
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3440428376197815,
-      "gain": -0.004685408698826277,
-      "source_drop": -0.013377929411604261
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6666666865348816,
+      "gain": 0.006693460296595122,
+      "source_drop": -3.986933005961646e-10
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3406961262226105,
-      "gain": -0.008032120095997297,
-      "source_drop": -0.020903015814497328
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6686747074127197,
+      "gain": 0.008701481174433257,
+      "source_drop": -0.0008361343556024803
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -0.007362789737492048,
-      "source_drop": -0.02424749203748927
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6706827282905579,
+      "gain": 0.010709502052271391,
+      "source_drop": -3.986933005961646e-10
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -0.007362789737492048,
-      "source_drop": -0.025919730148985243
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6720214486122131,
+      "gain": 0.012048222373926665,
+      "source_drop": -3.986933005961646e-10
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3427041471004486,
-      "gain": -0.006024099218159162,
-      "source_drop": -0.010033453188612318
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6673359870910645,
+      "gain": 0.007362760852777983,
+      "source_drop": -0.00167226831251166
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -0.007362789737492048,
-      "source_drop": -0.017558539591505384
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6666666865348816,
+      "gain": 0.006693460296595122,
+      "source_drop": -0.00167226831251166
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3406961262226105,
-      "gain": -0.008032120095997297,
-      "source_drop": -0.0225752539259933
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6686747074127197,
+      "gain": 0.008701481174433257,
+      "source_drop": -0.00167226831251166
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -0.007362789737492048,
-      "source_drop": -0.02341135808058009
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6700133681297302,
+      "gain": 0.010040141891443755,
+      "source_drop": -0.0008361343556024803
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.34337350726127625,
-      "gain": -0.005354739057331526,
-      "source_drop": -0.008361215077116346
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6666666865348816,
+      "gain": 0.006693460296595122,
+      "source_drop": -0.00167226831251166
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3393574357032776,
-      "gain": -0.009370810615330183,
-      "source_drop": -0.018394643746092176
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6666666865348816,
+      "gain": 0.006693460296595122,
+      "source_drop": -0.00167226831251166
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3406961262226105,
-      "gain": -0.008032120095997297,
-      "source_drop": -0.02173911996908412
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6686747074127197,
+      "gain": 0.008701481174433257,
+      "source_drop": -0.00167226831251166
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3406961262226105,
-      "gain": -0.008032120095997297,
-      "source_drop": -0.02341135808058009
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6686747074127197,
+      "gain": 0.008701481174433257,
+      "source_drop": -0.00167226831251166
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.34337350726127625,
-      "gain": -0.005354739057331526,
-      "source_drop": -0.008361215077116346
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6653279662132263,
+      "gain": 0.005354739974939848,
+      "source_drop": -0.0025083426647760643
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.33734938502311707,
-      "gain": -0.011378861295490705,
-      "source_drop": -0.014214033566191053
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6666666865348816,
+      "gain": 0.006693460296595122,
+      "source_drop": -0.00167226831251166
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -0.007362789737492048,
-      "source_drop": -0.020903015814497328
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6680053472518921,
+      "gain": 0.00803212101360562,
+      "source_drop": -0.0025083426647760643
     },
     {
       "room": "office",
       "seed": 2,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.34872824631860777,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -0.007362789737492048,
-      "source_drop": -0.0225752539259933
+      "pre_accuracy": 0.6599732262382865,
+      "post_accuracy": 0.6680053472518921,
+      "gain": 0.00803212101360562,
+      "source_drop": -0.0025083426647760643
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3580990731716156,
-      "gain": 0.016733611324226016,
-      "source_drop": -0.015886280149919108
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.665997326374054,
+      "gain": 0.00937082034995762,
+      "source_drop": -0.010033426476162788
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3473895490169525,
-      "gain": 0.0060240871695629306,
-      "source_drop": -0.02842808088730009
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.6653279662132263,
+      "gain": 0.008701460189129984,
+      "source_drop": -0.010869560433071968
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3427041471004486,
-      "gain": 0.0013386852530590243,
-      "source_drop": -0.03177258691261442
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.6653279662132263,
+      "gain": 0.008701460189129984,
+      "source_drop": -0.011705694389981147
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -5.266273861437298e-09,
-      "source_drop": -0.03344482502411039
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.6653279662132263,
+      "gain": 0.008701460189129984,
+      "source_drop": -0.011705694389981147
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3594377636909485,
-      "gain": 0.018072301843558902,
-      "source_drop": -0.01755851826141508
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.665997326374054,
+      "gain": 0.00937082034995762,
+      "source_drop": -0.009197352123898384
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3487282395362854,
-      "gain": 0.007362777688895816,
-      "source_drop": -0.02842808088730009
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.665997326374054,
+      "gain": 0.00937082034995762,
+      "source_drop": -0.010033426476162788
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.34672021865844727,
-      "gain": 0.0053547568110576815,
-      "source_drop": -0.03344482502411039
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.665997326374054,
+      "gain": 0.00937082034995762,
+      "source_drop": -0.009197352123898384
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3440428376197815,
-      "gain": 0.00267737577239191,
-      "source_drop": -0.03511706313560636
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.665997326374054,
+      "gain": 0.00937082034995762,
+      "source_drop": -0.010033426476162788
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3580990731716156,
-      "gain": 0.016733611324226016,
-      "source_drop": -0.01839465221832426
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.665997326374054,
+      "gain": 0.00937082034995762,
+      "source_drop": -0.009197352123898384
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3500669300556183,
-      "gain": 0.008701468208228702,
-      "source_drop": -0.02926421484420927
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.665997326374054,
+      "gain": 0.00937082034995762,
+      "source_drop": -0.009197352123898384
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.34672021865844727,
-      "gain": 0.0053547568110576815,
-      "source_drop": -0.03260869106720121
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.6653279662132263,
+      "gain": 0.008701460189129984,
+      "source_drop": -0.009197352123898384
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3473895490169525,
-      "gain": 0.0060240871695629306,
-      "source_drop": -0.03260869106720121
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.665997326374054,
+      "gain": 0.00937082034995762,
+      "source_drop": -0.009197352123898384
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.35876840353012085,
-      "gain": 0.017402941682731266,
-      "source_drop": -0.016722414106828287
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.6653279662132263,
+      "gain": 0.008701460189129984,
+      "source_drop": -0.008361218166989204
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3520749807357788,
-      "gain": 0.010709518888389225,
-      "source_drop": -0.027591976732713297
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.665997326374054,
+      "gain": 0.00937082034995762,
+      "source_drop": -0.009197352123898384
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3473895490169525,
-      "gain": 0.0060240871695629306,
-      "source_drop": -0.03093645295570524
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.6653279662132263,
+      "gain": 0.008701460189129984,
+      "source_drop": -0.010033426476162788
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3453815281391144,
-      "gain": 0.004016066291724796,
-      "source_drop": -0.03511706313560636
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.6653279662132263,
+      "gain": 0.008701460189129984,
+      "source_drop": -0.009197352123898384
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.35408300161361694,
-      "gain": 0.01271753976622736,
-      "source_drop": -0.015886280149919108
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.6646586060523987,
+      "gain": 0.008032100028302347,
+      "source_drop": -0.007525084210080024
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3547523319721222,
-      "gain": 0.013386870124732608,
-      "source_drop": -0.026755842775804117
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.6666666865348816,
+      "gain": 0.010040180510785257,
+      "source_drop": -0.008361218166989204
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.3507362902164459,
-      "gain": 0.009370828369056339,
-      "source_drop": -0.03093645295570524
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.665997326374054,
+      "gain": 0.00937082034995762,
+      "source_drop": -0.010033426476162788
     },
     {
       "room": "office",
       "seed": 3,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3413654618473896,
-      "post_accuracy": 0.34605085849761963,
-      "gain": 0.004685396650230045,
-      "source_drop": -0.03344482502411039
+      "pre_accuracy": 0.6566265060240963,
+      "post_accuracy": 0.6653279662132263,
+      "gain": 0.008701460189129984,
+      "source_drop": -0.009197352123898384
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3406961262226105,
-      "gain": -0.003346711796131163,
-      "source_drop": -0.00501673068091224
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6753681302070618,
+      "gain": 0.0020080231120148673,
+      "source_drop": -0.010033453387958913
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.33868807554244995,
-      "gain": -0.005354762476291686,
-      "source_drop": -0.011705683126896127
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6720214486122131,
+      "gain": -0.0013386584828337655,
+      "source_drop": -0.006688977164966969
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3393574357032776,
-      "gain": -0.004685402315464049,
-      "source_drop": -0.012541817083805307
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6713520884513855,
+      "gain": -0.0020080186436614023,
+      "source_drop": -0.006688977164966969
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3393574357032776,
-      "gain": -0.004685402315464049,
-      "source_drop": -0.01505015934988807
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6713520884513855,
+      "gain": -0.0020080186436614023,
+      "source_drop": -0.006688977164966969
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3427041471004486,
-      "gain": -0.0013386909182930284,
-      "source_drop": -0.004180596724003061
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6760374903678894,
+      "gain": 0.002677383272842504,
+      "source_drop": -0.007525111121876149
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -0.002677381437625914,
-      "source_drop": -0.011705683126896127
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6700133681297302,
+      "gain": -0.0033467389653166757,
+      "source_drop": -0.006688977164966969
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3406961262226105,
-      "gain": -0.003346711796131163,
-      "source_drop": -0.010869578972309335
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6700133681297302,
+      "gain": -0.0033467389653166757,
+      "source_drop": -0.00585284320805779
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3406961262226105,
-      "gain": -0.003346711796131163,
-      "source_drop": -0.013377921238392099
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6706827282905579,
+      "gain": -0.002677378804489039,
+      "source_drop": -0.00585284320805779
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.34203481674194336,
-      "gain": -0.0020080212767982775,
-      "source_drop": -0.0033444925694162686
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6760374903678894,
+      "gain": 0.002677383272842504,
+      "source_drop": -0.007525111121876149
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -0.002677381437625914,
-      "source_drop": -0.007525072946995004
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6706827282905579,
+      "gain": -0.002677378804489039,
+      "source_drop": -0.008361185474140553
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -0.002677381437625914,
-      "source_drop": -0.010033445015400155
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6700133681297302,
+      "gain": -0.0033467389653166757,
+      "source_drop": -0.00501670925114861
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -0.002677381437625914,
-      "source_drop": -0.010869578972309335
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6700133681297302,
+      "gain": -0.0033467389653166757,
+      "source_drop": -0.00585284320805779
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -0.002677381437625914,
-      "source_drop": 0.0008361176104848544
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6760374903678894,
+      "gain": 0.002677383272842504,
+      "source_drop": -0.007525111121876149
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.34203481674194336,
-      "gain": -0.0020080212767982775,
-      "source_drop": -0.005852834835499032
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6706827282905579,
+      "gain": -0.002677378804489039,
+      "source_drop": -0.007525111121876149
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.34002676606178284,
-      "gain": -0.0040160719569588,
-      "source_drop": -0.007525072946995004
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6686747074127197,
+      "gain": -0.004685399682327174,
+      "source_drop": -0.00501670925114861
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.34002676606178284,
-      "gain": -0.0040160719569588,
-      "source_drop": -0.009197311058490976
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6693440675735474,
+      "gain": -0.004016039521499537,
+      "source_drop": -0.00501670925114861
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.34203481674194336,
-      "gain": -0.0020080212767982775,
-      "source_drop": 0.0016722515673940341
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.676706850528717,
+      "gain": 0.0033467434336701407,
+      "source_drop": -0.007525111121876149
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3406961262226105,
-      "gain": -0.003346711796131163,
-      "source_drop": -0.00501673068091224
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6720214486122131,
+      "gain": -0.0013386584828337655,
+      "source_drop": -0.008361185474140553
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.3413654565811157,
-      "gain": -0.002677381437625914,
-      "source_drop": -0.0008361205010111172
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6680053472518921,
+      "gain": -0.0053547598431548105,
+      "source_drop": -0.00585284320805779
     },
     {
       "room": "office",
       "seed": 4,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.34404283801874164,
-      "post_accuracy": 0.34203481674194336,
-      "gain": -0.0020080212767982775,
-      "source_drop": -0.00501673068091224
+      "pre_accuracy": 0.6733601070950469,
+      "post_accuracy": 0.6693440675735474,
+      "gain": -0.004016039521499537,
+      "source_drop": -0.00501670925114861
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.4009370803833008,
-      "gain": 0.006024095108869698,
-      "source_drop": -0.0150501803809584
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.676706850528717,
+      "gain": 0.024096408761648758,
+      "source_drop": 0.014214073734538646
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.40227577090263367,
-      "gain": 0.007362785628202584,
-      "source_drop": -0.012541778510230861
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6700133681297302,
+      "gain": 0.01740292636266194,
+      "source_drop": 0.013377939777629466
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.40227577090263367,
-      "gain": 0.007362785628202584,
-      "source_drop": -0.016722388690131984
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6680053472518921,
+      "gain": 0.015394905484823806,
+      "source_drop": 0.013377939777629466
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.4029451012611389,
-      "gain": 0.008032115986707833,
-      "source_drop": -0.016722388690131984
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6686747074127197,
+      "gain": 0.016064265645651443,
+      "source_drop": 0.013377939777629466
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.4009370803833008,
-      "gain": 0.006024095108869698,
-      "source_drop": -0.010869570201057277
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6773761510848999,
+      "gain": 0.02476570931783162,
+      "source_drop": 0.014214073734538646
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.4029451012611389,
-      "gain": 0.008032115986707833,
-      "source_drop": -0.011705704157966457
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6740294694900513,
+      "gain": 0.021419027722982986,
+      "source_drop": 0.010033463554637523
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.4029451012611389,
-      "gain": 0.008032115986707833,
-      "source_drop": -0.0150501803809584
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6706827282905579,
+      "gain": 0.018072286523489578,
+      "source_drop": 0.013377939777629466
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.4016064405441284,
-      "gain": 0.006693455269697335,
-      "source_drop": -0.0150501803809584
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6700133681297302,
+      "gain": 0.01740292636266194,
+      "source_drop": 0.014214073734538646
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.40026775002479553,
-      "gain": 0.005354764750364449,
-      "source_drop": -0.010033436244148097
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6760374903678894,
+      "gain": 0.02342704860082112,
+      "source_drop": 0.01505014808680305
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.40361446142196655,
-      "gain": 0.00870147614753547,
-      "source_drop": -0.010033436244148097
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6746987700462341,
+      "gain": 0.022088328279165848,
+      "source_drop": 0.010869537906901927
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.4029451012611389,
-      "gain": 0.008032115986707833,
-      "source_drop": -0.011705704157966457
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6746987700462341,
+      "gain": 0.022088328279165848,
+      "source_drop": 0.012541805820720286
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.4029451012611389,
-      "gain": 0.008032115986707833,
-      "source_drop": -0.0150501803809584
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6740294694900513,
+      "gain": 0.021419027722982986,
+      "source_drop": 0.010869537906901927
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.40026775002479553,
-      "gain": 0.005354764750364449,
-      "source_drop": -0.009197302287238918
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6773761510848999,
+      "gain": 0.02476570931783162,
+      "source_drop": 0.01588628204371223
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.4042837917804718,
-      "gain": 0.009370806506040719,
-      "source_drop": -0.010033436244148097
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6746987700462341,
+      "gain": 0.022088328279165848,
+      "source_drop": 0.010869537906901927
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.40227577090263367,
-      "gain": 0.007362785628202584,
-      "source_drop": -0.010869570201057277
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6760374903678894,
+      "gain": 0.02342704860082112,
+      "source_drop": 0.009197329597728343
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.4029451012611389,
-      "gain": 0.008032115986707833,
-      "source_drop": -0.01337791246714004
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6740294694900513,
+      "gain": 0.021419027722982986,
+      "source_drop": 0.010033463554637523
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.40026775002479553,
-      "gain": 0.005354764750364449,
-      "source_drop": -0.009197302287238918
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.676706850528717,
+      "gain": 0.024096408761648758,
+      "source_drop": 0.013377939777629466
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.4042837917804718,
-      "gain": 0.009370806506040719,
-      "source_drop": -0.011705704157966457
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6773761510848999,
+      "gain": 0.02476570931783162,
+      "source_drop": 0.010869537906901927
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.4029451012611389,
-      "gain": 0.008032115986707833,
-      "source_drop": -0.010869570201057277
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.676706850528717,
+      "gain": 0.024096408761648758,
+      "source_drop": 0.008361195640819163
     },
     {
       "room": "hall",
       "seed": 0,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3949129852744311,
-      "post_accuracy": 0.40227577090263367,
-      "gain": 0.007362785628202584,
-      "source_drop": -0.012541778510230861
+      "pre_accuracy": 0.6526104417670683,
+      "post_accuracy": 0.6753681302070618,
+      "gain": 0.022757688439993484,
+      "source_drop": 0.009197329597728343
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.42369478940963745,
-      "gain": 0.0020080424216856185,
-      "source_drop": -0.0016722567504066088
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6807228922843933,
+      "gain": 0.009370817317860491,
+      "source_drop": -0.005016739153144378
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": -0.003344465059580193
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6787148714065552,
+      "gain": 0.007362796440022357,
+      "source_drop": 4.98366592438515e-09
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4243641197681427,
-      "gain": 0.0026773727801908676,
-      "source_drop": -0.005016732973398552
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6800535321235657,
+      "gain": 0.008701457157032855,
+      "source_drop": 0.0008361389405751041
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.42369478940963745,
-      "gain": 0.0020080424216856185,
-      "source_drop": -0.005016732973398552
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6800535321235657,
+      "gain": 0.008701457157032855,
+      "source_drop": 0.0008361389405751041
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4243641197681427,
-      "gain": 0.0026773727801908676,
-      "source_drop": 1.1163411750558794e-08
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6807228922843933,
+      "gain": 0.009370817317860491,
+      "source_drop": -0.004180605196235199
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": -0.0008361227934974291
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6780455112457275,
+      "gain": 0.00669343627919472,
+      "source_drop": -0.001672262930152435
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": -0.0025083907073157885
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6800535321235657,
+      "gain": 0.008701457157032855,
+      "source_drop": 0.0016722132928395084
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": -0.003344465059580193
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6793842315673828,
+      "gain": 0.008032156600849993,
+      "source_drop": 4.98366592438515e-09
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.42637214064598083,
-      "gain": 0.004685393658029002,
-      "source_drop": 0.0025083534294945142
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.681392252445221,
+      "gain": 0.010040177478688128,
+      "source_drop": -0.004180605196235199
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": -0.0016722567504066088
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6800535321235657,
+      "gain": 0.008701457157032855,
+      "source_drop": -0.004180605196235199
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": 1.1163411750558794e-08
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6800535321235657,
+      "gain": 0.008701457157032855,
+      "source_drop": -0.001672262930152435
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": -0.0025083907073157885
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6793842315673828,
+      "gain": 0.008032156600849993,
+      "source_drop": -0.001672262930152435
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": 0.003344487386403694
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6800535321235657,
+      "gain": 0.008701457157032855,
+      "source_drop": -0.004180605196235199
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4243641197681427,
-      "gain": 0.0026773727801908676,
-      "source_drop": -0.0008361227934974291
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6807228922843933,
+      "gain": 0.009370817317860491,
+      "source_drop": -0.0025083372824168393
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": 1.1163411750558794e-08
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.681392252445221,
+      "gain": 0.010040177478688128,
+      "source_drop": -0.001672262930152435
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": 1.1163411750558794e-08
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6807228922843933,
+      "gain": 0.009370817317860491,
+      "source_drop": -0.0025083372824168393
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": 0.004180621343312874
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6807228922843933,
+      "gain": 0.009370817317860491,
+      "source_drop": -0.001672262930152435
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": 0.0008361451203209302
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6800535321235657,
+      "gain": 0.008701457157032855,
+      "source_drop": -0.003344471239326019
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.4257028102874756,
-      "gain": 0.004016063299523753,
-      "source_drop": -0.0025083907073157885
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6800535321235657,
+      "gain": 0.008701457157032855,
+      "source_drop": -0.005016739153144378
     },
     {
       "room": "hall",
       "seed": 1,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.42168674698795183,
-      "post_accuracy": 0.42369478940963745,
-      "gain": 0.0020080424216856185,
-      "source_drop": 1.1163411750558794e-08
+      "pre_accuracy": 0.6713520749665328,
+      "post_accuracy": 0.6807228922843933,
+      "gain": 0.009370817317860491,
+      "source_drop": -0.003344471239326019
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.398259699344635,
-      "gain": 0.006693434284394062,
-      "source_drop": -0.012541805820720286
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6693440675735474,
+      "gain": 0.008032153249584839,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.39759036898612976,
-      "gain": 0.006024103925888813,
-      "source_drop": -0.01505014808680305
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6706827282905579,
+      "gain": 0.009370813966595337,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.3969210088253021,
-      "gain": 0.005354743765061176,
-      "source_drop": -0.013377939777629466
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6706827282905579,
+      "gain": 0.009370813966595337,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.3969210088253021,
-      "gain": 0.005354743765061176,
-      "source_drop": -0.013377939777629466
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6706827282905579,
+      "gain": 0.009370813966595337,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.39892905950546265,
-      "gain": 0.007362794445221699,
-      "source_drop": -0.012541805820720286
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6693440675735474,
+      "gain": 0.008032153249584839,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.3969210088253021,
-      "gain": 0.005354743765061176,
-      "source_drop": -0.013377939777629466
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6706827282905579,
+      "gain": 0.009370813966595337,
+      "source_drop": -0.0033445093145338944
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.39558231830596924,
-      "gain": 0.0040160532457282905,
-      "source_drop": -0.013377939777629466
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6706827282905579,
+      "gain": 0.009370813966595337,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.39558231830596924,
-      "gain": 0.0040160532457282905,
-      "source_drop": -0.013377939777629466
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6706827282905579,
+      "gain": 0.009370813966595337,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.39892905950546265,
-      "gain": 0.007362794445221699,
-      "source_drop": -0.010869537906901927
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6693440675735474,
+      "gain": 0.008032153249584839,
+      "source_drop": -0.0033445093145338944
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.39759036898612976,
-      "gain": 0.006024103925888813,
-      "source_drop": -0.013377939777629466
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6706827282905579,
+      "gain": 0.009370813966595337,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.3962516784667969,
-      "gain": 0.004685413406555927,
-      "source_drop": -0.014214073734538646
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6700133681297302,
+      "gain": 0.0087014538057677,
+      "source_drop": -0.0033445093145338944
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.3962516784667969,
-      "gain": 0.004685413406555927,
-      "source_drop": -0.014214073734538646
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6700133681297302,
+      "gain": 0.0087014538057677,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.39892905950546265,
-      "gain": 0.007362794445221699,
-      "source_drop": -0.009197329597728343
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6686747074127197,
+      "gain": 0.007362793088757202,
+      "source_drop": -0.0033445093145338944
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.398259699344635,
-      "gain": 0.006693434284394062,
-      "source_drop": -0.010869537906901927
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6706827282905579,
+      "gain": 0.009370813966595337,
+      "source_drop": -0.005016717623707478
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.3969210088253021,
-      "gain": 0.005354743765061176,
-      "source_drop": -0.014214073734538646
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6700133681297302,
+      "gain": 0.0087014538057677,
+      "source_drop": -0.0025083753576247148
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.3969210088253021,
-      "gain": 0.005354743765061176,
-      "source_drop": -0.014214073734538646
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6700133681297302,
+      "gain": 0.0087014538057677,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.398259699344635,
-      "gain": 0.006693434284394062,
-      "source_drop": -0.0066889873316455795
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6680053472518921,
+      "gain": 0.006693432927929566,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.398259699344635,
-      "gain": 0.006693434284394062,
-      "source_drop": -0.010869537906901927
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6706827282905579,
+      "gain": 0.009370813966595337,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.3962516784667969,
-      "gain": 0.004685413406555927,
-      "source_drop": -0.013377939777629466
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6700133681297302,
+      "gain": 0.0087014538057677,
+      "source_drop": -0.004180583666798299
     },
     {
       "room": "hall",
       "seed": 2,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.39156626506024095,
-      "post_accuracy": 0.3969210088253021,
-      "gain": 0.005354743765061176,
-      "source_drop": -0.011705671863811107
+      "pre_accuracy": 0.6613119143239625,
+      "post_accuracy": 0.6700133681297302,
+      "gain": 0.0087014538057677,
+      "source_drop": -0.005016717623707478
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.39089691638946533,
-      "gain": -0.015394917613212045,
-      "source_drop": -0.015886284834565112
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6639893054962158,
+      "gain": 0.005354767343605404,
+      "source_drop": 0.0008360928915017718
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.39290496706962585,
-      "gain": -0.013386866933051522,
-      "source_drop": -0.022575237280549
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6633199453353882,
+      "gain": 0.004685407182777768,
+      "source_drop": 0.002508360805320131
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.3922356069087982,
-      "gain": -0.014056227093879159,
-      "source_drop": -0.02508360934895415
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6633199453353882,
+      "gain": 0.004685407182777768,
+      "source_drop": 1.853923736749863e-08
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.39089691638946533,
-      "gain": -0.015394917613212045,
-      "source_drop": -0.02508360934895415
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6633199453353882,
+      "gain": 0.004685407182777768,
+      "source_drop": 1.853923736749863e-08
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.39290496706962585,
-      "gain": -0.013386866933051522,
-      "source_drop": -0.015050150877655932
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6639893054962158,
+      "gain": 0.005354767343605404,
+      "source_drop": 0.0016722268484109515
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.3935742974281311,
-      "gain": -0.012717536574546273,
-      "source_drop": -0.020066895014466235
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6633199453353882,
+      "gain": 0.004685407182777768,
+      "source_drop": 0.0016722268484109515
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.3935742974281311,
-      "gain": -0.012717536574546273,
-      "source_drop": -0.02591974330586333
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6619812846183777,
+      "gain": 0.0033467464657672696,
+      "source_drop": -0.0008361154176718122
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.39089691638946533,
-      "gain": -0.015394917613212045,
-      "source_drop": -0.02591974330586333
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6619812846183777,
+      "gain": 0.0033467464657672696,
+      "source_drop": -0.0016722493745809919
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.39424362778663635,
-      "gain": -0.012048206216041024,
-      "source_drop": -0.013377942568482348
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.665997326374054,
+      "gain": 0.007362788221443539,
+      "source_drop": 0.0008360928915017718
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.394912987947464,
-      "gain": -0.011378846055213387,
-      "source_drop": -0.01755855274838347
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6626505851745605,
+      "gain": 0.004016047021950131,
+      "source_drop": 0.0008360928915017718
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.39424362778663635,
-      "gain": -0.012048206216041024,
-      "source_drop": -0.02341137123745818
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6626505851745605,
+      "gain": 0.004016047021950131,
+      "source_drop": -0.003344457683754576
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.3935742974281311,
-      "gain": -0.012717536574546273,
-      "source_drop": -0.02591974330586333
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6619812846183777,
+      "gain": 0.0033467464657672696,
+      "source_drop": -0.003344457683754576
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.3935742974281311,
-      "gain": -0.012717536574546273,
-      "source_drop": -0.011705674654663989
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6666666865348816,
+      "gain": 0.008032148382271176,
+      "source_drop": -0.0008361154176718122
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.39424362778663635,
-      "gain": -0.012048206216041024,
-      "source_drop": -0.01672241879147429
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6633199453353882,
+      "gain": 0.004685407182777768,
+      "source_drop": 1.853923736749863e-08
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.39424362778663635,
-      "gain": -0.012048206216041024,
-      "source_drop": -0.022575237280549
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6626505851745605,
+      "gain": 0.004016047021950131,
+      "source_drop": -0.003344457683754576
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.394912987947464,
-      "gain": -0.011378846055213387,
-      "source_drop": -0.02341137123745818
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6619812846183777,
+      "gain": 0.0033467464657672696,
+      "source_drop": -0.003344457683754576
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.3935742974281311,
-      "gain": -0.012717536574546273,
-      "source_drop": -0.011705674654663989
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6646586060523987,
+      "gain": 0.006024067899788266,
+      "source_drop": -0.0025083833314901716
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.39424362778663635,
-      "gain": -0.012048206216041024,
-      "source_drop": -0.015050150877655932
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6626505851745605,
+      "gain": 0.004016047021950131,
+      "source_drop": 0.0008360928915017718
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.39424362778663635,
-      "gain": -0.012048206216041024,
-      "source_drop": -0.020066895014466235
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6633199453353882,
+      "gain": 0.004685407182777768,
+      "source_drop": -0.003344457683754576
     },
     {
       "room": "hall",
       "seed": 3,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.4062918340026774,
-      "post_accuracy": 0.39558231830596924,
-      "gain": -0.010709515696708138,
-      "source_drop": -0.020903028971375415
+      "pre_accuracy": 0.6586345381526104,
+      "post_accuracy": 0.6626505851745605,
+      "gain": 0.004016047021950131,
+      "source_drop": -0.0041805916406637555
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.41566264629364014,
-      "gain": 0.004016059948258599,
-      "source_drop": -0.004180593434783497
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6954484581947327,
+      "gain": -0.0006693463568068214,
+      "source_drop": 0.0008361419307747475
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.41566264629364014,
-      "gain": 0.004016059948258599,
-      "source_drop": -0.005852861348601857
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6941097974777222,
+      "gain": -0.0020080070738173195,
+      "source_drop": -0.0008361259830436119
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.4163320064544678,
-      "gain": 0.004685420109086236,
-      "source_drop": -0.007525069657775441
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6941097974777222,
+      "gain": -0.0020080070738173195,
+      "source_drop": -0.0008361259830436119
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.4163320064544678,
-      "gain": 0.004685420109086236,
-      "source_drop": -0.007525069657775441
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6941097974777222,
+      "gain": -0.0020080070738173195,
+      "source_drop": -0.0008361259830436119
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.41566264629364014,
-      "gain": 0.004016059948258599,
-      "source_drop": -0.0033444594778743175
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.694779098033905,
+      "gain": -0.0013387065176344581,
+      "source_drop": 0.0008361419307747475
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.4149933159351349,
-      "gain": 0.00334672958975335,
-      "source_drop": -0.007525069657775441
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.694779098033905,
+      "gain": -0.0013387065176344581,
+      "source_drop": 7.973865567834082e-09
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.417001336812973,
-      "gain": 0.005354750467591485,
-      "source_drop": -0.007525069657775441
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.694779098033905,
+      "gain": -0.0013387065176344581,
+      "source_drop": -0.0008361259830436119
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.417001336812973,
-      "gain": 0.005354750467591485,
-      "source_drop": -0.007525069657775441
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.694779098033905,
+      "gain": -0.0013387065176344581,
+      "source_drop": -0.0008361259830436119
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.4163320064544678,
-      "gain": 0.004685420109086236,
-      "source_drop": -0.004180593434783497
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6941097974777222,
+      "gain": -0.0020080070738173195,
+      "source_drop": 7.973865567834082e-09
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.4149933159351349,
-      "gain": 0.00334672958975335,
-      "source_drop": -0.006688935700866261
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6941097974777222,
+      "gain": -0.0020080070738173195,
+      "source_drop": 7.973865567834082e-09
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.4149933159351349,
-      "gain": 0.00334672958975335,
-      "source_drop": -0.00836120361468462
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.694779098033905,
+      "gain": -0.0013387065176344581,
+      "source_drop": -0.0008361259830436119
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.41566264629364014,
-      "gain": 0.004016059948258599,
-      "source_drop": -0.007525069657775441
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.694779098033905,
+      "gain": -0.0013387065176344581,
+      "source_drop": -0.0008361259830436119
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.4163320064544678,
-      "gain": 0.004685420109086236,
-      "source_drop": -0.0033444594778743175
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6941097974777222,
+      "gain": -0.0020080070738173195,
+      "source_drop": 7.973865567834082e-09
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.41432395577430725,
-      "gain": 0.0026773694289257133,
-      "source_drop": -0.007525069657775441
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6954484581947327,
+      "gain": -0.0006693463568068214,
+      "source_drop": 7.973865567834082e-09
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.4149933159351349,
-      "gain": 0.00334672958975335,
-      "source_drop": -0.00836120361468462
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6954484581947327,
+      "gain": -0.0006693463568068214,
+      "source_drop": 7.973865567834082e-09
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.41566264629364014,
-      "gain": 0.004016059948258599,
-      "source_drop": -0.007525069657775441
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6954484581947327,
+      "gain": -0.0006693463568068214,
+      "source_drop": -0.0008361259830436119
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.4163320064544678,
-      "gain": 0.004685420109086236,
-      "source_drop": -0.0025083851256099132
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6927710771560669,
+      "gain": -0.003346727395472593,
+      "source_drop": -0.0008361259830436119
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.4149933159351349,
-      "gain": 0.00334672958975335,
-      "source_drop": -0.004180593434783497
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6954484581947327,
+      "gain": -0.0006693463568068214,
+      "source_drop": 7.973865567834082e-09
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.417001336812973,
-      "gain": 0.005354750467591485,
-      "source_drop": -0.00836120361468462
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6954484581947327,
+      "gain": -0.0006693463568068214,
+      "source_drop": 7.973865567834082e-09
     },
     {
       "room": "hall",
       "seed": 4,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.41164658634538154,
-      "post_accuracy": 0.41566264629364014,
-      "gain": 0.004016059948258599,
-      "source_drop": -0.00836120361468462
+      "pre_accuracy": 0.6961178045515395,
+      "post_accuracy": 0.6954484581947327,
+      "gain": -0.0006693463568068214,
+      "source_drop": -0.0008361259830436119
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.27978581190109253,
-      "gain": 0.00401606625182882,
-      "source_drop": -0.0016722427961419761
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5033467411994934,
+      "gain": 0.002677397156655381,
+      "source_drop": -0.010869586746828253
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2804551422595978,
-      "gain": 0.004685396610334069,
-      "source_drop": -0.0008361088392327964
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5,
+      "gain": -0.0006693440428380271,
+      "source_drop": -0.009197318833009893
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2804551422595978,
-      "gain": 0.004685396610334069,
-      "source_drop": 2.5117676383246135e-08
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5,
+      "gain": -0.0006693440428380271,
+      "source_drop": -0.009197318833009893
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.27978581190109253,
-      "gain": 0.00401606625182882,
-      "source_drop": 2.5117676383246135e-08
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5,
+      "gain": -0.0006693440428380271,
+      "source_drop": -0.009197318833009893
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2791164517402649,
-      "gain": 0.0033467060910011837,
-      "source_drop": -0.002508376753051156
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5053547620773315,
+      "gain": 0.004685418034493516,
+      "source_drop": -0.009197318833009893
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2824631929397583,
-      "gain": 0.006693447290494592,
-      "source_drop": 2.5117676383246135e-08
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5053547620773315,
+      "gain": 0.004685418034493516,
+      "source_drop": -0.009197318833009893
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2804551422595978,
-      "gain": 0.004685396610334069,
-      "source_drop": 2.5117676383246135e-08
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5,
+      "gain": -0.0006693440428380271,
+      "source_drop": -0.010033452789919073
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.28179383277893066,
-      "gain": 0.006024087129666955,
-      "source_drop": 2.5117676383246135e-08
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5,
+      "gain": -0.0006693440428380271,
+      "source_drop": -0.010869586746828253
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.27844712138175964,
-      "gain": 0.0026773757324959346,
-      "source_drop": -0.0050167190191339195
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5073627829551697,
+      "gain": 0.006693438912331651,
+      "source_drop": -0.008361184876100713
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2811245024204254,
-      "gain": 0.005354756771161706,
-      "source_drop": -0.0016722427961419761
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5053547620773315,
+      "gain": 0.004685418034493516,
+      "source_drop": -0.00585284261001795
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2824631929397583,
-      "gain": 0.006693447290494592,
-      "source_drop": 0.0008360994699407875
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5006693601608276,
+      "gain": 1.611798960965416e-08,
+      "source_drop": -0.008361184876100713
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2824631929397583,
-      "gain": 0.006693447290494592,
-      "source_drop": 0.0008360994699407875
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.49933066964149475,
+      "gain": -0.001338674401343276,
+      "source_drop": -0.008361184876100713
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2777777910232544,
-      "gain": 0.0020080453739906856,
-      "source_drop": -0.005852852976043099
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.506693422794342,
+      "gain": 0.006024078751504014,
+      "source_drop": -0.0066889765669271295
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.27978581190109253,
-      "gain": 0.00401606625182882,
-      "source_drop": -0.002508376753051156
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5080321431159973,
+      "gain": 0.007362799073159287,
+      "source_drop": -0.0041805746961995904
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2824631929397583,
-      "gain": 0.006693447290494592,
-      "source_drop": -0.0016722427961419761
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5026773810386658,
+      "gain": 0.0020080369958277444,
+      "source_drop": -0.007525110523836309
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2824631929397583,
-      "gain": 0.006693447290494592,
-      "source_drop": -0.0008361088392327964
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5020080208778381,
+      "gain": 0.0013386768350001077,
+      "source_drop": -0.008361184876100713
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2777777910232544,
-      "gain": 0.0020080453739906856,
-      "source_drop": -0.006688986932952279
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5087014436721802,
+      "gain": 0.008032099629342149,
+      "source_drop": -0.0041805746961995904
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.27844712138175964,
-      "gain": 0.0026773757324959346,
-      "source_drop": -0.00418058506222474
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5080321431159973,
+      "gain": 0.007362799073159287,
+      "source_drop": -0.00501670865310877
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2791164517402649,
-      "gain": 0.0033467060910011837,
-      "source_drop": -0.0008361088392327964
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5046854019165039,
+      "gain": 0.004016057873665879,
+      "source_drop": -0.00585284261001795
     },
     {
       "room": "classroom",
       "seed": 0,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2757697456492637,
-      "post_accuracy": 0.2804551422595978,
-      "gain": 0.004685396610334069,
-      "source_drop": 2.5117676383246135e-08
+      "pre_accuracy": 0.500669344042838,
+      "post_accuracy": 0.5006693601608276,
+      "gain": 1.611798960965416e-08,
+      "source_drop": -0.0066889765669271295
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2871485948562622,
-      "gain": -0.009370816120980119,
-      "source_drop": -0.005016743140077162
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5107095241546631,
+      "gain": 0.0066934598976349235,
+      "source_drop": 0.004180613369447306
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2884872853755951,
-      "gain": -0.008032125601647233,
-      "source_drop": -0.005016743140077162
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.511378824710846,
+      "gain": 0.007362760453817785,
+      "source_drop": 0.004180613369447306
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2838018834590912,
-      "gain": -0.01271752751815114,
-      "source_drop": -0.007525085406159926
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.511378824710846,
+      "gain": 0.007362760453817785,
+      "source_drop": 0.004180613369447306
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2838018834590912,
-      "gain": -0.01271752751815114,
-      "source_drop": -0.007525085406159926
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5107095241546631,
+      "gain": 0.0066934598976349235,
+      "source_drop": 0.004180613369447306
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2884872853755951,
-      "gain": -0.008032125601647233,
-      "source_drop": -0.0058528174923415666
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5093708038330078,
+      "gain": 0.00535473957597965,
+      "source_drop": 0.003344479412538126
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2884872853755951,
-      "gain": -0.008032125601647233,
-      "source_drop": -0.005016743140077162
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5107095241546631,
+      "gain": 0.0066934598976349235,
+      "source_drop": 0.004180613369447306
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.28647926449775696,
-      "gain": -0.010040146479485368,
-      "source_drop": -0.006688951449250746
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5107095241546631,
+      "gain": 0.0066934598976349235,
+      "source_drop": 0.004180613369447306
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.28647926449775696,
-      "gain": -0.010040146479485368,
-      "source_drop": -0.0058528174923415666
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5107095241546631,
+      "gain": 0.0066934598976349235,
+      "source_drop": 0.004180613369447306
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.289825975894928,
-      "gain": -0.006693435082314347,
-      "source_drop": -0.003344475226258803
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5093708038330078,
+      "gain": 0.00535473957597965,
+      "source_drop": 0.0025083454556289464
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2884872853755951,
-      "gain": -0.008032125601647233,
-      "source_drop": -0.004180609183167983
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5100401639938354,
+      "gain": 0.006024099736807287,
+      "source_drop": 0.004180613369447306
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2858099043369293,
-      "gain": -0.010709506640313005,
-      "source_drop": -0.002508341269349623
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5093708038330078,
+      "gain": 0.00535473957597965,
+      "source_drop": 0.004180613369447306
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2858099043369293,
-      "gain": -0.010709506640313005,
-      "source_drop": -0.005016743140077162
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5100401639938354,
+      "gain": 0.006024099736807287,
+      "source_drop": 0.0050167473263564855
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2904953062534332,
-      "gain": -0.006024104723809098,
-      "source_drop": -0.004180609183167983
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5087014436721802,
+      "gain": 0.004685379415152013,
+      "source_drop": 0.003344479412538126
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2871485948562622,
-      "gain": -0.009370816120980119,
-      "source_drop": -0.002508341269349623
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5100401639938354,
+      "gain": 0.006024099736807287,
+      "source_drop": 0.004180613369447306
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.28647926449775696,
-      "gain": -0.010040146479485368,
-      "source_drop": -0.002508341269349623
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5107095241546631,
+      "gain": 0.0066934598976349235,
+      "source_drop": 0.0050167473263564855
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2851405739784241,
-      "gain": -0.011378836998818254,
-      "source_drop": -0.001672266917085219
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5100401639938354,
+      "gain": 0.006024099736807287,
+      "source_drop": 0.004180613369447306
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2904953062534332,
-      "gain": -0.006024104723809098,
-      "source_drop": -0.002508341269349623
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5073627829551697,
+      "gain": 0.0033467186981415153,
+      "source_drop": 0.0008361371464553624
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2871485948562622,
-      "gain": -0.009370816120980119,
-      "source_drop": -0.0008361329601760392
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5093708038330078,
+      "gain": 0.00535473957597965,
+      "source_drop": 0.0066889556355300694
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.2871485948562622,
-      "gain": -0.009370816120980119,
-      "source_drop": 9.96733140468109e-10
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5093708038330078,
+      "gain": 0.00535473957597965,
+      "source_drop": 0.0050167473263564855
     },
     {
       "room": "classroom",
       "seed": 1,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2965194109772423,
-      "post_accuracy": 0.28781792521476746,
-      "gain": -0.00870148576247487,
-      "source_drop": -0.0008361329601760392
+      "pre_accuracy": 0.5040160642570282,
+      "post_accuracy": 0.5093708038330078,
+      "gain": 0.00535473957597965,
+      "source_drop": 0.0050167473263564855
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.30455154180526733,
-      "gain": 0.0013386903996448485,
-      "source_drop": -0.00334448339947091
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5194109678268433,
+      "gain": 0.00200802271305478,
+      "source_drop": 0.0016722328288100163
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.3025435209274292,
-      "gain": -0.0006693304781932863,
-      "source_drop": -0.005852825665553674
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5140562057495117,
+      "gain": -0.003346739364276763,
+      "source_drop": -0.001672243394181927
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.29718875885009766,
-      "gain": -0.006024092555524829,
-      "source_drop": -0.010033435845454797
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5127175450325012,
+      "gain": -0.004685400081287261,
+      "source_drop": -0.0033445113080002864
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.29718875885009766,
-      "gain": -0.006024092555524829,
-      "source_drop": -0.010033435845454797
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5120481848716736,
+      "gain": -0.005354760242114898,
+      "source_drop": -0.0033445113080002864
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.3058902323246002,
-      "gain": 0.0026773809189777342,
-      "source_drop": -0.005016751313289269
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5207496881484985,
+      "gain": 0.0033467430347100535,
+      "source_drop": 0.002508366785719196
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.3025435209274292,
-      "gain": -0.0006693304781932863,
-      "source_drop": -0.007525093579372033
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5160642862319946,
+      "gain": -0.0013386588817938527,
+      "source_drop": -0.0033445113080002864
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.2991967797279358,
-      "gain": -0.0040160716776866945,
-      "source_drop": -0.006688959622462853
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5140562057495117,
+      "gain": -0.003346739364276763,
+      "source_drop": -0.0025083773510911067
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.2978580892086029,
-      "gain": -0.00535476219701958,
-      "source_drop": -0.006688959622462853
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5120481848716736,
+      "gain": -0.005354760242114898,
+      "source_drop": -0.004180585660264691
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.3058902323246002,
-      "gain": 0.0026773809189777342,
-      "source_drop": -0.008361227536281213
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.522088348865509,
+      "gain": 0.004685403751720552,
+      "source_drop": 0.002508366785719196
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.2998661398887634,
-      "gain": -0.0033467115168590578,
-      "source_drop": -0.01254177811153756
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5180723071098328,
+      "gain": 0.000669361996044282,
+      "source_drop": 0.0008360988719008366
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.29852744936943054,
-      "gain": -0.0046854020361919435,
-      "source_drop": -0.007525093579372033
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5140562057495117,
+      "gain": -0.003346739364276763,
+      "source_drop": -0.0033445113080002864
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.2991967797279358,
-      "gain": -0.0040160716776866945,
-      "source_drop": -0.007525093579372033
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5147255659103394,
+      "gain": -0.002677379203449126,
+      "source_drop": -0.0025083773510911067
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.30455154180526733,
-      "gain": 0.0013386903996448485,
-      "source_drop": -0.008361227536281213
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5214189887046814,
+      "gain": 0.004016043590892915,
+      "source_drop": 2.4519636432351888e-08
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.3005354702472687,
-      "gain": -0.0026773811583538087,
-      "source_drop": -0.010869569802363976
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5167335867881775,
+      "gain": -0.0006693583256109914,
+      "source_drop": 0.0008360988719008366
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.29852744936943054,
-      "gain": -0.0046854020361919435,
-      "source_drop": -0.009197301888545617
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5140562057495117,
+      "gain": -0.003346739364276763,
+      "source_drop": -0.0033445113080002864
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.29852744936943054,
-      "gain": -0.0046854020361919435,
-      "source_drop": -0.007525093579372033
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5140562057495117,
+      "gain": -0.003346739364276763,
+      "source_drop": -0.0025083773510911067
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.3058902323246002,
-      "gain": 0.0026773809189777342,
-      "source_drop": -0.00418061735638009
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.522088348865509,
+      "gain": 0.004685403751720552,
+      "source_drop": 2.4519636432351888e-08
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.3038821816444397,
-      "gain": 0.0006693302388172118,
-      "source_drop": -0.010869569802363976
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5180723071098328,
+      "gain": 0.000669361996044282,
+      "source_drop": 0.0008360988719008366
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.2991967797279358,
-      "gain": -0.0040160716776866945,
-      "source_drop": -0.011705703759273156
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5147255659103394,
+      "gain": -0.002677379203449126,
+      "source_drop": -0.0033445113080002864
     },
     {
       "room": "classroom",
       "seed": 2,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.3032128514056225,
-      "post_accuracy": 0.29852744936943054,
-      "gain": -0.0046854020361919435,
-      "source_drop": -0.009197301888545617
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5127175450325012,
+      "gain": -0.004685400081287261,
+      "source_drop": -0.001672243394181927
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.2376171350479126,
-      "gain": -0.0006693442024220675,
-      "source_drop": -0.0041805902452373145
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5180723071098328,
+      "gain": 0.000669361996044282,
+      "source_drop": -0.004180596424983141
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23360107839107513,
-      "gain": -0.004685400859259531,
-      "source_drop": -0.0041805902452373145
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5200803279876709,
+      "gain": 0.002677382873882417,
+      "source_drop": 1.3754917982389259e-08
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.22891566157341003,
-      "gain": -0.009370817676924631,
-      "source_drop": -0.008361200425138438
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5200803279876709,
+      "gain": 0.002677382873882417,
+      "source_drop": -0.0008361202019911973
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.22891566157341003,
-      "gain": -0.009370817676924631,
-      "source_drop": -0.008361200425138438
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5200803279876709,
+      "gain": 0.002677382873882417,
+      "source_drop": -0.0008361202019911973
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23828648030757904,
-      "gain": 1.0572443753797955e-09,
-      "source_drop": -0.0041805902452373145
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.515394926071167,
+      "gain": -0.0020080190426214894,
+      "source_drop": -0.0058528643388015
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.2362784445285797,
-      "gain": -0.0020080347217549532,
-      "source_drop": -0.005016724202146494
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5194109678268433,
+      "gain": 0.00200802271305478,
+      "source_drop": -0.0025083881158095567
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23092369735240936,
-      "gain": -0.007362781897925302,
-      "source_drop": -0.008361200425138438
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5200803279876709,
+      "gain": 0.002677382873882417,
+      "source_drop": -0.0008361202019911973
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.2315930426120758,
-      "gain": -0.0066934366382588595,
-      "source_drop": -0.008361200425138438
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5200803279876709,
+      "gain": 0.002677382873882417,
+      "source_drop": -0.0008361202019911973
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23895582556724548,
-      "gain": 0.0006693463169108183,
-      "source_drop": -0.0008361140222453711
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5174029469490051,
+      "gain": 1.8352166453183827e-09,
+      "source_drop": -0.007525072647975084
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.2376171350479126,
-      "gain": -0.0006693442024220675,
-      "source_drop": -0.0041805902452373145
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5194109678268433,
+      "gain": 0.00200802271305478,
+      "source_drop": -0.003344462468073961
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23360107839107513,
-      "gain": -0.004685400859259531,
-      "source_drop": -0.008361200425138438
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5200803279876709,
+      "gain": 0.002677382873882417,
+      "source_drop": -0.0008361202019911973
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23360107839107513,
-      "gain": -0.004685400859259531,
-      "source_drop": -0.008361200425138438
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5200803279876709,
+      "gain": 0.002677382873882417,
+      "source_drop": -0.0008361202019911973
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23895582556724548,
-      "gain": 0.0006693463169108183,
-      "source_drop": 0.0008360942869282129
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5180723071098328,
+      "gain": 0.000669361996044282,
+      "source_drop": -0.006688938691065904
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23828648030757904,
-      "gain": 1.0572443753797955e-09,
-      "source_drop": -0.0025083819360637305
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5180723071098328,
+      "gain": 0.000669361996044282,
+      "source_drop": -0.004180596424983141
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23694778978824615,
-      "gain": -0.0013386894620885104,
-      "source_drop": -0.005852858159055674
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5194109678268433,
+      "gain": 0.00200802271305478,
+      "source_drop": -0.001672254158900377
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23560909926891327,
-      "gain": -0.002677379981421396,
-      "source_drop": -0.0066889921159648535
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5194109678268433,
+      "gain": 0.00200802271305478,
+      "source_drop": -0.0008361202019911973
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.24029451608657837,
-      "gain": 0.002008036836243704,
-      "source_drop": 0.0025083622007465722
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5167335867881775,
+      "gain": -0.0006693583256109914,
+      "source_drop": -0.0058528643388015
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23895582556724548,
-      "gain": 0.0006693463169108183,
-      "source_drop": -0.0016722479791545508
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5200803279876709,
+      "gain": 0.002677382873882417,
+      "source_drop": -0.00501673038189232
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23828648030757904,
-      "gain": 1.0572443753797955e-09,
-      "source_drop": -0.005016724202146494
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5180723071098328,
+      "gain": 0.000669361996044282,
+      "source_drop": -0.001672254158900377
     },
     {
       "room": "classroom",
       "seed": 3,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.23828647925033467,
-      "post_accuracy": 0.23694778978824615,
-      "gain": -0.0013386894620885104,
-      "source_drop": -0.005852858159055674
+      "pre_accuracy": 0.5174029451137885,
+      "post_accuracy": 0.5187416076660156,
+      "gain": 0.0013386625522271434,
+      "source_drop": -0.0008361202019911973
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.2811245024204254,
-      "gain": -0.00669343599992267,
-      "source_drop": -0.009197339764406842
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5227577090263367,
+      "gain": 0.004685419869710161,
+      "source_drop": -0.002508382334757031
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.27710843086242676,
-      "gain": -0.010709507557921327,
-      "source_drop": -0.010033473721316022
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5227577090263367,
+      "gain": 0.004685419869710161,
+      "source_drop": -0.005016724600839795
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.27242302894592285,
-      "gain": -0.015394909474425233,
-      "source_drop": -0.012541815987398786
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5234270691871643,
+      "gain": 0.005354780030537798,
+      "source_drop": -0.0058528585577489745
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.27242302894592285,
-      "gain": -0.015394909474425233,
-      "source_drop": -0.012541815987398786
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5234270691871643,
+      "gain": 0.005354780030537798,
+      "source_drop": -0.0058528585577489745
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.2804551422595978,
-      "gain": -0.007362796160750307,
-      "source_drop": -0.008361205807497663
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5234270691871643,
+      "gain": 0.005354780030537798,
+      "source_drop": -0.0016722483778478514
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.2764391005039215,
-      "gain": -0.011378837916426576,
-      "source_drop": -0.008361205807497663
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5234270691871643,
+      "gain": 0.005354780030537798,
+      "source_drop": -0.004180590643930615
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.2704150080680847,
-      "gain": -0.017402930352263368,
-      "source_drop": -0.013377949944307965
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5247657299041748,
+      "gain": 0.006693440747548296,
+      "source_drop": -0.005016724600839795
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.2704150080680847,
-      "gain": -0.017402930352263368,
-      "source_drop": -0.013377949944307965
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5247657299041748,
+      "gain": 0.006693440747548296,
+      "source_drop": -0.005016724600839795
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.27978581190109253,
-      "gain": -0.008032126519255556,
-      "source_drop": -0.006688937893679303
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5234270691871643,
+      "gain": 0.005354780030537798,
+      "source_drop": -0.0033444566870214354
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.2751004099845886,
-      "gain": -0.012717528435759462,
-      "source_drop": -0.009197339764406842
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5234270691871643,
+      "gain": 0.005354780030537798,
+      "source_drop": -0.0016722483778478514
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.2704150080680847,
-      "gain": -0.017402930352263368,
-      "source_drop": -0.010869548073580426
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5247657299041748,
+      "gain": 0.006693440747548296,
+      "source_drop": -0.004180590643930615
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.2704150080680847,
-      "gain": -0.017402930352263368,
-      "source_drop": -0.011705682030489606
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5247657299041748,
+      "gain": 0.006693440747548296,
+      "source_drop": -0.005016724600839795
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.28313252329826355,
-      "gain": -0.004685415122084535,
-      "source_drop": -0.006688937893679303
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5227577090263367,
+      "gain": 0.004685419869710161,
+      "source_drop": -0.0033444566870214354
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.2764391005039215,
-      "gain": -0.011378837916426576,
-      "source_drop": -0.008361205807497663
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5254350900650024,
+      "gain": 0.007362800908375933,
+      "source_drop": -0.0016722483778478514
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.2704150080680847,
-      "gain": -0.017402930352263368,
-      "source_drop": -0.010869548073580426
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5240963697433472,
+      "gain": 0.006024080586720659,
+      "source_drop": -0.0033444566870214354
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.26773762702941895,
-      "gain": -0.02008031139092914,
-      "source_drop": -0.012541815987398786
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5247657299041748,
+      "gain": 0.006693440747548296,
+      "source_drop": -0.005016724600839795
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.2858099043369293,
-      "gain": -0.0020080340834187638,
-      "source_drop": -0.007525071850588483
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5214189887046814,
+      "gain": 0.003346699548054888,
+      "source_drop": -0.002508382334757031
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.2764391005039215,
-      "gain": -0.011378837916426576,
-      "source_drop": -0.006688937893679303
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5234270691871643,
+      "gain": 0.005354780030537798,
+      "source_drop": -0.002508382334757031
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.274431049823761,
-      "gain": -0.013386888596587099,
-      "source_drop": -0.009197339764406842
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5247657299041748,
+      "gain": 0.006693440747548296,
+      "source_drop": -0.004180590643930615
     },
     {
       "room": "classroom",
       "seed": 4,
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "pre_accuracy": 0.2878179384203481,
-      "post_accuracy": 0.27242302894592285,
-      "gain": -0.015394909474425233,
-      "source_drop": -0.010869548073580426
+      "pre_accuracy": 0.5180722891566265,
+      "post_accuracy": 0.5247657299041748,
+      "gain": 0.006693440747548296,
+      "source_drop": -0.004180590643930615
     }
   ],
   "summary": [
     {
       "confidence_threshold": 0.0,
       "alignment_threshold": 1.0,
-      "mean_gain": 0.00035698384325826097,
-      "std_gain": 0.007538315701934376,
-      "neg_rate": 0.4666666666666667,
-      "mean_source_drop": -0.010646601537929864,
+      "mean_gain": 0.006827314481943751,
+      "std_gain": 0.006099067201949457,
+      "neg_rate": 0.06666666666666667,
+      "mean_source_drop": -0.0019509445198935198,
       "n": 15
     },
     {
       "confidence_threshold": 0.0,
       "alignment_threshold": 2.0,
-      "mean_gain": -0.0012940658104308056,
-      "std_gain": 0.006860909090400685,
-      "neg_rate": 0.5333333333333333,
-      "mean_source_drop": -0.014437007923987399,
+      "mean_gain": 0.00526550986946613,
+      "std_gain": 0.00576272335843149,
+      "neg_rate": 0.26666666666666666,
+      "mean_source_drop": -0.001616498884415818,
       "n": 15
     },
     {
       "confidence_threshold": 0.0,
       "alignment_threshold": 5.0,
-      "mean_gain": -0.0026773753734318025,
-      "std_gain": 0.007980165473127401,
-      "neg_rate": 0.4666666666666667,
-      "mean_source_drop": -0.017558527012732517,
+      "mean_gain": 0.004596165603210434,
+      "std_gain": 0.006329082997508167,
+      "neg_rate": 0.3333333333333333,
+      "mean_source_drop": -0.0020624290474814105,
       "n": 15
     },
     {
       "confidence_threshold": 0.0,
       "alignment_threshold": 10.0,
-      "mean_gain": -0.003034359511920572,
-      "std_gain": 0.007963572581594485,
-      "neg_rate": 0.5333333333333333,
-      "mean_source_drop": -0.018171681980358453,
+      "mean_gain": 0.004551541592488591,
+      "std_gain": 0.006356001306478724,
+      "neg_rate": 0.3333333333333333,
+      "mean_source_drop": -0.0021181713112753556,
       "n": 15
     },
     {
       "confidence_threshold": 0.1,
       "alignment_threshold": 1.0,
-      "mean_gain": 0.0006247209537140919,
-      "std_gain": 0.0075068360556286694,
-      "neg_rate": 0.4,
-      "mean_source_drop": -0.010479372759726536,
+      "mean_gain": 0.006559574391255681,
+      "std_gain": 0.006228850684092224,
+      "neg_rate": 0.13333333333333333,
+      "mean_source_drop": -0.0015050183304709122,
       "n": 15
     },
     {
       "confidence_threshold": 0.1,
       "alignment_threshold": 2.0,
-      "mean_gain": -0.0009817027024316396,
-      "std_gain": 0.006806587984117888,
-      "neg_rate": 0.6,
-      "mean_source_drop": -0.013768116653031995,
+      "mean_gain": 0.0056224940079549,
+      "std_gain": 0.0060917192037224415,
+      "neg_rate": 0.2,
+      "mean_source_drop": -0.0018394719132345842,
       "n": 15
     },
     {
       "confidence_threshold": 0.1,
       "alignment_threshold": 5.0,
-      "mean_gain": -0.002008032100586852,
-      "std_gain": 0.007640072887726645,
-      "neg_rate": 0.5333333333333333,
-      "mean_source_drop": -0.017001120269365004,
+      "mean_gain": 0.004819277709533676,
+      "std_gain": 0.006656046622508356,
+      "neg_rate": 0.3333333333333333,
+      "mean_source_drop": -0.0016722411482097631,
       "n": 15
     },
     {
       "confidence_threshold": 0.1,
       "alignment_threshold": 10.0,
-      "mean_gain": -0.0025435053280877676,
-      "std_gain": 0.007728364938614486,
-      "neg_rate": 0.5333333333333333,
-      "mean_source_drop": -0.017558527012732517,
+      "mean_gain": 0.004685413624654119,
+      "std_gain": 0.006731581426345281,
+      "neg_rate": 0.3333333333333333,
+      "mean_source_drop": -0.0020624250738384255,
       "n": 15
     },
     {
       "confidence_threshold": 0.2,
       "alignment_threshold": 1.0,
-      "mean_gain": 0.0003123638061794035,
-      "std_gain": 0.007287939193461189,
-      "neg_rate": 0.4666666666666667,
-      "mean_source_drop": -0.009810479501949639,
+      "mean_gain": 0.006961182540466293,
+      "std_gain": 0.005706553117914479,
+      "neg_rate": 0.06666666666666667,
+      "mean_source_drop": -0.0018394719132345842,
       "n": 15
     },
     {
       "confidence_threshold": 0.2,
       "alignment_threshold": 2.0,
-      "mean_gain": -0.0012494408062982169,
-      "std_gain": 0.0070331954277060545,
-      "neg_rate": 0.6,
-      "mean_source_drop": -0.013377926766938856,
+      "mean_gain": 0.005845610087921127,
+      "std_gain": 0.006047770045075927,
+      "neg_rate": 0.13333333333333333,
+      "mean_source_drop": -0.0016722451218527483,
       "n": 15
     },
     {
       "confidence_threshold": 0.2,
       "alignment_threshold": 5.0,
-      "mean_gain": -0.002097276148387552,
-      "std_gain": 0.007610139251617972,
-      "neg_rate": 0.6,
-      "mean_source_drop": -0.015719066083497695,
+      "mean_gain": 0.005131629890014633,
+      "std_gain": 0.006912951116380518,
+      "neg_rate": 0.26666666666666666,
+      "mean_source_drop": -0.0019509524671794897,
       "n": 15
     },
     {
       "confidence_threshold": 0.2,
       "alignment_threshold": 10.0,
-      "mean_gain": -0.002008032100586852,
-      "std_gain": 0.007698492746135004,
-      "neg_rate": 0.6,
-      "mean_source_drop": -0.0168896397154201,
+      "mean_gain": 0.005087015813400253,
+      "std_gain": 0.006955110138825582,
+      "neg_rate": 0.3333333333333333,
+      "mean_source_drop": -0.002173913575069301,
       "n": 15
     },
     {
       "confidence_threshold": 0.3,
       "alignment_threshold": 1.0,
-      "mean_gain": 0.00017849574765686123,
-      "std_gain": 0.007242126109238232,
-      "neg_rate": 0.4666666666666667,
-      "mean_source_drop": -0.00875139437125811,
+      "mean_gain": 0.006782686497578923,
+      "std_gain": 0.0059592856654012575,
+      "neg_rate": 0.06666666666666667,
+      "mean_source_drop": -0.0017837256757976538,
       "n": 15
     },
     {
       "confidence_threshold": 0.3,
       "alignment_threshold": 2.0,
-      "mean_gain": -0.0013386878343311555,
-      "std_gain": 0.007457791322282603,
-      "neg_rate": 0.5333333333333333,
-      "mean_source_drop": -0.012430322190192234,
+      "mean_gain": 0.0064257063327331386,
+      "std_gain": 0.006185546652753915,
+      "neg_rate": 0.2,
+      "mean_source_drop": -0.001616502858058803,
       "n": 15
     },
     {
       "confidence_threshold": 0.3,
       "alignment_threshold": 5.0,
-      "mean_gain": -0.002275768217631937,
-      "std_gain": 0.007609857538561614,
-      "neg_rate": 0.6,
-      "mean_source_drop": -0.015217385709352186,
+      "mean_gain": 0.005443993991424545,
+      "std_gain": 0.007172864527280851,
+      "neg_rate": 0.26666666666666666,
+      "mean_source_drop": -0.0018952062297425594,
       "n": 15
     },
     {
       "confidence_threshold": 0.3,
       "alignment_threshold": 10.0,
-      "mean_gain": -0.0025435083083200066,
-      "std_gain": 0.008004985942325769,
-      "neg_rate": 0.6,
-      "mean_source_drop": -0.016109253982769342,
+      "mean_gain": 0.005087017800221746,
+      "std_gain": 0.006725874363493694,
+      "neg_rate": 0.26666666666666666,
+      "mean_source_drop": -0.0021739096014263158,
       "n": 15
     },
     {
       "confidence_threshold": 0.5,
       "alignment_threshold": 1.0,
-      "mean_gain": -0.00013386438011006585,
-      "std_gain": 0.006665653487567979,
-      "neg_rate": 0.4666666666666667,
-      "mean_source_drop": -0.007580824712978692,
+      "mean_gain": 0.006425694411804184,
+      "std_gain": 0.006149232959632768,
+      "neg_rate": 0.13333333333333333,
+      "mean_source_drop": -0.0017279834120037085,
       "n": 15
     },
     {
       "confidence_threshold": 0.5,
       "alignment_threshold": 2.0,
-      "mean_gain": -0.0014279368491855867,
-      "std_gain": 0.00814632578219974,
-      "neg_rate": 0.4666666666666667,
-      "mean_source_drop": -0.011426973362830172,
+      "mean_gain": 0.006514950380533838,
+      "std_gain": 0.006347258545333711,
+      "neg_rate": 0.13333333333333333,
+      "mean_source_drop": -0.0016722451218527483,
       "n": 15
     },
     {
       "confidence_threshold": 0.5,
       "alignment_threshold": 5.0,
-      "mean_gain": -0.0016956739596414175,
-      "std_gain": 0.00728793753453897,
-      "neg_rate": 0.5333333333333333,
-      "mean_source_drop": -0.013768120626674981,
+      "mean_gain": 0.00553324201286823,
+      "std_gain": 0.007255374027803226,
+      "neg_rate": 0.26666666666666666,
+      "mean_source_drop": -0.002341136392808152,
       "n": 15
     },
     {
       "confidence_threshold": 0.5,
       "alignment_threshold": 10.0,
-      "mean_gain": -0.0021865261566527293,
-      "std_gain": 0.0067764340275268935,
-      "neg_rate": 0.6,
-      "mean_source_drop": -0.014604232728547743,
+      "mean_gain": 0.005042389815856918,
+      "std_gain": 0.0072659410353118105,
+      "neg_rate": 0.26666666666666666,
+      "mean_source_drop": -0.0022296518652202614,
       "n": 15
     }
   ],
@@ -3206,6 +3206,6 @@
       5.0,
       10.0
     ],
-    "elapsed_seconds": 362.4308595787734
+    "elapsed_seconds": 823.4751237556338
   }
 }

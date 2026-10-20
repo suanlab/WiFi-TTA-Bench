@@ -41,19 +41,19 @@
     "widar_bvp": {
       "mlp": {
         "n": 15,
-        "source_train_accuracy": 0.8740725244072524,
-        "source_val_accuracy": 0.5336120401337793,
-        "target_accuracy": 0.3603748326639893,
-        "train_to_target_drop_pp": 51.36976917432631,
-        "val_to_target_drop_pp": 17.323720746979
+        "source_train_accuracy": 0.9873361227336123,
+        "source_val_accuracy": 0.7382943143812709,
+        "target_accuracy": 0.6198125836680054,
+        "train_to_target_drop_pp": 36.752353906560685,
+        "val_to_target_drop_pp": 11.848173071326551
       },
       "mlp_bn": {
         "n": 15,
-        "source_train_accuracy": 0.9517294281729428,
-        "source_val_accuracy": 0.558082497212932,
-        "target_accuracy": 0.36903168228469435,
-        "train_to_target_drop_pp": 58.26977458882485,
-        "val_to_target_drop_pp": 18.905081492823765
+        "source_train_accuracy": 0.9931659693165968,
+        "source_val_accuracy": 0.7567447045707916,
+        "target_accuracy": 0.6309683177153057,
+        "train_to_target_drop_pp": 36.219765160129114,
+        "val_to_target_drop_pp": 12.577638685548587
       }
     }
   }

@@ -257,36 +257,36 @@
       "default": {
         "learning_rate": 0.0005,
         "steps": 5,
-        "mean_pp": -6.581883087907185,
-        "ci_lower_pp": -8.902275769745648,
-        "ci_upper_pp": -4.3060017849174494,
-        "harm_rate": 0.9333333333333333,
-        "harm_rate_gt1pp": 0.8666666666666667
+        "mean_pp": -10.200803212851405,
+        "ci_lower_pp": -13.534136546184737,
+        "ci_upper_pp": -7.063699241410086,
+        "harm_rate": 1.0,
+        "harm_rate_gt1pp": 1.0
       },
       "source_selected": {
         "learning_rate": 0.0001,
         "steps": 1,
-        "mean_pp": -0.21865238732708664,
-        "ci_lower_pp": -0.31682284694332913,
-        "ci_upper_pp": -0.12048192771084339,
-        "harm_rate": 0.8666666666666667,
-        "harm_rate_gt1pp": 0.0
+        "mean_pp": -0.09370816599732157,
+        "ci_lower_pp": -0.33467202141900987,
+        "ci_upper_pp": 0.09370816599732527,
+        "harm_rate": 0.5333333333333333,
+        "harm_rate_gt1pp": 0.06666666666666667
       },
       "oracle": {
         "learning_rate": 0.0001,
         "steps": 1,
-        "mean_pp": -0.21865238732708664,
-        "ci_lower_pp": -0.3123605533244101,
-        "ci_upper_pp": -0.12048192771084373,
-        "harm_rate": 0.8666666666666667,
-        "harm_rate_gt1pp": 0.0
+        "mean_pp": -0.09370816599732157,
+        "ci_lower_pp": -0.32128514056225005,
+        "ci_upper_pp": 0.09817045961624397,
+        "harm_rate": 0.5333333333333333,
+        "harm_rate_gt1pp": 0.06666666666666667
       },
       "worst": {
         "learning_rate": 0.005,
         "steps": 20,
-        "mean_pp": -19.48683623382419,
-        "ci_lower_pp": -21.825189647478805,
-        "ci_upper_pp": -17.19767960731816,
+        "mean_pp": -45.24765729585006,
+        "ci_lower_pp": -48.38029897367247,
+        "ci_upper_pp": -41.820504239178945,
         "harm_rate": 1.0,
         "harm_rate_gt1pp": 1.0
       }
@@ -298,38 +298,38 @@
       "default": {
         "learning_rate": 0.0005,
         "steps": 5,
-        "mean_pp": -0.04908522980812199,
-        "ci_lower_pp": -0.16956715751896503,
-        "ci_upper_pp": 0.0490852298081205,
-        "harm_rate": 0.6,
+        "mean_pp": 0.02677376171352182,
+        "ci_lower_pp": -0.09370816599732083,
+        "ci_upper_pp": 0.1427933958054428,
+        "harm_rate": 0.3333333333333333,
         "harm_rate_gt1pp": 0.0
       },
       "source_selected": {
-        "learning_rate": 0.0001,
+        "learning_rate": 0.0005,
         "steps": 5,
-        "mean_pp": -0.01784917447568035,
-        "ci_lower_pp": -0.05800981704596087,
-        "ci_upper_pp": 0.022311468094600162,
-        "harm_rate": 0.4,
+        "mean_pp": 0.02677376171352182,
+        "ci_lower_pp": -0.09370816599732085,
+        "ci_upper_pp": 0.14279339580544803,
+        "harm_rate": 0.3333333333333333,
         "harm_rate_gt1pp": 0.0
       },
       "oracle": {
         "learning_rate": 0.0005,
-        "steps": 1,
-        "mean_pp": -0.004462293618920921,
-        "ci_lower_pp": -0.044622936189201066,
-        "ci_upper_pp": 0.035698348951359225,
-        "harm_rate": 0.3333333333333333,
+        "steps": 20,
+        "mean_pp": 0.09817045961624249,
+        "ci_lower_pp": -0.09817045961624397,
+        "ci_upper_pp": 0.3212851405622485,
+        "harm_rate": 0.4,
         "harm_rate_gt1pp": 0.0
       },
       "worst": {
         "learning_rate": 0.005,
         "steps": 20,
-        "mean_pp": -2.7755466309683174,
-        "ci_lower_pp": -4.176818384649709,
-        "ci_upper_pp": -1.4725568942436416,
-        "harm_rate": 0.8666666666666667,
-        "harm_rate_gt1pp": 0.5333333333333333
+        "mean_pp": -1.021865238732708,
+        "ci_lower_pp": -2.266956715751895,
+        "ci_upper_pp": -0.06693440428380047,
+        "harm_rate": 0.7333333333333333,
+        "harm_rate_gt1pp": 0.4
       }
     },
     {
@@ -339,36 +339,36 @@
       "default": {
         "learning_rate": 0.0005,
         "steps": 5,
-        "mean_pp": -0.6068719321731375,
-        "ci_lower_pp": -1.0084783578759489,
-        "ci_upper_pp": -0.21419009370816722,
-        "harm_rate": 0.7333333333333333,
-        "harm_rate_gt1pp": 0.3333333333333333
+        "mean_pp": -0.29897367246764767,
+        "ci_lower_pp": -0.7853636769299416,
+        "ci_upper_pp": 0.1784917447568043,
+        "harm_rate": 0.6,
+        "harm_rate_gt1pp": 0.26666666666666666
       },
       "source_selected": {
         "learning_rate": 0.0001,
         "steps": 1,
-        "mean_pp": -0.10263275323516415,
-        "ci_lower_pp": -0.2721999107541295,
-        "ci_upper_pp": 0.07139669790272103,
-        "harm_rate": 0.6666666666666666,
+        "mean_pp": -0.022311468094599423,
+        "ci_lower_pp": -0.2275769745649255,
+        "ci_upper_pp": 0.18741633199464536,
+        "harm_rate": 0.5333333333333333,
         "harm_rate_gt1pp": 0.0
       },
       "oracle": {
         "learning_rate": 0.0005,
-        "steps": 1,
-        "mean_pp": 0.01784917447567998,
-        "ci_lower_pp": -0.17849174475680574,
-        "ci_upper_pp": 0.21419009370816536,
-        "harm_rate": 0.4666666666666667,
-        "harm_rate_gt1pp": 0.0
+        "steps": 20,
+        "mean_pp": 0.3034359660865693,
+        "ci_lower_pp": -0.5220883534136529,
+        "ci_upper_pp": 1.0887996430165108,
+        "harm_rate": 0.3333333333333333,
+        "harm_rate_gt1pp": 0.2
       },
       "worst": {
         "learning_rate": 0.005,
         "steps": 20,
-        "mean_pp": -14.02052655064703,
-        "ci_lower_pp": -15.814368585452923,
-        "ci_upper_pp": -12.257920571173583,
+        "mean_pp": -27.501115573404725,
+        "ci_lower_pp": -32.115350290049086,
+        "ci_upper_pp": -23.172579205711738,
         "harm_rate": 1.0,
         "harm_rate_gt1pp": 1.0
       }
@@ -380,38 +380,38 @@
       "default": {
         "learning_rate": 0.0005,
         "steps": 5,
-        "mean_pp": -0.37483266398929077,
-        "ci_lower_pp": -0.7452030343596613,
-        "ci_upper_pp": -0.022311468094601633,
-        "harm_rate": 0.6,
-        "harm_rate_gt1pp": 0.26666666666666666
+        "mean_pp": -0.12048192771084265,
+        "ci_lower_pp": -0.43730477465417106,
+        "ci_upper_pp": 0.17849174475680352,
+        "harm_rate": 0.4,
+        "harm_rate_gt1pp": 0.13333333333333333
       },
       "source_selected": {
         "learning_rate": 0.0001,
         "steps": 1,
-        "mean_pp": -0.12494422132976357,
-        "ci_lower_pp": -0.3123605533244086,
-        "ci_upper_pp": 0.0669344042838016,
-        "harm_rate": 0.6666666666666666,
+        "mean_pp": -0.031236055332441264,
+        "ci_lower_pp": -0.22311468094600684,
+        "ci_upper_pp": 0.1607541276215978,
+        "harm_rate": 0.5333333333333333,
         "harm_rate_gt1pp": 0.0
       },
       "oracle": {
         "learning_rate": 0.005,
-        "steps": 1,
-        "mean_pp": -0.07139669790272252,
-        "ci_lower_pp": -0.24988844265952792,
-        "ci_upper_pp": 0.10263275323516231,
-        "harm_rate": 0.6666666666666666,
-        "harm_rate_gt1pp": 0.0
+        "steps": 20,
+        "mean_pp": 0.0490852298081205,
+        "ci_lower_pp": -0.4463409192324871,
+        "ci_upper_pp": 0.5131637661758148,
+        "harm_rate": 0.4,
+        "harm_rate_gt1pp": 0.13333333333333333
       },
       "worst": {
         "learning_rate": 0.0001,
-        "steps": 20,
-        "mean_pp": -0.9058456046407851,
-        "ci_lower_pp": -1.4948683623382417,
-        "ci_upper_pp": -0.3748326639892903,
-        "harm_rate": 0.8,
-        "harm_rate_gt1pp": 0.4
+        "steps": 5,
+        "mean_pp": -0.13833110218652336,
+        "ci_lower_pp": -0.4506916555109331,
+        "ci_upper_pp": 0.1427933958054465,
+        "harm_rate": 0.4,
+        "harm_rate_gt1pp": 0.13333333333333333
       }
     }
   ],
@@ -645,11 +645,11 @@
       "backbone": "mlp",
       "method": "collapse_guarded_entropy_tta",
       "stream": "class_blocked",
-      "mean_pp": -0.07139669790272214,
-      "ci_lower_pp": -0.28112449799196804,
-      "ci_upper_pp": 0.0669344042838016,
-      "harm_rate": 0.06666666666666667,
-      "harm_rate_gt1pp": 0.06666666666666667,
+      "mean_pp": 0.0,
+      "ci_lower_pp": 0.0,
+      "ci_upper_pp": 0.0,
+      "harm_rate": 0.0,
+      "harm_rate_gt1pp": 0.0,
       "accepted_steps": [
         0,
         0,
@@ -664,8 +664,8 @@
         0,
         0,
         0,
-        1,
-        2
+        0,
+        0
       ]
     },
     {
@@ -673,27 +673,27 @@
       "backbone": "mlp",
       "method": "collapse_guarded_entropy_tta",
       "stream": "iid",
-      "mean_pp": -0.6024096385542177,
-      "ci_lower_pp": -1.03078982597055,
-      "ci_upper_pp": -0.18741633199464575,
-      "harm_rate": 0.5333333333333333,
-      "harm_rate_gt1pp": 0.4,
+      "mean_pp": -1.9901829540383764,
+      "ci_lower_pp": -3.159303882195451,
+      "ci_upper_pp": -0.9415439535921469,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.6,
       "accepted_steps": [
         0,
         0,
-        0,
-        0,
-        0,
         1,
         1,
         1,
         1,
+        1,
+        1,
+        1,
         2,
         2,
         2,
-        2,
-        2,
-        3
+        3,
+        5,
+        5
       ]
     },
     {
@@ -701,9 +701,9 @@
       "backbone": "mlp",
       "method": "entropy_tta",
       "stream": "class_blocked",
-      "mean_pp": -9.388665774207944,
-      "ci_lower_pp": -11.726907630522089,
-      "ci_upper_pp": -7.103971441320837,
+      "mean_pp": -21.22713074520304,
+      "ci_lower_pp": -27.880633645693884,
+      "ci_upper_pp": -14.71207050423918,
       "harm_rate": 1.0,
       "harm_rate_gt1pp": 1.0,
       "accepted_steps": [
@@ -729,11 +729,11 @@
       "backbone": "mlp",
       "method": "entropy_tta",
       "stream": "iid",
-      "mean_pp": -6.581883087907185,
-      "ci_lower_pp": -8.902387327086123,
-      "ci_upper_pp": -4.270303435966088,
-      "harm_rate": 0.9333333333333333,
-      "harm_rate_gt1pp": 0.8666666666666667,
+      "mean_pp": -10.200803212851405,
+      "ci_lower_pp": -13.418228469433288,
+      "ci_upper_pp": -7.12617135207497,
+      "harm_rate": 1.0,
+      "harm_rate_gt1pp": 1.0,
       "accepted_steps": [
         5,
         5,

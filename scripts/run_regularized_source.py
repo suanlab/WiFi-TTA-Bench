@@ -157,10 +157,12 @@ def _mean(values: list[float]) -> float:
     return sum(values) / len(values) if values else float("nan")
 
 
-def stage_search(output_dir: Path, only: tuple[str, ...] = ()) -> dict[str, object]:
+def stage_search(
+    output_dir: Path, only: tuple[str, ...] = (), force: bool = False
+) -> dict[str, object]:
     path = output_dir / "search.json"
     summaries: dict[str, dict[str, float]] = (
-        json.loads(path.read_text())["summaries"] if path.exists() else {}
+        json.loads(path.read_text())["summaries"] if path.exists() and not force else {}
     )
     for name, overrides in SEARCH_GRID.items():
         if name in summaries and name not in only:
@@ -282,11 +284,16 @@ def main() -> None:
         default="",
         help="Comma-separated grid names to (re)run; others are reused.",
     )
+    parser.add_argument("--force", action="store_true", help="Re-run every search arm.")
     args = parser.parse_args()
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     if args.stage == "search":
-        stage_search(output_dir, tuple(n for n in args.only.split(",") if n.strip()))
+        stage_search(
+            output_dir,
+            tuple(n for n in args.only.split(",") if n.strip()),
+            force=args.force,
+        )
     else:
         stage_tta(output_dir, tuple(n for n in args.only.split(",") if n.strip()))
 

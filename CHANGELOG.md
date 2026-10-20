@@ -11,11 +11,24 @@ the supplement.
 
 ### Corrected
 
-- **Widar_BVP labels (known defect, not yet fixed)**: `scripts/prepare_widar_bvp.py`
-  maps gesture IDs 1-6 to the same six gestures on every recording date, but in Widar3.0
-  the meaning of a gesture ID changes between dates. The prepared Widar_BVP labels are
-  therefore wrong on most dates, and every Widar_BVP number in the released outputs is
-  affected. Rebuilding needs the raw BVP archive and a per-date gesture mapping.
+- **Widar_BVP labels**: `scripts/prepare_widar_bvp.py` mapped gesture IDs 1-6 to the same
+  six gestures on every recording date, but in Widar3.0 the meaning of a gesture ID changes
+  between dates (and between users on 20181205/08/09). Among the candidate files, 65 % of
+  room-1 and 52 % of room-2 labels were wrong; room 3 was correct; the date-to-room
+  assignment was correct. Labels now follow the dataset README's per-date table
+  (`GESTURES_BY_DATE`), with the same six shared gestures, 498 samples per room and gesture
+  and 8,964 samples; file selection sorts the archive listing so it no longer depends on
+  zip order; `sources.txt` records each sample's upstream file (bundle protocol 2.0). Every
+  Widar_BVP artifact was regenerated (2026-10-20); the pre-fix artifacts are at git tag
+  `pre-widar-label-fix` and the old prepared bundle is kept as superseded. Primary-MLP
+  source validation / target accuracy: 73.8 % / 62.0 % (was 53.4 % / 36.0 %); CNN-GRU:
+  79.5 % / 68.7 % (was 54.9 % / 37.2 %).
+- **Cached results under `--force`**: `scripts/run_backbone_breadth.py` skipped any cell
+  whose output existed and `scripts/run_regularized_source.py --stage search` reused arms
+  already in `search.json`, so `reproduce_all_results.py --force` silently kept stale
+  results for them. Both scripts take `--force` now and the reproducer passes it; the Widar
+  backbone-breadth cells, the regularisation search and the TTA stage that reads its
+  selection were regenerated (stale copies in `superseded_2026-10-21/`).
 - **BatchNorm statistics in adaptation**: each unguarded adaptation step also scored its
   objective with a train-mode forward pass, so five steps updated BatchNorm running
   statistics ten times. `TTAExperimentConfig.freeze_bn_in_scoring_pass` (off by default, so

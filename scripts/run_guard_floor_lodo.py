@@ -68,6 +68,12 @@ def run_grid() -> dict[str, dict[str, float]]:
             if floor == FLOORS[0]:
                 cell["unguarded"] = _mean_gain_pp(rows, "entropy_tta")
             cell[f"{floor}"] = _mean_gain_pp(rows, "collapse_guarded_entropy_tta")
+            guarded = [r for r in rows if r["method"] == "collapse_guarded_entropy_tta"]
+            # Runs where the guard accepted no step, i.e. declined to adapt.
+            cell[f"{floor}_abstained"] = float(
+                sum(int(r["accepted_steps"]) == 0 for r in guarded)  # type: ignore[call-overload]
+            )
+            cell[f"{floor}_runs"] = float(len(guarded))
             logger.info(
                 "%s tau=%.2f guarded %+.2f pp", dataset, floor, cell[f"{floor}"]
             )
@@ -84,6 +90,7 @@ def lodo(grid: dict[str, dict[str, float]]) -> dict[str, dict[str, float | str]]
         )
         unguarded = grid[held_out]["unguarded"]
         guarded = grid[held_out][f"{chosen}"]
+        abstained = grid[held_out].get(f"{chosen}_abstained")
         out[held_out] = {
             "chosen_floor": chosen,
             "unguarded_pp": unguarded,
@@ -92,6 +99,7 @@ def lodo(grid: dict[str, dict[str, float]]) -> dict[str, dict[str, float | str]]
                 100.0 * (guarded - unguarded) / -unguarded if unguarded < 0 else "n/a"
             ),
             "in_sample_best_floor": max(FLOORS, key=lambda f: grid[held_out][f"{f}"]),
+            "abstained_runs": abstained if abstained is not None else "n/a",
         }
     return out
 

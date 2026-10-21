@@ -11,7 +11,7 @@ structural aggregation (Table 10).
 
 Preconditions:
     * ``data/prepared/{widar_bvp,ntufi_har,signfi_top10}`` populated by the
-      per-dataset preparation scripts (see ``SUBMISSION_README.md``).
+      per-dataset preparation scripts (see ``BENCHMARK.md``).
     * ``pip install -e ".[dev]"`` run from the repo root.
 
 Usage:

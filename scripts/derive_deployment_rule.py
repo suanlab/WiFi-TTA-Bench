@@ -142,13 +142,13 @@ HARM_SOURCES: tuple[HarmSource, ...] = (
     HarmSource(
         "signfi_top10",
         "mlp",
-        "outputs/deployment_rule/signfi_mlp/signfi_top10_lame_sar_cotta.json",
+        "outputs/guard_backbone/signfi_mlp/signfi_top10_lame_sar_cotta.json",
         None,
     ),
     HarmSource(
         "signfi_top10",
         "cnn1d",
-        "outputs/deployment_rule/signfi_cnn1d/signfi_top10_lame_sar_cotta.json",
+        "outputs/guard_backbone/signfi_cnn1d/signfi_top10_lame_sar_cotta.json",
         None,
     ),
 )

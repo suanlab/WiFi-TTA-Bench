@@ -1,14 +1,15 @@
-"""WiFi-TTA-Bench: A Benchmark for TTA Under Physics-Structured Shift.
+"""WiFi-TTA-Bench: a harm-aware benchmark for test-time adaptation on WiFi CSI.
 
 Quick start:
     from wifi_tta_bench import load_dataset, list_methods, evaluate
 
     dataset = load_dataset("widar_bvp")
-    results = evaluate("tent", dataset, seeds=5)
-    print(results["mean_gain"], results["ci"])
+    result = evaluate("tent", dataset, seeds=5)
+    print(result.mean_gain, result.ci_lower, result.ci_upper,
+          result.negative_adaptation_rate)
 """
 
 from wifi_tta_bench.api import evaluate, list_datasets, list_methods, load_dataset
 
 __all__ = ["load_dataset", "list_datasets", "list_methods", "evaluate"]
-__version__ = "0.1.0"
+__version__ = "2.0.0"

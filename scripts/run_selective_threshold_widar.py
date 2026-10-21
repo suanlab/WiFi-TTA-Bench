@@ -21,6 +21,7 @@ import torch
 
 from pinn4csi.training.paper2_tta import (
     TTAExperimentConfig,
+    _set_seed,
     adapt_model_for_tta_with_summary,
     build_prepared_tta_loaders,
     compute_tta_reference_stats,
@@ -88,6 +89,8 @@ def main() -> None:
                 train_env_ids=train_envs,
                 test_env_ids=test_envs,
             )
+            # Same seeding as run_tta_suite, so these are the benchmark's models.
+            _set_seed(seed)
             source_model = train_source_only_tta_model(
                 source_train_loader=source_train,
                 source_val_loader=source_val,

@@ -48,8 +48,8 @@
   "name": "WiFi-TTA-Bench",
   "description": "Harm-aware benchmark for test-time adaptation (TTA) on WiFi Channel State Information (CSI). It evaluates ten adaptation methods (TENT, SHOT/IM, entropy-based simplified ports of SAR, CoTTA and T3A, physics-prior variants) plus SAR, CoTTA and T3A as published, on three real WiFi CSI datasets, six backbones and a synthetic control. It does not redistribute raw CSI; it provides split definitions, evaluation protocol artifacts and per-method JSON summaries.",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
-  "version": "1.1.0",
-  "dateModified": "2026-10-21",
+  "version": "2.0.0",
+  "dateModified": "2026-10-22",
   "keywords": [
     "test-time adaptation",
     "domain adaptation",
@@ -94,7 +94,7 @@
       "name": "widar-full-tta-summary",
       "contentUrl": "method_summaries/widar.json",
       "encodingFormat": "application/json",
-      "sha256": "4a763dadff6c302515ad12c3925e9fc83ab143b15b865b065cb05486939dd2de",
+      "sha256": "0574ec9f962e4828ebf26e42fa7f9398f2d37442442d841288924502410c63b6",
       "description": "Per-method mean gain + 95% bootstrap CI + Cohen's d + negative adaptation rate for Widar_BVP (primary MLP backbone, n=15 paired observations)."
     },
     {
@@ -103,7 +103,7 @@
       "name": "ntufi-tta-summary",
       "contentUrl": "method_summaries/ntufi.json",
       "encodingFormat": "application/json",
-      "sha256": "e36e7a453064437085b6b1634e9ae96444079d9d1c5f55e2a9b968cccecdbcaf",
+      "sha256": "a448b9a66513209a53e7eac129cd4d404656ca5cd3f033412248862565ab3d83",
       "description": "Per-method summary for NTU-Fi HAR (primary MLP, n=15)."
     },
     {
@@ -112,7 +112,7 @@
       "name": "signfi-tta-summary",
       "contentUrl": "method_summaries/signfi.json",
       "encodingFormat": "application/json",
-      "sha256": "2b8bb182b0d3935bec03dcc08627e854ab2a6dafff4d4ffc922e4e8008315f8d",
+      "sha256": "323e3c6ba3a82dac7263578a058b95c527cead467cc3b882b01e8856495ff0f7",
       "description": "Per-method summary for SignFi-10 (primary MLP, n=15)."
     },
     {
@@ -121,7 +121,7 @@
       "name": "widar-lame-sar-cotta",
       "contentUrl": "method_summaries/widar_bvp_lame_sar_cotta.json",
       "encodingFormat": "application/json",
-      "sha256": "f10b7c26de1bda74aa3a89012a7990ed5aad802e19f087a27a783cdbdb099173",
+      "sha256": "6d21efbf0b6f4ad82c8d5eabfffab349feffccf7525b8e2bda29cbde384de96c",
       "description": "SAR, CoTTA, LAME on Widar_BVP (primary MLP, n=15)."
     },
     {
@@ -130,7 +130,7 @@
       "name": "ntufi-lame-sar-cotta",
       "contentUrl": "method_summaries/ntufi_lame_sar_cotta.json",
       "encodingFormat": "application/json",
-      "sha256": "0753a21827e8e734642dc43039074777e98a97f5770d757efea96d09304f7b2b",
+      "sha256": "837bc46c783ce788f77e689c1d18cb3ab96f16361ca327b489a7f14aac055d8c",
       "description": "SAR, CoTTA, LAME on NTU-Fi HAR (primary MLP, n=15)."
     },
     {
@@ -139,7 +139,7 @@
       "name": "signfi-lame-sar-cotta",
       "contentUrl": "method_summaries/signfi_lame_sar_cotta.json",
       "encodingFormat": "application/json",
-      "sha256": "5004c90ef82bb608b323d4693aebaedced3ede7b6003cc848fc5984cebb36261",
+      "sha256": "b73ff43fd4b66dc4d652d05f8cf466b909ce18826293d4a0318d6157a1853822",
       "description": "SAR, CoTTA, LAME on SignFi-10 (primary MLP, n=15)."
     },
     {
@@ -148,7 +148,7 @@
       "name": "widar-mlpbn-faithful-sar-cotta",
       "contentUrl": "method_summaries/widar_mlpbn_faithful_sar_cotta.json",
       "encodingFormat": "application/json",
-      "sha256": "9e979d0f9c73d978066cfc295fd1faccc8f0bd71dd5cf52eb1dafa5f57408ae9",
+      "sha256": "dddd624939bd0c2de97fdeaa17bf31b2d9dc02b1d91a822959b9a71c8ba6e896",
       "description": "Faithful BN-only SAR/CoTTA + full TENT on MLP+BN Widar_BVP backbone (n=15)."
     },
     {
@@ -157,7 +157,7 @@
       "name": "arch-ablation-with-ci",
       "contentUrl": "method_summaries/arch_ablation_with_ci.json",
       "encodingFormat": "application/json",
-      "sha256": "499682c42ee916b3429cb142a793b2c7afd3c593e3dd9f90f4433a80d23367e4",
+      "sha256": "644565eff19b30fd5c14884a73b766eb831769f1b7918caa4bf8ea79e6f8c4f1",
       "description": "Three-backbone architecture ablation with 95% bootstrap CIs (MLP, MLP+BN, CNN1D+BN)."
     },
     {
@@ -166,7 +166,7 @@
       "name": "faithful-tent",
       "contentUrl": "method_summaries/faithful_tent_results.json",
       "encodingFormat": "application/json",
-      "sha256": "98783f61ded5b93207e1fbe5d4dd5e43efd645113b5b6dc0955024077b42320a",
+      "sha256": "8527f168ffbd0bbc130b3f4b24b5c42718bb79e9080998cdd1fc6aef01f0ea0a",
       "description": "Faithful BN-only TENT on MLP+BN Widar_BVP (n=15)."
     },
     {
@@ -175,7 +175,7 @@
       "name": "source-overfit",
       "contentUrl": "method_summaries/source_overfit_pilot.json",
       "encodingFormat": "application/json",
-      "sha256": "ddfb6a18f30f7ce3f42bab40a1c0258136e6cc92a754eb715466b6383fa927f6",
+      "sha256": "0d35fae75d313727423323580ed15aa96837854a1dc1805b4b78839a0343b998",
       "description": "Source-overfit mitigation pilot: label smoothing alpha in {0.0, 0.1, 0.2} on Widar (n=15)."
     },
     {
@@ -184,7 +184,7 @@
       "name": "widar-per-class",
       "contentUrl": "method_summaries/widar_bvp_per_class.json",
       "encodingFormat": "application/json",
-      "sha256": "d7c08031ad7169b8ff097d4ae8a97e0ced6c1296373e8e8c976e9580041ac690",
+      "sha256": "d6a7b3284146b9af35cd35d1a1951c28dd962bfc7e66fdf92c47cf7f9087a2f6",
       "description": "Per-class Widar target accuracy and mean max-softmax confidence (source-only, aggregated over n=15 runs)."
     },
     {
@@ -193,7 +193,7 @@
       "name": "coverage-matrix",
       "contentUrl": "method_summaries/coverage_matrix.json",
       "encodingFormat": "application/json",
-      "sha256": "f52f08bc1431e8305cd9b624fc4b902856e1443af73ff9d958b8646577c07e34",
+      "sha256": "fe1325ef41a673f9b3343d6a6d92485d8e39755015b74d65d1cf75679468a94e",
       "description": "Method x dataset coverage matrix."
     },
     {
@@ -202,7 +202,7 @@
       "name": "published-ports-widar-bvp-mlp",
       "contentUrl": "method_summaries/published_ports_widar_bvp_mlp.json",
       "encodingFormat": "application/json",
-      "sha256": "0e89be4679783a9fe69303d5e3d545e9e05e43bbfce0d338e59f83d537b16d61",
+      "sha256": "bdac53d93401a28eb646443e5a8d890ca2a42d1be7a390739e0b49d31ccfedb5",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, widar_bvp with the mlp backbone (n=15)."
     },
     {
@@ -211,7 +211,7 @@
       "name": "published-ports-widar-bvp-mlp-bn",
       "contentUrl": "method_summaries/published_ports_widar_bvp_mlp_bn.json",
       "encodingFormat": "application/json",
-      "sha256": "20412dbe5a470916e345b3b552b3e2d2489045c6462e7fbc659a43c83999d228",
+      "sha256": "3d45a6eb595b31a6cc3e826e39c8b8220523ab07c2c6acfed6d3bd5ab33a61fc",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, widar_bvp with the mlp_bn backbone (n=15)."
     },
     {
@@ -220,7 +220,7 @@
       "name": "published-ports-ntufi-har-mlp",
       "contentUrl": "method_summaries/published_ports_ntufi_har_mlp.json",
       "encodingFormat": "application/json",
-      "sha256": "f128598ffaba0589715a54a5d2847a433187ef51a697cd4b29f269646c1a019c",
+      "sha256": "351f6451584a4f77f37f525becd3ca2f219ca557b1a651f3d0cd7241fe8d1275",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, ntufi_har with the mlp backbone (n=15)."
     },
     {
@@ -229,7 +229,7 @@
       "name": "published-ports-ntufi-har-mlp-bn",
       "contentUrl": "method_summaries/published_ports_ntufi_har_mlp_bn.json",
       "encodingFormat": "application/json",
-      "sha256": "94ad96f54e3931a0f4fda1a5256a731afda3124eb8588f50fe54d9d3323c559a",
+      "sha256": "c7d6f47a22235109cda4ab1b64d20f4cf96164216ae17c7fe87b86da41c3eb4c",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, ntufi_har with the mlp_bn backbone (n=15)."
     },
     {
@@ -238,7 +238,7 @@
       "name": "published-ports-signfi-top10-mlp",
       "contentUrl": "method_summaries/published_ports_signfi_top10_mlp.json",
       "encodingFormat": "application/json",
-      "sha256": "a3e869b8e548c0e72e9230b9cb421b568385c83c3634b0427a8ca8a54e0c3c79",
+      "sha256": "eb24ca5720f8a141f2db662593b2323ab2ef61946a65656a267505dfd628c173",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, signfi_top10 with the mlp backbone (n=15)."
     },
     {
@@ -247,7 +247,7 @@
       "name": "published-ports-signfi-top10-mlp-bn",
       "contentUrl": "method_summaries/published_ports_signfi_top10_mlp_bn.json",
       "encodingFormat": "application/json",
-      "sha256": "68fa201ee92a60aea8d14bd06f7519b76929e3dc81cacb3ad4e25a153cceaa79",
+      "sha256": "9d13dd173fb63238c01dbcaf8b8448ee8858ededeb782793512e1c77ce379998",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, signfi_top10 with the mlp_bn backbone (n=15)."
     },
     {
@@ -256,7 +256,7 @@
       "name": "guard-coverage",
       "contentUrl": "method_summaries/guard_coverage.json",
       "encodingFormat": "application/json",
-      "sha256": "832fbf921f1268c7adb1e522af29b2a8f0e4841a97589b0b24836a56199bea50",
+      "sha256": "37304b370e2050f88a02e9ca806c8c6c3678674873a3a2eb1b99f2d0ce956ba4",
       "description": "Every collapse-guard measurement with its unguarded arm."
     },
     {
@@ -265,7 +265,7 @@
       "name": "harm-tolerance",
       "contentUrl": "method_summaries/harm_tolerance.json",
       "encodingFormat": "application/json",
-      "sha256": "d3d7ddb550b8b5fbd3b19039d0ae6d1d44f519aa323db366358676afee074f9e",
+      "sha256": "3afa72a7a59291721c292ee6189a79e1164141795a6b13128b83eefa3942fcb0",
       "description": "Harm rates beyond one test sample and 1 pp, abstention rates and per-environment means for every reported cell."
     },
     {
@@ -274,7 +274,7 @@
       "name": "protocol-sensitivity",
       "contentUrl": "method_summaries/protocol_sensitivity.json",
       "encodingFormat": "application/json",
-      "sha256": "f6e9e1a65ef92d548089e746fe6a66509af18e616cc575830eaeb9f75c6ac5fa",
+      "sha256": "98f2e71efb94937a3ed39730672ef5a676f2a81cd515379da1bd5d395f67489d",
       "description": "Learning-rate x step-budget sweep and class-blocked stream summary."
     },
     {
@@ -283,7 +283,7 @@
       "name": "split-widar-bvp",
       "contentUrl": "splits/widar_bvp.json",
       "encodingFormat": "application/json",
-      "sha256": "1748ada5e6f57973fb4940c687eeeac29f583f01e97e462919b2f676f8aac3b7",
+      "sha256": "e211ece5d273e3f0a5773da5664d8ed08b9488f5f9b2a419eb58cdd513451e66",
       "description": "Widar_BVP split manifest: per-sample environment and label, and the exact train/val/adapt/eval indices of every fold and seed."
     },
     {

@@ -9,21 +9,21 @@
     "n_observations": 15
   },
   "tent": {
-    "mean_gain": 0.10285715013742447,
-    "ci_lower": 0.05206349119544029,
-    "ci_upper": 0.15111111104488373,
-    "cohens_d_vs_noadapt": 1.4269676208496094,
-    "paired_d_vs_noadapt": 1.0090185403823853,
-    "negative_adaptation_rate": 0.13333334028720856,
+    "mean_gain": 0.07333334535360336,
+    "ci_lower": 0.04730159044265747,
+    "ci_upper": 0.10063492506742477,
+    "cohens_d_vs_noadapt": 1.8746269941329956,
+    "paired_d_vs_noadapt": 1.3255614042282104,
+    "negative_adaptation_rate": 0.0,
     "n_observations": 15
   },
   "collapse_guarded_tent": {
-    "mean_gain": 0.0895238146185875,
-    "ci_lower": 0.04158730432391167,
-    "ci_upper": 0.13683347404003143,
-    "cohens_d_vs_noadapt": 1.301268458366394,
-    "paired_d_vs_noadapt": 0.9201357364654541,
-    "negative_adaptation_rate": 0.13333334028720856,
+    "mean_gain": 0.058095239102840424,
+    "ci_lower": 0.029523810371756554,
+    "ci_upper": 0.08984126895666122,
+    "cohens_d_vs_noadapt": 1.3315820693969727,
+    "paired_d_vs_noadapt": 0.9415707588195801,
+    "negative_adaptation_rate": 0.0,
     "n_observations": 15
   }
 }

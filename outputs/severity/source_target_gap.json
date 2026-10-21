@@ -5,55 +5,55 @@
     "ntufi_har": {
       "mlp": {
         "n": 15,
-        "source_train_accuracy": 0.995828397126193,
-        "source_val_accuracy": 0.9284756728778468,
-        "target_accuracy": 0.8423086587265691,
-        "train_to_target_drop_pp": 15.351973839962385,
-        "val_to_target_drop_pp": 8.61670141512777
+        "source_train_accuracy": 0.997912573474326,
+        "source_val_accuracy": 0.9746376811594203,
+        "target_accuracy": 0.88578823056435,
+        "train_to_target_drop_pp": 11.212434290997608,
+        "val_to_target_drop_pp": 8.884945059507032
       },
       "mlp_bn": {
         "n": 15,
-        "source_train_accuracy": 0.999479159049063,
-        "source_val_accuracy": 0.9704658385093168,
-        "target_accuracy": 0.9070606563143876,
-        "train_to_target_drop_pp": 9.241850273467545,
-        "val_to_target_drop_pp": 6.340518219492919
+        "source_train_accuracy": 0.9987533944041693,
+        "source_val_accuracy": 0.9742184265010352,
+        "target_accuracy": 0.9014473089099955,
+        "train_to_target_drop_pp": 9.730608549417386,
+        "val_to_target_drop_pp": 7.277111759103971
       }
     },
     "signfi_top10": {
       "mlp": {
         "n": 15,
-        "source_train_accuracy": 0.3033882783882784,
-        "source_val_accuracy": 0.2510989010989011,
-        "target_accuracy": 0.22603174603174603,
-        "train_to_target_drop_pp": 7.735653235653239,
-        "val_to_target_drop_pp": 2.5067155067155067
+        "source_train_accuracy": 1.0,
+        "source_val_accuracy": 0.9010989010989011,
+        "target_accuracy": 0.806031746031746,
+        "train_to_target_drop_pp": 19.396825396825403,
+        "val_to_target_drop_pp": 9.506715506715512
       },
       "mlp_bn": {
         "n": 15,
-        "source_train_accuracy": 0.9314102564102564,
-        "source_val_accuracy": 0.645970695970696,
-        "target_accuracy": 0.6733333333333333,
-        "train_to_target_drop_pp": 25.80769230769231,
-        "val_to_target_drop_pp": -2.736263736263733
+        "source_train_accuracy": 0.9467948717948718,
+        "source_val_accuracy": 0.6846153846153845,
+        "target_accuracy": 0.7174603174603175,
+        "train_to_target_drop_pp": 22.93345543345543,
+        "val_to_target_drop_pp": -3.284493284493295
       }
     },
     "widar_bvp": {
       "mlp": {
         "n": 15,
-        "source_train_accuracy": 0.9873361227336123,
-        "source_val_accuracy": 0.7382943143812709,
-        "target_accuracy": 0.6198125836680054,
-        "train_to_target_drop_pp": 36.752353906560685,
-        "val_to_target_drop_pp": 11.848173071326551
+        "source_train_accuracy": 0.9693584379358438,
+        "source_val_accuracy": 0.7307692307692307,
+        "target_accuracy": 0.6449799196787148,
+        "train_to_target_drop_pp": 32.43785182571289,
+        "val_to_target_drop_pp": 8.578931109051592
       },
       "mlp_bn": {
         "n": 15,
-        "source_train_accuracy": 0.9931659693165968,
-        "source_val_accuracy": 0.7567447045707916,
-        "target_accuracy": 0.6309683177153057,
-        "train_to_target_drop_pp": 36.219765160129114,
-        "val_to_target_drop_pp": 12.577638685548587
+        "source_train_accuracy": 0.9546304044630405,
+        "source_val_accuracy": 0.7168338907469342,
+        "target_accuracy": 0.6318161535029004,
+        "train_to_target_drop_pp": 32.281425096014004,
+        "val_to_target_drop_pp": 8.501773724403371
       }
     }
   }

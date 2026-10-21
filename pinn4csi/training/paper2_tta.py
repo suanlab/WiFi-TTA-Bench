@@ -6,7 +6,7 @@ import random
 import time
 import warnings
 from collections.abc import Iterable
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from itertools import cycle
 from pathlib import Path
 
@@ -216,6 +216,10 @@ class TTAExperimentConfig:
     # running statistics are frozen for that pass so each step updates them
     # once (the scoring pass otherwise doubles the running-statistic updates).
     freeze_bn_in_scoring_pass: bool = False
+    # Input scaling for prepared datasets: "source" standardises every feature
+    # with mean/std fitted on the source-train split only (applied to all
+    # splits); "none" feeds the prepared arrays unchanged.
+    input_standardization: str = "source"
     ablation_use_invariance: bool = True
     ablation_use_residual: bool = True
     ablation_use_entropy: bool = True
@@ -415,6 +419,7 @@ def build_prepared_tta_loaders(
     target_adapt_ratio: float,
     train_env_ids: tuple[int, ...] | None = None,
     test_env_ids: tuple[int, ...] | None = None,
+    input_standardization: str = "source",
 ) -> tuple[
     DataLoader[dict[str, Tensor]],
     DataLoader[dict[str, Tensor]],
@@ -424,6 +429,12 @@ def build_prepared_tta_loaders(
     int,
     dict[str, int | str],
 ]:
+    """Leave-environment-out loaders for a prepared dataset.
+
+    With ``input_standardization="source"`` every feature is standardised with
+    statistics fitted on the source-train split only, so no target or
+    validation data informs the scaling.
+    """
     bundle = load_prepared_paper1_dataset(
         dataset_name=dataset_name,
         prepared_root=prepared_root,
@@ -460,6 +471,27 @@ def build_prepared_tta_loaders(
     source_val_bundle = bundle.subset(source_val_idx)
     target_adapt_bundle = bundle.subset(target_adapt_idx)
     target_test_bundle = bundle.subset(target_test_idx)
+    if input_standardization == "source":
+        mean = source_train_bundle.features.mean(dim=0, keepdim=True)
+        std = source_train_bundle.features.std(dim=0, keepdim=True)
+        # Features constant on the source split (e.g. zero padding) keep scale 1.
+        std = torch.where(std > 1e-6, std, torch.ones_like(std))
+        (
+            source_train_bundle,
+            source_val_bundle,
+            target_adapt_bundle,
+            target_test_bundle,
+        ) = (
+            replace(b, features=(b.features - mean) / std)
+            for b in (
+                source_train_bundle,
+                source_val_bundle,
+                target_adapt_bundle,
+                target_test_bundle,
+            )
+        )
+    elif input_standardization != "none":
+        raise ValueError(f"Unknown input_standardization: {input_standardization!r}")
 
     loaders = _bundle_loaders(
         source_train_bundle=source_train_bundle,
@@ -1062,8 +1094,13 @@ def _adapt_sar_full(
             continue
         optimizer.step()
         if guard and checkpoint is not None and optimizer_state is not None:
+            # The guard only observes: freeze BN running statistics so its
+            # diagnostic pass leaves the model exactly as unguarded SAR would.
+            frozen = _freeze_bn_running_stats(adapted)
             with torch.no_grad():
                 post_diversity = prediction_diversity(_batch_logits(adapted, moved))
+            for module, momentum in frozen:
+                module.momentum = momentum
             if post_diversity < config.collapse_guard_diversity_ratio * pre_diversity:
                 adapted.load_state_dict(checkpoint)
                 optimizer.load_state_dict(optimizer_state)
@@ -1225,10 +1262,13 @@ def _adapt_cotta_full(
             student, source_state, config.cotta_restore_probability
         )
         if guard:
+            frozen = _freeze_bn_running_stats(teacher)
             with torch.no_grad():
                 post_diversity = prediction_diversity(
                     teacher(x, prior=prior, has_prior=has_prior)["task_logits"]
                 )
+            for module, momentum in frozen:
+                module.momentum = momentum
             if post_diversity < config.collapse_guard_diversity_ratio * pre_diversity:
                 student.load_state_dict(saved[0])
                 teacher.load_state_dict(saved[1])

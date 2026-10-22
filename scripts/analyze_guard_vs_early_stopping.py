@@ -66,7 +66,10 @@ def analyse_cell(runs: list[dict[str, object]], rng: np.random.Generator) -> dic
         "guard_accepted_steps": sorted(int(a) for a in accepted),
         "guard": _rule_stats(guard_gain),
         "unguarded_5_steps": _rule_stats(gain[:, -1]),
-        "fixed_budget": {str(k): _rule_stats(gain[:, k]) for k in (1, 2, 3)},
+        # k = 0 is "do not adapt" (gain 0), so the budget rule may also abstain.
+        "fixed_budget": {
+            str(k): _rule_stats(gain[:, k]) for k in BUDGETS if k < gain.shape[1]
+        },
     }
     rows = np.arange(len(runs))
     perm_means = np.array(
@@ -77,6 +80,35 @@ def analyse_cell(runs: list[dict[str, object]], rng: np.random.Generator) -> dic
         "p_ge_guard": float((perm_means >= guard_gain.mean() - 1e-12).mean()),
         "permutations": PERMUTATIONS,
     }
+    return out
+
+
+BUDGETS = (0, 1, 2, 3, 5)
+
+
+def budget_lodo(report: dict[str, dict]) -> dict[str, dict[str, object]]:
+    """Choose the step budget k leave-one-dataset-out (best mean gain elsewhere).
+
+    Only the primary-MLP cell of each dataset enters, matching the guard-floor
+    selection in ``run_guard_floor_lodo.py``.
+    """
+    mlp = {c.split("/")[0]: r for c, r in report.items() if c.endswith("/mlp")}
+    out: dict[str, dict[str, object]] = {}
+    for held_out, cell in mlp.items():
+        others = [r for d, r in mlp.items() if d != held_out]
+        options = [
+            k for k in BUDGETS if all(str(k) in r["fixed_budget"] for r in mlp.values())
+        ]
+        chosen = max(
+            options,
+            key=lambda k: float(
+                np.mean([r["fixed_budget"][str(k)]["mean_gain_pp"] for r in others])
+            ),
+        )
+        out[held_out] = {
+            "chosen_k": chosen,
+            "mean_gain_pp": cell["fixed_budget"][str(chosen)]["mean_gain_pp"],
+        }
     return out
 
 
@@ -95,6 +127,7 @@ def main() -> None:
                 "note": "p_ge_guard: share of random stops (same stopping-point "
                 "distribution) whose mean gain is at least the guard's",
                 "cells": report,
+                "fixed_budget_leave_one_dataset_out": budget_lodo(report),
             },
             indent=2,
         )

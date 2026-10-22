@@ -66,7 +66,7 @@ def run_widar_full_experiment() -> dict[str, object]:
         entropy_weight=0.1,
         selective_confidence_threshold=0.2,
         selective_alignment_threshold=2.0,
-        early_stop_patience=3,
+        early_stop_patience=0,
     )
 
     for split in ROOM_SPLITS:

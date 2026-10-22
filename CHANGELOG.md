@@ -7,6 +7,33 @@ in the paper can be traced to the code that produced them.
 Superseded artifacts are preserved rather than overwritten, per the deprecation policy in
 the supplement.
 
+## 2026-10-22 (benchmark version 3.0.0)
+
+### Changed (all canonical numbers regenerated)
+
+- **Adaptation batches**: the adaptation loader yielded a short remainder batch (35 samples
+  gave batches of 32 and 3), so on SignFi-10 two of five steps ran on 3 samples. Batches now
+  wrap round the adaptation half (`_WrapAroundBatchSampler`): every step sees
+  min(32, n) samples.
+- **One BatchNorm-statistics policy**: extra train-mode passes (the post-step scoring pass,
+  SAR's perturbed pass, the guard's diagnostic pass) no longer update running statistics,
+  so every method updates them once per step (`freeze_bn_in_scoring_pass=True` by default).
+  `bn_double_update_*` keeps the old two-updates regime as a control; `bn_source_control_*`
+  adapts on source-validation data instead of target data.
+- **Guard reference**: the collapse guard compares diversity on the same batch before and
+  after a step (`collapse_guard_reference="same_batch"`); `guard_first_batch_*` keeps the
+  old first-batch reference as a control. Guarded IM (`collapse_guarded_shot`) added.
+- **Guard floor selection**: chosen leave-one-dataset-out by least regret over harmful and
+  helpful cells (MLP entropy, MLP IM, MLP+BN TENT) instead of by mean gain of entropy
+  minimisation alone; the step-budget baseline includes k = 0 (do not adapt) and is also
+  chosen leave-one-dataset-out.
+- **One protocol**: no runner uses objective-based early stopping (`early_stop_patience=0`
+  everywhere; the Widar runners used 3).
+- **SignFi-10 preparation released**: `scripts/prepare_signfi10.py` builds the bundle from
+  the public `dataset_lab_276_dl.mat`: lab signs 1-10, CSI amplitude, environments are
+  repetition blocks 1-6, 7-13 and 14-20 of one user (reproduces the previous bundle to
+  float32 rounding).
+
 ## 2026-10-21 (benchmark version 2.0.0)
 
 ### Changed (all canonical numbers regenerated)

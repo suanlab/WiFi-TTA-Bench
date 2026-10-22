@@ -25,9 +25,12 @@ from dataclasses import asdict
 from pathlib import Path
 
 import torch
+from torch.utils.data import DataLoader
 
 from pinn4csi.training.paper2_tta import (
     TTAExperimentConfig,
+    UnlabeledPreparedCSIDataset,
+    _WrapAroundBatchSampler,
     build_prepared_tta_loaders,
     run_tta_suite,
 )
@@ -60,8 +63,9 @@ def run_experiment(
     weight_reset_probability: float = 0.01,
     bn_eval_stats: str = "running",
     bn_reset_cumulative: bool = False,
-    collapse_guard_reference: str = "first_batch",
-    freeze_bn_in_scoring_pass: bool = False,
+    collapse_guard_reference: str = "same_batch",
+    freeze_bn_in_scoring_pass: bool = True,
+    adapt_on_source_val: bool = False,
 ) -> dict[str, object]:
     all_rows: list[dict[str, object]] = []
     config = TTAExperimentConfig(
@@ -106,6 +110,17 @@ def run_experiment(
                     train_env_ids=train_envs,
                     test_env_ids=test_envs,
                 )
+                if adapt_on_source_val:
+                    # Control: re-estimate/adapt on held-out *source* data, then
+                    # evaluate on the target, to separate source-BN repair from
+                    # adaptation to the shift.
+                    val_bundle = src_val.dataset.bundle  # type: ignore[attr-defined]
+                    tgt_adapt = DataLoader(
+                        UnlabeledPreparedCSIDataset(val_bundle),
+                        batch_sampler=_WrapAroundBatchSampler(
+                            val_bundle.num_samples, config.batch_size
+                        ),
+                    )
                 rows = run_tta_suite(
                     source_train_loader=src_train,
                     source_val_loader=src_val,
@@ -242,12 +257,18 @@ def main() -> None:
     parser.add_argument(
         "--collapse-guard-reference",
         choices=("first_batch", "same_batch"),
-        default="first_batch",
+        default="same_batch",
     )
     parser.add_argument(
         "--freeze-bn-in-scoring-pass",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Freeze BN running statistics in extra forward passes (default on).",
+    )
+    parser.add_argument(
+        "--adapt-on-source-val",
         action="store_true",
-        help="Freeze BN running statistics in the post-step scoring pass.",
+        help="Control: adapt on the source-validation split instead of target data.",
     )
     args = parser.parse_args()
 
@@ -270,6 +291,7 @@ def main() -> None:
         bn_reset_cumulative=args.bn_reset_cumulative,
         collapse_guard_reference=args.collapse_guard_reference,
         freeze_bn_in_scoring_pass=args.freeze_bn_in_scoring_pass,
+        adapt_on_source_val=args.adapt_on_source_val,
     )
     rows = results["rows"]
 

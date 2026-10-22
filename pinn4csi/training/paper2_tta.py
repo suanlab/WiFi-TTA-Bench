@@ -5,7 +5,7 @@ import math
 import random
 import time
 import warnings
-from collections.abc import Iterable
+from collections.abc import Iterable, Iterator
 from dataclasses import dataclass, replace
 from itertools import cycle
 from pathlib import Path
@@ -73,6 +73,7 @@ CANONICAL_TTA_METHODS = DEFAULT_TTA_METHODS + (
     "collapse_guarded_sar",
     "collapse_guarded_cotta",
     "collapse_guarded_t3a",
+    "collapse_guarded_shot",
     "reset_entropy_tta",
     "reset_tent",
     "sar_full",
@@ -97,6 +98,7 @@ _COLLAPSE_GUARDED_METHOD_ALIASES = {
     "collapse_guarded_sar": "sar",
     "collapse_guarded_cotta": "cotta",
     "collapse_guarded_t3a": "t3a",
+    "collapse_guarded_shot": "shot",
 }
 
 # Methods that keep their base objective but randomly restore a fraction of the
@@ -211,11 +213,11 @@ class TTAExperimentConfig:
     # Collapse-guard reference: "first_batch" compares post-step diversity with
     # the first batch's pre-step diversity; "same_batch" with the pre-step
     # diversity of the same batch (a paired statistic).
-    collapse_guard_reference: str = "first_batch"
-    # The post-step objective is scored in train mode; when True, BatchNorm
-    # running statistics are frozen for that pass so each step updates them
-    # once (the scoring pass otherwise doubles the running-statistic updates).
-    freeze_bn_in_scoring_pass: bool = False
+    collapse_guard_reference: str = "same_batch"
+    # Extra forward passes (the post-step scoring pass, SAR's perturbed pass)
+    # run in train mode; when True their BatchNorm running statistics are
+    # frozen, so every method updates the statistics exactly once per step.
+    freeze_bn_in_scoring_pass: bool = True
     # Input scaling for prepared datasets: "source" standardises every feature
     # with mean/std fitted on the source-train split only (applied to all
     # splits); "none" feeds the prepared arrays unchanged.
@@ -1080,7 +1082,16 @@ def _adapt_sar_full(
                 perturbations.append(e_w)
         # Gradient at the SAM-perturbed point, applied at the original weights.
         optimizer.zero_grad()
+        # The SAM pass at perturbed weights must not add a second running-
+        # statistics update: every method updates BN statistics once per step.
+        frozen_bn = (
+            _freeze_bn_running_stats(adapted)
+            if config.freeze_bn_in_scoring_pass
+            else []
+        )
         second = _batch_entropy(adapted, moved)
+        for module, momentum in frozen_bn:
+            module.momentum = momentum
         second_reliable = second < margin
         has_second = bool(second_reliable.any())
         if has_second:
@@ -1694,6 +1705,28 @@ def save_tta_results_csv(rows: list[TTAResultRow], output_csv: str | Path) -> No
     save_dataclass_rows_csv(rows, output_csv)
 
 
+class _WrapAroundBatchSampler:
+    """Fixed-size batches over ``range(n)``, wrapping round at the end.
+
+    Adaptation steps then always see ``min(batch_size, n)`` samples: a 35-sample
+    adaptation half gives batches of 32 and 32 (indices 32-34 then 0-28) rather
+    than 32 and 3. One pass yields ``ceil(n / batch_size)`` batches.
+    """
+
+    def __init__(self, n: int, batch_size: int) -> None:
+        self.n = n
+        self.size = min(batch_size, n)
+        self.batch_size = batch_size
+
+    def __len__(self) -> int:
+        return math.ceil(self.n / self.batch_size)
+
+    def __iter__(self) -> Iterator[list[int]]:
+        for k in range(len(self)):
+            start = k * self.batch_size
+            yield [(start + j) % self.n for j in range(self.size)]
+
+
 def _bundle_loaders(
     source_train_bundle: PreparedCSIBundle,
     source_val_bundle: PreparedCSIBundle,
@@ -1719,8 +1752,9 @@ def _bundle_loaders(
         ),
         DataLoader(
             UnlabeledPreparedCSIDataset(target_adapt_bundle),
-            batch_size=batch_size,
-            shuffle=False,
+            batch_sampler=_WrapAroundBatchSampler(
+                target_adapt_bundle.num_samples, batch_size
+            ),
         ),
         DataLoader(
             PreparedCSIDataset(target_test_bundle),

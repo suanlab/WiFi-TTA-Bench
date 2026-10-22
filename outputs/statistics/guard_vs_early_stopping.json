@@ -32,6 +32,11 @@
         "harm_rate_gt1pp": 0.6
       },
       "fixed_budget": {
+        "0": {
+          "mean_gain_pp": 0.0,
+          "harm_rate": 0.0,
+          "harm_rate_gt1pp": 0.0
+        },
         "1": {
           "mean_gain_pp": 0.2663450424644472,
           "harm_rate": 0.3333333333333333,
@@ -46,6 +51,11 @@
           "mean_gain_pp": -0.833710236695311,
           "harm_rate": 0.5333333333333333,
           "harm_rate_gt1pp": 0.4666666666666667
+        },
+        "5": {
+          "mean_gain_pp": -2.266445550027638,
+          "harm_rate": 0.6666666666666666,
+          "harm_rate_gt1pp": 0.6
         }
       },
       "random_stop_same_distribution": {
@@ -84,6 +94,11 @@
         "harm_rate_gt1pp": 1.0
       },
       "fixed_budget": {
+        "0": {
+          "mean_gain_pp": 0.0,
+          "harm_rate": 0.0,
+          "harm_rate_gt1pp": 0.0
+        },
         "1": {
           "mean_gain_pp": -20.06349206349207,
           "harm_rate": 0.8666666666666667,
@@ -96,6 +111,11 @@
         },
         "3": {
           "mean_gain_pp": -25.80952380952381,
+          "harm_rate": 1.0,
+          "harm_rate_gt1pp": 1.0
+        },
+        "5": {
+          "mean_gain_pp": -27.206349206349216,
           "harm_rate": 1.0,
           "harm_rate_gt1pp": 1.0
         }
@@ -136,6 +156,11 @@
         "harm_rate_gt1pp": 0.7333333333333333
       },
       "fixed_budget": {
+        "0": {
+          "mean_gain_pp": 0.0,
+          "harm_rate": 0.0,
+          "harm_rate_gt1pp": 0.0
+        },
         "1": {
           "mean_gain_pp": 2.571428571428571,
           "harm_rate": 0.26666666666666666,
@@ -150,6 +175,11 @@
           "mean_gain_pp": -6.5396825396825395,
           "harm_rate": 0.6666666666666666,
           "harm_rate_gt1pp": 0.6666666666666666
+        },
+        "5": {
+          "mean_gain_pp": -9.49206349206349,
+          "harm_rate": 0.7333333333333333,
+          "harm_rate_gt1pp": 0.7333333333333333
         }
       },
       "random_stop_same_distribution": {
@@ -188,6 +218,11 @@
         "harm_rate_gt1pp": 1.0
       },
       "fixed_budget": {
+        "0": {
+          "mean_gain_pp": 0.0,
+          "harm_rate": 0.0,
+          "harm_rate_gt1pp": 0.0
+        },
         "1": {
           "mean_gain_pp": -11.396825396825399,
           "harm_rate": 0.9333333333333333,
@@ -200,6 +235,11 @@
         },
         "3": {
           "mean_gain_pp": -23.04761904761904,
+          "harm_rate": 1.0,
+          "harm_rate_gt1pp": 1.0
+        },
+        "5": {
+          "mean_gain_pp": -28.444444444444443,
           "harm_rate": 1.0,
           "harm_rate_gt1pp": 1.0
         }
@@ -240,6 +280,11 @@
         "harm_rate_gt1pp": 0.26666666666666666
       },
       "fixed_budget": {
+        "0": {
+          "mean_gain_pp": 0.0,
+          "harm_rate": 0.0,
+          "harm_rate_gt1pp": 0.0
+        },
         "1": {
           "mean_gain_pp": 0.12494422132976506,
           "harm_rate": 0.3333333333333333,
@@ -254,6 +299,11 @@
           "mean_gain_pp": -0.08924587237840138,
           "harm_rate": 0.4666666666666667,
           "harm_rate_gt1pp": 0.13333333333333333
+        },
+        "5": {
+          "mean_gain_pp": -0.17402945113788335,
+          "harm_rate": 0.6,
+          "harm_rate_gt1pp": 0.26666666666666666
         }
       },
       "random_stop_same_distribution": {
@@ -261,6 +311,20 @@
         "p_ge_guard": 0.1372,
         "permutations": 10000
       }
+    }
+  },
+  "fixed_budget_leave_one_dataset_out": {
+    "ntufi_har": {
+      "chosen_k": 0,
+      "mean_gain_pp": 0.0
+    },
+    "signfi_top10": {
+      "chosen_k": 1,
+      "mean_gain_pp": -20.06349206349207
+    },
+    "widar_bvp": {
+      "chosen_k": 0,
+      "mean_gain_pp": 0.0
     }
   }
 }

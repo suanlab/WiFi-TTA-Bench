@@ -49,3 +49,13 @@ def test_standardization_uses_source_train_statistics_only(tmp_path: Path) -> No
         **kwargs, input_standardization="none"
     )
     assert float(_features(raw_train).mean()) > 4.0
+
+
+def test_adaptation_batches_wrap_instead_of_short_remainders() -> None:
+    from pinn4csi.training.paper2_tta import _WrapAroundBatchSampler
+
+    batches = list(_WrapAroundBatchSampler(35, 32))
+    assert [len(b) for b in batches] == [32, 32]
+    assert batches[1][:4] == [32, 33, 34, 0]
+    assert [len(b) for b in _WrapAroundBatchSampler(30, 32)] == [30]
+    assert sorted({i for b in batches for i in b}) == list(range(35))

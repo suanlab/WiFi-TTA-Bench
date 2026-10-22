@@ -1,7 +1,7 @@
 # WiFi-TTA-Bench
 
 A harm-aware benchmark for test-time adaptation (TTA) on WiFi channel state
-information. Version 2.0.0 (see `CHANGELOG.md`; Croissant metadata in
+information. Version 3.0.0 (see `CHANGELOG.md`; Croissant metadata in
 `outputs/croissant/`).
 
 ## What is evaluated

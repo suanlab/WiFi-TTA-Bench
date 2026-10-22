@@ -11,7 +11,7 @@ structural aggregation (Table 10).
 
 Preconditions:
     * ``data/prepared/{widar_bvp,ntufi_har,signfi_top10}`` populated by the
-      per-dataset preparation scripts (see ``SUBMISSION_README.md``).
+      per-dataset preparation scripts (see ``BENCHMARK.md``).
     * ``pip install -e ".[dev]"`` run from the repo root.
 
 Usage:
@@ -741,6 +741,48 @@ SOURCE_SCRIPTS: dict[str, dict[str, object]] = {
             ],
         }
         for dataset in ("ntufi_har", "signfi_top10")
+    },
+    "guard_floor_lodo": {
+        "description": "Collapse-guard floor chosen leave-one-dataset-out",
+        "argv": ["scripts/run_guard_floor_lodo.py"],
+        "outputs": ["outputs/guard_floor_lodo/guard_floor_lodo.json"],
+    },
+    "tent_lr0_widar_bvp_resnet2d": {
+        "description": "TENT at learning rate 0 on ResNet-BN (statistics-only control)",
+        "argv": [
+            "scripts/run_extended_tta_per_dataset.py",
+            "--dataset",
+            "widar_bvp",
+            "--backbone",
+            "resnet2d",
+            "--methods",
+            "no_adapt,tent",
+            "--adaptation-learning-rate",
+            "0",
+            "--output-dir",
+            "outputs/tent_lr0/widar_bvp_resnet2d",
+        ],
+        "outputs": [
+            "outputs/tent_lr0/widar_bvp_resnet2d/widar_bvp_lame_sar_cotta.json"
+        ],
+    },
+    "bn_single_update_widar_bvp_resnet2d": {
+        "description": "ResNet-BN with one BN-statistics update per step: Widar",
+        "argv": [
+            "scripts/run_extended_tta_per_dataset.py",
+            "--dataset",
+            "widar_bvp",
+            "--backbone",
+            "resnet2d",
+            "--methods",
+            "no_adapt,tent,entropy_tta,bn_reset",
+            "--freeze-bn-in-scoring-pass",
+            "--output-dir",
+            "outputs/bn_single_update/widar_bvp_resnet2d",
+        ],
+        "outputs": [
+            "outputs/bn_single_update/widar_bvp_resnet2d/widar_bvp_lame_sar_cotta.json"
+        ],
     },
     **{
         f"bn_reset_cumulative_{dataset}": {

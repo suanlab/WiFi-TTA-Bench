@@ -26,10 +26,12 @@ DATASETS: dict[str, dict[str, str]] = {
     "ntufi_har": {
         "canonical": "outputs/ntufi_tta/method_summary.json",
         "extras": "outputs/new_methods/ntufi_har_lame_sar_cotta.json",
+        "core": "outputs/core_regen/ntufi_har_lame_sar_cotta.json",
     },
     "signfi_top10": {
         "canonical": "outputs/signfi_tta/method_summary.json",
         "extras": "outputs/new_methods/signfi_top10_lame_sar_cotta.json",
+        "core": "outputs/core_regen/signfi_top10_lame_sar_cotta.json",
     },
 }
 
@@ -50,7 +52,7 @@ def build(output: Path) -> dict[str, object]:
     coverage: dict[str, list[str]] = {}
     for dataset, paths in DATASETS.items():
         methods = set()
-        for key in ("canonical", "extras"):
+        for key in ("canonical", "extras", "core"):
             p = paths.get(key)
             if p:
                 methods |= _methods_in(Path(p))
@@ -67,6 +69,7 @@ def build(output: Path) -> dict[str, object]:
             ds: {
                 "canonical": paths["canonical"],
                 "extras": paths.get("extras"),
+                "core": paths.get("core"),
             }
             for ds, paths in DATASETS.items()
         },

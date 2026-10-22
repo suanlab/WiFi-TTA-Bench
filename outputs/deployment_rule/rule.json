@@ -7,151 +7,11 @@
   ],
   "harm_threshold_pp": -2.0,
   "n_cells": 9,
-  "n_harmful_cells": 6,
+  "n_harmful_cells": 3,
   "predictors": {
     "feature_shift": {
-      "in_sample_correct": 7,
-      "in_sample_threshold": 0.37967386907109146,
-      "leave_one_dataset_out": {
-        "accuracy": 0.6666666666666666,
-        "correct": 6,
-        "folds": [
-          {
-            "correct": 2,
-            "held_out_dataset": "ntufi_har",
-            "n_test_cells": 3,
-            "predict_harmful_above": true,
-            "threshold": 0.37967386907109146
-          },
-          {
-            "correct": 2,
-            "held_out_dataset": "signfi_top10",
-            "n_test_cells": 3,
-            "predict_harmful_above": true,
-            "threshold": 0.37967386907109146
-          },
-          {
-            "correct": 2,
-            "held_out_dataset": "widar_bvp",
-            "n_test_cells": 3,
-            "predict_harmful_above": true,
-            "threshold": 0.5383537406201488
-          }
-        ],
-        "total": 9
-      },
-      "n_cells": 9,
-      "predict_harmful_above": true,
-      "spearman_rho_vs_gain": -0.5333333333333333
-    },
-    "norm_backbone": {
-      "in_sample_correct": 6,
-      "in_sample_threshold": 0.5,
-      "leave_one_dataset_out": {
-        "accuracy": 0.6666666666666666,
-        "correct": 6,
-        "folds": [
-          {
-            "correct": 2,
-            "held_out_dataset": "ntufi_har",
-            "n_test_cells": 3,
-            "predict_harmful_above": false,
-            "threshold": 0.5
-          },
-          {
-            "correct": 2,
-            "held_out_dataset": "signfi_top10",
-            "n_test_cells": 3,
-            "predict_harmful_above": false,
-            "threshold": 0.5
-          },
-          {
-            "correct": 2,
-            "held_out_dataset": "widar_bvp",
-            "n_test_cells": 3,
-            "predict_harmful_above": false,
-            "threshold": 0.5
-          }
-        ],
-        "total": 9
-      },
-      "n_cells": 9,
-      "predict_harmful_above": false,
-      "spearman_rho_vs_gain": 0.35
-    },
-    "source_val_ece": {
-      "in_sample_correct": 7,
-      "in_sample_threshold": 0.03635169389761156,
-      "leave_one_dataset_out": {
-        "accuracy": 0.5555555555555556,
-        "correct": 5,
-        "folds": [
-          {
-            "correct": 2,
-            "held_out_dataset": "ntufi_har",
-            "n_test_cells": 3,
-            "predict_harmful_above": false,
-            "threshold": 0.33611490743027794
-          },
-          {
-            "correct": 2,
-            "held_out_dataset": "signfi_top10",
-            "n_test_cells": 3,
-            "predict_harmful_above": true,
-            "threshold": 0.03635169389761156
-          },
-          {
-            "correct": 1,
-            "held_out_dataset": "widar_bvp",
-            "n_test_cells": 3,
-            "predict_harmful_above": true,
-            "threshold": 0.039568710451324776
-          }
-        ],
-        "total": 9
-      },
-      "n_cells": 9,
-      "predict_harmful_above": true,
-      "spearman_rho_vs_gain": -0.1
-    },
-    "target_confidence": {
-      "in_sample_correct": 7,
-      "in_sample_threshold": 0.3667704976267285,
-      "leave_one_dataset_out": {
-        "accuracy": 0.6666666666666666,
-        "correct": 6,
-        "folds": [
-          {
-            "correct": 2,
-            "held_out_dataset": "ntufi_har",
-            "n_test_cells": 3,
-            "predict_harmful_above": true,
-            "threshold": 0.3667704976267285
-          },
-          {
-            "correct": 2,
-            "held_out_dataset": "signfi_top10",
-            "n_test_cells": 3,
-            "predict_harmful_above": false,
-            "threshold": 0.9227864080005221
-          },
-          {
-            "correct": 2,
-            "held_out_dataset": "widar_bvp",
-            "n_test_cells": 3,
-            "predict_harmful_above": true,
-            "threshold": 0.3667704976267285
-          }
-        ],
-        "total": 9
-      },
-      "n_cells": 9,
-      "predict_harmful_above": true,
-      "spearman_rho_vs_gain": 0.16666666666666666
-    },
-    "target_diversity": {
       "in_sample_correct": 8,
-      "in_sample_threshold": 0.9863262110286288,
+      "in_sample_threshold": 0.5902881521742056,
       "leave_one_dataset_out": {
         "accuracy": 0.7777777777777778,
         "correct": 7,
@@ -160,29 +20,169 @@
             "correct": 2,
             "held_out_dataset": "ntufi_har",
             "n_test_cells": 3,
+            "predict_harmful_above": true,
+            "threshold": 0.9656975761633274
+          },
+          {
+            "correct": 2,
+            "held_out_dataset": "signfi_top10",
+            "n_test_cells": 3,
+            "predict_harmful_above": true,
+            "threshold": 0.5902881521742056
+          },
+          {
+            "correct": 3,
+            "held_out_dataset": "widar_bvp",
+            "n_test_cells": 3,
+            "predict_harmful_above": true,
+            "threshold": 0.5902881521742056
+          }
+        ],
+        "total": 9
+      },
+      "n_cells": 9,
+      "predict_harmful_above": true,
+      "spearman_rho_vs_gain": -0.6666666666666666
+    },
+    "norm_backbone": {
+      "in_sample_correct": 7,
+      "in_sample_threshold": 0.5,
+      "leave_one_dataset_out": {
+        "accuracy": 0.7777777777777778,
+        "correct": 7,
+        "folds": [
+          {
+            "correct": 3,
+            "held_out_dataset": "ntufi_har",
+            "n_test_cells": 3,
             "predict_harmful_above": false,
-            "threshold": 0.987750682565901
+            "threshold": 0.5
           },
           {
             "correct": 2,
             "held_out_dataset": "signfi_top10",
             "n_test_cells": 3,
             "predict_harmful_above": false,
-            "threshold": 0.9863262110286288
+            "threshold": 0.5
           },
           {
-            "correct": 3,
+            "correct": 2,
             "held_out_dataset": "widar_bvp",
             "n_test_cells": 3,
             "predict_harmful_above": false,
-            "threshold": 0.9863003657923805
+            "threshold": 0.5
           }
         ],
         "total": 9
       },
       "n_cells": 9,
       "predict_harmful_above": false,
-      "spearman_rho_vs_gain": 0.6833333333333333
+      "spearman_rho_vs_gain": 0.0
+    },
+    "source_val_ece": {
+      "in_sample_correct": 7,
+      "in_sample_threshold": 0.1584879592474964,
+      "leave_one_dataset_out": {
+        "accuracy": 0.3333333333333333,
+        "correct": 3,
+        "folds": [
+          {
+            "correct": 2,
+            "held_out_dataset": "ntufi_har",
+            "n_test_cells": 3,
+            "predict_harmful_above": true,
+            "threshold": 0.1584879592474964
+          },
+          {
+            "correct": 1,
+            "held_out_dataset": "signfi_top10",
+            "n_test_cells": 3,
+            "predict_harmful_above": false,
+            "threshold": 0.033427610217283174
+          },
+          {
+            "correct": 0,
+            "held_out_dataset": "widar_bvp",
+            "n_test_cells": 3,
+            "predict_harmful_above": true,
+            "threshold": 0.023610659098873533
+          }
+        ],
+        "total": 9
+      },
+      "n_cells": 9,
+      "predict_harmful_above": true,
+      "spearman_rho_vs_gain": -0.55
+    },
+    "target_confidence": {
+      "in_sample_correct": 7,
+      "in_sample_threshold": 0.9584684471289316,
+      "leave_one_dataset_out": {
+        "accuracy": 0.3333333333333333,
+        "correct": 3,
+        "folds": [
+          {
+            "correct": 2,
+            "held_out_dataset": "ntufi_har",
+            "n_test_cells": 3,
+            "predict_harmful_above": false,
+            "threshold": 0.5320458445284102
+          },
+          {
+            "correct": 1,
+            "held_out_dataset": "signfi_top10",
+            "n_test_cells": 3,
+            "predict_harmful_above": true,
+            "threshold": 0.9584684471289316
+          },
+          {
+            "correct": 0,
+            "held_out_dataset": "widar_bvp",
+            "n_test_cells": 3,
+            "predict_harmful_above": true,
+            "threshold": 0.35981689724657273
+          }
+        ],
+        "total": 9
+      },
+      "n_cells": 9,
+      "predict_harmful_above": true,
+      "spearman_rho_vs_gain": 0.4666666666666667
+    },
+    "target_diversity": {
+      "in_sample_correct": 8,
+      "in_sample_threshold": 0.9766557647122277,
+      "leave_one_dataset_out": {
+        "accuracy": 0.8888888888888888,
+        "correct": 8,
+        "folds": [
+          {
+            "correct": 2,
+            "held_out_dataset": "ntufi_har",
+            "n_test_cells": 3,
+            "predict_harmful_above": false,
+            "threshold": 0.9772597120867835
+          },
+          {
+            "correct": 3,
+            "held_out_dataset": "signfi_top10",
+            "n_test_cells": 3,
+            "predict_harmful_above": false,
+            "threshold": 0.9874582787354786
+          },
+          {
+            "correct": 3,
+            "held_out_dataset": "widar_bvp",
+            "n_test_cells": 3,
+            "predict_harmful_above": false,
+            "threshold": 0.9766557647122277
+          }
+        ],
+        "total": 9
+      },
+      "n_cells": 9,
+      "predict_harmful_above": false,
+      "spearman_rho_vs_gain": 0.6333333333333333
     }
   }
 }

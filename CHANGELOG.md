@@ -7,7 +7,33 @@ in the paper can be traced to the code that produced them.
 Superseded artifacts are preserved rather than overwritten, per the deprecation policy in
 the supplement.
 
+## 2026-10-21 (benchmark version 2.0.0)
+
+### Changed (all canonical numbers regenerated)
+
+- **Input standardisation**: prepared inputs were fed unscaled (SignFi-10 amplitudes 0-197;
+  its primary MLP reached 30 % source training accuracy). `build_prepared_tta_loaders` now
+  standardises every feature with mean and standard deviation fitted on the source-train
+  split only (`TTAExperimentConfig.input_standardization = "source"`; features that are
+  constant on the source split keep scale 1). With it the SignFi-10 primary MLP reaches
+  87-100 % target accuracy (seed 0) instead of about 23 %.
+- **Widar_BVP sampling (bundle protocol 3.0)**: within a room, gestures were tied to
+  recording dates (in room 1, draw-O and draw-zigzag came only from 20181121). The bundle
+  now includes 20181130 (room 1, all six gestures, nine users; stored without a `6-link`
+  folder), draws each room-gesture group round-robin over its recording dates, and skips
+  the few files that hold a single frame. Room 3 has one recording date.
+- **Guard on published SAR/CoTTA**: the guard's diagnostic forward pass ran in train mode
+  and updated BatchNorm running statistics, so guarded and unguarded runs differed even
+  when the guard never fired. The pass now freezes running statistics.
+- Spearman rank correlation excludes the LAME no-op; the method-coverage matrix also reads
+  `outputs/core_regen/`.
+- Croissant version 2.0.0 (split and protocol change). Pre-change artifacts: git tag
+  `pre-input-standardization`.
+
 ## 2026-10-17
+
+Numbers in this entry are as of 2026-10-17; the Widar_BVP label correction and the
+2026-10-21 changes regenerated them, and the paper reports the current values.
 
 ### Corrected
 

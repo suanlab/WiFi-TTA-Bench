@@ -134,7 +134,7 @@ def main() -> None:
 
     metadata = {
         "source": "widar3_bvp_zip",
-        "protocol_version": "2.0",
+        "protocol_version": "3.0",
         "task_name": "gesture_recognition",
         "representation": "bvp",
         "num_classes": int(np.max(labels) + 1),
@@ -147,7 +147,8 @@ def main() -> None:
         },
         "label_names": {str(idx): name for idx, name in enumerate(SHARED_GESTURES)},
         "label_mapping": "per recording date and user (GESTURES_BY_DATE)",
-        "file_filter": "BVP/<date>-VS/6-link/ only (20181130 has no 6-link folder)",
+        "file_filter": "BVP/<date>-VS/6-link/, plus BVP/20181130-VS/<user>/",
+        "sampling": "per (room, gesture): round-robin over recording dates",
         "cap_per_room_gesture": args.cap_per_room_gesture,
         "target_length": args.target_length,
         "normalization": "(x - 0.0025) / 0.0119",
@@ -168,14 +169,20 @@ def main() -> None:
 
 
 def collect_entries(bvp_zip: Path) -> dict[tuple[int, int], list[str]]:
-    """Group 6-link BVP files by (room, shared-gesture label index)."""
+    """Group BVP files by (room, shared-gesture label index).
+
+    Dates store BVP under ``<date>-VS/6-link/<user>/``, except 20181130, which
+    stores it directly under ``<date>-VS/<user>/`` (same 20x20xT format).
+    """
     grouped: dict[tuple[int, int], list[str]] = defaultdict(list)
     with zipfile.ZipFile(bvp_zip) as archive:
         for name in archive.namelist():
-            if not name.endswith(".mat") or "/6-link/" not in name:
+            if not name.endswith(".mat"):
                 continue
             parts = [part for part in name.split("/") if part]
-            if len(parts) < 5:
+            if "/6-link/" not in name and not name.startswith("BVP/20181130-VS/"):
+                continue
+            if len(parts) < 4:
                 continue
             date = parts[1].split("-")[0]
             if date not in ROOM_BY_DATE:
@@ -198,6 +205,12 @@ def sample_entries(
     reserve_per_group: int,
     seed: int,
 ) -> list[tuple[str, int, int]]:
+    """Draw each (room, gesture) group evenly across its recording dates.
+
+    Dates are visited round-robin in a seeded random order, so a gesture's
+    samples are spread over every date that recorded it instead of following
+    how many files each date happens to hold (which tied gesture to date).
+    """
     rng = np.random.default_rng(seed)
     selected: list[tuple[str, int, int]] = []
     for room_id in sorted({room for room, _ in grouped_entries}):
@@ -208,12 +221,17 @@ def sample_entries(
                     f"Not enough entries for room {room_id}, gesture {label}: "
                     f"{len(entries)} < {cap_per_room_gesture}"
                 )
-            chosen_count = min(
-                len(entries),
-                cap_per_room_gesture + reserve_per_group,
-            )
-            chosen = rng.choice(entries, size=chosen_count, replace=False)
-            for name in chosen.tolist():
+            by_date: dict[str, list[str]] = defaultdict(list)
+            for name in entries:
+                by_date[name.split("/")[1].split("-")[0]].append(name)
+            queues = [list(rng.permutation(by_date[date])) for date in sorted(by_date)]
+            chosen_count = min(len(entries), cap_per_room_gesture + reserve_per_group)
+            chosen: list[str] = []
+            while len(chosen) < chosen_count:
+                for queue in queues:
+                    if queue and len(chosen) < chosen_count:
+                        chosen.append(str(queue.pop()))
+            for name in chosen:
                 selected.append((name, label, room_id))
     return selected
 
@@ -241,6 +259,8 @@ def load_entries(
             except (MatReadError, OSError, ValueError):
                 continue
             bvp = np.asarray(mat["velocity_spectrum_ro"], dtype=np.float32)
+            if bvp.ndim != 3:  # a few files hold a single 20x20 frame
+                continue
             bvp = reshape_bvp(bvp, target_length=target_length)
             bvp = (bvp - 0.0025) / 0.0119
             features.append(bvp.reshape(target_length, -1))

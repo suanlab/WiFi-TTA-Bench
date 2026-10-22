@@ -220,3 +220,23 @@ def test_frozen_scoring_pass_updates_bn_statistics_once_per_step() -> None:
     ):
         if "running" in name:
             assert torch.allclose(got, want, atol=1e-6), name
+
+
+def test_guard_that_never_fires_leaves_sar_unchanged() -> None:
+    # A floor of 0 can never fire: guarded SAR must end exactly where SAR does,
+    # including BatchNorm running statistics.
+    config, model, reference, loaders, *_ = _setup(
+        sar_margin_factor=10.0, collapse_guard_diversity_ratio=0.0
+    )
+    states = []
+    for method in ("sar_full", "collapse_guarded_sar_full"):
+        torch.manual_seed(0)
+        summary = adapt_model_for_tta_with_summary(
+            model, loaders[2], reference, config, method, torch.device("cpu")
+        )
+        states.append(summary.model.state_dict())
+    for name, value in states[0].items():
+        # The batch counter only matters for cumulative (momentum=None) BN.
+        if name.endswith("num_batches_tracked"):
+            continue
+        assert torch.equal(value, states[1][name]), name

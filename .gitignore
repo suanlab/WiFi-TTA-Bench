@@ -94,6 +94,8 @@ outputs/synthetic_shift/analysis/*
 !outputs/splits/**
 !outputs/published_bn_batchstats/
 !outputs/published_bn_batchstats/**
+!outputs/guard_floor_lodo/
+!outputs/guard_floor_lodo/**
 !outputs/bn_single_update/
 !outputs/bn_single_update/**
 !outputs/tent_lr0/

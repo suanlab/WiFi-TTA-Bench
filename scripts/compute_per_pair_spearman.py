@@ -93,6 +93,7 @@ def main() -> None:
     # Methods evaluated on all three datasets
     common = set.intersection(*[set(g.keys()) for g in gains.values()])
     common.discard("no_adapt")  # zero by construction; uninformative for ranking
+    common.discard("lame")  # our LAME port is a no-op (constant zero gain)
     methods = sorted(common)
 
     print(f"Methods evaluated on all three datasets ({len(methods)}):")

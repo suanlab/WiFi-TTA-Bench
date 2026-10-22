@@ -1,0 +1,92 @@
+{
+  "protocol": "primary MLP, entropy_tta vs collapse_guarded_entropy_tta, 3 folds x 5 seeds per dataset; tau chosen on the other two datasets",
+  "floors": [
+    0.8,
+    0.9,
+    0.95,
+    0.98,
+    1.0
+  ],
+  "grid_mean_gain_pp": {
+    "widar_bvp": {
+      "unguarded": -0.17402945113788335,
+      "0.8": -0.17402945113788335,
+      "0.8_abstained": 0.0,
+      "0.8_runs": 15.0,
+      "0.9": -0.10709504685408137,
+      "0.9_abstained": 0.0,
+      "0.9_runs": 15.0,
+      "0.95": 0.049085229808123465,
+      "0.95_abstained": 1.0,
+      "0.95_runs": 15.0,
+      "0.98": 0.04908522980812272,
+      "0.98_abstained": 2.0,
+      "0.98_runs": 15.0,
+      "1.0": 0.05800981704596234,
+      "1.0_abstained": 11.0,
+      "1.0_runs": 15.0
+    },
+    "ntufi_har": {
+      "unguarded": -2.266445550027638,
+      "0.8": -2.266445550027638,
+      "0.8_abstained": 0.0,
+      "0.8_runs": 15.0,
+      "0.9": -1.9679380873410708,
+      "0.9_abstained": 0.0,
+      "0.9_runs": 15.0,
+      "0.95": -1.6005829438665249,
+      "0.95_abstained": 0.0,
+      "0.95_runs": 15.0,
+      "0.98": 7.401486830834377e-16,
+      "0.98_abstained": 4.0,
+      "0.98_runs": 15.0,
+      "1.0": 0.43570028644655423,
+      "1.0_abstained": 9.0,
+      "1.0_runs": 15.0
+    },
+    "signfi_top10": {
+      "unguarded": -27.206349206349206,
+      "0.8": -20.73015873015873,
+      "0.8_abstained": 0.0,
+      "0.8_runs": 15.0,
+      "0.9": -14.539682539682541,
+      "0.9_abstained": 4.0,
+      "0.9_runs": 15.0,
+      "0.95": -4.73015873015873,
+      "0.95_abstained": 11.0,
+      "0.95_runs": 15.0,
+      "0.98": -1.1111111111111116,
+      "0.98_abstained": 14.0,
+      "0.98_runs": 15.0,
+      "1.0": 0.0,
+      "1.0_abstained": 15.0,
+      "1.0_runs": 15.0
+    }
+  },
+  "leave_one_dataset_out": {
+    "widar_bvp": {
+      "chosen_floor": 1.0,
+      "unguarded_pp": -0.17402945113788335,
+      "guarded_pp": 0.05800981704596234,
+      "harm_removed_pct": 133.33333333333402,
+      "in_sample_best_floor": 1.0,
+      "abstained_runs": 11.0
+    },
+    "ntufi_har": {
+      "chosen_floor": 1.0,
+      "unguarded_pp": -2.266445550027638,
+      "guarded_pp": 0.43570028644655423,
+      "harm_removed_pct": 119.22394678492238,
+      "in_sample_best_floor": 1.0,
+      "abstained_runs": 9.0
+    },
+    "signfi_top10": {
+      "chosen_floor": 1.0,
+      "unguarded_pp": -27.206349206349206,
+      "guarded_pp": 0.0,
+      "harm_removed_pct": 100.0,
+      "in_sample_best_floor": 1.0,
+      "abstained_runs": 15.0
+    }
+  }
+}

@@ -29,6 +29,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import dataclasses
 import json
 import logging
 import time
@@ -169,10 +170,31 @@ def _run_one_room(
         )
         device = next(source_model.parameters()).device
 
-        # (2) Build target loaders for labelled 5-fold fine-tuning
-        bundle = load_prepared_paper1_dataset(
+        # (2) Build target loaders for labelled 5-fold fine-tuning. The source
+        # model sees inputs standardised with source-train statistics, so the
+        # target data must be scaled with the same statistics: recover them
+        # from the identical (unscaled) source-train split.
+        raw_src_train, *_ = build_prepared_tta_loaders(
             dataset_name="widar_bvp",
             prepared_root=PREPARED_ROOT,
+            seed=seed,
+            batch_size=config.batch_size,
+            source_val_ratio=config.source_val_ratio,
+            target_adapt_ratio=config.target_adapt_ratio,
+            train_env_ids=train_envs,
+            test_env_ids=test_envs,
+            input_standardization="none",
+        )
+        raw_features = raw_src_train.dataset.bundle.features  # type: ignore[attr-defined]
+        mean = raw_features.mean(dim=0, keepdim=True)
+        std = raw_features.std(dim=0, keepdim=True)
+        std = torch.where(std > 1e-6, std, torch.ones_like(std))
+        raw_bundle = load_prepared_paper1_dataset(
+            dataset_name="widar_bvp",
+            prepared_root=PREPARED_ROOT,
+        )
+        bundle = dataclasses.replace(
+            raw_bundle, features=(raw_bundle.features - mean) / std
         )
         assert bundle.environments is not None
         tgt_idx = _target_indices_for_env(bundle.environments, test_envs).tolist()

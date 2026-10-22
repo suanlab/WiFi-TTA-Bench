@@ -5,11 +5,11 @@
     "widar_bvp": {
       "cnn_gru": {
         "n": 15,
-        "source_train_accuracy": 0.924142259414226,
-        "source_val_accuracy": 0.7949832775919732,
-        "target_accuracy": 0.6867916108879963,
-        "train_to_target_drop_pp": 23.735064852622966,
-        "val_to_target_drop_pp": 10.819166670397685
+        "source_train_accuracy": 0.8864574616457461,
+        "source_val_accuracy": 0.7148272017837235,
+        "target_accuracy": 0.6405622489959839,
+        "train_to_target_drop_pp": 24.58952126497622,
+        "val_to_target_drop_pp": 7.4264952787739595
       }
     }
   }

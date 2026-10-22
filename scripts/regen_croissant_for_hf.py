@@ -322,8 +322,8 @@ def build() -> dict:
             "negative results",
         ],
         "license": (
-            "CC-BY-4.0 (benchmark artifacts and code; raw datasets retain "
-            "original academic licences)"
+            "CC-BY-4.0 (benchmark data artifacts and metadata; code is MIT; raw "
+            "datasets retain original academic licences)"
         ),
         "citeAs": "To be assigned upon acceptance.",
         "url": "https://anonymous.4open.science/r/WiFi-TTA-Bench-48FE",

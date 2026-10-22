@@ -73,3 +73,8 @@ pytest --tb=short -q                                         # test suite
 
 `SOURCE_SCRIPTS` in `scripts/reproduce_all_results.py` maps every artifact under
 `outputs/` to the command that regenerates it.
+
+## Licence
+
+Code: MIT (`LICENSE`). Split manifests, metadata and result artifacts: CC BY 4.0
+(`LICENSE-DATA`). Upstream datasets are not redistributed and keep their own licences.

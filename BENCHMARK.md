@@ -1,7 +1,7 @@
 # WiFi-TTA-Bench
 
 A harm-aware benchmark for test-time adaptation (TTA) on WiFi channel state
-information. Version 2.0.0 (see `CHANGELOG.md`; Croissant metadata in
+information. Version 3.0.0 (see `CHANGELOG.md`; Croissant metadata in
 `outputs/croissant/`).
 
 ## What is evaluated
@@ -73,3 +73,8 @@ pytest --tb=short -q                                         # test suite
 
 `SOURCE_SCRIPTS` in `scripts/reproduce_all_results.py` maps every artifact under
 `outputs/` to the command that regenerates it.
+
+## Licence
+
+Code: MIT (`LICENSE`). Split manifests, metadata and result artifacts: CC BY 4.0
+(`LICENSE-DATA`). Upstream datasets are not redistributed and keep their own licences.

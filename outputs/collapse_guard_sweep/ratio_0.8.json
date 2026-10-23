@@ -13,7 +13,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 16.276773798589904
+      "time_seconds": 14.062138225262364
     },
     {
       "backbone": "mlp",
@@ -28,7 +28,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 16.276773798589904
+      "time_seconds": 14.062138225262364
     },
     {
       "backbone": "mlp",
@@ -43,7 +43,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 16.276773798589904
+      "time_seconds": 14.062138225262364
     },
     {
       "backbone": "mlp",
@@ -58,7 +58,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 15.872510648642978
+      "time_seconds": 13.50392109217743
     },
     {
       "backbone": "mlp",
@@ -73,7 +73,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.872510648642978
+      "time_seconds": 13.50392109217743
     },
     {
       "backbone": "mlp",
@@ -88,7 +88,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.872510648642978
+      "time_seconds": 13.50392109217743
     },
     {
       "backbone": "mlp",
@@ -103,7 +103,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 15.546208839863539
+      "time_seconds": 13.723232123379907
     },
     {
       "backbone": "mlp",
@@ -118,7 +118,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.546208839863539
+      "time_seconds": 13.723232123379907
     },
     {
       "backbone": "mlp",
@@ -133,7 +133,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.546208839863539
+      "time_seconds": 13.723232123379907
     },
     {
       "backbone": "mlp",
@@ -148,7 +148,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 14.965465510264039
+      "time_seconds": 12.708536609386405
     },
     {
       "backbone": "mlp",
@@ -163,7 +163,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 14.965465510264039
+      "time_seconds": 12.708536609386405
     },
     {
       "backbone": "mlp",
@@ -178,7 +178,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 14.965465510264039
+      "time_seconds": 12.708536609386405
     },
     {
       "backbone": "mlp",
@@ -193,7 +193,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 13.048373129218817
+      "time_seconds": 14.145090042303005
     },
     {
       "backbone": "mlp",
@@ -208,7 +208,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 13.048373129218817
+      "time_seconds": 14.145090042303005
     },
     {
       "backbone": "mlp",
@@ -223,7 +223,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 13.048373129218817
+      "time_seconds": 14.145090042303005
     },
     {
       "backbone": "mlp",
@@ -238,7 +238,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 15.07408252855142
+      "time_seconds": 12.789633136242628
     },
     {
       "backbone": "mlp",
@@ -253,7 +253,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.07408252855142
+      "time_seconds": 12.789633136242628
     },
     {
       "backbone": "mlp",
@@ -268,7 +268,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.07408252855142
+      "time_seconds": 12.789633136242628
     },
     {
       "backbone": "mlp",
@@ -283,7 +283,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 13.943857663000623
+      "time_seconds": 14.397436757261554
     },
     {
       "backbone": "mlp",
@@ -298,7 +298,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 13.943857663000623
+      "time_seconds": 14.397436757261554
     },
     {
       "backbone": "mlp",
@@ -313,7 +313,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 13.943857663000623
+      "time_seconds": 14.397436757261554
     },
     {
       "backbone": "mlp",
@@ -328,7 +328,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 15.53973065627118
+      "time_seconds": 14.889295841256777
     },
     {
       "backbone": "mlp",
@@ -343,7 +343,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.53973065627118
+      "time_seconds": 14.889295841256777
     },
     {
       "backbone": "mlp",
@@ -358,7 +358,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.53973065627118
+      "time_seconds": 14.889295841256777
     },
     {
       "backbone": "mlp",
@@ -373,7 +373,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 15.772356473530332
+      "time_seconds": 12.703837722539902
     },
     {
       "backbone": "mlp",
@@ -388,7 +388,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.772356473530332
+      "time_seconds": 12.703837722539902
     },
     {
       "backbone": "mlp",
@@ -403,7 +403,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.772356473530332
+      "time_seconds": 12.703837722539902
     },
     {
       "backbone": "mlp",
@@ -418,7 +418,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 13.15820495163401
+      "time_seconds": 13.590592923884591
     },
     {
       "backbone": "mlp",
@@ -433,7 +433,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 13.15820495163401
+      "time_seconds": 13.590592923884591
     },
     {
       "backbone": "mlp",
@@ -448,7 +448,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 13.15820495163401
+      "time_seconds": 13.590592923884591
     },
     {
       "backbone": "mlp",
@@ -463,7 +463,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 15.261832429716984
+      "time_seconds": 13.228398426125446
     },
     {
       "backbone": "mlp",
@@ -478,7 +478,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.261832429716984
+      "time_seconds": 13.228398426125446
     },
     {
       "backbone": "mlp",
@@ -493,7 +493,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.261832429716984
+      "time_seconds": 13.228398426125446
     },
     {
       "backbone": "mlp",
@@ -508,7 +508,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 14.897767601534724
+      "time_seconds": 14.082629742100835
     },
     {
       "backbone": "mlp",
@@ -523,7 +523,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 14.897767601534724
+      "time_seconds": 14.082629742100835
     },
     {
       "backbone": "mlp",
@@ -538,7 +538,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 14.897767601534724
+      "time_seconds": 14.082629742100835
     },
     {
       "backbone": "mlp",
@@ -553,7 +553,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 15.346399092425903
+      "time_seconds": 14.153253736595312
     },
     {
       "backbone": "mlp",
@@ -568,7 +568,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.346399092425903
+      "time_seconds": 14.153253736595312
     },
     {
       "backbone": "mlp",
@@ -583,7 +583,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.346399092425903
+      "time_seconds": 14.153253736595312
     },
     {
       "backbone": "mlp",
@@ -598,7 +598,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 15.23845125362277
+      "time_seconds": 13.44473724377652
     },
     {
       "backbone": "mlp",
@@ -613,7 +613,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.23845125362277
+      "time_seconds": 13.44473724377652
     },
     {
       "backbone": "mlp",
@@ -628,7 +628,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.23845125362277
+      "time_seconds": 13.44473724377652
     },
     {
       "backbone": "mlp",
@@ -643,7 +643,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 15.601370994622508
+      "time_seconds": 12.282661855841676
     },
     {
       "backbone": "mlp",
@@ -658,7 +658,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.601370994622508
+      "time_seconds": 12.282661855841676
     },
     {
       "backbone": "mlp",
@@ -673,7 +673,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.601370994622508
+      "time_seconds": 12.282661855841676
     }
   ],
   "summary": {
@@ -733,5 +733,5 @@
     "source_epochs": 10,
     "collapse_guard_diversity_ratio": 0.8
   },
-  "elapsed_seconds": 676.6805273480713
+  "elapsed_seconds": 611.181941376999
 }

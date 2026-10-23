@@ -60,7 +60,7 @@
   "summaries": {
     "baseline": {
       "n": 15,
-      "seconds": 621.848108517006,
+      "seconds": 576.9577701035887,
       "source_train_accuracy": 0.9693584379358438,
       "source_val_accuracy": 0.7307692307692307,
       "target_accuracy": 0.6449799196787148,
@@ -68,7 +68,7 @@
     },
     "combined": {
       "n": 15,
-      "seconds": 744.4897327683866,
+      "seconds": 801.8956913705915,
       "source_train_accuracy": 0.9871408647140865,
       "source_val_accuracy": 0.7351727982162765,
       "target_accuracy": 0.6528335564480142,
@@ -76,7 +76,7 @@
     },
     "combined_strong": {
       "n": 15,
-      "seconds": 1429.5202000234276,
+      "seconds": 1544.0798024497926,
       "source_train_accuracy": 0.99442119944212,
       "source_val_accuracy": 0.7314938684503901,
       "target_accuracy": 0.6448906738063365,
@@ -84,7 +84,7 @@
     },
     "epochs_1": {
       "n": 15,
-      "seconds": 96.4002506993711,
+      "seconds": 117.4360944647342,
       "source_train_accuracy": 0.9211994421199442,
       "source_val_accuracy": 0.7231326644370123,
       "target_accuracy": 0.6472556894243642,
@@ -92,7 +92,7 @@
     },
     "epochs_2": {
       "n": 15,
-      "seconds": 156.02571331709623,
+      "seconds": 175.63738599792123,
       "source_train_accuracy": 0.940739191073919,
       "source_val_accuracy": 0.7256967670011149,
       "target_accuracy": 0.6455153949129853,
@@ -100,7 +100,7 @@
     },
     "epochs_2_small": {
       "n": 15,
-      "seconds": 113.08972752653062,
+      "seconds": 125.81287718936801,
       "source_train_accuracy": 0.9484379358437935,
       "source_val_accuracy": 0.704515050167224,
       "target_accuracy": 0.6355198572066042,
@@ -108,7 +108,7 @@
     },
     "epochs_3": {
       "n": 15,
-      "seconds": 211.56759958341718,
+      "seconds": 238.39436956495047,
       "source_train_accuracy": 0.9643933054393306,
       "source_val_accuracy": 0.7283166109253065,
       "target_accuracy": 0.6435966086568496,
@@ -116,7 +116,7 @@
     },
     "input_noise_0.1": {
       "n": 15,
-      "seconds": 797.9567846916616,
+      "seconds": 750.9892657119781,
       "source_train_accuracy": 0.9692747559274756,
       "source_val_accuracy": 0.7318283166109254,
       "target_accuracy": 0.646586345381526,
@@ -124,7 +124,7 @@
     },
     "input_noise_0.3": {
       "n": 15,
-      "seconds": 776.4693388529122,
+      "seconds": 725.5801603905857,
       "source_train_accuracy": 0.9643235704323571,
       "source_val_accuracy": 0.7230769230769231,
       "target_accuracy": 0.6387773315484159,
@@ -132,7 +132,7 @@
     },
     "label_smoothing_0.1": {
       "n": 15,
-      "seconds": 620.8838015515357,
+      "seconds": 571.5779089741409,
       "source_train_accuracy": 0.983863319386332,
       "source_val_accuracy": 0.7410813823857302,
       "target_accuracy": 0.6514056224899599,
@@ -140,7 +140,7 @@
     },
     "mixup_0.2": {
       "n": 15,
-      "seconds": 655.0547667946666,
+      "seconds": 662.9921291284263,
       "source_train_accuracy": 0.9842817294281729,
       "source_val_accuracy": 0.7330546265328874,
       "target_accuracy": 0.6494868362338242,
@@ -148,7 +148,7 @@
     },
     "mixup_0.4": {
       "n": 15,
-      "seconds": 612.6557680666447,
+      "seconds": 658.2705150116235,
       "source_train_accuracy": 0.9703905160390516,
       "source_val_accuracy": 0.7310479375696768,
       "target_accuracy": 0.6502900490852298,
@@ -156,7 +156,7 @@
     },
     "small_encoder": {
       "n": 15,
-      "seconds": 389.72137934342027,
+      "seconds": 438.10909099690616,
       "source_train_accuracy": 0.9792887029288704,
       "source_val_accuracy": 0.7137123745819398,
       "target_accuracy": 0.634359660865685,
@@ -164,7 +164,7 @@
     },
     "weight_decay_1e-1": {
       "n": 15,
-      "seconds": 675.9457136448473,
+      "seconds": 629.4507915079594,
       "source_train_accuracy": 0.9644351464435147,
       "source_val_accuracy": 0.7307692307692307,
       "target_accuracy": 0.6453369031682284,
@@ -172,7 +172,7 @@
     },
     "weight_decay_1e-2": {
       "n": 15,
-      "seconds": 649.4061620291322,
+      "seconds": 596.0734542552382,
       "source_train_accuracy": 0.9748675034867503,
       "source_val_accuracy": 0.7322742474916387,
       "target_accuracy": 0.6453369031682284,

@@ -240,3 +240,18 @@ def test_guard_that_never_fires_leaves_sar_unchanged() -> None:
         if name.endswith("num_batches_tracked"):
             continue
         assert torch.equal(value, states[1][name]), name
+
+
+def test_batch_stat_evaluation_handles_a_one_sample_batch() -> None:
+    from torch.utils.data import DataLoader, Subset
+
+    from pinn4csi.training.paper2_tta import evaluate_tta_classifier
+
+    config, model, reference, loaders, *_ = _setup()
+    test_set = loaders[3].dataset
+    # 33 samples with batch size 32 leave a one-sample remainder batch.
+    loader = DataLoader(Subset(test_set, range(33)), batch_size=32)
+    metrics = evaluate_tta_classifier(
+        model, loader, torch.device("cpu"), bn_batch_stats=True
+    )
+    assert 0.0 <= metrics["accuracy"] <= 1.0

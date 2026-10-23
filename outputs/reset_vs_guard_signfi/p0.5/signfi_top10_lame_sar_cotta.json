@@ -9,29 +9,29 @@
     "n_observations": 15
   },
   "tent": {
-    "mean_gain": 0.07333334535360336,
-    "ci_lower": 0.0476190485060215,
-    "ci_upper": 0.10095237195491791,
-    "cohens_d_vs_noadapt": 1.8746269941329956,
-    "paired_d_vs_noadapt": 1.3255614042282104,
+    "mean_gain": 0.05238095670938492,
+    "ci_lower": 0.02857142873108387,
+    "ci_upper": 0.07841269671916962,
+    "cohens_d_vs_noadapt": 1.467132568359375,
+    "paired_d_vs_noadapt": 1.0374194383621216,
     "negative_adaptation_rate": 0.0,
     "n_observations": 15
   },
   "reset_tent": {
-    "mean_gain": 0.07333334535360336,
-    "ci_lower": 0.04730158671736717,
-    "ci_upper": 0.10063491761684418,
-    "cohens_d_vs_noadapt": 1.8746269941329956,
-    "paired_d_vs_noadapt": 1.3255614042282104,
+    "mean_gain": 0.05047619342803955,
+    "ci_lower": 0.026349207386374474,
+    "ci_upper": 0.07683346420526505,
+    "cohens_d_vs_noadapt": 1.4041802883148193,
+    "paired_d_vs_noadapt": 0.9929054379463196,
     "negative_adaptation_rate": 0.0,
     "n_observations": 15
   },
   "collapse_guarded_tent": {
-    "mean_gain": 0.07333334535360336,
-    "ci_lower": 0.046666670590639114,
-    "ci_upper": 0.10158730298280716,
-    "cohens_d_vs_noadapt": 1.8746269941329956,
-    "paired_d_vs_noadapt": 1.3255614042282104,
+    "mean_gain": 0.05238095670938492,
+    "ci_lower": 0.02857142873108387,
+    "ci_upper": 0.07777778059244156,
+    "cohens_d_vs_noadapt": 1.467132568359375,
+    "paired_d_vs_noadapt": 1.0374194383621216,
     "negative_adaptation_rate": 0.0,
     "n_observations": 15
   }

@@ -41,8 +41,8 @@
     "t3a_full_filter_k": 20,
     "bn_eval_stats": "running",
     "bn_reset_cumulative": false,
-    "collapse_guard_reference": "first_batch",
-    "freeze_bn_in_scoring_pass": false,
+    "collapse_guard_reference": "same_batch",
+    "freeze_bn_in_scoring_pass": true,
     "input_standardization": "source",
     "ablation_use_invariance": true,
     "ablation_use_residual": true,
@@ -64,14 +64,14 @@
       "source_only_accuracy": 0.7128514056224899,
       "oracle_fold_accuracies": [
         0.8076923076923077,
-        0.8260869565217391,
+        0.822742474916388,
         0.8344481605351171,
         0.8492462311557789,
         0.8023450586264657
       ],
-      "oracle_mean_accuracy": 0.8239637429062816,
-      "oracle_std_accuracy": 0.019272794134943042,
-      "gap_pp": 11.111233728379165
+      "oracle_mean_accuracy": 0.8232948465852115,
+      "oracle_std_accuracy": 0.019238689684306393,
+      "gap_pp": 11.044344096272152
     },
     {
       "room": "room2",
@@ -287,10 +287,10 @@
   "summary": {
     "source_only_mean": 0.6476349843819723,
     "source_only_std": 0.07649715030448323,
-    "oracle_mean": 0.7542597790139849,
-    "oracle_std": 0.06667403988421379,
-    "supervised_gap_pp": 10.662479463201258,
+    "oracle_mean": 0.7542151859259135,
+    "oracle_std": 0.06662429547569443,
+    "supervised_gap_pp": 10.658020154394121,
     "n_room_seed_rows": 15
   },
-  "elapsed_seconds": 6167.874244872481
+  "elapsed_seconds": 6878.45634896867
 }

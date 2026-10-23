@@ -9,29 +9,29 @@
     "n_observations": 15
   },
   "entropy_tta": {
-    "mean_gain": -0.023070059716701508,
-    "ci_lower": -0.039047304540872574,
-    "ci_upper": -0.008612227626144886,
-    "cohens_d_vs_noadapt": -1.052032470703125,
-    "paired_d_vs_noadapt": -0.7438992261886597,
+    "mean_gain": -0.02199910767376423,
+    "ci_lower": -0.03543061017990112,
+    "ci_upper": -0.009370816871523857,
+    "cohens_d_vs_noadapt": -1.1673468351364136,
+    "paired_d_vs_noadapt": -0.825438916683197,
     "negative_adaptation_rate": 0.7333333492279053,
     "n_observations": 15
   },
   "tent": {
-    "mean_gain": -0.004239178728312254,
-    "ci_lower": -0.015619141981005669,
-    "ci_upper": 0.0033467202447354794,
-    "cohens_d_vs_noadapt": -0.2950032353401184,
-    "paired_d_vs_noadapt": -0.2085987776517868,
-    "negative_adaptation_rate": 0.4000000059604645,
+    "mean_gain": -0.0029897368513047695,
+    "ci_lower": -0.010843374766409397,
+    "ci_upper": 0.0021865239832550287,
+    "cohens_d_vs_noadapt": -0.302082359790802,
+    "paired_d_vs_noadapt": -0.21360448002815247,
+    "negative_adaptation_rate": 0.46666666865348816,
     "n_observations": 15
   },
   "sar_full": {
-    "mean_gain": -0.004105310421437025,
-    "ci_lower": -0.01512829214334488,
-    "ci_upper": 0.003435965860262513,
-    "cohens_d_vs_noadapt": -0.2882176339626312,
-    "paired_d_vs_noadapt": -0.20380063354969025,
+    "mean_gain": -0.0030343597754836082,
+    "ci_lower": -0.010664882138371468,
+    "ci_upper": 0.002052654977887869,
+    "cohens_d_vs_noadapt": -0.3093318045139313,
+    "paired_d_vs_noadapt": -0.2187306135892868,
     "negative_adaptation_rate": 0.4000000059604645,
     "n_observations": 15
   },
@@ -45,12 +45,12 @@
     "n_observations": 15
   },
   "collapse_guarded_entropy_tta": {
-    "mean_gain": -0.0026327529922127724,
-    "ci_lower": -0.008656849153339863,
-    "ci_upper": 0.0031682285480201244,
-    "cohens_d_vs_noadapt": -0.3079160153865814,
-    "paired_d_vs_noadapt": -0.21772952377796173,
-    "negative_adaptation_rate": 0.4000000059604645,
+    "mean_gain": -0.012851405888795853,
+    "ci_lower": -0.022267960011959076,
+    "ci_upper": -0.004148799926042557,
+    "cohens_d_vs_noadapt": -0.9841810464859009,
+    "paired_d_vs_noadapt": -0.6959210634231567,
+    "negative_adaptation_rate": 0.6000000238418579,
     "n_observations": 15
   }
 }

@@ -198,12 +198,30 @@ def _summarise(
     return out
 
 
+DATASETS = ("widar_bvp", "ntufi_har", "signfi_top10")
+GLOBBED_ARTIFACTS = (
+    "outputs/faithful_ports/*/*_lame_sar_cotta_full.json",
+    "outputs/bn_source_control/*/*_lame_sar_cotta_full.json",
+    "outputs/bn_double_update/*/*_lame_sar_cotta_full.json",
+    "outputs/tent_lr0/*/*_lame_sar_cotta_full.json",
+    "outputs/published_bn_batchstats/*/*_lame_sar_cotta_full.json",
+    "outputs/backbone_breadth/*.json",
+)
+
+
 def _artifacts() -> list[tuple[str, str]]:
     registry = json.loads(
         Path("outputs/guard_coverage/guard_coverage.json").read_text()
     )
     pairs = {(str(r["source"]), str(r["dataset"])) for r in registry["rows"]}
     pairs.update(EXTRA_ARTIFACTS)
+    # Every per-run artifact the paper quotes environment-level evidence for.
+    for pattern in GLOBBED_ARTIFACTS:
+        for path in sorted(Path().glob(pattern)):
+            if "superseded" in str(path):
+                continue
+            dataset = next(d for d in DATASETS if path.name.startswith(d))
+            pairs.add((str(path), dataset))
     return sorted(pairs)
 
 

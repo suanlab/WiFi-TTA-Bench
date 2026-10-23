@@ -14,7 +14,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.969473237171769
+      "time_seconds": 12.345977609511465
     },
     {
       "split": "env2",
@@ -30,7 +30,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.969473237171769
+      "time_seconds": 12.345977609511465
     },
     {
       "split": "env2",
@@ -46,7 +46,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.969473237171769
+      "time_seconds": 12.345977609511465
     },
     {
       "split": "env2",
@@ -62,7 +62,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "abstained_collapse_guard",
-      "time_seconds": 4.969473237171769
+      "time_seconds": 12.345977609511465
     },
     {
       "split": "env2",
@@ -78,7 +78,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.932482418604195
+      "time_seconds": 12.276774214580655
     },
     {
       "split": "env2",
@@ -94,7 +94,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.932482418604195
+      "time_seconds": 12.276774214580655
     },
     {
       "split": "env2",
@@ -110,7 +110,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.932482418604195
+      "time_seconds": 12.276774214580655
     },
     {
       "split": "env2",
@@ -119,14 +119,14 @@
       "seed": 1,
       "method": "collapse_guarded_entropy_tta",
       "pre_accuracy": 0.7342704149933066,
-      "post_accuracy": 0.7402945113788487,
-      "gain": 0.0060240963855421326,
-      "source_drop": -0.010869565217391353,
+      "post_accuracy": 0.7429718875502008,
+      "gain": 0.00870147255689424,
+      "source_drop": -0.02006688963210701,
       "attempted_steps": 5,
-      "accepted_steps": 4,
+      "accepted_steps": 5,
       "abstained": false,
-      "stop_reason": "early_stop_collapse_guard",
-      "time_seconds": 4.932482418604195
+      "stop_reason": "budget_exhausted",
+      "time_seconds": 12.276774214580655
     },
     {
       "split": "env2",
@@ -142,7 +142,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.903846985660493
+      "time_seconds": 11.796420691534877
     },
     {
       "split": "env2",
@@ -158,7 +158,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.903846985660493
+      "time_seconds": 11.796420691534877
     },
     {
       "split": "env2",
@@ -174,7 +174,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.903846985660493
+      "time_seconds": 11.796420691534877
     },
     {
       "split": "env2",
@@ -190,7 +190,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.903846985660493
+      "time_seconds": 11.796420691534877
     },
     {
       "split": "env2",
@@ -206,7 +206,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 5.00188405578956
+      "time_seconds": 12.011600927915424
     },
     {
       "split": "env2",
@@ -222,7 +222,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 5.00188405578956
+      "time_seconds": 12.011600927915424
     },
     {
       "split": "env2",
@@ -238,7 +238,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 5.00188405578956
+      "time_seconds": 12.011600927915424
     },
     {
       "split": "env2",
@@ -247,14 +247,14 @@
       "seed": 3,
       "method": "collapse_guarded_entropy_tta",
       "pre_accuracy": 0.7034805890227577,
-      "post_accuracy": 0.7001338688085676,
-      "gain": -0.0033467202141900243,
-      "source_drop": -0.0016722408026755842,
-      "attempted_steps": 3,
-      "accepted_steps": 2,
+      "post_accuracy": 0.713520749665328,
+      "gain": 0.010040160642570295,
+      "source_drop": -0.0008361204013378476,
+      "attempted_steps": 5,
+      "accepted_steps": 5,
       "abstained": false,
-      "stop_reason": "early_stop_collapse_guard",
-      "time_seconds": 5.00188405578956
+      "stop_reason": "budget_exhausted",
+      "time_seconds": 12.011600927915424
     },
     {
       "split": "env2",
@@ -270,7 +270,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 5.310934891924262
+      "time_seconds": 11.871215846855193
     },
     {
       "split": "env2",
@@ -286,7 +286,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 5.310934891924262
+      "time_seconds": 11.871215846855193
     },
     {
       "split": "env2",
@@ -302,7 +302,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 5.310934891924262
+      "time_seconds": 11.871215846855193
     },
     {
       "split": "env2",
@@ -311,14 +311,14 @@
       "seed": 4,
       "method": "collapse_guarded_entropy_tta",
       "pre_accuracy": 0.6874163319946452,
-      "post_accuracy": 0.6947791164658634,
-      "gain": 0.007362784471218187,
+      "post_accuracy": 0.6987951807228916,
+      "gain": 0.011378848728246349,
       "source_drop": -0.0050167224080267525,
-      "attempted_steps": 4,
-      "accepted_steps": 3,
+      "attempted_steps": 5,
+      "accepted_steps": 5,
       "abstained": false,
-      "stop_reason": "early_stop_collapse_guard",
-      "time_seconds": 5.310934891924262
+      "stop_reason": "budget_exhausted",
+      "time_seconds": 11.871215846855193
     },
     {
       "split": "env1",
@@ -334,7 +334,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.9432438826188445
+      "time_seconds": 11.859704403672367
     },
     {
       "split": "env1",
@@ -350,7 +350,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.9432438826188445
+      "time_seconds": 11.859704403672367
     },
     {
       "split": "env1",
@@ -366,7 +366,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.9432438826188445
+      "time_seconds": 11.859704403672367
     },
     {
       "split": "env1",
@@ -382,7 +382,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.9432438826188445
+      "time_seconds": 11.859704403672367
     },
     {
       "split": "env1",
@@ -398,7 +398,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.890411477070302
+      "time_seconds": 11.771788035985082
     },
     {
       "split": "env1",
@@ -414,7 +414,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.890411477070302
+      "time_seconds": 11.771788035985082
     },
     {
       "split": "env1",
@@ -430,7 +430,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.890411477070302
+      "time_seconds": 11.771788035985082
     },
     {
       "split": "env1",
@@ -439,14 +439,14 @@
       "seed": 1,
       "method": "collapse_guarded_entropy_tta",
       "pre_accuracy": 0.6546184738955824,
-      "post_accuracy": 0.6552878179384204,
-      "gain": 0.0006693440428380271,
-      "source_drop": 0.0016722408026755842,
-      "attempted_steps": 4,
-      "accepted_steps": 3,
+      "post_accuracy": 0.6445783132530121,
+      "gain": -0.010040160642570295,
+      "source_drop": -0.0025083612040134318,
+      "attempted_steps": 5,
+      "accepted_steps": 5,
       "abstained": false,
-      "stop_reason": "early_stop_collapse_guard",
-      "time_seconds": 4.890411477070302
+      "stop_reason": "budget_exhausted",
+      "time_seconds": 11.771788035985082
     },
     {
       "split": "env1",
@@ -462,7 +462,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.891395381651819
+      "time_seconds": 10.770142780151218
     },
     {
       "split": "env1",
@@ -478,7 +478,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.891395381651819
+      "time_seconds": 10.770142780151218
     },
     {
       "split": "env1",
@@ -494,7 +494,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.891395381651819
+      "time_seconds": 10.770142780151218
     },
     {
       "split": "env1",
@@ -510,7 +510,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.891395381651819
+      "time_seconds": 10.770142780151218
     },
     {
       "split": "env1",
@@ -526,7 +526,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.9335624892264605
+      "time_seconds": 11.639765770174563
     },
     {
       "split": "env1",
@@ -542,7 +542,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.9335624892264605
+      "time_seconds": 11.639765770174563
     },
     {
       "split": "env1",
@@ -558,7 +558,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.9335624892264605
+      "time_seconds": 11.639765770174563
     },
     {
       "split": "env1",
@@ -574,7 +574,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.9335624892264605
+      "time_seconds": 11.639765770174563
     },
     {
       "split": "env1",
@@ -590,7 +590,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.966678178869188
+      "time_seconds": 12.081431137397885
     },
     {
       "split": "env1",
@@ -606,7 +606,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.966678178869188
+      "time_seconds": 12.081431137397885
     },
     {
       "split": "env1",
@@ -622,7 +622,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.966678178869188
+      "time_seconds": 12.081431137397885
     },
     {
       "split": "env1",
@@ -631,14 +631,14 @@
       "seed": 4,
       "method": "collapse_guarded_entropy_tta",
       "pre_accuracy": 0.6546184738955824,
-      "post_accuracy": 0.6526104417670683,
-      "gain": -0.002008032128514081,
-      "source_drop": -0.004180602006689016,
-      "attempted_steps": 2,
-      "accepted_steps": 1,
+      "post_accuracy": 0.64190093708166,
+      "gain": -0.012717536813922403,
+      "source_drop": -0.012541806020066937,
+      "attempted_steps": 5,
+      "accepted_steps": 5,
       "abstained": false,
-      "stop_reason": "early_stop_collapse_guard",
-      "time_seconds": 4.966678178869188
+      "stop_reason": "budget_exhausted",
+      "time_seconds": 12.081431137397885
     },
     {
       "split": "env0",
@@ -654,7 +654,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.926727292127907
+      "time_seconds": 11.106925598345697
     },
     {
       "split": "env0",
@@ -670,7 +670,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.926727292127907
+      "time_seconds": 11.106925598345697
     },
     {
       "split": "env0",
@@ -686,7 +686,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.926727292127907
+      "time_seconds": 11.106925598345697
     },
     {
       "split": "env0",
@@ -702,7 +702,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.926727292127907
+      "time_seconds": 11.106925598345697
     },
     {
       "split": "env0",
@@ -718,7 +718,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.951390138361603
+      "time_seconds": 11.37240647431463
     },
     {
       "split": "env0",
@@ -734,7 +734,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.951390138361603
+      "time_seconds": 11.37240647431463
     },
     {
       "split": "env0",
@@ -750,7 +750,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.951390138361603
+      "time_seconds": 11.37240647431463
     },
     {
       "split": "env0",
@@ -766,7 +766,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.951390138361603
+      "time_seconds": 11.37240647431463
     },
     {
       "split": "env0",
@@ -782,7 +782,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.65698827104643
+      "time_seconds": 11.767728838138282
     },
     {
       "split": "env0",
@@ -798,7 +798,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.65698827104643
+      "time_seconds": 11.767728838138282
     },
     {
       "split": "env0",
@@ -814,7 +814,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.65698827104643
+      "time_seconds": 11.767728838138282
     },
     {
       "split": "env0",
@@ -823,14 +823,14 @@
       "seed": 2,
       "method": "collapse_guarded_entropy_tta",
       "pre_accuracy": 0.5461847389558233,
-      "post_accuracy": 0.5468540829986613,
-      "gain": 0.0006693440428380271,
-      "source_drop": -0.0025083612040134318,
-      "attempted_steps": 2,
-      "accepted_steps": 1,
+      "post_accuracy": 0.5441767068273092,
+      "gain": -0.002008032128514081,
+      "source_drop": -0.014214046822742521,
+      "attempted_steps": 5,
+      "accepted_steps": 5,
       "abstained": false,
-      "stop_reason": "early_stop_collapse_guard",
-      "time_seconds": 4.65698827104643
+      "stop_reason": "budget_exhausted",
+      "time_seconds": 11.767728838138282
     },
     {
       "split": "env0",
@@ -846,7 +846,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.972674397751689
+      "time_seconds": 11.566578108817339
     },
     {
       "split": "env0",
@@ -862,7 +862,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.972674397751689
+      "time_seconds": 11.566578108817339
     },
     {
       "split": "env0",
@@ -878,7 +878,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.972674397751689
+      "time_seconds": 11.566578108817339
     },
     {
       "split": "env0",
@@ -887,14 +887,14 @@
       "seed": 3,
       "method": "collapse_guarded_entropy_tta",
       "pre_accuracy": 0.5502008032128514,
-      "post_accuracy": 0.5461847389558233,
-      "gain": -0.004016064257028051,
-      "source_drop": -0.009197324414715657,
+      "post_accuracy": 0.5414993306559571,
+      "gain": -0.00870147255689424,
+      "source_drop": -0.01421404682274241,
       "attempted_steps": 5,
-      "accepted_steps": 4,
+      "accepted_steps": 5,
       "abstained": false,
-      "stop_reason": "early_stop_collapse_guard",
-      "time_seconds": 4.972674397751689
+      "stop_reason": "budget_exhausted",
+      "time_seconds": 11.566578108817339
     },
     {
       "split": "env0",
@@ -910,7 +910,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 4.904898727312684
+      "time_seconds": 11.815575272310525
     },
     {
       "split": "env0",
@@ -926,7 +926,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.904898727312684
+      "time_seconds": 11.815575272310525
     },
     {
       "split": "env0",
@@ -942,7 +942,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 4.904898727312684
+      "time_seconds": 11.815575272310525
     },
     {
       "split": "env0",
@@ -951,14 +951,14 @@
       "seed": 4,
       "method": "collapse_guarded_entropy_tta",
       "pre_accuracy": 0.5508701472556894,
-      "post_accuracy": 0.5568942436412316,
-      "gain": 0.006024096385542244,
-      "source_drop": -0.0058528428093646,
-      "attempted_steps": 2,
-      "accepted_steps": 1,
+      "post_accuracy": 0.5468540829986613,
+      "gain": -0.004016064257028051,
+      "source_drop": -0.02341137123745818,
+      "attempted_steps": 5,
+      "accepted_steps": 5,
       "abstained": false,
-      "stop_reason": "early_stop_collapse_guard",
-      "time_seconds": 4.904898727312684
+      "stop_reason": "budget_exhausted",
+      "time_seconds": 11.815575272310525
     }
   ],
   "config": {
@@ -1005,8 +1005,8 @@
     "t3a_full_filter_k": 20,
     "bn_eval_stats": "running",
     "bn_reset_cumulative": false,
-    "collapse_guard_reference": "first_batch",
-    "freeze_bn_in_scoring_pass": false,
+    "collapse_guard_reference": "same_batch",
+    "freeze_bn_in_scoring_pass": true,
     "input_standardization": "source",
     "ablation_use_invariance": true,
     "ablation_use_residual": true,

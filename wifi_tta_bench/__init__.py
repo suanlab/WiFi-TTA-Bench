@@ -12,4 +12,4 @@ Quick start:
 from wifi_tta_bench.api import evaluate, list_datasets, list_methods, load_dataset
 
 __all__ = ["load_dataset", "list_datasets", "list_methods", "evaluate"]
-__version__ = "2.0.0"
+__version__ = "3.0.0"

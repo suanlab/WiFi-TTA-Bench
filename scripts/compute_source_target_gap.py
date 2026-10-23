@@ -48,7 +48,7 @@ BASE = TTAExperimentConfig(
     hidden_dim=64,
     num_layers=3,
     latent_dim=32,
-    early_stop_patience=3,
+    early_stop_patience=0,
 )
 
 

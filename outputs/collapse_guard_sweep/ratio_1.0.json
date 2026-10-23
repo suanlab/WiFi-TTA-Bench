@@ -13,7 +13,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 13.18893719340364
+      "time_seconds": 12.921727608889341
     },
     {
       "backbone": "mlp",
@@ -28,7 +28,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 13.18893719340364
+      "time_seconds": 12.921727608889341
     },
     {
       "backbone": "mlp",
@@ -43,7 +43,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "abstained_collapse_guard",
-      "time_seconds": 13.18893719340364
+      "time_seconds": 12.921727608889341
     },
     {
       "backbone": "mlp",
@@ -58,7 +58,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 12.655504496147236
+      "time_seconds": 13.407275579248866
     },
     {
       "backbone": "mlp",
@@ -73,7 +73,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 12.655504496147236
+      "time_seconds": 13.407275579248866
     },
     {
       "backbone": "mlp",
@@ -88,7 +88,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "abstained_collapse_guard",
-      "time_seconds": 12.655504496147236
+      "time_seconds": 13.407275579248866
     },
     {
       "backbone": "mlp",
@@ -103,7 +103,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 12.822704094151655
+      "time_seconds": 13.74979865240554
     },
     {
       "backbone": "mlp",
@@ -118,7 +118,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 12.822704094151655
+      "time_seconds": 13.74979865240554
     },
     {
       "backbone": "mlp",
@@ -126,14 +126,14 @@
       "seed": 2,
       "method": "collapse_guarded_entropy_tta",
       "pre_accuracy": 0.7536813922356091,
-      "post_accuracy": 0.7623828647925034,
-      "gain": 0.00870147255689424,
-      "source_drop": -0.006688963210702337,
-      "attempted_steps": 5,
-      "accepted_steps": 5,
+      "post_accuracy": 0.7536813922356091,
+      "gain": 0.0,
+      "source_drop": 0.006688963210702337,
+      "attempted_steps": 2,
+      "accepted_steps": 1,
       "abstained": false,
-      "stop_reason": "budget_exhausted",
-      "time_seconds": 12.822704094151655
+      "stop_reason": "early_stop_collapse_guard",
+      "time_seconds": 13.74979865240554
     },
     {
       "backbone": "mlp",
@@ -148,7 +148,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 11.840569032977024
+      "time_seconds": 11.759107545639077
     },
     {
       "backbone": "mlp",
@@ -163,7 +163,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 11.840569032977024
+      "time_seconds": 11.759107545639077
     },
     {
       "backbone": "mlp",
@@ -178,7 +178,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "abstained_collapse_guard",
-      "time_seconds": 11.840569032977024
+      "time_seconds": 11.759107545639077
     },
     {
       "backbone": "mlp",
@@ -193,7 +193,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 13.04803365903596
+      "time_seconds": 12.121189823995033
     },
     {
       "backbone": "mlp",
@@ -208,7 +208,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 13.04803365903596
+      "time_seconds": 12.121189823995033
     },
     {
       "backbone": "mlp",
@@ -216,14 +216,14 @@
       "seed": 4,
       "method": "collapse_guarded_entropy_tta",
       "pre_accuracy": 0.6874163319946452,
-      "post_accuracy": 0.6914323962516734,
-      "gain": 0.004016064257028162,
-      "source_drop": -0.0025083612040133207,
-      "attempted_steps": 2,
-      "accepted_steps": 1,
+      "post_accuracy": 0.6927710843373494,
+      "gain": 0.0053547523427041055,
+      "source_drop": -0.005852842809364489,
+      "attempted_steps": 3,
+      "accepted_steps": 2,
       "abstained": false,
       "stop_reason": "early_stop_collapse_guard",
-      "time_seconds": 13.04803365903596
+      "time_seconds": 12.121189823995033
     },
     {
       "backbone": "mlp",
@@ -238,7 +238,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 13.279470865925154
+      "time_seconds": 13.751472896585861
     },
     {
       "backbone": "mlp",
@@ -253,7 +253,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 13.279470865925154
+      "time_seconds": 13.751472896585861
     },
     {
       "backbone": "mlp",
@@ -268,7 +268,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "abstained_collapse_guard",
-      "time_seconds": 13.279470865925154
+      "time_seconds": 13.751472896585861
     },
     {
       "backbone": "mlp",
@@ -283,7 +283,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 13.666075309117636
+      "time_seconds": 13.500466911122203
     },
     {
       "backbone": "mlp",
@@ -298,7 +298,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 13.666075309117636
+      "time_seconds": 13.500466911122203
     },
     {
       "backbone": "mlp",
@@ -313,7 +313,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "abstained_collapse_guard",
-      "time_seconds": 13.666075309117636
+      "time_seconds": 13.500466911122203
     },
     {
       "backbone": "mlp",
@@ -328,7 +328,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 12.991587356353799
+      "time_seconds": 13.968692204604546
     },
     {
       "backbone": "mlp",
@@ -343,7 +343,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 12.991587356353799
+      "time_seconds": 13.968692204604546
     },
     {
       "backbone": "mlp",
@@ -358,7 +358,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "abstained_collapse_guard",
-      "time_seconds": 12.991587356353799
+      "time_seconds": 13.968692204604546
     },
     {
       "backbone": "mlp",
@@ -373,7 +373,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 13.665205389882127
+      "time_seconds": 14.885800755893191
     },
     {
       "backbone": "mlp",
@@ -388,7 +388,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 13.665205389882127
+      "time_seconds": 14.885800755893191
     },
     {
       "backbone": "mlp",
@@ -403,7 +403,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "abstained_collapse_guard",
-      "time_seconds": 13.665205389882127
+      "time_seconds": 14.885800755893191
     },
     {
       "backbone": "mlp",
@@ -418,7 +418,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 14.139999492714802
+      "time_seconds": 13.583784124503532
     },
     {
       "backbone": "mlp",
@@ -433,7 +433,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 14.139999492714802
+      "time_seconds": 13.583784124503532
     },
     {
       "backbone": "mlp",
@@ -448,7 +448,7 @@
       "accepted_steps": 1,
       "abstained": false,
       "stop_reason": "early_stop_collapse_guard",
-      "time_seconds": 14.139999492714802
+      "time_seconds": 13.583784124503532
     },
     {
       "backbone": "mlp",
@@ -463,7 +463,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 12.837595665206512
+      "time_seconds": 13.319601396098733
     },
     {
       "backbone": "mlp",
@@ -478,7 +478,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 12.837595665206512
+      "time_seconds": 13.319601396098733
     },
     {
       "backbone": "mlp",
@@ -486,14 +486,14 @@
       "seed": 0,
       "method": "collapse_guarded_entropy_tta",
       "pre_accuracy": 0.5421686746987951,
-      "post_accuracy": 0.5401606425702812,
-      "gain": -0.00200803212851397,
-      "source_drop": -0.015050167224080258,
-      "attempted_steps": 5,
-      "accepted_steps": 4,
+      "post_accuracy": 0.5441767068273092,
+      "gain": 0.002008032128514081,
+      "source_drop": -0.010869565217391242,
+      "attempted_steps": 4,
+      "accepted_steps": 3,
       "abstained": false,
       "stop_reason": "early_stop_collapse_guard",
-      "time_seconds": 12.837595665206512
+      "time_seconds": 13.319601396098733
     },
     {
       "backbone": "mlp",
@@ -508,7 +508,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 14.660517972583571
+      "time_seconds": 13.46364790139099
     },
     {
       "backbone": "mlp",
@@ -523,7 +523,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 14.660517972583571
+      "time_seconds": 13.46364790139099
     },
     {
       "backbone": "mlp",
@@ -538,7 +538,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "abstained_collapse_guard",
-      "time_seconds": 14.660517972583571
+      "time_seconds": 13.46364790139099
     },
     {
       "backbone": "mlp",
@@ -553,7 +553,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 15.126533381640911
+      "time_seconds": 13.462455347801248
     },
     {
       "backbone": "mlp",
@@ -568,7 +568,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.126533381640911
+      "time_seconds": 13.462455347801248
     },
     {
       "backbone": "mlp",
@@ -583,7 +583,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "abstained_collapse_guard",
-      "time_seconds": 15.126533381640911
+      "time_seconds": 13.462455347801248
     },
     {
       "backbone": "mlp",
@@ -598,7 +598,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 15.370598159109553
+      "time_seconds": 13.177656416470805
     },
     {
       "backbone": "mlp",
@@ -613,7 +613,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 15.370598159109553
+      "time_seconds": 13.177656416470805
     },
     {
       "backbone": "mlp",
@@ -628,7 +628,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "abstained_collapse_guard",
-      "time_seconds": 15.370598159109553
+      "time_seconds": 13.177656416470805
     },
     {
       "backbone": "mlp",
@@ -643,7 +643,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "no_adapt",
-      "time_seconds": 14.857483367125193
+      "time_seconds": 13.236495576798916
     },
     {
       "backbone": "mlp",
@@ -658,7 +658,7 @@
       "accepted_steps": 5,
       "abstained": false,
       "stop_reason": "budget_exhausted",
-      "time_seconds": 14.857483367125193
+      "time_seconds": 13.236495576798916
     },
     {
       "backbone": "mlp",
@@ -673,7 +673,7 @@
       "accepted_steps": 0,
       "abstained": true,
       "stop_reason": "abstained_collapse_guard",
-      "time_seconds": 14.857483367125193
+      "time_seconds": 13.236495576798916
     }
   ],
   "summary": {
@@ -697,12 +697,12 @@
         "n_observations": 15
       },
       "collapse_guarded_entropy_tta": {
-        "mean_gain": 0.0005800981889478862,
-        "ci_lower": -0.00040160640492103994,
-        "ci_upper": 0.00200803205370903,
-        "cohens_d_vs_noadapt": 0.3151639401912689,
-        "paired_d_vs_noadapt": 0.22285455465316772,
-        "negative_adaptation_rate": 0.13333334028720856,
+        "mean_gain": 0.0003569834807422012,
+        "ci_lower": -0.0002677376032806933,
+        "ci_upper": 0.0012048191856592894,
+        "cohens_d_vs_noadapt": 0.32009145617485046,
+        "paired_d_vs_noadapt": 0.22633884847164154,
+        "negative_adaptation_rate": 0.06666667014360428,
         "n_observations": 15
       }
     }
@@ -733,5 +733,5 @@
     "source_epochs": 10,
     "collapse_guard_diversity_ratio": 1.0
   },
-  "elapsed_seconds": 612.4944475833327
+  "elapsed_seconds": 600.9699227288365
 }

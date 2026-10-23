@@ -151,7 +151,7 @@
     "batch_size": 32,
     "seed": 1,
     "method": "entropy_tta",
-    "gain": -0.05555555555555558
+    "gain": -0.3611111111111111
   },
   {
     "ablation": "batch_size",
@@ -165,7 +165,7 @@
     "batch_size": 32,
     "seed": 1,
     "method": "physics_tta",
-    "gain": 0.0
+    "gain": -0.02777777777777779
   },
   {
     "ablation": "batch_size",

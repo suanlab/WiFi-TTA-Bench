@@ -1,5 +1,5 @@
 {
-  "protocol": "primary MLP, entropy_tta vs collapse_guarded_entropy_tta, 3 folds x 5 seeds per dataset; tau chosen on the other two datasets",
+  "protocol": "3 folds x 5 seeds per cell; cells: MLP entropy_tta, MLP IM (shot), MLP+BN TENT; tau chosen on the other two datasets by least mean regret (guarded gain minus max(unguarded gain, 0))",
   "floors": [
     0.8,
     0.9,
@@ -7,86 +7,201 @@
     0.98,
     1.0
   ],
-  "grid_mean_gain_pp": {
+  "runs_per_cell": 15,
+  "grid": {
     "widar_bvp": {
-      "unguarded": -0.17402945113788335,
-      "0.8": -0.17402945113788335,
-      "0.8_abstained": 0.0,
-      "0.8_runs": 15.0,
-      "0.9": -0.10709504685408137,
-      "0.9_abstained": 0.0,
-      "0.9_runs": 15.0,
-      "0.95": 0.049085229808123465,
-      "0.95_abstained": 1.0,
-      "0.95_runs": 15.0,
-      "0.98": 0.04908522980812272,
-      "0.98_abstained": 2.0,
-      "0.98_runs": 15.0,
-      "1.0": 0.05800981704596234,
-      "1.0_abstained": 11.0,
-      "1.0_runs": 15.0
+      "mlp/entropy_tta": {
+        "unguarded": -0.17402945113788335,
+        "0.8": -0.17402945113788335,
+        "0.8_abstained": 0.0,
+        "0.9": -0.17402945113788335,
+        "0.9_abstained": 0.0,
+        "0.95": -0.07585899152164084,
+        "0.95_abstained": 1.0,
+        "0.98": 0.12048192771084561,
+        "0.98_abstained": 2.0,
+        "1.0": 0.0356983489513607,
+        "1.0_abstained": 11.0
+      },
+      "mlp/shot": {
+        "unguarded": 0.08924587237840287,
+        "0.8": 0.08924587237840287,
+        "0.8_abstained": 0.0,
+        "0.9": 0.08924587237840287,
+        "0.9_abstained": 0.0,
+        "0.95": 0.08924587237840287,
+        "0.95_abstained": 0.0,
+        "0.98": 0.08924587237840287,
+        "0.98_abstained": 0.0,
+        "1.0": 0.10709504685408211,
+        "1.0_abstained": 4.0
+      },
+      "mlp_bn/tent": {
+        "unguarded": -0.5711735832217765,
+        "0.8": -0.5711735832217765,
+        "0.8_abstained": 0.0,
+        "0.9": -0.5711735832217765,
+        "0.9_abstained": 0.0,
+        "0.95": -0.5711735832217765,
+        "0.95_abstained": 0.0,
+        "0.98": -0.5711735832217765,
+        "0.98_abstained": 0.0,
+        "1.0": 0.0,
+        "1.0_abstained": 15.0
+      }
     },
     "ntufi_har": {
-      "unguarded": -2.266445550027638,
-      "0.8": -2.266445550027638,
-      "0.8_abstained": 0.0,
-      "0.8_runs": 15.0,
-      "0.9": -1.9679380873410708,
-      "0.9_abstained": 0.0,
-      "0.9_runs": 15.0,
-      "0.95": -1.6005829438665249,
-      "0.95_abstained": 0.0,
-      "0.95_runs": 15.0,
-      "0.98": 7.401486830834377e-16,
-      "0.98_abstained": 4.0,
-      "0.98_runs": 15.0,
-      "1.0": 0.43570028644655423,
-      "1.0_abstained": 9.0,
-      "1.0_runs": 15.0
+      "mlp/entropy_tta": {
+        "unguarded": -2.266445550027638,
+        "0.8": -2.266445550027638,
+        "0.8_abstained": 0.0,
+        "0.9": -2.266445550027638,
+        "0.9_abstained": 0.0,
+        "0.95": -2.133775566611386,
+        "0.95_abstained": 0.0,
+        "0.98": -0.7040554801748826,
+        "0.98_abstained": 4.0,
+        "1.0": 0.3000150761344796,
+        "1.0_abstained": 9.0
+      },
+      "mlp/shot": {
+        "unguarded": 0.9271822704658554,
+        "0.8": 0.9271822704658554,
+        "0.8_abstained": 0.0,
+        "0.9": 0.9271822704658554,
+        "0.9_abstained": 0.0,
+        "0.95": 0.9271822704658554,
+        "0.95_abstained": 0.0,
+        "0.98": 0.9271822704658554,
+        "0.98_abstained": 0.0,
+        "1.0": 1.597567716970704,
+        "1.0_abstained": 2.0
+      },
+      "mlp_bn/tent": {
+        "unguarded": 0.3326800341725729,
+        "0.8": 0.3326800341725729,
+        "0.8_abstained": 0.0,
+        "0.9": 0.3326800341725729,
+        "0.9_abstained": 0.0,
+        "0.95": 0.3326800341725729,
+        "0.95_abstained": 0.0,
+        "0.98": 0.3326800341725729,
+        "0.98_abstained": 0.0,
+        "1.0": 0.033670033670033885,
+        "1.0_abstained": 13.0
+      }
     },
     "signfi_top10": {
-      "unguarded": -27.206349206349206,
-      "0.8": -20.73015873015873,
-      "0.8_abstained": 0.0,
-      "0.8_runs": 15.0,
-      "0.9": -14.539682539682541,
-      "0.9_abstained": 4.0,
-      "0.9_runs": 15.0,
-      "0.95": -4.73015873015873,
-      "0.95_abstained": 11.0,
-      "0.95_runs": 15.0,
-      "0.98": -1.1111111111111116,
-      "0.98_abstained": 14.0,
-      "0.98_runs": 15.0,
-      "1.0": 0.0,
-      "1.0_abstained": 15.0,
-      "1.0_runs": 15.0
+      "mlp/entropy_tta": {
+        "unguarded": -23.58730158730159,
+        "0.8": -23.58730158730159,
+        "0.8_abstained": 0.0,
+        "0.9": -17.20634920634921,
+        "0.9_abstained": 4.0,
+        "0.95": -4.53968253968254,
+        "0.95_abstained": 11.0,
+        "0.98": -1.1111111111111116,
+        "0.98_abstained": 14.0,
+        "1.0": 0.0,
+        "1.0_abstained": 15.0
+      },
+      "mlp/shot": {
+        "unguarded": 8.571428571428571,
+        "0.8": 8.571428571428571,
+        "0.8_abstained": 0.0,
+        "0.9": 8.571428571428571,
+        "0.9_abstained": 0.0,
+        "0.95": 8.571428571428571,
+        "0.95_abstained": 0.0,
+        "0.98": 10.095238095238095,
+        "0.98_abstained": 1.0,
+        "1.0": 11.555555555555555,
+        "1.0_abstained": 3.0
+      },
+      "mlp_bn/tent": {
+        "unguarded": 5.23809523809524,
+        "0.8": 5.23809523809524,
+        "0.8_abstained": 0.0,
+        "0.9": 5.23809523809524,
+        "0.9_abstained": 0.0,
+        "0.95": 5.23809523809524,
+        "0.95_abstained": 0.0,
+        "0.98": 5.23809523809524,
+        "0.98_abstained": 0.0,
+        "1.0": 0.0,
+        "1.0_abstained": 15.0
+      }
     }
   },
   "leave_one_dataset_out": {
     "widar_bvp": {
-      "chosen_floor": 1.0,
-      "unguarded_pp": -0.17402945113788335,
-      "guarded_pp": 0.05800981704596234,
-      "harm_removed_pct": 133.33333333333402,
-      "in_sample_best_floor": 1.0,
-      "abstained_runs": 11.0
+      "chosen_floor": 0.98,
+      "cells": {
+        "mlp/entropy_tta": {
+          "unguarded_pp": -0.17402945113788335,
+          "guarded_pp": 0.12048192771084561,
+          "abstained_runs": 2.0,
+          "regret_pp": 0.12048192771084561
+        },
+        "mlp/shot": {
+          "unguarded_pp": 0.08924587237840287,
+          "guarded_pp": 0.08924587237840287,
+          "abstained_runs": 0.0,
+          "regret_pp": 0.0
+        },
+        "mlp_bn/tent": {
+          "unguarded_pp": -0.5711735832217765,
+          "guarded_pp": -0.5711735832217765,
+          "abstained_runs": 0.0,
+          "regret_pp": -0.5711735832217765
+        }
+      }
     },
     "ntufi_har": {
-      "chosen_floor": 1.0,
-      "unguarded_pp": -2.266445550027638,
-      "guarded_pp": 0.43570028644655423,
-      "harm_removed_pct": 119.22394678492238,
-      "in_sample_best_floor": 1.0,
-      "abstained_runs": 9.0
+      "chosen_floor": 0.98,
+      "cells": {
+        "mlp/entropy_tta": {
+          "unguarded_pp": -2.266445550027638,
+          "guarded_pp": -0.7040554801748826,
+          "abstained_runs": 4.0,
+          "regret_pp": -0.7040554801748826
+        },
+        "mlp/shot": {
+          "unguarded_pp": 0.9271822704658554,
+          "guarded_pp": 0.9271822704658554,
+          "abstained_runs": 0.0,
+          "regret_pp": 0.0
+        },
+        "mlp_bn/tent": {
+          "unguarded_pp": 0.3326800341725729,
+          "guarded_pp": 0.3326800341725729,
+          "abstained_runs": 0.0,
+          "regret_pp": 0.0
+        }
+      }
     },
     "signfi_top10": {
       "chosen_floor": 1.0,
-      "unguarded_pp": -27.206349206349206,
-      "guarded_pp": 0.0,
-      "harm_removed_pct": 100.0,
-      "in_sample_best_floor": 1.0,
-      "abstained_runs": 15.0
+      "cells": {
+        "mlp/entropy_tta": {
+          "unguarded_pp": -23.58730158730159,
+          "guarded_pp": 0.0,
+          "abstained_runs": 15.0,
+          "regret_pp": 0.0
+        },
+        "mlp/shot": {
+          "unguarded_pp": 8.571428571428571,
+          "guarded_pp": 11.555555555555555,
+          "abstained_runs": 3.0,
+          "regret_pp": 2.984126984126984
+        },
+        "mlp_bn/tent": {
+          "unguarded_pp": 5.23809523809524,
+          "guarded_pp": 0.0,
+          "abstained_runs": 15.0,
+          "regret_pp": -5.23809523809524
+        }
+      }
     }
   }
 }

@@ -63,7 +63,7 @@ def main() -> None:
         entropy_weight=0.1,
         selective_confidence_threshold=0.2,
         selective_alignment_threshold=2.0,
-        early_stop_patience=3,
+        early_stop_patience=0,
     )
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     rows: list[dict[str, float | int | str]] = []

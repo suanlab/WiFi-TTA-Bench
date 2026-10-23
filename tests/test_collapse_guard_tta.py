@@ -58,6 +58,7 @@ def test_collapse_guarded_methods_are_registered() -> None:
         "collapse_guarded_sar",
         "collapse_guarded_cotta",
         "collapse_guarded_t3a",
+        "collapse_guarded_shot",
         "reset_entropy_tta",
     ):
         assert name in CANONICAL_TTA_METHODS

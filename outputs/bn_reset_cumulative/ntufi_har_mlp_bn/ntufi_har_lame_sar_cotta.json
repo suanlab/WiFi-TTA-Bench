@@ -9,12 +9,12 @@
     "n_observations": 15
   },
   "bn_reset": {
-    "mean_gain": 0.0050505055114626884,
-    "ci_lower": -0.003955224063247442,
-    "ci_upper": 0.015407809987664223,
-    "cohens_d_vs_noadapt": 0.3601028323173523,
-    "paired_d_vs_noadapt": 0.2546311616897583,
-    "negative_adaptation_rate": 0.3333333432674408,
+    "mean_gain": 0.005713855382055044,
+    "ci_lower": -0.001985024195164442,
+    "ci_upper": 0.01478466298431158,
+    "cohens_d_vs_noadapt": 0.46718135476112366,
+    "paired_d_vs_noadapt": 0.33034712076187134,
+    "negative_adaptation_rate": 0.20000000298023224,
     "n_observations": 15
   }
 }

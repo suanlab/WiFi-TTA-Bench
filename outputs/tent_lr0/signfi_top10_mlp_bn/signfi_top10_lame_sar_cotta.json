@@ -9,11 +9,11 @@
     "n_observations": 15
   },
   "tent": {
-    "mean_gain": 0.07555556297302246,
-    "ci_lower": 0.04920634999871254,
-    "ci_upper": 0.10253968834877014,
-    "cohens_d_vs_noadapt": 1.9182146787643433,
-    "paired_d_vs_noadapt": 1.3563826084136963,
+    "mean_gain": 0.05047619342803955,
+    "ci_lower": 0.02698412723839283,
+    "ci_upper": 0.07555556297302246,
+    "cohens_d_vs_noadapt": 1.4041802883148193,
+    "paired_d_vs_noadapt": 0.9929054379463196,
     "negative_adaptation_rate": 0.0,
     "n_observations": 15
   }

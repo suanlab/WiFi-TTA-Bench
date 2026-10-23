@@ -18,12 +18,12 @@
     "n_observations": 15
   },
   "collapse_guarded_entropy_tta": {
-    "mean_gain": 0.004357003141194582,
-    "ci_lower": -0.00061309605371207,
-    "ci_upper": 0.009357254952192307,
-    "cohens_d_vs_noadapt": 0.6171573400497437,
-    "paired_d_vs_noadapt": 0.43639612197875977,
-    "negative_adaptation_rate": 0.06666667014360428,
+    "mean_gain": 0.00300015090033412,
+    "ci_lower": -0.0006633499288000166,
+    "ci_upper": 0.007658676244318485,
+    "cohens_d_vs_noadapt": 0.4934300482273102,
+    "paired_d_vs_noadapt": 0.3489077091217041,
+    "negative_adaptation_rate": 0.13333334028720856,
     "n_observations": 15
   }
 }

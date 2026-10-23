@@ -48,8 +48,8 @@
   "name": "WiFi-TTA-Bench",
   "description": "Harm-aware benchmark for test-time adaptation (TTA) on WiFi Channel State Information (CSI). It evaluates ten adaptation methods (TENT, SHOT/IM, entropy-based simplified ports of SAR, CoTTA and T3A, physics-prior variants) plus SAR, CoTTA and T3A as published, on three real WiFi CSI datasets, six backbones and a synthetic control. It does not redistribute raw CSI; it provides split definitions, evaluation protocol artifacts and per-method JSON summaries.",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
-  "version": "2.0.0",
-  "dateModified": "2026-10-22",
+  "version": "3.0.0",
+  "dateModified": "2026-10-23",
   "keywords": [
     "test-time adaptation",
     "domain adaptation",
@@ -60,7 +60,7 @@
     "benchmark",
     "negative results"
   ],
-  "license": "CC-BY-4.0 (benchmark artifacts and code; raw datasets retain original academic licences)",
+  "license": "CC-BY-4.0 (benchmark data artifacts and metadata; code is MIT; raw datasets retain original academic licences)",
   "citeAs": "To be assigned upon acceptance.",
   "url": "https://anonymous.4open.science/r/WiFi-TTA-Bench-48FE",
   "creator": {
@@ -94,7 +94,7 @@
       "name": "widar-full-tta-summary",
       "contentUrl": "method_summaries/widar.json",
       "encodingFormat": "application/json",
-      "sha256": "0574ec9f962e4828ebf26e42fa7f9398f2d37442442d841288924502410c63b6",
+      "sha256": "6387d84a5117653f5367f6562479a6418073b9f40a07c499935e64d28754c878",
       "description": "Per-method mean gain + 95% bootstrap CI + Cohen's d + negative adaptation rate for Widar_BVP (primary MLP backbone, n=15 paired observations)."
     },
     {
@@ -112,7 +112,7 @@
       "name": "signfi-tta-summary",
       "contentUrl": "method_summaries/signfi.json",
       "encodingFormat": "application/json",
-      "sha256": "323e3c6ba3a82dac7263578a058b95c527cead467cc3b882b01e8856495ff0f7",
+      "sha256": "74cf14fa5702b813929c2fe3f1c1a3639e99da364a7938bd4556de6f29f48551",
       "description": "Per-method summary for SignFi-10 (primary MLP, n=15)."
     },
     {
@@ -139,7 +139,7 @@
       "name": "signfi-lame-sar-cotta",
       "contentUrl": "method_summaries/signfi_lame_sar_cotta.json",
       "encodingFormat": "application/json",
-      "sha256": "b73ff43fd4b66dc4d652d05f8cf466b909ce18826293d4a0318d6157a1853822",
+      "sha256": "0897ca3b07e21769a496afc66483cca89c34fc6ed08dba93130013ddd0263b84",
       "description": "SAR, CoTTA, LAME on SignFi-10 (primary MLP, n=15)."
     },
     {
@@ -148,7 +148,7 @@
       "name": "widar-mlpbn-faithful-sar-cotta",
       "contentUrl": "method_summaries/widar_mlpbn_faithful_sar_cotta.json",
       "encodingFormat": "application/json",
-      "sha256": "dddd624939bd0c2de97fdeaa17bf31b2d9dc02b1d91a822959b9a71c8ba6e896",
+      "sha256": "d352f5afbe8654e4c1d3148e79ce1b05ed71f5752320e1c0c9a473c5c51a24ec",
       "description": "Faithful BN-only SAR/CoTTA + full TENT on MLP+BN Widar_BVP backbone (n=15)."
     },
     {
@@ -157,7 +157,7 @@
       "name": "arch-ablation-with-ci",
       "contentUrl": "method_summaries/arch_ablation_with_ci.json",
       "encodingFormat": "application/json",
-      "sha256": "644565eff19b30fd5c14884a73b766eb831769f1b7918caa4bf8ea79e6f8c4f1",
+      "sha256": "53ea4d3a32365cc0d241bdc51f0f909c052e2b838139085272c1bd94e15650c0",
       "description": "Three-backbone architecture ablation with 95% bootstrap CIs (MLP, MLP+BN, CNN1D+BN)."
     },
     {
@@ -166,7 +166,7 @@
       "name": "faithful-tent",
       "contentUrl": "method_summaries/faithful_tent_results.json",
       "encodingFormat": "application/json",
-      "sha256": "8527f168ffbd0bbc130b3f4b24b5c42718bb79e9080998cdd1fc6aef01f0ea0a",
+      "sha256": "7ea6eb8ae851b890bbeb469b71f320dc2e850f49cbf261413cb3f57bf3f0d03c",
       "description": "Faithful BN-only TENT on MLP+BN Widar_BVP (n=15)."
     },
     {
@@ -175,7 +175,7 @@
       "name": "source-overfit",
       "contentUrl": "method_summaries/source_overfit_pilot.json",
       "encodingFormat": "application/json",
-      "sha256": "0d35fae75d313727423323580ed15aa96837854a1dc1805b4b78839a0343b998",
+      "sha256": "eef2aedbf31bed21d296ec69414b5ca78d69405b92d50c85eacdcf943a26f7b6",
       "description": "Source-overfit mitigation pilot: label smoothing alpha in {0.0, 0.1, 0.2} on Widar (n=15)."
     },
     {
@@ -211,7 +211,7 @@
       "name": "published-ports-widar-bvp-mlp-bn",
       "contentUrl": "method_summaries/published_ports_widar_bvp_mlp_bn.json",
       "encodingFormat": "application/json",
-      "sha256": "3d45a6eb595b31a6cc3e826e39c8b8220523ab07c2c6acfed6d3bd5ab33a61fc",
+      "sha256": "39d7339e89a0761e6d098db73ed1feb0da5b6c7a737104659304f251522981df",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, widar_bvp with the mlp_bn backbone (n=15)."
     },
     {
@@ -229,7 +229,7 @@
       "name": "published-ports-ntufi-har-mlp-bn",
       "contentUrl": "method_summaries/published_ports_ntufi_har_mlp_bn.json",
       "encodingFormat": "application/json",
-      "sha256": "c7d6f47a22235109cda4ab1b64d20f4cf96164216ae17c7fe87b86da41c3eb4c",
+      "sha256": "8b2fee9aeb37b037142f9f95feb90a69dbf646c457d32e1a6a47acbe106bfaba",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, ntufi_har with the mlp_bn backbone (n=15)."
     },
     {
@@ -238,7 +238,7 @@
       "name": "published-ports-signfi-top10-mlp",
       "contentUrl": "method_summaries/published_ports_signfi_top10_mlp.json",
       "encodingFormat": "application/json",
-      "sha256": "eb24ca5720f8a141f2db662593b2323ab2ef61946a65656a267505dfd628c173",
+      "sha256": "377c74b1b7b3cd961faca3ea3cb31249a46c19fee0acb228e8fbebf4a60a037c",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, signfi_top10 with the mlp backbone (n=15)."
     },
     {
@@ -247,7 +247,7 @@
       "name": "published-ports-signfi-top10-mlp-bn",
       "contentUrl": "method_summaries/published_ports_signfi_top10_mlp_bn.json",
       "encodingFormat": "application/json",
-      "sha256": "9d13dd173fb63238c01dbcaf8b8448ee8858ededeb782793512e1c77ce379998",
+      "sha256": "0c1ec4e7c27c91bcf3c35bff864624d560fd163b44b1deefd304b3ead87e7ade",
       "description": "SAR, CoTTA and T3A as published next to the simplified ports, signfi_top10 with the mlp_bn backbone (n=15)."
     },
     {
@@ -256,7 +256,7 @@
       "name": "guard-coverage",
       "contentUrl": "method_summaries/guard_coverage.json",
       "encodingFormat": "application/json",
-      "sha256": "37304b370e2050f88a02e9ca806c8c6c3678674873a3a2eb1b99f2d0ce956ba4",
+      "sha256": "d7e527d9e42eb7b5f70eac7abad968960d918758fad43e96da1b3286b6501745",
       "description": "Every collapse-guard measurement with its unguarded arm."
     },
     {
@@ -265,7 +265,7 @@
       "name": "harm-tolerance",
       "contentUrl": "method_summaries/harm_tolerance.json",
       "encodingFormat": "application/json",
-      "sha256": "3afa72a7a59291721c292ee6189a79e1164141795a6b13128b83eefa3942fcb0",
+      "sha256": "f9dbdbdd490ca59a227b22b3ddbfb633fe3cb1707efa0a105da87efd12316f2f",
       "description": "Harm rates beyond one test sample and 1 pp, abstention rates and per-environment means for every reported cell."
     },
     {
@@ -274,7 +274,7 @@
       "name": "protocol-sensitivity",
       "contentUrl": "method_summaries/protocol_sensitivity.json",
       "encodingFormat": "application/json",
-      "sha256": "98f2e71efb94937a3ed39730672ef5a676f2a81cd515379da1bd5d395f67489d",
+      "sha256": "a3a2a1c9ebc256bf93b9654229dd08fd050ee22521e177f467556ec535764e30",
       "description": "Learning-rate x step-budget sweep and class-blocked stream summary."
     },
     {
@@ -301,7 +301,7 @@
       "name": "split-signfi-top10",
       "contentUrl": "splits/signfi_top10.json",
       "encodingFormat": "application/json",
-      "sha256": "e724d09e1dc0d4cf98f3f01b6fe1b34d41b5d289b410c86e4eb3e20984b68c89",
+      "sha256": "699425d9413c730cf416a1878d9ac276a56196b370f41b31557901fa747a04e5",
       "description": "SignFi-10 split manifest: per-sample environment and label, and the exact train/val/adapt/eval indices of every fold and seed."
     },
     {
@@ -310,7 +310,7 @@
       "name": "submission-manifest",
       "contentUrl": "SUBMISSION_MANIFEST.md",
       "encodingFormat": "text/markdown",
-      "sha256": "3359b9c3afad9e15f9ecc12f31d03e4642296db63fabdf19716edf644e2e5866",
+      "sha256": "ee87f45cd467a60ef0195d79d5fcebabdb51b83c19d8a17cfe231596fe53eaf6",
       "description": "Mapping from paper tables/figures to backing artifacts."
     }
   ]

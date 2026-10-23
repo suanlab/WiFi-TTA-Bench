@@ -31,11 +31,11 @@
       },
       "mlp_bn": {
         "n": 15,
-        "source_train_accuracy": 0.9467948717948718,
-        "source_val_accuracy": 0.6846153846153845,
-        "target_accuracy": 0.7174603174603175,
-        "train_to_target_drop_pp": 22.93345543345543,
-        "val_to_target_drop_pp": -3.284493284493295
+        "source_train_accuracy": 0.9473901098901099,
+        "source_val_accuracy": 0.682051282051282,
+        "target_accuracy": 0.7200000000000001,
+        "train_to_target_drop_pp": 22.73901098901098,
+        "val_to_target_drop_pp": -3.7948717948718125
       }
     },
     "widar_bvp": {

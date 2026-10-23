@@ -10,7 +10,7 @@
       "post_accuracy": 0.7054886211512718,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 5.068891625665128
+      "time_seconds": 4.644270109012723
     },
     {
       "room": "room2_office",
@@ -22,7 +22,7 @@
       "post_accuracy": 0.6907630522088354,
       "gain": -0.014725568942436373,
       "source_drop": -0.030936454849498363,
-      "time_seconds": 5.068891625665128
+      "time_seconds": 4.644270109012723
     },
     {
       "room": "room2_office",
@@ -34,7 +34,7 @@
       "post_accuracy": 0.6874163319946452,
       "gain": -0.01807228915662651,
       "source_drop": -0.03344481605351168,
-      "time_seconds": 5.068891625665128
+      "time_seconds": 4.644270109012723
     },
     {
       "room": "room2_office",
@@ -46,7 +46,7 @@
       "post_accuracy": 0.7175368139223561,
       "gain": 0.012048192771084376,
       "source_drop": -0.0050167224080267525,
-      "time_seconds": 5.068891625665128
+      "time_seconds": 4.644270109012723
     },
     {
       "room": "room2_office",
@@ -58,7 +58,7 @@
       "post_accuracy": 0.7175368139223561,
       "gain": 0.012048192771084376,
       "source_drop": -0.0050167224080267525,
-      "time_seconds": 5.068891625665128
+      "time_seconds": 4.644270109012723
     },
     {
       "room": "room2_office",
@@ -70,7 +70,7 @@
       "post_accuracy": 0.7175368139223561,
       "gain": 0.012048192771084376,
       "source_drop": -0.0050167224080267525,
-      "time_seconds": 5.068891625665128
+      "time_seconds": 4.644270109012723
     },
     {
       "room": "room2_office",
@@ -82,7 +82,7 @@
       "post_accuracy": 0.7182061672210693,
       "gain": 0.01271754606979758,
       "source_drop": -0.0033444903766032263,
-      "time_seconds": 5.068891625665128
+      "time_seconds": 4.644270109012723
     },
     {
       "room": "room2_office",
@@ -94,7 +94,7 @@
       "post_accuracy": 0.7054886211512718,
       "gain": 0.0,
       "source_drop": 0.0008361204013378476,
-      "time_seconds": 5.068891625665128
+      "time_seconds": 4.644270109012723
     },
     {
       "room": "room2_office",
@@ -106,7 +106,7 @@
       "post_accuracy": 0.7115127175368139,
       "gain": 0.0060240963855421326,
       "source_drop": -0.02926421404682278,
-      "time_seconds": 5.068891625665128
+      "time_seconds": 4.644270109012723
     },
     {
       "room": "room2_office",
@@ -118,7 +118,7 @@
       "post_accuracy": 0.7108433842658997,
       "gain": 0.005354763114627903,
       "source_drop": -0.04347826465715132,
-      "time_seconds": 5.068891625665128
+      "time_seconds": 4.644270109012723
     },
     {
       "room": "room2_office",
@@ -130,7 +130,7 @@
       "post_accuracy": 0.7342704149933066,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 5.165488323941827
+      "time_seconds": 4.468186223134398
     },
     {
       "room": "room2_office",
@@ -142,7 +142,7 @@
       "post_accuracy": 0.7429718875502008,
       "gain": 0.00870147255689424,
       "source_drop": -0.02006688963210701,
-      "time_seconds": 5.165488323941827
+      "time_seconds": 4.468186223134398
     },
     {
       "room": "room2_office",
@@ -154,7 +154,7 @@
       "post_accuracy": 0.7469879518072289,
       "gain": 0.012717536813922292,
       "source_drop": -0.012541806020066937,
-      "time_seconds": 5.165488323941827
+      "time_seconds": 4.468186223134398
     },
     {
       "room": "room2_office",
@@ -166,7 +166,7 @@
       "post_accuracy": 0.7429718875502008,
       "gain": 0.00870147255689424,
       "source_drop": -0.0033444816053511683,
-      "time_seconds": 5.165488323941827
+      "time_seconds": 4.468186223134398
     },
     {
       "room": "room2_office",
@@ -178,7 +178,7 @@
       "post_accuracy": 0.7436412315930389,
       "gain": 0.009370816599732268,
       "source_drop": -0.0033444816053511683,
-      "time_seconds": 5.165488323941827
+      "time_seconds": 4.468186223134398
     },
     {
       "room": "room2_office",
@@ -190,7 +190,7 @@
       "post_accuracy": 0.7429718875502008,
       "gain": 0.00870147255689424,
       "source_drop": -0.0033444816053511683,
-      "time_seconds": 5.165488323941827
+      "time_seconds": 4.468186223134398
     },
     {
       "room": "room2_office",
@@ -202,7 +202,7 @@
       "post_accuracy": 0.7416331768035889,
       "gain": 0.007362761810282281,
       "source_drop": 0.0008361387412284538,
-      "time_seconds": 5.165488323941827
+      "time_seconds": 4.468186223134398
     },
     {
       "room": "room2_office",
@@ -214,7 +214,7 @@
       "post_accuracy": 0.7362784471218207,
       "gain": 0.002008032128514081,
       "source_drop": 0.0050167224080267525,
-      "time_seconds": 5.165488323941827
+      "time_seconds": 4.468186223134398
     },
     {
       "room": "room2_office",
@@ -226,7 +226,7 @@
       "post_accuracy": 0.7469879518072289,
       "gain": 0.012717536813922292,
       "source_drop": -0.0033444816053511683,
-      "time_seconds": 5.165488323941827
+      "time_seconds": 4.468186223134398
     },
     {
       "room": "room2_office",
@@ -238,7 +238,7 @@
       "post_accuracy": 0.7168674468994141,
       "gain": -0.017402968093892524,
       "source_drop": -0.012541825755384095,
-      "time_seconds": 5.165488323941827
+      "time_seconds": 4.468186223134398
     },
     {
       "room": "room2_office",
@@ -250,7 +250,7 @@
       "post_accuracy": 0.7536813922356091,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.714921033196151
+      "time_seconds": 4.38130623344332
     },
     {
       "room": "room2_office",
@@ -262,7 +262,7 @@
       "post_accuracy": 0.7623828647925034,
       "gain": 0.00870147255689424,
       "source_drop": -0.006688963210702337,
-      "time_seconds": 4.714921033196151
+      "time_seconds": 4.38130623344332
     },
     {
       "room": "room2_office",
@@ -274,7 +274,7 @@
       "post_accuracy": 0.7663989290495314,
       "gain": 0.012717536813922292,
       "source_drop": -0.005852842809364489,
-      "time_seconds": 4.714921033196151
+      "time_seconds": 4.38130623344332
     },
     {
       "room": "room2_office",
@@ -286,7 +286,7 @@
       "post_accuracy": 0.7570281124497992,
       "gain": 0.0033467202141900243,
       "source_drop": 0.0008361204013378476,
-      "time_seconds": 4.714921033196151
+      "time_seconds": 4.38130623344332
     },
     {
       "room": "room2_office",
@@ -298,7 +298,7 @@
       "post_accuracy": 0.7576974564926372,
       "gain": 0.004016064257028051,
       "source_drop": 0.0016722408026755842,
-      "time_seconds": 4.714921033196151
+      "time_seconds": 4.38130623344332
     },
     {
       "room": "room2_office",
@@ -310,7 +310,7 @@
       "post_accuracy": 0.7570281124497992,
       "gain": 0.0033467202141900243,
       "source_drop": 0.0008361204013378476,
-      "time_seconds": 4.714921033196151
+      "time_seconds": 4.38130623344332
     },
     {
       "room": "room2_office",
@@ -322,7 +322,7 @@
       "post_accuracy": 0.7570281028747559,
       "gain": 0.0033467106391467105,
       "source_drop": -0.0016722495739276422,
-      "time_seconds": 4.714921033196151
+      "time_seconds": 4.38130623344332
     },
     {
       "room": "room2_office",
@@ -334,7 +334,7 @@
       "post_accuracy": 0.7516733601070951,
       "gain": -0.002008032128514081,
       "source_drop": 0.0008361204013378476,
-      "time_seconds": 4.714921033196151
+      "time_seconds": 4.38130623344332
     },
     {
       "room": "room2_office",
@@ -346,7 +346,7 @@
       "post_accuracy": 0.7663989290495314,
       "gain": 0.012717536813922292,
       "source_drop": -0.0008361204013377366,
-      "time_seconds": 4.714921033196151
+      "time_seconds": 4.38130623344332
     },
     {
       "room": "room2_office",
@@ -358,7 +358,7 @@
       "post_accuracy": 0.7657296061515808,
       "gain": 0.012048213915971662,
       "source_drop": -0.02006689860270572,
-      "time_seconds": 4.714921033196151
+      "time_seconds": 4.38130623344332
     },
     {
       "room": "room2_office",
@@ -370,7 +370,7 @@
       "post_accuracy": 0.7034805890227577,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.226684554480016
+      "time_seconds": 4.240730712004006
     },
     {
       "room": "room2_office",
@@ -382,7 +382,7 @@
       "post_accuracy": 0.713520749665328,
       "gain": 0.010040160642570295,
       "source_drop": -0.0008361204013378476,
-      "time_seconds": 4.226684554480016
+      "time_seconds": 4.240730712004006
     },
     {
       "room": "room2_office",
@@ -394,7 +394,7 @@
       "post_accuracy": 0.7121820615796519,
       "gain": 0.00870147255689424,
       "source_drop": -0.006688963210702337,
-      "time_seconds": 4.226684554480016
+      "time_seconds": 4.240730712004006
     },
     {
       "room": "room2_office",
@@ -406,7 +406,7 @@
       "post_accuracy": 0.714859437751004,
       "gain": 0.011378848728246349,
       "source_drop": -0.0033444816053511683,
-      "time_seconds": 4.226684554480016
+      "time_seconds": 4.240730712004006
     },
     {
       "room": "room2_office",
@@ -418,7 +418,7 @@
       "post_accuracy": 0.714859437751004,
       "gain": 0.011378848728246349,
       "source_drop": -0.0033444816053511683,
-      "time_seconds": 4.226684554480016
+      "time_seconds": 4.240730712004006
     },
     {
       "room": "room2_office",
@@ -430,7 +430,7 @@
       "post_accuracy": 0.714859437751004,
       "gain": 0.011378848728246349,
       "source_drop": -0.0033444816053511683,
-      "time_seconds": 4.226684554480016
+      "time_seconds": 4.240730712004006
     },
     {
       "room": "room2_office",
@@ -442,7 +442,7 @@
       "post_accuracy": 0.7115127444267273,
       "gain": 0.00803215540396962,
       "source_drop": -0.0025083699752654898,
-      "time_seconds": 4.226684554480016
+      "time_seconds": 4.240730712004006
     },
     {
       "room": "room2_office",
@@ -454,7 +454,7 @@
       "post_accuracy": 0.7041499330655957,
       "gain": 0.0006693440428380271,
       "source_drop": 0.0,
-      "time_seconds": 4.226684554480016
+      "time_seconds": 4.240730712004006
     },
     {
       "room": "room2_office",
@@ -463,10 +463,10 @@
       "seed": 3,
       "method": "shot",
       "pre_accuracy": 0.7034805890227577,
-      "post_accuracy": 0.6954484605087015,
-      "gain": -0.008032128514056214,
-      "source_drop": 0.0025083612040133207,
-      "time_seconds": 4.226684554480016
+      "post_accuracy": 0.7014725568942436,
+      "gain": -0.002008032128514081,
+      "source_drop": -0.0008361204013378476,
+      "time_seconds": 4.240730712004006
     },
     {
       "room": "room2_office",
@@ -478,7 +478,7 @@
       "post_accuracy": 0.7175368070602417,
       "gain": 0.014056218037484025,
       "source_drop": -0.008361188464340197,
-      "time_seconds": 4.226684554480016
+      "time_seconds": 4.240730712004006
     },
     {
       "room": "room2_office",
@@ -490,7 +490,7 @@
       "post_accuracy": 0.6874163319946452,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.461737059615553
+      "time_seconds": 4.496587491966784
     },
     {
       "room": "room2_office",
@@ -502,7 +502,7 @@
       "post_accuracy": 0.6987951807228916,
       "gain": 0.011378848728246349,
       "source_drop": -0.0050167224080267525,
-      "time_seconds": 4.461737059615553
+      "time_seconds": 4.496587491966784
     },
     {
       "room": "room2_office",
@@ -514,7 +514,7 @@
       "post_accuracy": 0.7034805890227577,
       "gain": 0.016064257028112428,
       "source_drop": -0.010869565217391242,
-      "time_seconds": 4.461737059615553
+      "time_seconds": 4.496587491966784
     },
     {
       "room": "room2_office",
@@ -526,7 +526,7 @@
       "post_accuracy": 0.6666666666666666,
       "gain": -0.020749665327978617,
       "source_drop": -0.013377926421404673,
-      "time_seconds": 4.461737059615553
+      "time_seconds": 4.496587491966784
     },
     {
       "room": "room2_office",
@@ -538,7 +538,7 @@
       "post_accuracy": 0.6666666666666666,
       "gain": -0.020749665327978617,
       "source_drop": -0.013377926421404673,
-      "time_seconds": 4.461737059615553
+      "time_seconds": 4.496587491966784
     },
     {
       "room": "room2_office",
@@ -550,7 +550,7 @@
       "post_accuracy": 0.6666666666666666,
       "gain": -0.020749665327978617,
       "source_drop": -0.013377926421404673,
-      "time_seconds": 4.461737059615553
+      "time_seconds": 4.496587491966784
     },
     {
       "room": "room2_office",
@@ -562,7 +562,7 @@
       "post_accuracy": 0.6807228922843933,
       "gain": -0.006693439710251936,
       "source_drop": -3.388892833022794e-09,
-      "time_seconds": 4.461737059615553
+      "time_seconds": 4.496587491966784
     },
     {
       "room": "room2_office",
@@ -574,7 +574,7 @@
       "post_accuracy": 0.6887550200803213,
       "gain": 0.0013386880856760541,
       "source_drop": -0.0008361204013377366,
-      "time_seconds": 4.461737059615553
+      "time_seconds": 4.496587491966784
     },
     {
       "room": "room2_office",
@@ -586,7 +586,7 @@
       "post_accuracy": 0.7041499330655957,
       "gain": 0.016733601070950455,
       "source_drop": -0.010033444816053505,
-      "time_seconds": 4.461737059615553
+      "time_seconds": 4.496587491966784
     },
     {
       "room": "room2_office",
@@ -598,7 +598,7 @@
       "post_accuracy": 0.7161981463432312,
       "gain": 0.028781814348585955,
       "source_drop": -0.010869566014777843,
-      "time_seconds": 4.461737059615553
+      "time_seconds": 4.496587491966784
     },
     {
       "room": "room1_hall",
@@ -610,7 +610,7 @@
       "post_accuracy": 0.6900937081659974,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.5410241648554805
+      "time_seconds": 4.420303755998612
     },
     {
       "room": "room1_hall",
@@ -622,7 +622,7 @@
       "post_accuracy": 0.6867469879518072,
       "gain": -0.0033467202141901353,
       "source_drop": -0.0016722408026755842,
-      "time_seconds": 4.5410241648554805
+      "time_seconds": 4.420303755998612
     },
     {
       "room": "room1_hall",
@@ -634,7 +634,7 @@
       "post_accuracy": 0.6820615796519411,
       "gain": -0.008032128514056214,
       "source_drop": -0.018394648829431426,
-      "time_seconds": 4.5410241648554805
+      "time_seconds": 4.420303755998612
     },
     {
       "room": "room1_hall",
@@ -646,7 +646,7 @@
       "post_accuracy": 0.6847389558232931,
       "gain": -0.0053547523427042165,
       "source_drop": 0.0033444816053511683,
-      "time_seconds": 4.5410241648554805
+      "time_seconds": 4.420303755998612
     },
     {
       "room": "room1_hall",
@@ -658,7 +658,7 @@
       "post_accuracy": 0.6860776439089692,
       "gain": -0.004016064257028162,
       "source_drop": 0.0033444816053511683,
-      "time_seconds": 4.5410241648554805
+      "time_seconds": 4.420303755998612
     },
     {
       "room": "room1_hall",
@@ -670,7 +670,7 @@
       "post_accuracy": 0.6847389558232931,
       "gain": -0.0053547523427042165,
       "source_drop": 0.0033444816053511683,
-      "time_seconds": 4.5410241648554805
+      "time_seconds": 4.420303755998612
     },
     {
       "room": "room1_hall",
@@ -682,7 +682,7 @@
       "post_accuracy": 0.6887550354003906,
       "gain": -0.0013386727656067299,
       "source_drop": 0.0066889711845679045,
-      "time_seconds": 4.5410241648554805
+      "time_seconds": 4.420303755998612
     },
     {
       "room": "room1_hall",
@@ -694,7 +694,7 @@
       "post_accuracy": 0.6867469879518072,
       "gain": -0.0033467202141901353,
       "source_drop": 0.0008361204013378476,
-      "time_seconds": 4.5410241648554805
+      "time_seconds": 4.420303755998612
     },
     {
       "room": "room1_hall",
@@ -706,7 +706,7 @@
       "post_accuracy": 0.6840696117804551,
       "gain": -0.006024096385542244,
       "source_drop": 0.0008361204013378476,
-      "time_seconds": 4.5410241648554805
+      "time_seconds": 4.420303755998612
     },
     {
       "room": "room1_hall",
@@ -718,7 +718,7 @@
       "post_accuracy": 0.6720214486122131,
       "gain": -0.01807225955378422,
       "source_drop": -0.0025083831321435213,
-      "time_seconds": 4.5410241648554805
+      "time_seconds": 4.420303755998612
     },
     {
       "room": "room1_hall",
@@ -730,7 +730,7 @@
       "post_accuracy": 0.6546184738955824,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.746977841481566
+      "time_seconds": 4.480324536934495
     },
     {
       "room": "room1_hall",
@@ -742,7 +742,7 @@
       "post_accuracy": 0.6445783132530121,
       "gain": -0.010040160642570295,
       "source_drop": -0.0025083612040134318,
-      "time_seconds": 4.746977841481566
+      "time_seconds": 4.480324536934495
     },
     {
       "room": "room1_hall",
@@ -754,7 +754,7 @@
       "post_accuracy": 0.64190093708166,
       "gain": -0.012717536813922403,
       "source_drop": -0.004180602006689016,
-      "time_seconds": 4.746977841481566
+      "time_seconds": 4.480324536934495
     },
     {
       "room": "room1_hall",
@@ -763,10 +763,10 @@
       "seed": 1,
       "method": "physics_tta",
       "pre_accuracy": 0.6546184738955824,
-      "post_accuracy": 0.6512717536813922,
-      "gain": -0.0033467202141901353,
-      "source_drop": -0.0025083612040134318,
-      "time_seconds": 4.746977841481566
+      "post_accuracy": 0.6499330655957162,
+      "gain": -0.0046854082998661895,
+      "source_drop": -0.0008361204013378476,
+      "time_seconds": 4.480324536934495
     },
     {
       "room": "room1_hall",
@@ -775,10 +775,10 @@
       "seed": 1,
       "method": "physics_entropy_tta",
       "pre_accuracy": 0.6546184738955824,
-      "post_accuracy": 0.6512717536813922,
-      "gain": -0.0033467202141901353,
-      "source_drop": -0.0025083612040134318,
-      "time_seconds": 4.746977841481566
+      "post_accuracy": 0.6506024096385542,
+      "gain": -0.004016064257028162,
+      "source_drop": -0.0008361204013378476,
+      "time_seconds": 4.480324536934495
     },
     {
       "room": "room1_hall",
@@ -790,7 +790,7 @@
       "post_accuracy": 0.6499330655957162,
       "gain": -0.0046854082998661895,
       "source_drop": -0.0008361204013378476,
-      "time_seconds": 4.746977841481566
+      "time_seconds": 4.480324536934495
     },
     {
       "room": "room1_hall",
@@ -802,7 +802,7 @@
       "post_accuracy": 0.6539491415023804,
       "gain": -0.0006693323932019934,
       "source_drop": -0.0016722194725853345,
-      "time_seconds": 4.746977841481566
+      "time_seconds": 4.480324536934495
     },
     {
       "room": "room1_hall",
@@ -814,7 +814,7 @@
       "post_accuracy": 0.6546184738955824,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.746977841481566
+      "time_seconds": 4.480324536934495
     },
     {
       "room": "room1_hall",
@@ -823,10 +823,10 @@
       "seed": 1,
       "method": "shot",
       "pre_accuracy": 0.6546184738955824,
-      "post_accuracy": 0.6519410977242303,
-      "gain": -0.0026773761713521083,
-      "source_drop": 0.0025083612040133207,
-      "time_seconds": 4.746977841481566
+      "post_accuracy": 0.6546184738955824,
+      "gain": 0.0,
+      "source_drop": -0.0033444816053511683,
+      "time_seconds": 4.480324536934495
     },
     {
       "room": "room1_hall",
@@ -838,7 +838,7 @@
       "post_accuracy": 0.6358768343925476,
       "gain": -0.018741639503034757,
       "source_drop": -0.01086957378929676,
-      "time_seconds": 4.746977841481566
+      "time_seconds": 4.480324536934495
     },
     {
       "room": "room1_hall",
@@ -850,7 +850,7 @@
       "post_accuracy": 0.6680053547523427,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.584175704792142
+      "time_seconds": 4.535553142987192
     },
     {
       "room": "room1_hall",
@@ -859,10 +859,10 @@
       "seed": 2,
       "method": "entropy_tta",
       "pre_accuracy": 0.6680053547523427,
-      "post_accuracy": 0.6726907630522089,
-      "gain": 0.0046854082998661895,
-      "source_drop": -0.00836120401337792,
-      "time_seconds": 4.584175704792142
+      "post_accuracy": 0.6733601070950469,
+      "gain": 0.0053547523427042165,
+      "source_drop": -0.01170568561872909,
+      "time_seconds": 4.535553142987192
     },
     {
       "room": "room1_hall",
@@ -871,10 +871,10 @@
       "seed": 2,
       "method": "conservative_entropy_tta",
       "pre_accuracy": 0.6680053547523427,
-      "post_accuracy": 0.6820615796519411,
-      "gain": 0.014056224899598457,
+      "post_accuracy": 0.6827309236947792,
+      "gain": 0.014725568942436484,
       "source_drop": -0.006688963210702337,
-      "time_seconds": 4.584175704792142
+      "time_seconds": 4.535553142987192
     },
     {
       "room": "room1_hall",
@@ -886,7 +886,7 @@
       "post_accuracy": 0.677376171352075,
       "gain": 0.009370816599732268,
       "source_drop": -0.0016722408026755842,
-      "time_seconds": 4.584175704792142
+      "time_seconds": 4.535553142987192
     },
     {
       "room": "room1_hall",
@@ -898,7 +898,7 @@
       "post_accuracy": 0.6767068273092369,
       "gain": 0.00870147255689424,
       "source_drop": -0.0016722408026755842,
-      "time_seconds": 4.584175704792142
+      "time_seconds": 4.535553142987192
     },
     {
       "room": "room1_hall",
@@ -910,7 +910,7 @@
       "post_accuracy": 0.677376171352075,
       "gain": 0.009370816599732268,
       "source_drop": -0.0016722408026755842,
-      "time_seconds": 4.584175704792142
+      "time_seconds": 4.535553142987192
     },
     {
       "room": "room1_hall",
@@ -922,7 +922,7 @@
       "post_accuracy": 0.6713520884513855,
       "gain": 0.0033467336990428143,
       "source_drop": 1.853923736749863e-08,
-      "time_seconds": 4.584175704792142
+      "time_seconds": 4.535553142987192
     },
     {
       "room": "room1_hall",
@@ -934,7 +934,7 @@
       "post_accuracy": 0.6666666666666666,
       "gain": -0.0013386880856760541,
       "source_drop": -0.0008361204013377366,
-      "time_seconds": 4.584175704792142
+      "time_seconds": 4.535553142987192
     },
     {
       "room": "room1_hall",
@@ -946,7 +946,7 @@
       "post_accuracy": 0.6820615796519411,
       "gain": 0.014056224899598457,
       "source_drop": -0.010033444816053505,
-      "time_seconds": 4.584175704792142
+      "time_seconds": 4.535553142987192
     },
     {
       "room": "room1_hall",
@@ -957,8 +957,8 @@
       "pre_accuracy": 0.6680053547523427,
       "post_accuracy": 0.6579651832580566,
       "gain": -0.010040171494286043,
-      "source_drop": -0.017558556137276304,
-      "time_seconds": 4.584175704792142
+      "source_drop": -0.01839463048954071,
+      "time_seconds": 4.535553142987192
     },
     {
       "room": "room1_hall",
@@ -970,7 +970,7 @@
       "post_accuracy": 0.6840696117804551,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.821268603950739
+      "time_seconds": 4.411995705962181
     },
     {
       "room": "room1_hall",
@@ -982,7 +982,7 @@
       "post_accuracy": 0.6693440428380187,
       "gain": -0.014725568942436373,
       "source_drop": -0.005852842809364489,
-      "time_seconds": 4.821268603950739
+      "time_seconds": 4.411995705962181
     },
     {
       "room": "room1_hall",
@@ -994,7 +994,7 @@
       "post_accuracy": 0.6613119143239625,
       "gain": -0.022757697456492587,
       "source_drop": -0.015050167224080258,
-      "time_seconds": 4.821268603950739
+      "time_seconds": 4.411995705962181
     },
     {
       "room": "room1_hall",
@@ -1003,10 +1003,10 @@
       "seed": 3,
       "method": "physics_tta",
       "pre_accuracy": 0.6840696117804551,
-      "post_accuracy": 0.6807228915662651,
-      "gain": -0.0033467202141900243,
-      "source_drop": -0.0050167224080267525,
-      "time_seconds": 4.821268603950739
+      "post_accuracy": 0.678714859437751,
+      "gain": -0.0053547523427041055,
+      "source_drop": -0.007525083612040073,
+      "time_seconds": 4.411995705962181
     },
     {
       "room": "room1_hall",
@@ -1015,10 +1015,10 @@
       "seed": 3,
       "method": "physics_entropy_tta",
       "pre_accuracy": 0.6840696117804551,
-      "post_accuracy": 0.6807228915662651,
-      "gain": -0.0033467202141900243,
-      "source_drop": -0.005852842809364489,
-      "time_seconds": 4.821268603950739
+      "post_accuracy": 0.679384203480589,
+      "gain": -0.004685408299866078,
+      "source_drop": -0.00836120401337792,
+      "time_seconds": 4.411995705962181
     },
     {
       "room": "room1_hall",
@@ -1030,7 +1030,7 @@
       "post_accuracy": 0.678714859437751,
       "gain": -0.0053547523427041055,
       "source_drop": -0.007525083612040073,
-      "time_seconds": 4.821268603950739
+      "time_seconds": 4.411995705962181
     },
     {
       "room": "room1_hall",
@@ -1039,10 +1039,10 @@
       "seed": 3,
       "method": "selective_physics_tta",
       "pre_accuracy": 0.6840696117804551,
-      "post_accuracy": 0.6847389340400696,
-      "gain": 0.0006693222596144688,
+      "post_accuracy": 0.6807228922843933,
+      "gain": -0.0033467194960618007,
       "source_drop": -0.0008361154176718122,
-      "time_seconds": 4.821268603950739
+      "time_seconds": 4.411995705962181
     },
     {
       "room": "room1_hall",
@@ -1054,7 +1054,7 @@
       "post_accuracy": 0.6827309236947792,
       "gain": -0.001338688085675943,
       "source_drop": 0.0008361204013378476,
-      "time_seconds": 4.821268603950739
+      "time_seconds": 4.411995705962181
     },
     {
       "room": "room1_hall",
@@ -1063,10 +1063,10 @@
       "seed": 3,
       "method": "shot",
       "pre_accuracy": 0.6840696117804551,
-      "post_accuracy": 0.6700133868808568,
-      "gain": -0.014056224899598346,
-      "source_drop": -0.01170568561872909,
-      "time_seconds": 4.821268603950739
+      "post_accuracy": 0.6639892904953146,
+      "gain": -0.02008032128514048,
+      "source_drop": -0.00836120401337792,
+      "time_seconds": 4.411995705962181
     },
     {
       "room": "room1_hall",
@@ -1078,7 +1078,7 @@
       "post_accuracy": 0.66131192445755,
       "gain": -0.022757687322905062,
       "source_drop": -0.008361201820564879,
-      "time_seconds": 4.821268603950739
+      "time_seconds": 4.411995705962181
     },
     {
       "room": "room1_hall",
@@ -1090,7 +1090,7 @@
       "post_accuracy": 0.6546184738955824,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.6238000432029365
+      "time_seconds": 4.351601323485374
     },
     {
       "room": "room1_hall",
@@ -1099,10 +1099,10 @@
       "seed": 4,
       "method": "entropy_tta",
       "pre_accuracy": 0.6546184738955824,
-      "post_accuracy": 0.6398929049531459,
-      "gain": -0.014725568942436484,
-      "source_drop": -0.01170568561872909,
-      "time_seconds": 4.6238000432029365
+      "post_accuracy": 0.64190093708166,
+      "gain": -0.012717536813922403,
+      "source_drop": -0.012541806020066937,
+      "time_seconds": 4.351601323485374
     },
     {
       "room": "room1_hall",
@@ -1111,10 +1111,10 @@
       "seed": 4,
       "method": "conservative_entropy_tta",
       "pre_accuracy": 0.6546184738955824,
-      "post_accuracy": 0.64190093708166,
-      "gain": -0.012717536813922403,
-      "source_drop": -0.010869565217391353,
-      "time_seconds": 4.6238000432029365
+      "post_accuracy": 0.6392235609103079,
+      "gain": -0.015394912985274511,
+      "source_drop": -0.01672240802675584,
+      "time_seconds": 4.351601323485374
     },
     {
       "room": "room1_hall",
@@ -1126,7 +1126,7 @@
       "post_accuracy": 0.6539491298527443,
       "gain": -0.0006693440428380271,
       "source_drop": -0.0033444816053511683,
-      "time_seconds": 4.6238000432029365
+      "time_seconds": 4.351601323485374
     },
     {
       "room": "room1_hall",
@@ -1138,7 +1138,7 @@
       "post_accuracy": 0.6539491298527443,
       "gain": -0.0006693440428380271,
       "source_drop": -0.0033444816053511683,
-      "time_seconds": 4.6238000432029365
+      "time_seconds": 4.351601323485374
     },
     {
       "room": "room1_hall",
@@ -1150,7 +1150,7 @@
       "post_accuracy": 0.6539491298527443,
       "gain": -0.0006693440428380271,
       "source_drop": -0.0033444816053511683,
-      "time_seconds": 4.6238000432029365
+      "time_seconds": 4.351601323485374
     },
     {
       "room": "room1_hall",
@@ -1162,7 +1162,7 @@
       "post_accuracy": 0.657295823097229,
       "gain": 0.0026773492016466394,
       "source_drop": -0.0033444710399793687,
-      "time_seconds": 4.6238000432029365
+      "time_seconds": 4.351601323485374
     },
     {
       "room": "room1_hall",
@@ -1174,7 +1174,7 @@
       "post_accuracy": 0.6566265060240963,
       "gain": 0.00200803212851397,
       "source_drop": -0.0025083612040134318,
-      "time_seconds": 4.6238000432029365
+      "time_seconds": 4.351601323485374
     },
     {
       "room": "room1_hall",
@@ -1183,10 +1183,10 @@
       "seed": 4,
       "method": "shot",
       "pre_accuracy": 0.6546184738955824,
-      "post_accuracy": 0.6479250334672021,
-      "gain": -0.006693440428380271,
-      "source_drop": -0.01170568561872909,
-      "time_seconds": 4.6238000432029365
+      "post_accuracy": 0.6445783132530121,
+      "gain": -0.010040160642570295,
+      "source_drop": -0.015886287625418105,
+      "time_seconds": 4.351601323485374
     },
     {
       "room": "room1_hall",
@@ -1197,8 +1197,8 @@
       "pre_accuracy": 0.6546184738955824,
       "post_accuracy": 0.6385542154312134,
       "gain": -0.016064258464368986,
-      "source_drop": -0.021739120068757445,
-      "time_seconds": 4.6238000432029365
+      "source_drop": -0.023411387982575804,
+      "time_seconds": 4.351601323485374
     },
     {
       "room": "room0_classroom",
@@ -1210,7 +1210,7 @@
       "post_accuracy": 0.5421686746987951,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.279687537252903
+      "time_seconds": 4.377340535447002
     },
     {
       "room": "room0_classroom",
@@ -1222,7 +1222,7 @@
       "post_accuracy": 0.5401606425702812,
       "gain": -0.00200803212851397,
       "source_drop": -0.01170568561872909,
-      "time_seconds": 4.279687537252903
+      "time_seconds": 4.377340535447002
     },
     {
       "room": "room0_classroom",
@@ -1234,7 +1234,7 @@
       "post_accuracy": 0.5408299866131191,
       "gain": -0.0013386880856760541,
       "source_drop": -0.010869565217391242,
-      "time_seconds": 4.279687537252903
+      "time_seconds": 4.377340535447002
     },
     {
       "room": "room0_classroom",
@@ -1246,7 +1246,7 @@
       "post_accuracy": 0.5428380187416332,
       "gain": 0.0006693440428380271,
       "source_drop": 0.0050167224080267525,
-      "time_seconds": 4.279687537252903
+      "time_seconds": 4.377340535447002
     },
     {
       "room": "room0_classroom",
@@ -1258,7 +1258,7 @@
       "post_accuracy": 0.5428380187416332,
       "gain": 0.0006693440428380271,
       "source_drop": 0.0050167224080267525,
-      "time_seconds": 4.279687537252903
+      "time_seconds": 4.377340535447002
     },
     {
       "room": "room0_classroom",
@@ -1270,7 +1270,7 @@
       "post_accuracy": 0.5428380187416332,
       "gain": 0.0006693440428380271,
       "source_drop": 0.0050167224080267525,
-      "time_seconds": 4.279687537252903
+      "time_seconds": 4.377340535447002
     },
     {
       "room": "room0_classroom",
@@ -1282,7 +1282,7 @@
       "post_accuracy": 0.5401606559753418,
       "gain": -0.002008018723453353,
       "source_drop": 0.004180583268104998,
-      "time_seconds": 4.279687537252903
+      "time_seconds": 4.377340535447002
     },
     {
       "room": "room0_classroom",
@@ -1294,7 +1294,7 @@
       "post_accuracy": 0.5441767068273092,
       "gain": 0.002008032128514081,
       "source_drop": 0.0,
-      "time_seconds": 4.279687537252903
+      "time_seconds": 4.377340535447002
     },
     {
       "room": "room0_classroom",
@@ -1306,7 +1306,7 @@
       "post_accuracy": 0.5394912985274432,
       "gain": -0.0026773761713519972,
       "source_drop": -0.01755852842809369,
-      "time_seconds": 4.279687537252903
+      "time_seconds": 4.377340535447002
     },
     {
       "room": "room0_classroom",
@@ -1318,7 +1318,7 @@
       "post_accuracy": 0.5468540787696838,
       "gain": 0.004685404070888688,
       "source_drop": -0.020066884249747785,
-      "time_seconds": 4.279687537252903
+      "time_seconds": 4.377340535447002
     },
     {
       "room": "room0_classroom",
@@ -1330,7 +1330,7 @@
       "post_accuracy": 0.5495314591700133,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.222869382798672
+      "time_seconds": 4.521672637201846
     },
     {
       "room": "room0_classroom",
@@ -1339,10 +1339,10 @@
       "seed": 1,
       "method": "entropy_tta",
       "pre_accuracy": 0.5495314591700133,
-      "post_accuracy": 0.5535475234270415,
-      "gain": 0.004016064257028162,
-      "source_drop": -0.00836120401337792,
-      "time_seconds": 4.222869382798672
+      "post_accuracy": 0.5515394912985274,
+      "gain": 0.002008032128514081,
+      "source_drop": -0.007525083612040184,
+      "time_seconds": 4.521672637201846
     },
     {
       "room": "room0_classroom",
@@ -1351,10 +1351,10 @@
       "seed": 1,
       "method": "conservative_entropy_tta",
       "pre_accuracy": 0.5495314591700133,
-      "post_accuracy": 0.5522088353413654,
-      "gain": 0.0026773761713521083,
-      "source_drop": -0.00836120401337792,
-      "time_seconds": 4.222869382798672
+      "post_accuracy": 0.5502008032128514,
+      "gain": 0.0006693440428380271,
+      "source_drop": -0.010869565217391353,
+      "time_seconds": 4.521672637201846
     },
     {
       "room": "room0_classroom",
@@ -1363,10 +1363,10 @@
       "seed": 1,
       "method": "physics_tta",
       "pre_accuracy": 0.5495314591700133,
-      "post_accuracy": 0.5522088353413654,
-      "gain": 0.0026773761713521083,
-      "source_drop": -0.004180602006689016,
-      "time_seconds": 4.222869382798672
+      "post_accuracy": 0.5542168674698795,
+      "gain": 0.0046854082998661895,
+      "source_drop": 0.0008361204013377366,
+      "time_seconds": 4.521672637201846
     },
     {
       "room": "room0_classroom",
@@ -1375,10 +1375,10 @@
       "seed": 1,
       "method": "physics_entropy_tta",
       "pre_accuracy": 0.5495314591700133,
-      "post_accuracy": 0.5522088353413654,
-      "gain": 0.0026773761713521083,
-      "source_drop": -0.004180602006689016,
-      "time_seconds": 4.222869382798672
+      "post_accuracy": 0.5542168674698795,
+      "gain": 0.0046854082998661895,
+      "source_drop": 0.0008361204013377366,
+      "time_seconds": 4.521672637201846
     },
     {
       "room": "room0_classroom",
@@ -1390,7 +1390,7 @@
       "post_accuracy": 0.5542168674698795,
       "gain": 0.0046854082998661895,
       "source_drop": 0.0008361204013377366,
-      "time_seconds": 4.222869382798672
+      "time_seconds": 4.521672637201846
     },
     {
       "room": "room0_classroom",
@@ -1399,10 +1399,10 @@
       "seed": 1,
       "method": "selective_physics_tta",
       "pre_accuracy": 0.5495314591700133,
-      "post_accuracy": 0.5555555820465088,
-      "gain": 0.006024122876495452,
-      "source_drop": -7.774518917536e-09,
-      "time_seconds": 4.222869382798672
+      "post_accuracy": 0.5542168617248535,
+      "gain": 0.004685402554840179,
+      "source_drop": -0.0008361417314280972,
+      "time_seconds": 4.521672637201846
     },
     {
       "room": "room0_classroom",
@@ -1414,7 +1414,7 @@
       "post_accuracy": 0.5535475234270415,
       "gain": 0.004016064257028162,
       "source_drop": 0.0008361204013377366,
-      "time_seconds": 4.222869382798672
+      "time_seconds": 4.521672637201846
     },
     {
       "room": "room0_classroom",
@@ -1423,10 +1423,10 @@
       "seed": 1,
       "method": "shot",
       "pre_accuracy": 0.5495314591700133,
-      "post_accuracy": 0.5542168674698795,
-      "gain": 0.0046854082998661895,
-      "source_drop": -0.0050167224080267525,
-      "time_seconds": 4.222869382798672
+      "post_accuracy": 0.5555555555555556,
+      "gain": 0.006024096385542244,
+      "source_drop": -0.0025083612040134318,
+      "time_seconds": 4.521672637201846
     },
     {
       "room": "room0_classroom",
@@ -1435,10 +1435,10 @@
       "seed": 1,
       "method": "t3a",
       "pre_accuracy": 0.5495314591700133,
-      "post_accuracy": 0.5535475015640259,
-      "gain": 0.004016042394012542,
-      "source_drop": -0.010033436443494748,
-      "time_seconds": 4.222869382798672
+      "post_accuracy": 0.5508701205253601,
+      "gain": 0.0013386613553467708,
+      "source_drop": -0.012541778709577511,
+      "time_seconds": 4.521672637201846
     },
     {
       "room": "room0_classroom",
@@ -1450,7 +1450,7 @@
       "post_accuracy": 0.5461847389558233,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.602905885875225
+      "time_seconds": 4.4148941490799185
     },
     {
       "room": "room0_classroom",
@@ -1459,10 +1459,10 @@
       "seed": 2,
       "method": "entropy_tta",
       "pre_accuracy": 0.5461847389558233,
-      "post_accuracy": 0.5421686746987951,
-      "gain": -0.004016064257028162,
-      "source_drop": -0.01170568561872909,
-      "time_seconds": 4.602905885875225
+      "post_accuracy": 0.5441767068273092,
+      "gain": -0.002008032128514081,
+      "source_drop": -0.014214046822742521,
+      "time_seconds": 4.4148941490799185
     },
     {
       "room": "room0_classroom",
@@ -1471,10 +1471,10 @@
       "seed": 2,
       "method": "conservative_entropy_tta",
       "pre_accuracy": 0.5461847389558233,
-      "post_accuracy": 0.5461847389558233,
-      "gain": 0.0,
-      "source_drop": -0.010869565217391353,
-      "time_seconds": 4.602905885875225
+      "post_accuracy": 0.5408299866131191,
+      "gain": -0.0053547523427042165,
+      "source_drop": -0.018394648829431426,
+      "time_seconds": 4.4148941490799185
     },
     {
       "room": "room0_classroom",
@@ -1486,7 +1486,7 @@
       "post_accuracy": 0.5414993306559571,
       "gain": -0.0046854082998661895,
       "source_drop": -0.0050167224080267525,
-      "time_seconds": 4.602905885875225
+      "time_seconds": 4.4148941490799185
     },
     {
       "room": "room0_classroom",
@@ -1498,7 +1498,7 @@
       "post_accuracy": 0.5414993306559571,
       "gain": -0.0046854082998661895,
       "source_drop": -0.0050167224080267525,
-      "time_seconds": 4.602905885875225
+      "time_seconds": 4.4148941490799185
     },
     {
       "room": "room0_classroom",
@@ -1510,7 +1510,7 @@
       "post_accuracy": 0.5414993306559571,
       "gain": -0.0046854082998661895,
       "source_drop": -0.0050167224080267525,
-      "time_seconds": 4.602905885875225
+      "time_seconds": 4.4148941490799185
     },
     {
       "room": "room0_classroom",
@@ -1522,7 +1522,7 @@
       "post_accuracy": 0.5441766977310181,
       "gain": -0.002008041224805246,
       "source_drop": 0.0016722222634382167,
-      "time_seconds": 4.602905885875225
+      "time_seconds": 4.4148941490799185
     },
     {
       "room": "room0_classroom",
@@ -1531,10 +1531,10 @@
       "seed": 2,
       "method": "tent",
       "pre_accuracy": 0.5461847389558233,
-      "post_accuracy": 0.5448460508701473,
-      "gain": -0.0013386880856760541,
-      "source_drop": 0.0,
-      "time_seconds": 4.602905885875225
+      "post_accuracy": 0.5461847389558233,
+      "gain": 0.0,
+      "source_drop": -0.0008361204013378476,
+      "time_seconds": 4.4148941490799185
     },
     {
       "room": "room0_classroom",
@@ -1543,10 +1543,10 @@
       "seed": 2,
       "method": "shot",
       "pre_accuracy": 0.5461847389558233,
-      "post_accuracy": 0.534805890227577,
-      "gain": -0.011378848728246349,
+      "post_accuracy": 0.5274431057563588,
+      "gain": -0.018741633199464536,
       "source_drop": -0.010033444816053505,
-      "time_seconds": 4.602905885875225
+      "time_seconds": 4.4148941490799185
     },
     {
       "room": "room0_classroom",
@@ -1557,8 +1557,8 @@
       "pre_accuracy": 0.5461847389558233,
       "post_accuracy": 0.5448460578918457,
       "gain": -0.0013386810639776092,
-      "source_drop": -0.023411379211323746,
-      "time_seconds": 4.602905885875225
+      "source_drop": -0.021739111297505387,
+      "time_seconds": 4.4148941490799185
     },
     {
       "room": "room0_classroom",
@@ -1570,7 +1570,7 @@
       "post_accuracy": 0.5502008032128514,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.928883259743452
+      "time_seconds": 4.295006852410734
     },
     {
       "room": "room0_classroom",
@@ -1579,10 +1579,10 @@
       "seed": 3,
       "method": "entropy_tta",
       "pre_accuracy": 0.5502008032128514,
-      "post_accuracy": 0.5461847389558233,
-      "gain": -0.004016064257028051,
-      "source_drop": -0.009197324414715657,
-      "time_seconds": 4.928883259743452
+      "post_accuracy": 0.5414993306559571,
+      "gain": -0.00870147255689424,
+      "source_drop": -0.01421404682274241,
+      "time_seconds": 4.295006852410734
     },
     {
       "room": "room0_classroom",
@@ -1591,10 +1591,10 @@
       "seed": 3,
       "method": "conservative_entropy_tta",
       "pre_accuracy": 0.5502008032128514,
-      "post_accuracy": 0.5428380187416332,
-      "gain": -0.007362784471218187,
-      "source_drop": -0.005852842809364489,
-      "time_seconds": 4.928883259743452
+      "post_accuracy": 0.5401606425702812,
+      "gain": -0.010040160642570184,
+      "source_drop": -0.013377926421404673,
+      "time_seconds": 4.295006852410734
     },
     {
       "room": "room0_classroom",
@@ -1606,7 +1606,7 @@
       "post_accuracy": 0.5455153949129853,
       "gain": -0.004685408299866078,
       "source_drop": -0.010869565217391242,
-      "time_seconds": 4.928883259743452
+      "time_seconds": 4.295006852410734
     },
     {
       "room": "room0_classroom",
@@ -1618,7 +1618,7 @@
       "post_accuracy": 0.5455153949129853,
       "gain": -0.004685408299866078,
       "source_drop": -0.010869565217391242,
-      "time_seconds": 4.928883259743452
+      "time_seconds": 4.295006852410734
     },
     {
       "room": "room0_classroom",
@@ -1630,7 +1630,7 @@
       "post_accuracy": 0.5455153949129853,
       "gain": -0.004685408299866078,
       "source_drop": -0.010869565217391242,
-      "time_seconds": 4.928883259743452
+      "time_seconds": 4.295006852410734
     },
     {
       "room": "room0_classroom",
@@ -1642,7 +1642,7 @@
       "post_accuracy": 0.5448460578918457,
       "gain": -0.005354745321005661,
       "source_drop": -0.007525096968264866,
-      "time_seconds": 4.928883259743452
+      "time_seconds": 4.295006852410734
     },
     {
       "room": "room0_classroom",
@@ -1654,7 +1654,7 @@
       "post_accuracy": 0.5488621151271754,
       "gain": -0.001338688085675943,
       "source_drop": 0.0,
-      "time_seconds": 4.928883259743452
+      "time_seconds": 4.295006852410734
     },
     {
       "room": "room0_classroom",
@@ -1666,7 +1666,7 @@
       "post_accuracy": 0.5495314591700133,
       "gain": -0.0006693440428380271,
       "source_drop": -0.0016722408026755842,
-      "time_seconds": 4.928883259743452
+      "time_seconds": 4.295006852410734
     },
     {
       "room": "room0_classroom",
@@ -1675,10 +1675,10 @@
       "seed": 3,
       "method": "t3a",
       "pre_accuracy": 0.5502008032128514,
-      "post_accuracy": 0.5448460578918457,
-      "gain": -0.005354745321005661,
-      "source_drop": -0.023411344126315403,
-      "time_seconds": 4.928883259743452
+      "post_accuracy": 0.5381526350975037,
+      "gain": -0.012048168115347702,
+      "source_drop": -0.028428088263125706,
+      "time_seconds": 4.295006852410734
     },
     {
       "room": "room0_classroom",
@@ -1690,7 +1690,7 @@
       "post_accuracy": 0.5508701472556894,
       "gain": 0.0,
       "source_drop": 0.0,
-      "time_seconds": 4.307762002758682
+      "time_seconds": 4.365666788257658
     },
     {
       "room": "room0_classroom",
@@ -1699,10 +1699,10 @@
       "seed": 4,
       "method": "entropy_tta",
       "pre_accuracy": 0.5508701472556894,
-      "post_accuracy": 0.5515394912985274,
-      "gain": 0.0006693440428380271,
-      "source_drop": -0.019230769230769273,
-      "time_seconds": 4.307762002758682
+      "post_accuracy": 0.5468540829986613,
+      "gain": -0.004016064257028051,
+      "source_drop": -0.02341137123745818,
+      "time_seconds": 4.365666788257658
     },
     {
       "room": "room0_classroom",
@@ -1711,10 +1711,10 @@
       "seed": 4,
       "method": "conservative_entropy_tta",
       "pre_accuracy": 0.5508701472556894,
-      "post_accuracy": 0.5548862115127176,
-      "gain": 0.004016064257028162,
-      "source_drop": -0.01672240802675584,
-      "time_seconds": 4.307762002758682
+      "post_accuracy": 0.5481927710843374,
+      "gain": -0.0026773761713519972,
+      "source_drop": -0.020903010033444858,
+      "time_seconds": 4.365666788257658
     },
     {
       "room": "room0_classroom",
@@ -1723,10 +1723,10 @@
       "seed": 4,
       "method": "physics_tta",
       "pre_accuracy": 0.5508701472556894,
-      "post_accuracy": 0.5562248995983936,
-      "gain": 0.0053547523427042165,
-      "source_drop": -0.013377926421404673,
-      "time_seconds": 4.307762002758682
+      "post_accuracy": 0.5589022757697456,
+      "gain": 0.008032128514056214,
+      "source_drop": -0.012541806020066937,
+      "time_seconds": 4.365666788257658
     },
     {
       "room": "room0_classroom",
@@ -1735,10 +1735,10 @@
       "seed": 4,
       "method": "physics_entropy_tta",
       "pre_accuracy": 0.5508701472556894,
-      "post_accuracy": 0.5562248995983936,
-      "gain": 0.0053547523427042165,
-      "source_drop": -0.013377926421404673,
-      "time_seconds": 4.307762002758682
+      "post_accuracy": 0.5589022757697456,
+      "gain": 0.008032128514056214,
+      "source_drop": -0.012541806020066937,
+      "time_seconds": 4.365666788257658
     },
     {
       "room": "room0_classroom",
@@ -1750,7 +1750,7 @@
       "post_accuracy": 0.5589022757697456,
       "gain": 0.008032128514056214,
       "source_drop": -0.012541806020066937,
-      "time_seconds": 4.307762002758682
+      "time_seconds": 4.365666788257658
     },
     {
       "room": "room0_classroom",
@@ -1759,10 +1759,10 @@
       "seed": 4,
       "method": "selective_physics_tta",
       "pre_accuracy": 0.5508701472556894,
-      "post_accuracy": 0.5495314598083496,
-      "gain": -0.0013386874473397814,
-      "source_drop": -0.008361184676754063,
-      "time_seconds": 4.307762002758682
+      "post_accuracy": 0.5535475015640259,
+      "gain": 0.002677354308336488,
+      "source_drop": -0.009197318633663243,
+      "time_seconds": 4.365666788257658
     },
     {
       "room": "room0_classroom",
@@ -1771,10 +1771,10 @@
       "seed": 4,
       "method": "tent",
       "pre_accuracy": 0.5508701472556894,
-      "post_accuracy": 0.5522088353413654,
-      "gain": 0.0013386880856760541,
+      "post_accuracy": 0.5515394912985274,
+      "gain": 0.0006693440428380271,
       "source_drop": -0.0008361204013378476,
-      "time_seconds": 4.307762002758682
+      "time_seconds": 4.365666788257658
     },
     {
       "room": "room0_classroom",
@@ -1783,10 +1783,10 @@
       "seed": 4,
       "method": "shot",
       "pre_accuracy": 0.5508701472556894,
-      "post_accuracy": 0.5582329317269076,
-      "gain": 0.007362784471218187,
-      "source_drop": -0.015886287625418105,
-      "time_seconds": 4.307762002758682
+      "post_accuracy": 0.5562248995983936,
+      "gain": 0.0053547523427042165,
+      "source_drop": -0.019230769230769273,
+      "time_seconds": 4.365666788257658
     },
     {
       "room": "room0_classroom",
@@ -1795,10 +1795,10 @@
       "seed": 4,
       "method": "t3a",
       "pre_accuracy": 0.5508701472556894,
-      "post_accuracy": 0.5448460578918457,
-      "gain": -0.006024089363843688,
-      "source_drop": -0.019230747302639073,
-      "time_seconds": 4.307762002758682
+      "post_accuracy": 0.5421686768531799,
+      "gain": -0.00870147040250946,
+      "source_drop": -0.020066881259548253,
+      "time_seconds": 4.365666788257658
     }
   ],
   "config": {
@@ -1851,13 +1851,13 @@
     "t3a_full_filter_k": 20,
     "bn_eval_stats": "running",
     "bn_reset_cumulative": false,
-    "collapse_guard_reference": "first_batch",
-    "freeze_bn_in_scoring_pass": false,
+    "collapse_guard_reference": "same_batch",
+    "freeze_bn_in_scoring_pass": true,
     "input_standardization": "source",
     "ablation_use_invariance": true,
     "ablation_use_residual": true,
     "ablation_use_entropy": true,
-    "early_stop_patience": 3,
+    "early_stop_patience": 0,
     "backbone": "mlp",
     "source_label_smoothing": 0.0,
     "source_weight_decay": 0.0,

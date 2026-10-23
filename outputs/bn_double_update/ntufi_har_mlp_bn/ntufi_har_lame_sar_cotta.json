@@ -1,0 +1,47 @@
+{
+  "no_adapt": {
+    "mean_gain": 0.0,
+    "ci_lower": 0.0,
+    "ci_upper": 0.0,
+    "cohens_d_vs_noadapt": 0.0,
+    "paired_d_vs_noadapt": 0.0,
+    "negative_adaptation_rate": 0.0,
+    "n_observations": 15
+  },
+  "tent": {
+    "mean_gain": 0.00602040346711874,
+    "ci_lower": 0.0006734005874022841,
+    "ci_upper": 0.011669057421386242,
+    "cohens_d_vs_noadapt": 0.7468885183334351,
+    "paired_d_vs_noadapt": 0.5281299948692322,
+    "negative_adaptation_rate": 0.20000000298023224,
+    "n_observations": 15
+  },
+  "entropy_tta": {
+    "mean_gain": 0.008693903684616089,
+    "ci_lower": -0.006000174675136805,
+    "ci_upper": 0.024343185126781464,
+    "cohens_d_vs_noadapt": 0.3927992582321167,
+    "paired_d_vs_noadapt": 0.27775102853775024,
+    "negative_adaptation_rate": 0.4000000059604645,
+    "n_observations": 15
+  },
+  "bn_reset": {
+    "mean_gain": 0.004351976793259382,
+    "ci_lower": -0.0006534247077070177,
+    "ci_upper": 0.010030655190348625,
+    "cohens_d_vs_noadapt": 0.5512762069702148,
+    "paired_d_vs_noadapt": 0.3898111581802368,
+    "negative_adaptation_rate": 0.3333333432674408,
+    "n_observations": 15
+  },
+  "sar_full": {
+    "mean_gain": 0.007015427574515343,
+    "ci_lower": 0.0010549528524279594,
+    "ci_upper": 0.01305606123059988,
+    "cohens_d_vs_noadapt": 0.8110393285751343,
+    "paired_d_vs_noadapt": 0.5734913945198059,
+    "negative_adaptation_rate": 0.20000000298023224,
+    "n_observations": 15
+  }
+}

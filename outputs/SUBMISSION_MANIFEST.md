@@ -94,21 +94,21 @@ reflects whether the output file exists on disk at manifest time.
 | `published_bn_batchstats_widar_bvp` | Published BN regime (test-batch statistics): widar_bvp | `outputs/published_bn_batchstats/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta.json` | present |
 | `published_bn_batchstats_ntufi_har` | Published BN regime (test-batch statistics): ntufi_har | `outputs/published_bn_batchstats/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta.json` | present |
 | `published_bn_batchstats_signfi_top10` | Published BN regime (test-batch statistics): signfi_top10 | `outputs/published_bn_batchstats/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta.json` | present |
-| `bn_double_update_ntufi_har` | BN running statistics updated twice per step (unfrozen extra passes): ntufi_har | `outputs/bn_double_update/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta.json` | missing |
-| `bn_double_update_signfi_top10` | BN running statistics updated twice per step (unfrozen extra passes): signfi_top10 | `outputs/bn_double_update/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta.json` | missing |
+| `bn_double_update_ntufi_har` | BN running statistics updated twice per step (unfrozen extra passes): ntufi_har | `outputs/bn_double_update/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta.json` | present |
+| `bn_double_update_signfi_top10` | BN running statistics updated twice per step (unfrozen extra passes): signfi_top10 | `outputs/bn_double_update/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta.json` | present |
 | `tent_lr0_ntufi_har` | TENT at learning rate 0 (statistics-only control): ntufi_har | `outputs/tent_lr0/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta.json` | present |
 | `tent_lr0_signfi_top10` | TENT at learning rate 0 (statistics-only control): signfi_top10 | `outputs/tent_lr0/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta.json` | present |
-| `bn_source_control_widar_bvp` | BN methods adapted on source-validation data, scored on target: widar_bvp | `outputs/bn_source_control/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta.json` | missing |
-| `bn_source_control_ntufi_har` | BN methods adapted on source-validation data, scored on target: ntufi_har | `outputs/bn_source_control/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta.json` | missing |
-| `bn_source_control_signfi_top10` | BN methods adapted on source-validation data, scored on target: signfi_top10 | `outputs/bn_source_control/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta.json` | missing |
+| `bn_source_control_widar_bvp` | BN methods adapted on source-validation data, scored on target: widar_bvp | `outputs/bn_source_control/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta.json` | present |
+| `bn_source_control_ntufi_har` | BN methods adapted on source-validation data, scored on target: ntufi_har | `outputs/bn_source_control/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta.json` | present |
+| `bn_source_control_signfi_top10` | BN methods adapted on source-validation data, scored on target: signfi_top10 | `outputs/bn_source_control/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta.json` | present |
 | `guard_floor_lodo` | Collapse-guard floor chosen leave-one-dataset-out | `outputs/guard_floor_lodo/guard_floor_lodo.json` | present |
 | `tent_lr0_widar_bvp_resnet2d` | TENT at learning rate 0 on ResNet-BN (statistics-only control) | `outputs/tent_lr0/widar_bvp_resnet2d/widar_bvp_lame_sar_cotta.json` | present |
-| `bn_double_update_widar_bvp_resnet2d` | ResNet-BN with two BN-statistics updates per step: Widar | `outputs/bn_double_update/widar_bvp_resnet2d/widar_bvp_lame_sar_cotta.json` | missing |
+| `bn_double_update_widar_bvp_resnet2d` | ResNet-BN with two BN-statistics updates per step: Widar | `outputs/bn_double_update/widar_bvp_resnet2d/widar_bvp_lame_sar_cotta.json` | present |
 | `bn_reset_cumulative_widar_bvp` | BN-reset with cumulative re-estimation: widar_bvp | `outputs/bn_reset_cumulative/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta.json` | present |
 | `bn_reset_cumulative_ntufi_har` | BN-reset with cumulative re-estimation: ntufi_har | `outputs/bn_reset_cumulative/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta.json` | present |
 | `bn_reset_cumulative_signfi_top10` | BN-reset with cumulative re-estimation: signfi_top10 | `outputs/bn_reset_cumulative/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta.json` | present |
-| `guard_first_batch_widar_bvp` | Guard with a first-batch (unpaired) reference: widar_bvp | `outputs/guard_first_batch/widar_bvp/widar_bvp_lame_sar_cotta.json` | missing |
-| `guard_first_batch_ntufi_har` | Guard with a first-batch (unpaired) reference: ntufi_har | `outputs/guard_first_batch/ntufi_har/ntufi_har_lame_sar_cotta.json` | missing |
+| `guard_first_batch_widar_bvp` | Guard with a first-batch (unpaired) reference: widar_bvp | `outputs/guard_first_batch/widar_bvp/widar_bvp_lame_sar_cotta.json` | present |
+| `guard_first_batch_ntufi_har` | Guard with a first-batch (unpaired) reference: ntufi_har | `outputs/guard_first_batch/ntufi_har/ntufi_har_lame_sar_cotta.json` | present |
 | `cnn_gru_widar_source` | Source/target accuracy of the CNN-GRU backbone on Widar_BVP | `outputs/severity/cnn_gru_widar.json` | present |
 | `cnn_gru_widar` | Widar3.0-style CNN-GRU backbone on Widar_BVP | `outputs/cnn_gru/widar_bvp/widar_bvp_lame_sar_cotta.json` | present |
 | `protocol_sweep` | Learning-rate x step-budget sweep with label-free selection | `outputs/protocol_sensitivity/sweep.json` | present |

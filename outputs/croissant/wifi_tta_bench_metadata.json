@@ -265,7 +265,7 @@
       "name": "harm-tolerance",
       "contentUrl": "method_summaries/harm_tolerance.json",
       "encodingFormat": "application/json",
-      "sha256": "f9dbdbdd490ca59a227b22b3ddbfb633fe3cb1707efa0a105da87efd12316f2f",
+      "sha256": "b432a8e7f14d1a8c74c8ee0546c7ee47f962629f4c6dd1f3690123e14a708c6f",
       "description": "Harm rates beyond one test sample and 1 pp, abstention rates and per-environment means for every reported cell."
     },
     {

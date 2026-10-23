@@ -326,5 +326,16 @@
       "chosen_k": 0,
       "mean_gain_pp": 0.0
     }
+  },
+  "diversity_accuracy_spearman": {
+    "pooled": 0.8381468024330232,
+    "n_runs": 75,
+    "per_cell": {
+      "ntufi_har/mlp": 0.6357142857142856,
+      "signfi_top10/mlp": 0.7928571428571427,
+      "signfi_top10/resnet2d": 0.5924681985315953,
+      "signfi_top10/transformer": 0.5622204580711102,
+      "widar_bvp/mlp": 0.8282660838046896
+    }
   }
 }

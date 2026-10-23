@@ -539,6 +539,9 @@ def leave_one_dataset_out(cells: list[CellRow], name: str) -> dict[str, object]:
     }
 
 
+SENSITIVITY_THRESHOLDS_PP = (-1.0, -1.5, -2.0, -3.0)
+
+
 def fit_rule(cells: list[CellRow], harm_threshold_pp: float) -> dict[str, object]:
     """Rank-correlate every predictor with harm and validate a threshold rule."""
     gains = [cell.measured_gain_pp for cell in cells]
@@ -637,6 +640,22 @@ def main() -> None:
         if not cells:
             raise SystemExit("No cell had both predictors and a measured outcome.")
         rule = fit_rule(cells, args.harm_threshold_pp)
+        # Sensitivity of the screen to the harm threshold that defines labels.
+        sensitivity: dict[str, object] = {}
+        for threshold in SENSITIVITY_THRESHOLDS_PP:
+            alt_cells = build_cells(rows, threshold)
+            alt = fit_rule(alt_cells, threshold)
+            n_harm = int(alt["n_harmful_cells"])  # type: ignore[call-overload]
+            sensitivity[f"{threshold}"] = {
+                "n_harmful_cells": n_harm,
+                "majority_baseline_correct": max(n_harm, len(alt_cells) - n_harm),
+                "lodo_correct": {
+                    name: stats["leave_one_dataset_out"]["correct"]  # type: ignore[index]
+                    for name, stats in alt["predictors"].items()  # type: ignore[union-attr]
+                },
+                "n_cells": len(alt_cells),
+            }
+        rule["threshold_sensitivity"] = sensitivity
         save_json_file(rule, output_dir / "rule.json")
         save_dataclass_rows_csv(cells, output_dir / "rule.csv")
         logger.info(

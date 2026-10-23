@@ -127,7 +127,7 @@ def run_backbone(
                     src_accs.append(run_rows[0].pre_accuracy)
             except Exception as e:  # noqa: BLE001
                 logger.error("  FAILED: %s", e)
-                continue
+                raise
     src_stats: dict[str, float] = {}
     if src_accs:
         t = torch.tensor(src_accs)

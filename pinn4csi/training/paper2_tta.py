@@ -638,11 +638,20 @@ def evaluate_tta_classifier(
     with torch.no_grad():
         for batch in loader:
             moved = _move_batch_to_device(batch, device)
+            # BatchNorm cannot normalise a one-sample batch with its own
+            # statistics; such a remainder batch uses the running statistics.
+            single = bn_batch_stats and int(moved["x"].shape[0]) < 2
+            if single:
+                for module, _ in saved_momentum:
+                    module.eval()
             logits = model(
                 moved["x"],
                 prior=_optional_prior(moved),
                 has_prior=moved["has_prior"],
             )["task_logits"]
+            if single:
+                for module, _ in saved_momentum:
+                    module.train()
             batch_size = int(moved["label"].shape[0])
             total_loss += (
                 float(functional.cross_entropy(logits, moved["label"]).item())

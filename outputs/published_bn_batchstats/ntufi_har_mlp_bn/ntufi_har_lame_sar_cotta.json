@@ -6,69 +6,69 @@
     "cohens_d_vs_noadapt": 0.0,
     "paired_d_vs_noadapt": 0.0,
     "negative_adaptation_rate": 0.0,
-    "n_observations": 10
+    "n_observations": 15
   },
   "tent": {
-    "mean_gain": -0.019402984529733658,
-    "ci_lower": -0.028868157416582108,
-    "ci_upper": -0.009452736005187035,
-    "cohens_d_vs_noadapt": -1.615522861480713,
-    "paired_d_vs_noadapt": -1.1423470973968506,
-    "negative_adaptation_rate": 0.800000011920929,
-    "n_observations": 10
+    "mean_gain": -0.020679427310824394,
+    "ci_lower": -0.02769988402724266,
+    "ci_upper": -0.013362481258809566,
+    "cohens_d_vs_noadapt": -1.9869029521942139,
+    "paired_d_vs_noadapt": -1.4049525260925293,
+    "negative_adaptation_rate": 0.8666666746139526,
+    "n_observations": 15
   },
   "bn_reset": {
-    "mean_gain": -0.019402984529733658,
-    "ci_lower": -0.02885572239756584,
-    "ci_upper": -0.009452736005187035,
-    "cohens_d_vs_noadapt": -1.6311472654342651,
-    "paired_d_vs_noadapt": -1.1533952951431274,
-    "negative_adaptation_rate": 0.800000011920929,
-    "n_observations": 10
+    "mean_gain": -0.021016128361225128,
+    "ci_lower": -0.028283080086112022,
+    "ci_upper": -0.013397403061389923,
+    "cohens_d_vs_noadapt": -1.9796632528305054,
+    "paired_d_vs_noadapt": -1.39983332157135,
+    "negative_adaptation_rate": 0.8666666746139526,
+    "n_observations": 15
   },
   "sar_full": {
-    "mean_gain": -0.019402984529733658,
-    "ci_lower": -0.029353231191635132,
-    "ci_upper": -0.009452736005187035,
-    "cohens_d_vs_noadapt": -1.615522861480713,
-    "paired_d_vs_noadapt": -1.1423470973968506,
-    "negative_adaptation_rate": 0.800000011920929,
-    "n_observations": 10
+    "mean_gain": -0.020679427310824394,
+    "ci_lower": -0.027589449658989906,
+    "ci_upper": -0.01331725250929594,
+    "cohens_d_vs_noadapt": -1.9869029521942139,
+    "paired_d_vs_noadapt": -1.4049525260925293,
+    "negative_adaptation_rate": 0.8666666746139526,
+    "n_observations": 15
   },
   "cotta_full": {
-    "mean_gain": -0.019900497049093246,
-    "ci_lower": -0.028855720534920692,
-    "ci_upper": -0.010447761043906212,
-    "cohens_d_vs_noadapt": -1.7503799200057983,
-    "paired_d_vs_noadapt": -1.2377055883407593,
-    "negative_adaptation_rate": 0.800000011920929,
-    "n_observations": 10
+    "mean_gain": -0.021347803995013237,
+    "ci_lower": -0.028302928432822227,
+    "ci_upper": -0.014302225783467293,
+    "cohens_d_vs_noadapt": -2.090428113937378,
+    "paired_d_vs_noadapt": -1.4781559705734253,
+    "negative_adaptation_rate": 0.8666666746139526,
+    "n_observations": 15
   },
   "collapse_guarded_tent": {
-    "mean_gain": -0.019402984529733658,
-    "ci_lower": -0.029353231191635132,
-    "ci_upper": -0.008955223485827446,
-    "cohens_d_vs_noadapt": -1.615522861480713,
-    "paired_d_vs_noadapt": -1.1423470973968506,
-    "negative_adaptation_rate": 0.800000011920929,
-    "n_observations": 10
+    "mean_gain": -0.020679427310824394,
+    "ci_lower": -0.02759937383234501,
+    "ci_upper": -0.013075906783342361,
+    "cohens_d_vs_noadapt": -1.9869029521942139,
+    "paired_d_vs_noadapt": -1.4049525260925293,
+    "negative_adaptation_rate": 0.8666666746139526,
+    "n_observations": 15
   },
   "collapse_guarded_sar_full": {
-    "mean_gain": -0.019402984529733658,
-    "ci_lower": -0.02885572239756584,
-    "ci_upper": -0.008955223485827446,
-    "cohens_d_vs_noadapt": -1.615522861480713,
-    "paired_d_vs_noadapt": -1.1423470973968506,
-    "negative_adaptation_rate": 0.800000011920929,
-    "n_observations": 10
+    "mean_gain": -0.020679427310824394,
+    "ci_lower": -0.02775026485323906,
+    "ci_upper": -0.01337742991745472,
+    "cohens_d_vs_noadapt": -1.9869029521942139,
+    "paired_d_vs_noadapt": -1.4049525260925293,
+    "negative_adaptation_rate": 0.8666666746139526,
+    "n_observations": 15
   },
   "collapse_guarded_cotta_full": {
-    "mean_gain": -0.019900497049093246,
-    "ci_lower": -0.029353231191635132,
-    "ci_upper": -0.010447761043906212,
-    "cohens_d_vs_noadapt": -1.7503799200057983,
-    "paired_d_vs_noadapt": -1.2377055883407593,
-    "negative_adaptation_rate": 0.800000011920929,
-    "n_observations": 10
+    "mean_gain": -0.021347803995013237,
+    "ci_lower": -0.02813231386244297,
+    "ci_upper": -0.014312278479337692,
+    "cohens_d_vs_noadapt": -2.090428113937378,
+    "paired_d_vs_noadapt": -1.4781559705734253,
+    "negative_adaptation_rate": 0.8666666746139526,
+    "n_observations": 15
   }
 }

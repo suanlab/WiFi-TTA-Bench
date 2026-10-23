@@ -132,7 +132,7 @@ def run_condition(
                     )
             except Exception as e:  # noqa: BLE001
                 logger.error("  FAILED: %s", e)
-                continue
+                raise
 
     src_val_t = torch.tensor(src_pre_accs) if src_pre_accs else torch.tensor([0.0])
     summary: dict[str, dict[str, float]] = {}

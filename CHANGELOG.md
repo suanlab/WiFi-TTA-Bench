@@ -29,6 +29,15 @@ the supplement.
   chosen leave-one-dataset-out.
 - **One protocol**: no runner uses objective-based early stopping (`early_stop_patience=0`
   everywhere; the Widar runners used 3).
+- **Silent failed runs**: under test-batch BatchNorm statistics, a one-sample remainder
+  batch at evaluation raised an error that the runners caught and skipped, so
+  `published_bn_batchstats/ntufi_har_mlp_bn` held 10 of 15 runs (environment 0 missing). A
+  one-sample batch now uses the running statistics, and every runner re-raises a failed run
+  instead of continuing; the cell was regenerated with all 15 runs.
+- **Traceability**: `harm_tolerance_report.py` covers every per-run artifact the paper
+  quotes environment-level evidence for; the guard analysis records the diversity-accuracy
+  Spearman correlation; the deployment-rule fit records its sensitivity to the harm
+  threshold.
 - **SignFi-10 preparation released**: `scripts/prepare_signfi10.py` builds the bundle from
   the public `dataset_lab_276_dl.mat`: lab signs 1-10, CSI amplitude, environments are
   repetition blocks 1-6, 7-13 and 14-20 of one user (reproduces the previous bundle to

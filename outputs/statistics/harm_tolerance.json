@@ -2698,6 +2698,765 @@
       "sign_test_p_envs": 1.0
     },
     {
+      "source": "outputs/bn_double_update/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": 0.4351977486305847,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.13333333333333333,
+      "env_mean_pp": {
+        "0": 0.8080808080808111,
+        "1": 0.298507462686568,
+        "2": 0.19900497512437498
+      },
+      "hier_ci_pp": [
+        -0.1326699834162522,
+        1.0673903211216647
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.3765253777929598,
+        1.2469208750541292
+      ],
+      "sign_test_p_runs": 0.5810546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_double_update/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": 0.8693904216292289,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 1.4141414141414144,
+        "1": -0.19900497512437718,
+        "2": 1.3930348258706493
+      },
+      "hier_ci_pp": [
+        -0.7960199004975117,
+        2.62930298004925
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -1.4294117878610582,
+        3.168192631119516
+      ],
+      "sign_test_p_runs": 0.79052734375,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/bn_double_update/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": 0.7015427910950296,
+      "harm_rate": 0.2,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 1.01010101010101,
+        "1": 0.3980099502487566,
+        "2": 0.6965174129353224
+      },
+      "hier_ci_pp": [
+        0.03316749585406435,
+        1.3437861199055212
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.05885468497228574,
+        1.4619402671623452
+      ],
+      "sign_test_p_runs": 0.09228515625,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_double_update/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 0.6020403035328411,
+      "harm_rate": 0.2,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 1.01010101010101,
+        "1": 0.298507462686568,
+        "2": 0.4975124378109453
+      },
+      "hier_ci_pp": [
+        -0.03267752148349252,
+        1.2659053218754717
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.3100397339399932,
+        1.5141203410056754
+      ],
+      "sign_test_p_runs": 0.09228515625,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_double_update/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": 1.2380952380952381,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.6,
+      "env_mean_pp": {
+        "0": 1.9999999999999998,
+        "1": 1.1428571428571432,
+        "2": 0.5714285714285716
+      },
+      "hier_ci_pp": [
+        0.3809523809523811,
+        2.2222222222222223
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.5482230622910009,
+        3.0244135384814776
+      ],
+      "sign_test_p_runs": 0.03125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_double_update/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -1.3015873015873,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.666666666666671,
+        "1": -2.2857142857142865,
+        "2": -2.2857142857142843
+      },
+      "hier_ci_pp": [
+        -6.857142857142858,
+        4.413492063492056
+      ],
+      "envs_negative": 2,
+      "env_t_ci_pp": [
+        -5.536285714285719,
+        2.9331111111111197
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/bn_double_update/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": 6.793650793650796,
+      "harm_rate": 0.06666666666666667,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 10.666666666666671,
+        "1": 5.714285714285716,
+        "2": 4.0000000000000036
+      },
+      "hier_ci_pp": [
+        3.047619047619052,
+        10.888888888888893
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -1.8069267371573359,
+        15.394228324458929
+      ],
+      "sign_test_p_runs": 0.0018310546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_double_update/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 5.523809523809526,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 8.000000000000004,
+        "1": 5.142857142857145,
+        "2": 3.4285714285714324
+      },
+      "hier_ci_pp": [
+        2.3809523809523845,
+        9.428571428571432
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.2135238095238048,
+        11.261142857142861
+      ],
+      "sign_test_p_runs": 0.0224609375,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_double_update/widar_bvp_resnet2d/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": -8.57652833556448,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.0481927710843375,
+        "1": -8.607764390896921,
+        "2": -15.073627844712185
+      },
+      "hier_ci_pp": [
+        -19.129852744310575,
+        -0.9057340473003151
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -24.756460921694654,
+        7.603404250565694
+      ],
+      "sign_test_p_runs": 0.60723876953125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_double_update/widar_bvp_resnet2d/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -2.5568942436412314,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.0307898259705484,
+        "1": 0.7496653279785837,
+        "2": -7.389558232931728
+      },
+      "hier_ci_pp": [
+        -10.70526550647033,
+        1.5351405622489973
+      ],
+      "envs_negative": 2,
+      "env_t_ci_pp": [
+        -13.186984099600638,
+        8.073195612318175
+      ],
+      "sign_test_p_runs": 0.60723876953125,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/bn_double_update/widar_bvp_resnet2d/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -3.1102186523873265,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.13333333333333333,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.8567603748326624,
+        "1": 0.9236947791164662,
+        "2": -9.397590361445781
+      },
+      "hier_ci_pp": [
+        -12.717536813922356,
+        1.1289602855867937
+      ],
+      "envs_negative": 2,
+      "env_t_ci_pp": [
+        -16.817100199138594,
+        10.596662894363941
+      ],
+      "sign_test_p_runs": 0.012939453125,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/bn_source_control/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": 0.2995125383185108,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.2,
+      "env_mean_pp": {
+        "0": 0.20202020202020554,
+        "1": 0.3980099502487589,
+        "2": 0.298507462686568
+      },
+      "hier_ci_pp": [
+        -0.0010050756319383443,
+        0.535717875270118
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        0.05605052488066406,
+        0.5429745517563576
+      ],
+      "sign_test_p_runs": 0.03857421875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_source_control/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "cotta_full",
+      "n": 15,
+      "mean_pp": 0.4321825217347615,
+      "harm_rate": 0.06666666666666667,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.20202020202020332,
+        "1": 0.597014925373136,
+        "2": 0.4975124378109453
+      },
+      "hier_ci_pp": [
+        0.16684255490225636,
+        0.7296849087893883
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.07820362451032986,
+        0.9425686679798528
+      ],
+      "sign_test_p_runs": 0.021484375,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_source_control/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": 0.20001005075632144,
+      "harm_rate": 0.2,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.20202020202020332,
+        "1": 0.19900497512438164,
+        "2": 0.19900497512437945
+      },
+      "hier_ci_pp": [
+        -0.03417257148600342,
+        0.43519774863058835
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        0.19568521031207967,
+        0.20433489120056328
+      ],
+      "sign_test_p_runs": 0.34375,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_source_control/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 0.20001005075632144,
+      "harm_rate": 0.2,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.20202020202020332,
+        "1": 0.19900497512438164,
+        "2": 0.19900497512437945
+      },
+      "hier_ci_pp": [
+        -0.03417257148600342,
+        0.43519774863058835
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        0.19568521031207967,
+        0.20433489120056328
+      ],
+      "sign_test_p_runs": 0.34375,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_source_control/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": 1.1111111111111107,
+      "harm_rate": 0.06666666666666667,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.6666666666666666,
+      "env_mean_pp": {
+        "0": 3.3333333333333326,
+        "1": 0.5714285714285716,
+        "2": -0.5714285714285716
+      },
+      "hier_ci_pp": [
+        -0.5714285714285716,
+        3.555555555555555
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -3.8763080217119947,
+        6.098530243934216
+      ],
+      "sign_test_p_runs": 0.375,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/bn_source_control/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "cotta_full",
+      "n": 15,
+      "mean_pp": 3.1746031746031753,
+      "harm_rate": 0.06666666666666667,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 6.666666666666668,
+        "1": 0.5714285714285716,
+        "2": 2.2857142857142865
+      },
+      "hier_ci_pp": [
+        0.3809523809523811,
+        6.888888888888889
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -4.634511785142427,
+        10.983718134348779
+      ],
+      "sign_test_p_runs": 0.0390625,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_source_control/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": 3.238095238095239,
+      "harm_rate": 0.06666666666666667,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.06666666666666667,
+      "env_mean_pp": {
+        "0": 8.000000000000004,
+        "1": 0.5714285714285716,
+        "2": 1.1428571428571432
+      },
+      "hier_ci_pp": [
+        0.1904761904761905,
+        7.58730158730159
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -7.0317019928890705,
+        13.507892469079549
+      ],
+      "sign_test_p_runs": 0.0390625,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_source_control/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 2.603174603174604,
+      "harm_rate": 0.06666666666666667,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 6.66666666666667,
+        "1": 0.5714285714285716,
+        "2": 0.5714285714285716
+      },
+      "hier_ci_pp": [
+        -0.19047619047619055,
+        6.444444444444447
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -6.139428571428574,
+        11.345777777777784
+      ],
+      "sign_test_p_runs": 0.0703125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_source_control/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": -0.6961178045515407,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.8969210174029429,
+        "1": -0.45515394912985396,
+        "2": -0.7362784471218253
+      },
+      "hier_ci_pp": [
+        -1.1960062472110708,
+        -0.20972780008924916
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -1.251628235937785,
+        -0.14060737316529626
+      ],
+      "sign_test_p_runs": 0.11846923828125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_source_control/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "cotta_full",
+      "n": 15,
+      "mean_pp": -0.19634091923248498,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.09370816599732157,
+        "1": -0.14725568942436373,
+        "2": -0.34805890227576963
+      },
+      "hier_ci_pp": [
+        -0.5042391789379738,
+        0.053547523427042165
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -0.5294701464443461,
+        0.13678830797937608
+      ],
+      "sign_test_p_runs": 0.3017578125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_source_control/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": -0.1874163319946446,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.09370816599732157,
+        "1": -0.1338688085676032,
+        "2": -0.3346720214190091
+      },
+      "hier_ci_pp": [
+        -0.4953145917001334,
+        0.0713966979027214
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -0.5081404290931406,
+        0.13330776510385137
+      ],
+      "sign_test_p_runs": 0.3017578125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/bn_source_control/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -0.1695671575189639,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.5333333333333333,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.0401606425702794,
+        "1": -0.14725568942436373,
+        "2": -0.32128514056224855
+      },
+      "hier_ci_pp": [
+        -0.4908522980812132,
+        0.10263275323516563
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -0.5220552414422188,
+        0.18292092640429097
+      ],
+      "sign_test_p_runs": 0.3017578125,
+      "sign_test_p_envs": 0.25
+    },
+    {
       "source": "outputs/collapse_guard_generality/widar_sar_cotta.json",
       "dataset": "widar_bvp",
       "backbone": "mlp",
@@ -4084,6 +4843,2085 @@
       "sign_test_p_envs": 0.25
     },
     {
+      "source": "outputs/faithful_ports/ntufi_har_mlp/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_cotta_full",
+      "n": 15,
+      "mean_pp": 0.0,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "hier_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_sar_full",
+      "n": 15,
+      "mean_pp": -0.0653299160761837,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.2,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.2020202020202011,
+        "1": 0.09950248756218859,
+        "2": -0.49751243781094073
+      },
+      "hier_ci_pp": [
+        -0.5638474295190672,
+        0.3367003367003359
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -1.0038501872113101,
+        0.8731903550589428
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -2.1991054826875702,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.6,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.02020202020202,
+        "1": -3.184079601990046,
+        "2": -1.3930348258706449
+      },
+      "hier_ci_pp": [
+        -4.4112769485903796,
+        -0.572390572390571
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -4.456937303335041,
+        0.05872633795989968
+      ],
+      "sign_test_p_runs": 0.1795654296875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "cotta_full",
+      "n": 15,
+      "mean_pp": 0.0,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "hier_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -2.266445550027638,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.6,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.222222222222221,
+        "1": -3.0845771144278578,
+        "2": -1.4925373134328357
+      },
+      "hier_ci_pp": [
+        -4.482737826021407,
+        -0.5638223026282698
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -4.246315749184843,
+        -0.2865753508704334
+      ],
+      "sign_test_p_runs": 0.1795654296875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -2.399115533443892,
+      "harm_rate": 0.6666666666666666,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.6,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.222222222222223,
+        "1": -3.5820895522388057,
+        "2": -1.393034825870647
+      },
+      "hier_ci_pp": [
+        -4.577114427860699,
+        -0.630182421227199
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -5.14479661440691,
+        0.34656554751912605
+      ],
+      "sign_test_p_runs": 0.1795654296875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": -0.0653299160761837,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.2,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.2020202020202011,
+        "1": 0.09950248756218859,
+        "2": -0.49751243781094073
+      },
+      "hier_ci_pp": [
+        -0.5638474295190672,
+        0.3367003367003359
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -1.0038501872113101,
+        0.8731903550589428
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -3.0107041663084493,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.7333333333333333,
+      "harm_rate_gt1pp": 0.6666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -5.151516367690732,
+        "1": -2.587063514178072,
+        "2": -1.2935326170565453
+      },
+      "hier_ci_pp": [
+        -5.661163263921133,
+        -0.4975114898203201
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -7.888879976727376,
+        1.8674716441104766
+      ],
+      "sign_test_p_runs": 0.11846923828125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "t3a_full",
+      "n": 15,
+      "mean_pp": 0.3934871099050219,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.26666666666666666,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.13333333333333333,
+      "env_mean_pp": {
+        "0": -0.9090909090909084,
+        "1": 1.7910447761194037,
+        "2": 0.29850746268657025
+      },
+      "hier_ci_pp": [
+        -1.0729308005427416,
+        2.0895522388059735
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -2.96675736576007,
+        3.753731585570114
+      ],
+      "sign_test_p_runs": 0.5810546875,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 0.06583245389215546,
+      "harm_rate": 0.26666666666666666,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.10101010101009945,
+        "1": 0.19900497512437718,
+        "2": 0.09950248756218859
+      },
+      "hier_ci_pp": [
+        -0.5316850092969502,
+        0.6965174129353239
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -0.3138124260849753,
+        0.4454773338692861
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": 0.4351977486305847,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.13333333333333333,
+      "env_mean_pp": {
+        "0": 0.8080808080808111,
+        "1": 0.298507462686568,
+        "2": 0.19900497512437498
+      },
+      "hier_ci_pp": [
+        -0.1326699834162522,
+        1.0673903211216647
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.3765253777929598,
+        1.2469208750541292
+      ],
+      "sign_test_p_runs": 0.5810546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_cotta_full",
+      "n": 15,
+      "mean_pp": 0.3995175636966682,
+      "harm_rate": 0.26666666666666666,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.30303030303030276,
+        "1": 0.597014925373136,
+        "2": 0.2985074626865658
+      },
+      "hier_ci_pp": [
+        -0.03367003367003389,
+        0.9658902457409925
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.025435149132543744,
+        0.8244702765258801
+      ],
+      "sign_test_p_runs": 0.548828125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_sar_full",
+      "n": 15,
+      "mean_pp": 0.3326800341725729,
+      "harm_rate": 0.2,
+      "harm_rate_gt1_sample": 0.13333333333333333,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.20202020202020332,
+        "1": 0.49751243781094745,
+        "2": 0.298507462686568
+      },
+      "hier_ci_pp": [
+        -0.13065983215236596,
+        0.8955223880597042
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.04166232591012392,
+        0.7070223942552698
+      ],
+      "sign_test_p_runs": 0.5078125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": 0.3683602191064879,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.7070707070707072,
+        "1": -0.09950248756218859,
+        "2": 0.4975124378109453
+      },
+      "hier_ci_pp": [
+        -1.2271973466003305,
+        1.926780240213075
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -0.671359218153746,
+        1.4080796563667217
+      ],
+      "sign_test_p_runs": 0.60723876953125,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "cotta_full",
+      "n": 15,
+      "mean_pp": 0.3995175636966682,
+      "harm_rate": 0.26666666666666666,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.30303030303030276,
+        "1": 0.597014925373136,
+        "2": 0.2985074626865658
+      },
+      "hier_ci_pp": [
+        -0.03367003367003389,
+        0.9658902457409925
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.025435149132543744,
+        0.8244702765258801
+      ],
+      "sign_test_p_runs": 0.548828125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": 0.5331926227448625,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.5050505050505061,
+        "1": -0.2985074626865658,
+        "2": 1.393034825870647
+      },
+      "hier_ci_pp": [
+        -1.0628800442233255,
+        2.229760289461781
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -1.56886113937902,
+        2.635246384868745
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": 0.9668827579275341,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.3333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 1.01010101010101,
+        "1": 0.3980099502487566,
+        "2": 1.4925373134328357
+      },
+      "hier_ci_pp": [
+        -0.43117744610281655,
+        2.5772651892054856
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.3958812600576429,
+        2.3296467759127113
+      ],
+      "sign_test_p_runs": 0.60723876953125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": 0.3326800341725729,
+      "harm_rate": 0.2,
+      "harm_rate_gt1_sample": 0.13333333333333333,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.20202020202020332,
+        "1": 0.49751243781094745,
+        "2": 0.298507462686568
+      },
+      "hier_ci_pp": [
+        -0.13065983215236596,
+        0.8955223880597042
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.04166232591012392,
+        0.7070223942552698
+      ],
+      "sign_test_p_runs": 0.5078125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": 0.3663495329913376,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.30303008628614014,
+        "1": -0.49751268097417256,
+        "2": 1.2935311936620453
+      },
+      "hier_ci_pp": [
+        -1.2935327038934963,
+        2.255389300151844
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -1.8625969277000152,
+        2.5952959936826905
+      ],
+      "sign_test_p_runs": 0.60723876953125,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "t3a_full",
+      "n": 15,
+      "mean_pp": 0.1658374792703158,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.13333333333333333,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.13333333333333333,
+      "env_mean_pp": {
+        "0": 0.0,
+        "1": 0.3980099502487589,
+        "2": 0.09950248756218859
+      },
+      "hier_ci_pp": [
+        -0.29850746268656586,
+        0.6965174129353262
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.3487458420670528,
+        0.6804208006076844
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 0.5
+    },
+    {
+      "source": "outputs/faithful_ports/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 0.3326800341725729,
+      "harm_rate": 0.2,
+      "harm_rate_gt1_sample": 0.13333333333333333,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.20202020202020332,
+        "1": 0.49751243781094745,
+        "2": 0.298507462686568
+      },
+      "hier_ci_pp": [
+        -0.13065983215236596,
+        0.8955223880597042
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.04166232591012392,
+        0.7070223942552698
+      ],
+      "sign_test_p_runs": 0.5078125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_cotta_full",
+      "n": 15,
+      "mean_pp": 0.0,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "hier_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_sar_full",
+      "n": 15,
+      "mean_pp": -5.84126984126984,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.6,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.666666666666666,
+        "1": -10.285714285714285,
+        "2": -4.571428571428571
+      },
+      "hier_ci_pp": [
+        -11.809523809523808,
+        -1.0793650793650793
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -15.691864849727963,
+        4.009325167188282
+      ],
+      "sign_test_p_runs": 0.0654296875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -23.619047619047624,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -20.0,
+        "1": -20.0,
+        "2": -30.857142857142854
+      },
+      "hier_ci_pp": [
+        -32.38095238095238,
+        -17.174603174603178
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -39.191809523809525,
+        -8.046285714285718
+      ],
+      "sign_test_p_runs": 6.103515625e-05,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "cotta_full",
+      "n": 15,
+      "mean_pp": 0.0,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "hier_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        0.0,
+        0.0
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -23.587301587301592,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -19.333333333333336,
+        "1": -20.0,
+        "2": -31.428571428571434
+      },
+      "hier_ci_pp": [
+        -32.761904761904766,
+        -16.952380952380956
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -40.478105984015585,
+        -6.696497190587603
+      ],
+      "sign_test_p_runs": 6.103515625e-05,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -30.063492063492063,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 1.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -23.333333333333332,
+        "1": -32.0,
+        "2": -34.85714285714286
+      },
+      "hier_ci_pp": [
+        -39.238095238095234,
+        -21.523809523809526
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -44.97202484540078,
+        -15.154959281583347
+      ],
+      "sign_test_p_runs": 6.103515625e-05,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": -5.84126984126984,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.6,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.666666666666666,
+        "1": -10.285714285714285,
+        "2": -4.571428571428571
+      },
+      "hier_ci_pp": [
+        -11.809523809523808,
+        -1.0793650793650793
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -15.691864849727963,
+        4.009325167188282
+      ],
+      "sign_test_p_runs": 0.0654296875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -20.761903759032965,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -15.999999443689983,
+        "1": -17.71428443704333,
+        "2": -28.57142739636557
+      },
+      "hier_ci_pp": [
+        -30.285712792759846,
+        -12.761903442939124
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -37.69849350938203,
+        -3.8253140086838933
+      ],
+      "sign_test_p_runs": 0.00738525390625,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "t3a_full",
+      "n": 15,
+      "mean_pp": -9.841269841269842,
+      "harm_rate": 0.8,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.2,
+      "env_mean_pp": {
+        "0": -10.666666666666668,
+        "1": -7.4285714285714315,
+        "2": -11.428571428571429
+      },
+      "hier_ci_pp": [
+        -14.285714285714288,
+        -6.063492063492065
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -15.117760867416361,
+        -4.564778815123321
+      ],
+      "sign_test_p_runs": 0.00048828125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -15.396825396825395,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.8666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -15.333333333333336,
+        "1": -12.571428571428573,
+        "2": -18.285714285714285
+      },
+      "hier_ci_pp": [
+        -21.428571428571427,
+        -9.714285714285714
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -22.496248906435753,
+        -8.297401887215042
+      ],
+      "sign_test_p_runs": 0.000244140625,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": 1.2380952380952381,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.6,
+      "env_mean_pp": {
+        "0": 1.9999999999999998,
+        "1": 1.1428571428571432,
+        "2": 0.5714285714285716
+      },
+      "hier_ci_pp": [
+        0.3809523809523811,
+        2.2222222222222223
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.5482230622910009,
+        3.0244135384814776
+      ],
+      "sign_test_p_runs": 0.03125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_cotta_full",
+      "n": 15,
+      "mean_pp": 4.253968253968257,
+      "harm_rate": 0.06666666666666667,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 9.333333333333337,
+        "1": 2.2857142857142865,
+        "2": 1.1428571428571455
+      },
+      "hier_ci_pp": [
+        0.5714285714285745,
+        9.111111111111116
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -6.7661071062240925,
+        15.274043614160606
+      ],
+      "sign_test_p_runs": 0.021484375,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_sar_full",
+      "n": 15,
+      "mean_pp": 5.23809523809524,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 10.000000000000005,
+        "1": 2.857142857142858,
+        "2": 2.857142857142858
+      },
+      "hier_ci_pp": [
+        1.7142857142857146,
+        9.904761904761909
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -5.0071428571428624,
+        15.483333333333341
+      ],
+      "sign_test_p_runs": 0.001953125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -2.9523809523809517,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -1.9999999999999973,
+        "1": -2.857142857142858,
+        "2": -3.9999999999999996
+      },
+      "hier_ci_pp": [
+        -8.349999999999996,
+        2.095238095238096
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -5.4451549683688825,
+        -0.45960693639302175
+      ],
+      "sign_test_p_runs": 0.5810546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "cotta_full",
+      "n": 15,
+      "mean_pp": 4.253968253968257,
+      "harm_rate": 0.06666666666666667,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 9.333333333333337,
+        "1": 2.2857142857142865,
+        "2": 1.1428571428571455
+      },
+      "hier_ci_pp": [
+        0.5714285714285745,
+        9.111111111111116
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -6.7661071062240925,
+        15.274043614160606
+      ],
+      "sign_test_p_runs": 0.021484375,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -3.015873015873015,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -3.3333333333333304,
+        "1": -2.2857142857142865,
+        "2": -3.4285714285714275
+      },
+      "hier_ci_pp": [
+        -8.38174603174603,
+        1.7142857142857153
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -4.591257677614866,
+        -1.440488354131163
+      ],
+      "sign_test_p_runs": 0.5810546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -2.412698412698412,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.6,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.666666666666664,
+        "1": -0.5714285714285738,
+        "2": -3.9999999999999996
+      },
+      "hier_ci_pp": [
+        -8.19047619047619,
+        2.857142857142856
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -6.706473230259924,
+        1.8810764048630984
+      ],
+      "sign_test_p_runs": 0.60723876953125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": 5.23809523809524,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 10.000000000000005,
+        "1": 2.857142857142858,
+        "2": 2.857142857142858
+      },
+      "hier_ci_pp": [
+        1.7142857142857146,
+        9.904761904761909
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -5.0071428571428624,
+        15.483333333333341
+      ],
+      "sign_test_p_runs": 0.001953125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": 3.206350088119507,
+      "harm_rate": 0.26666666666666666,
+      "harm_rate_gt1_sample": 0.26666666666666666,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 7.333333253860477,
+        "1": 0.5714298657008565,
+        "2": 1.7142871447971886
+      },
+      "hier_ci_pp": [
+        -3.302379625468025,
+        10.350000421111535
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -5.785623849537799,
+        12.198324025776813
+      ],
+      "sign_test_p_runs": 0.11846923828125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "t3a_full",
+      "n": 15,
+      "mean_pp": -3.2698412698412693,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.4,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.4,
+      "env_mean_pp": {
+        "0": -8.666666666666664,
+        "1": -2.2857142857142865,
+        "2": 1.1428571428571432
+      },
+      "hier_ci_pp": [
+        -9.777777777777775,
+        1.1428571428571432
+      ],
+      "envs_negative": 2,
+      "env_t_ci_pp": [
+        -15.637521839524547,
+        9.09783929984201
+      ],
+      "sign_test_p_runs": 0.5078125,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 5.23809523809524,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 10.000000000000005,
+        "1": 2.2857142857142865,
+        "2": 3.4285714285714293
+      },
+      "hier_ci_pp": [
+        1.714285714285715,
+        9.90634920634919
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -5.105029520785798,
+        15.581219996976277
+      ],
+      "sign_test_p_runs": 0.001953125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_cotta_full",
+      "n": 15,
+      "mean_pp": 0.008924587237840361,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.026773761713521083,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "hier_ci_pp": [
+        0.0,
+        0.031236055332441264
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.029477911646586717,
+        0.047327086122267444
+      ],
+      "sign_test_p_runs": 0.5,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_sar_full",
+      "n": 15,
+      "mean_pp": -0.00892458723783962,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.1338688085676054,
+        "1": -0.16064257028112428,
+        "2": 0.0
+      },
+      "hier_ci_pp": [
+        -0.1695671575189639,
+        0.14279339580544578
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -0.3752610784200919,
+        0.35741190394441263
+      ],
+      "sign_test_p_runs": 0.79052734375,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": -0.21865238732708517,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.2,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.32128514056224633,
+        "1": -0.7095046854082998,
+        "2": 0.3748326639892907
+      },
+      "hier_ci_pp": [
+        -0.7898259705488624,
+        0.45515394912985396
+      ],
+      "envs_negative": 2,
+      "env_t_ci_pp": [
+        -1.583562774003812,
+        1.1462579993496418
+      ],
+      "sign_test_p_runs": 0.60723876953125,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "cotta_full",
+      "n": 15,
+      "mean_pp": 0.004462293618920181,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.013386880856760541,
+        "1": 0.0,
+        "2": 0.0
+      },
+      "hier_ci_pp": [
+        0.0,
+        0.017849174475680723
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.014738955823293359,
+        0.023663543061133722
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": -0.17402945113788335,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.29451137884872525,
+        "1": -0.7095046854082998,
+        "2": 0.481927710843375
+      },
+      "hier_ci_pp": [
+        -0.7764390896921017,
+        0.5266622043730482
+      ],
+      "envs_negative": 2,
+      "env_t_ci_pp": [
+        -1.676519551740899,
+        1.3284606494651325
+      ],
+      "sign_test_p_runs": 0.60723876953125,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -0.25435073627844734,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.2811244979919669,
+        "1": -1.0040160642570317,
+        "2": 0.5220883534136567
+      },
+      "hier_ci_pp": [
+        -1.0174029451137914,
+        0.6157965194109782
+      ],
+      "envs_negative": 2,
+      "env_t_ci_pp": [
+        -2.1509054901061138,
+        1.642204017549219
+      ],
+      "sign_test_p_runs": 0.79052734375,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": -0.00892458723783962,
+      "harm_rate": 0.5333333333333333,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.1338688085676054,
+        "1": -0.16064257028112428,
+        "2": 0.0
+      },
+      "hier_ci_pp": [
+        -0.1695671575189639,
+        0.14279339580544578
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -0.3752610784200919,
+        0.35741190394441263
+      ],
+      "sign_test_p_runs": 0.79052734375,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -0.392681527808009,
+      "harm_rate": 0.6,
+      "harm_rate_gt1_sample": 0.6,
+      "harm_rate_gt1pp": 0.4666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.3212850831119862,
+        "1": -1.7135203267675814,
+        "2": 0.8567608264555404
+      },
+      "hier_ci_pp": [
+        -1.6822841416401089,
+        0.9104202461263932
+      ],
+      "envs_negative": 2,
+      "env_t_ci_pp": [
+        -3.5890984853050583,
+        2.8037354296890404
+      ],
+      "sign_test_p_runs": 0.60723876953125,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "t3a_full",
+      "n": 15,
+      "mean_pp": 0.06693440428380344,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.26666666666666666,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.21419009370816866,
+        "1": -1.204819277108431,
+        "2": 1.1914323962516726
+      },
+      "hier_ci_pp": [
+        -1.1378848728246282,
+        1.1468094600624723
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -2.9264289183673817,
+        3.060297726934989
+      ],
+      "sign_test_p_runs": 0.60723876953125,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 0.022311468094601643,
+      "harm_rate": 0.3333333333333333,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.10709504685408656,
+        "1": -0.08032128514056325,
+        "2": 0.040160642570281624
+      },
+      "hier_ci_pp": [
+        -0.10263275323516266,
+        0.14279339580544725
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -0.21363743527529983,
+        0.25826037146450315
+      ],
+      "sign_test_p_runs": 0.7744140625,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": -1.026327532351628,
+      "harm_rate": 0.8,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.5333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.7898259705488585,
+        "1": -0.6961178045515415,
+        "2": -1.5930388219544844
+      },
+      "hier_ci_pp": [
+        -1.793842034805888,
+        -0.3077867023650152
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -2.2511505363804516,
+        0.1984954716771954
+      ],
+      "sign_test_p_runs": 0.03515625,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_cotta_full",
+      "n": 15,
+      "mean_pp": -0.5354752342704158,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.9333333333333333,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.25435073627844806,
+        "1": -0.5087014725568939,
+        "2": -0.8433734939759052
+      },
+      "hier_ci_pp": [
+        -0.9326193663543059,
+        -0.21854082998661462
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -1.2694051621161226,
+        0.198454693575291
+      ],
+      "sign_test_p_runs": 0.0009765625,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_sar_full",
+      "n": 15,
+      "mean_pp": -0.5577867023650159,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.29451137884872747,
+        "1": -0.4417670682730935,
+        "2": -0.9370816599732268
+      },
+      "hier_ci_pp": [
+        -0.986166889781348,
+        -0.2141900937081665
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -1.3940887401059021,
+        0.27851533537587025
+      ],
+      "sign_test_p_runs": 0.0018310546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "cotta",
+      "n": 15,
+      "mean_pp": 0.004462293618919441,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4,
+      "harm_rate_gt1pp": 0.2,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.10709504685408211,
+        "1": -0.0401606425702794,
+        "2": 0.16064257028111983
+      },
+      "hier_ci_pp": [
+        -0.3569834895136107,
+        0.45961624274876894
+      ],
+      "envs_negative": 2,
+      "env_t_ci_pp": [
+        -0.3416931534654443,
+        0.35061774070328316
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "cotta_full",
+      "n": 15,
+      "mean_pp": -0.5443998215082554,
+      "harm_rate": 0.9333333333333333,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.2409638554216875,
+        "1": -0.4953145917001333,
+        "2": -0.8969210174029453
+      },
+      "hier_ci_pp": [
+        -0.9593931280678268,
+        -0.20526550647032757
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -1.3660248525535479,
+        0.2772252095370371
+      ],
+      "sign_test_p_runs": 0.0009765625,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "entropy_tta",
+      "n": 15,
+      "mean_pp": 0.0,
+      "harm_rate": 0.4,
+      "harm_rate_gt1_sample": 0.3333333333333333,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.12048192771084265,
+        "1": -0.08032128514056103,
+        "2": 0.2008032128514037
+      },
+      "hier_ci_pp": [
+        -0.3748326639892907,
+        0.48192771084337277
+      ],
+      "envs_negative": 2,
+      "env_t_ci_pp": [
+        -0.43489876271713174,
+        0.43489876271713174
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "sar",
+      "n": 15,
+      "mean_pp": -0.05800981704596161,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.2,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.21419009370816203,
+        "1": 0.0401606425702794,
+        "2": -2.220446049250313e-15
+      },
+      "hier_ci_pp": [
+        -0.419455600178494,
+        0.3034359660865708
+      ],
+      "envs_negative": 2,
+      "env_t_ci_pp": [
+        -0.3977145973839348,
+        0.2816949632920115
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": -0.5577867023650159,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.06666666666666667,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.29451137884872747,
+        "1": -0.4417670682730935,
+        "2": -0.9370816599732268
+      },
+      "hier_ci_pp": [
+        -0.986166889781348,
+        -0.2141900937081665
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -1.3940887401059021,
+        0.27851533537587025
+      ],
+      "sign_test_p_runs": 0.0018310546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "t3a",
+      "n": 15,
+      "mean_pp": -0.4462290581503603,
+      "harm_rate": 0.7333333333333333,
+      "harm_rate_gt1_sample": 0.6666666666666666,
+      "harm_rate_gt1pp": 0.26666666666666666,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.5488608049420773,
+        "1": -0.3614468874541954,
+        "2": -0.42837948205480814
+      },
+      "hier_ci_pp": [
+        -0.9103079289929334,
+        0.013387139555811193
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -0.682175142926333,
+        -0.21028297337438762
+      ],
+      "sign_test_p_runs": 0.11846923828125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "t3a_full",
+      "n": 15,
+      "mean_pp": 0.39714413208389016,
+      "harm_rate": 0.4666666666666667,
+      "harm_rate_gt1_sample": 0.4666666666666667,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.026773761713521083,
+        "1": -0.026773761713523303,
+        "2": 1.1914323962516726
+      },
+      "hier_ci_pp": [
+        -0.160642570281125,
+        1.146921017402945
+      ],
+      "envs_negative": 1,
+      "env_t_ci_pp": [
+        -1.3130610446324167,
+        2.107349308800197
+      ],
+      "sign_test_p_runs": 1.0,
+      "sign_test_p_envs": 1.0
+    },
+    {
+      "source": "outputs/faithful_ports/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -0.5711735832217765,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.2811244979919669,
+        "1": -0.5087014725568961,
+        "2": -0.9236947791164662
+      },
+      "hier_ci_pp": [
+        -0.9906291834002666,
+        -0.23203926818384715
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -1.380592226886788,
+        0.23824506044323523
+      ],
+      "sign_test_p_runs": 0.0018310546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
       "source": "outputs/final_ablations/arch_ablation_with_ci.json",
       "dataset": "widar_bvp",
       "backbone": "cnn1d",
@@ -5206,6 +8044,699 @@
       "sign_test_p_envs": 1.0
     },
     {
+      "source": "outputs/published_bn_batchstats/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": -2.1016131463892656,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.4242424242424243,
+        "1": -2.487562189054726,
+        "2": -1.393034825870647
+      },
+      "hier_ci_pp": [
+        -2.9016533494145436,
+        -1.1608623548922055
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.628147048859142,
+        -0.5750792439193895
+      ],
+      "sign_test_p_runs": 0.00738525390625,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_cotta_full",
+      "n": 15,
+      "mean_pp": -2.134780642243329,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.4242424242424243,
+        "1": -2.487562189054726,
+        "2": -1.4925373134328357
+      },
+      "hier_ci_pp": [
+        -2.910699030102016,
+        -1.260038192874018
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.5188039156002158,
+        -0.7507573688864411
+      ],
+      "sign_test_p_runs": 0.0018310546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_sar_full",
+      "n": 15,
+      "mean_pp": -2.0679431127192314,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.3232323232323226,
+        "1": -2.487562189054726,
+        "2": -1.3930348258706449
+      },
+      "hier_ci_pp": [
+        -2.852404643449419,
+        -1.127694859038141
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.5342856705833263,
+        -0.6016005548551364
+      ],
+      "sign_test_p_runs": 0.0018310546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "collapse_guarded_tent",
+      "n": 15,
+      "mean_pp": -2.0679431127192314,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.3232323232323226,
+        "1": -2.487562189054726,
+        "2": -1.3930348258706449
+      },
+      "hier_ci_pp": [
+        -2.852404643449419,
+        -1.127694859038141
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.5342856705833263,
+        -0.6016005548551364
+      ],
+      "sign_test_p_runs": 0.0018310546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "cotta_full",
+      "n": 15,
+      "mean_pp": -2.134780642243329,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.4242424242424243,
+        "1": -2.487562189054726,
+        "2": -1.4925373134328357
+      },
+      "hier_ci_pp": [
+        -2.910699030102016,
+        -1.260038192874018
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.5188039156002158,
+        -0.7507573688864411
+      ],
+      "sign_test_p_runs": 0.0018310546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": -2.0679431127192314,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.3232323232323226,
+        "1": -2.487562189054726,
+        "2": -1.3930348258706449
+      },
+      "hier_ci_pp": [
+        -2.852404643449419,
+        -1.127694859038141
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.5342856705833263,
+        -0.6016005548551364
+      ],
+      "sign_test_p_runs": 0.0018310546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -2.0679431127192314,
+      "harm_rate": 0.8666666666666667,
+      "harm_rate_gt1_sample": 0.8,
+      "harm_rate_gt1pp": 0.8,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.3232323232323226,
+        "1": -2.487562189054726,
+        "2": -1.3930348258706449
+      },
+      "hier_ci_pp": [
+        -2.852404643449419,
+        -1.127694859038141
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.5342856705833263,
+        -0.6016005548551364
+      ],
+      "sign_test_p_runs": 0.0018310546875,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": 7.904761904761906,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.06666666666666667,
+      "env_mean_pp": {
+        "0": 14.000000000000004,
+        "1": 6.2857142857142865,
+        "2": 3.4285714285714293
+      },
+      "hier_ci_pp": [
+        2.0952380952380962,
+        14.000000000000004
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -5.680902839360209,
+        21.490426648884025
+      ],
+      "sign_test_p_runs": 0.012939453125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_cotta_full",
+      "n": 15,
+      "mean_pp": 7.682539682539685,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 13.333333333333336,
+        "1": 6.2857142857142865,
+        "2": 3.4285714285714293
+      },
+      "hier_ci_pp": [
+        2.0952380952380962,
+        13.461111111111105
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -4.9825711804206545,
+        20.347650545500024
+      ],
+      "sign_test_p_runs": 0.012939453125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_sar_full",
+      "n": 15,
+      "mean_pp": 7.904761904761906,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 14.000000000000004,
+        "1": 6.2857142857142865,
+        "2": 3.4285714285714293
+      },
+      "hier_ci_pp": [
+        2.0952380952380962,
+        14.000000000000004
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -5.680902839360209,
+        21.490426648884025
+      ],
+      "sign_test_p_runs": 0.012939453125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "collapse_guarded_tent",
+      "n": 15,
+      "mean_pp": 7.682539682539685,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 13.333333333333336,
+        "1": 6.2857142857142865,
+        "2": 3.4285714285714293
+      },
+      "hier_ci_pp": [
+        2.0952380952380962,
+        13.33333333333334
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -4.9825711804206545,
+        20.347650545500024
+      ],
+      "sign_test_p_runs": 0.012939453125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "cotta_full",
+      "n": 15,
+      "mean_pp": 7.682539682539685,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 13.333333333333336,
+        "1": 6.2857142857142865,
+        "2": 3.4285714285714293
+      },
+      "hier_ci_pp": [
+        2.0952380952380962,
+        13.461111111111105
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -4.9825711804206545,
+        20.347650545500024
+      ],
+      "sign_test_p_runs": 0.012939453125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": 7.904761904761906,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 14.000000000000004,
+        "1": 6.2857142857142865,
+        "2": 3.4285714285714293
+      },
+      "hier_ci_pp": [
+        2.0952380952380962,
+        14.000000000000004
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -5.680902839360209,
+        21.490426648884025
+      ],
+      "sign_test_p_runs": 0.012939453125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 7.682539682539685,
+      "harm_rate": 0.13333333333333333,
+      "harm_rate_gt1_sample": 0.06666666666666667,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 13.333333333333336,
+        "1": 6.2857142857142865,
+        "2": 3.4285714285714293
+      },
+      "hier_ci_pp": [
+        2.0952380952380962,
+        13.33333333333334
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -4.9825711804206545,
+        20.347650545500024
+      ],
+      "sign_test_p_runs": 0.012939453125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "bn_reset",
+      "n": 15,
+      "mean_pp": -2.3560910307898255,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.1151271753681367,
+        "1": -2.0615796519410967,
+        "2": -2.8915662650602436
+      },
+      "hier_ci_pp": [
+        -3.1905399375278907,
+        -1.7938420348058874
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.510084524824028,
+        -1.2020975367556228
+      ],
+      "sign_test_p_runs": 6.103515625e-05,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_cotta_full",
+      "n": 15,
+      "mean_pp": -2.3560910307898264,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.1017402945113783,
+        "1": -2.0749665327978573,
+        "2": -2.8915662650602436
+      },
+      "hier_ci_pp": [
+        -3.1860776439089724,
+        -1.798304328424809
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.5086459285938245,
+        -1.2035361329858283
+      ],
+      "sign_test_p_runs": 6.103515625e-05,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_sar_full",
+      "n": 15,
+      "mean_pp": -2.3516287371709064,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.1017402945113783,
+        "1": -2.088353413654618,
+        "2": -2.8647925033467225
+      },
+      "hier_ci_pp": [
+        -3.168228469433291,
+        -1.79384203480589
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.455825798537183,
+        -1.2474316758046287
+      ],
+      "sign_test_p_runs": 6.103515625e-05,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "collapse_guarded_tent",
+      "n": 15,
+      "mean_pp": -2.369477911646586,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.1151271753681367,
+        "1": -2.0749665327978573,
+        "2": -2.9183400267737647
+      },
+      "hier_ci_pp": [
+        -3.217313699241412,
+        -1.7983043284248081
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.551408009731248,
+        -1.1875478135619237
+      ],
+      "sign_test_p_runs": 6.103515625e-05,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "cotta_full",
+      "n": 15,
+      "mean_pp": -2.360553324408746,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.1151271753681367,
+        "1": -2.0749665327978573,
+        "2": -2.8915662650602436
+      },
+      "hier_ci_pp": [
+        -3.1905399375278907,
+        -1.7983043284248106
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.504116294062814,
+        -1.2169903547546783
+      ],
+      "sign_test_p_runs": 6.103515625e-05,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "sar_full",
+      "n": 15,
+      "mean_pp": -2.3516287371709064,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.1017402945113783,
+        "1": -2.088353413654618,
+        "2": -2.8647925033467225
+      },
+      "hier_ci_pp": [
+        -3.168228469433291,
+        -1.79384203480589
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.455825798537183,
+        -1.2474316758046287
+      ],
+      "sign_test_p_runs": 6.103515625e-05,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/published_bn_batchstats/widar_bvp_mlp_bn/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -2.369477911646586,
+      "harm_rate": 1.0,
+      "harm_rate_gt1_sample": 1.0,
+      "harm_rate_gt1pp": 0.9333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -2.1151271753681367,
+        "1": -2.0749665327978573,
+        "2": -2.9183400267737647
+      },
+      "hier_ci_pp": [
+        -3.217313699241412,
+        -1.7983043284248081
+      ],
+      "envs_negative": 3,
+      "env_t_ci_pp": [
+        -3.551408009731248,
+        -1.1875478135619237
+      ],
+      "sign_test_p_runs": 6.103515625e-05,
+      "sign_test_p_envs": 0.25
+    },
+    {
       "source": "outputs/reset_transfer_ntufi/p0.5/ntufi_har_lame_sar_cotta.json",
       "dataset": "ntufi_har",
       "backbone": "",
@@ -6062,6 +9593,105 @@
       ],
       "sign_test_p_runs": 0.001953125,
       "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/tent_lr0/ntufi_har_mlp_bn/ntufi_har_lame_sar_cotta_full.json",
+      "dataset": "ntufi_har",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 0.3658475300266358,
+      "harm_rate": 0.2,
+      "harm_rate_gt1_sample": 0.13333333333333333,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 0.505,
+        "1": 0.498,
+        "2": 0.498
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 0.20202020202020332,
+        "1": 0.49751243781094745,
+        "2": 0.3980099502487566
+      },
+      "hier_ci_pp": [
+        -0.09799487411427404,
+        0.9286898839137662
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -0.007669487619995141,
+        0.7393645476732666
+      ],
+      "sign_test_p_runs": 0.34375,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/tent_lr0/signfi_top10_mlp_bn/signfi_top10_lame_sar_cotta_full.json",
+      "dataset": "signfi_top10",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": 5.047619047619049,
+      "harm_rate": 0.0,
+      "harm_rate_gt1_sample": 0.0,
+      "harm_rate_gt1pp": 0.0,
+      "one_test_sample_pp": {
+        "0": 3.333,
+        "1": 2.857,
+        "2": 2.857
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": 10.000000000000005,
+        "1": 2.2857142857142865,
+        "2": 2.857142857142858
+      },
+      "hier_ci_pp": [
+        1.5238095238095244,
+        9.650793650793656
+      ],
+      "envs_negative": 0,
+      "env_t_ci_pp": [
+        -5.631045255634771,
+        15.726283350872873
+      ],
+      "sign_test_p_runs": 0.001953125,
+      "sign_test_p_envs": 0.25
+    },
+    {
+      "source": "outputs/tent_lr0/widar_bvp_resnet2d/widar_bvp_lame_sar_cotta_full.json",
+      "dataset": "widar_bvp",
+      "backbone": "",
+      "method": "tent",
+      "n": 15,
+      "mean_pp": -2.967425256581883,
+      "harm_rate": 0.2,
+      "harm_rate_gt1_sample": 0.2,
+      "harm_rate_gt1pp": 0.13333333333333333,
+      "one_test_sample_pp": {
+        "0": 0.067,
+        "1": 0.067,
+        "2": 0.067
+      },
+      "abstain_rate": 0.0,
+      "env_mean_pp": {
+        "0": -0.562248995983935,
+        "1": 0.8969210174029453,
+        "2": -9.236947791164658
+      },
+      "hier_ci_pp": [
+        -12.365015618027666,
+        1.0977242302543524
+      ],
+      "envs_negative": 2,
+      "env_t_ci_pp": [
+        -16.577535796876976,
+        10.642685283713211
+      ],
+      "sign_test_p_runs": 0.057373046875,
+      "sign_test_p_envs": 1.0
     },
     {
       "source": "outputs/widar_full_tta/full_results.json",

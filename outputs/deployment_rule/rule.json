@@ -184,5 +184,55 @@
       "predict_harmful_above": false,
       "spearman_rho_vs_gain": 0.65
     }
+  },
+  "threshold_sensitivity": {
+    "-1.0": {
+      "lodo_correct": {
+        "feature_shift": 6,
+        "norm_backbone": 2,
+        "source_val_ece": 3,
+        "target_confidence": 7,
+        "target_diversity": 6
+      },
+      "majority_baseline_correct": 5,
+      "n_cells": 9,
+      "n_harmful_cells": 5
+    },
+    "-1.5": {
+      "lodo_correct": {
+        "feature_shift": 6,
+        "norm_backbone": 2,
+        "source_val_ece": 3,
+        "target_confidence": 7,
+        "target_diversity": 6
+      },
+      "majority_baseline_correct": 5,
+      "n_cells": 9,
+      "n_harmful_cells": 5
+    },
+    "-2.0": {
+      "lodo_correct": {
+        "feature_shift": 8,
+        "norm_backbone": 3,
+        "source_val_ece": 2,
+        "target_confidence": 3,
+        "target_diversity": 6
+      },
+      "majority_baseline_correct": 5,
+      "n_cells": 9,
+      "n_harmful_cells": 4
+    },
+    "-3.0": {
+      "lodo_correct": {
+        "feature_shift": 6,
+        "norm_backbone": 3,
+        "source_val_ece": 4,
+        "target_confidence": 7,
+        "target_diversity": 7
+      },
+      "majority_baseline_correct": 6,
+      "n_cells": 9,
+      "n_harmful_cells": 3
+    }
   }
 }

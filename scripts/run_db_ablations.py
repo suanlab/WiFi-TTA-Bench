@@ -86,6 +86,7 @@ def run_step_budget_ablation() -> list[dict[str, object]]:
                     )
             except Exception as e:
                 logger.error("  step=%d seed=%d FAILED: %s", steps, seed, e)
+                raise
     return results
 
 
@@ -172,6 +173,7 @@ def compute_baseline_accuracies() -> dict[str, dict[str, float]]:
                 accs["target"].append(tgt_m["accuracy"])
             except Exception as e:
                 logger.error("  %s seed=%d FAILED: %s", dataset, seed, e)
+                raise
 
         results[dataset] = {k: float(np.mean(v)) for k, v in accs.items() if v}
         logger.info("  %s: %s", dataset, results[dataset])

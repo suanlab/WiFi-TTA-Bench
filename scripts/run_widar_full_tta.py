@@ -131,7 +131,7 @@ def run_widar_full_experiment() -> dict[str, object]:
                     )
             except Exception as e:
                 logger.error("  FAILED: %s", e)
-                continue
+                raise
 
     return {"rows": all_rows, "config": asdict(config)}
 

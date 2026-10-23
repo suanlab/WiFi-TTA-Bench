@@ -156,7 +156,7 @@ def run_experiment(
                     )
             except Exception as e:  # noqa: BLE001
                 logger.error("  FAILED: %s", e)
-                continue
+                raise
 
     return {"rows": all_rows, "config": asdict(config), "dataset": dataset}
 

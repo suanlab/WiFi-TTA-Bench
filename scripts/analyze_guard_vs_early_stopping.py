@@ -86,6 +86,63 @@ def analyse_cell(runs: list[dict[str, object]], rng: np.random.Generator) -> dic
 BUDGETS = (0, 1, 2, 3, 5)
 
 
+def _ranks(values: np.ndarray) -> np.ndarray:
+    """Average ranks (ties share the mean rank)."""
+    order = np.argsort(values, kind="mergesort")
+    ranks = np.empty(len(values))
+    sorted_vals = values[order]
+    i = 0
+    while i < len(values):
+        j = i
+        while j + 1 < len(values) and sorted_vals[j + 1] == sorted_vals[i]:
+            j += 1
+        ranks[order[i : j + 1]] = (i + j) / 2.0
+        i = j + 1
+    return ranks
+
+
+def spearman(x: np.ndarray, y: np.ndarray) -> float:
+    rx, ry = _ranks(x), _ranks(y)
+    return float(np.corrcoef(rx, ry)[0, 1])
+
+
+def diversity_accuracy_spearman(runs: list[dict[str, object]]) -> dict[str, object]:
+    """Spearman between the change in predicted-class diversity and in accuracy.
+
+    Change after the full unguarded trajectory (k = 0 to the last step), per cell
+    and pooled over all runs.
+    """
+
+    def deltas(group: list[dict[str, object]]) -> tuple[np.ndarray, np.ndarray]:
+        div = np.array(
+            [
+                r["entropy_trajectory"][-1]["diversity"]  # type: ignore[index]
+                - r["entropy_trajectory"][0]["diversity"]  # type: ignore[index]
+                for r in group
+            ]
+        )
+        acc = np.array(
+            [
+                r["entropy_trajectory"][-1]["accuracy"]  # type: ignore[index]
+                - r["entropy_trajectory"][0]["accuracy"]  # type: ignore[index]
+                for r in group
+            ]
+        )
+        return div, acc
+
+    cells: dict[str, list[dict[str, object]]] = defaultdict(list)
+    for r in runs:
+        cells[f"{r['dataset']}/{r['backbone']}"].append(r)
+    per_cell = {}
+    for cell, group in sorted(cells.items()):
+        div, acc = deltas(group)
+        per_cell[cell] = (
+            spearman(div, acc) if np.ptp(div) > 0 and np.ptp(acc) > 0 else None
+        )
+    div, acc = deltas(runs)
+    return {"pooled": spearman(div, acc), "n_runs": len(runs), "per_cell": per_cell}
+
+
 def budget_lodo(report: dict[str, dict]) -> dict[str, dict[str, object]]:
     """Choose the step budget k leave-one-dataset-out (best mean gain elsewhere).
 
@@ -128,6 +185,9 @@ def main() -> None:
                 "distribution) whose mean gain is at least the guard's",
                 "cells": report,
                 "fixed_budget_leave_one_dataset_out": budget_lodo(report),
+                "diversity_accuracy_spearman": diversity_accuracy_spearman(
+                    payload["runs"]
+                ),
             },
             indent=2,
         )

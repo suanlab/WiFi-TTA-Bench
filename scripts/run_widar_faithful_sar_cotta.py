@@ -116,7 +116,7 @@ def run_experiment(
                     )
             except Exception as e:  # noqa: BLE001
                 logger.error("  FAILED: %s", e)
-                continue
+                raise
 
     return {"rows": rows, "config": {"backbone": "mlp_bn", "methods": list(methods)}}
 
